@@ -91,11 +91,12 @@ form {
 /* General {{{ */
 .group:after { content: ""; display: block; clear: both; } .group { zoom: 1; }
 
-.width    { width: 941px; margin: 0 auto; }
 .shy      { position: absolute; left: -9999px; }
 .relative { position: relative; }
 .left     { float: left; }
 .right    { float: right; }
+
+.uppercase { text-transform: uppercase; }
 
 /* }}} */
 

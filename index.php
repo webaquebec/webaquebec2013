@@ -10,7 +10,7 @@
 
     <title>Web à Québec - Édition 2013</title>
 
-    <link rel="author" href="/humans.txt" />
+    <link rel="author" href="/humans.txt"/>
     <link rel="stylesheet" href="/assets/stylesheets/global.css">
 
     <!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -58,9 +58,13 @@
       </nav>
 
       <header id="header">
-        <div>
+        <section id="event-details">
+            <h1>Web À Québec</h1>
+            <img src="/assets/images/logo-waq.png" alt="Logo - Web À Québec">
 
-        </div>
+            <span id="dates">du <time datetime="2013-02-20">20 <span class="uppercase">au</span> <time datetime="2013-02-22">22</time> février 2013</span>
+            <span id="location">Espace 400<sup>e</sup> Bell, Québec</span>
+        </section>
 
         <div>
           <h1>Le WAQ est enfin de retour !</h1>

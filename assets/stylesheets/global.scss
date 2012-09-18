@@ -1,0 +1,213 @@
+/*
+ * @author    Luc-Olivier Boulet
+ * @company   iXmédia <http://www.ixmedia.com>
+ */
+
+@import "mixin";
+
+
+/*----------------------------------------- BASICS
+**************************************************/
+// SASS variables {{{
+
+// }}}
+/* iXReset {{{ */
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+time { display: inline; }
+html { font-size: 62.5%; overflow-y: scroll; }
+html, body { height: 100%; }
+body { position: relative; margin: 0; }
+ul, ol, dl { margin: 0; }
+nav ul, ol.breadbrumbs { list-style:none; margin: 0; padding: 0; }
+.group:after { content: ""; display: block; clear: both; } .group { zoom: 1; }
+a *, button * { cursor: pointer; }
+a img { border:0; }
+hr { display: none; }
+small { font-size: 90%; }
+del { text-decoration: line-through; }
+sup, sub { height: 0; line-height: 1; vertical-align: baseline; _vertical-align: bottom; position: relative; font-size: 75%; } sup { bottom: 1ex; } sub { top: .5ex; }
+span.amp { font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif; font-weight: normal; font-style: italic; font-size: 1.2em; line-height: 0.8; }
+abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+button, input[type="submit"], input[type="button"], * html input { width: auto; overflow: visible; }
+button, label, select, option, input[type=submit], input[type=button] { cursor: pointer; }
+button::-moz-focus-inner { border: 0; padding: 1px; }
+input { margin: 0 }
+/* }}} */
+/* iXBoilerplate  {{{ */
+body {
+  color: #444;
+  font-family: Arial;
+  font-size: 130%;
+  line-height: 1.3;
+
+  position: relative;
+  @extend .group;
+}
+
+h1,h2,h3,h4,h5,h6 { line-height: 1.1; text-rendering: optimizeLegibility; margin: 1em 0; }
+p,ul,ol,dl,table { margin: 1em 0; }
+input, select, button, textarea, option { font-size: 100%; margin: 0; }
+
+ol,ul { margin-left: 20px; padding: 0; }
+#content ul li,
+#content ol li { margin-bottom: 2px; }
+ul { list-style: square; }
+
+a { text-decoration: none; cursor: pointer; color: #771516; }
+a:focus { outline: 3px solid darken(#771516, 10); }
+a.focus { outline: 3px solid darken(#771516, 10); }
+a.focus:active { outline: 3px solid #771516; }
+a:hover, a:focus { text-decoration: underline; color: #771516; }
+a:link { -webkit-tap-highlight-color: #771516; }
+
+hr { border-top:1px solid #cccccc; border:0; display:block; height:1px; margin:0.5em 0; padding:0; }
+
+::selection {
+  color: #333;
+  background-color: white;
+}
+/* }}} */
+
+/* Titles {{{ */
+h1, .h1 {
+
+}
+
+h2, .h2 {
+
+}
+/* }}} */
+/* Forms {{{ */
+form {
+  div {
+    label {
+
+    }
+  }
+}
+/* }}} */
+
+/*------------------- CLASSES */
+/* General {{{ */
+.group:after { content: ""; display: block; clear: both; } .group { zoom: 1; }
+
+.width    { width: 941px; margin: 0 auto; }
+.shy      { position: absolute; left: -9999px; }
+.relative { position: relative; }
+.left     { float: left; }
+.right    { float: right; }
+
+/* }}} */
+
+/*---------------------------------------- LAYOUT
+*************************************************/
+/* Wrapper {{{ */
+#wrapper {
+
+}
+/* }}} */
+
+/* Header {{{ */
+#header {
+
+/* }}} */
+/* Header > Meta-nav {{{ */
+#meta-nav {
+
+}
+/* }}} */
+/* Header > Banner {{{ */
+#banner {
+
+}
+/* }}} */
+/* Header > Main-nav {{{ */
+#main-nav {
+
+}
+/* }}} */
+
+/* Content {{{ */
+#content {
+
+}
+/* }}} */
+/* Content > Main-content {{{ */
+/* }}} */
+/* Content > Sidebar {{{ */
+
+/* }}} */
+
+/* Footer {{{ */
+#footer {
+
+}
+/* }}} */
+
+/*-------------------------------------------- UI
+*************************************************/
+
+/*---------------------------------------- SECTIONS
+**************************************************/
+
+
+/*------------------------------------------- PAGES
+**************************************************/
+/* Home {{{ */
+.home {
+
+}
+/* }}} */
+
+/*------------------------------------------ UTILS
+**************************************************/
+/* Shitty browsers {{{ */
+.ie7 {
+  #lt-ie7 { display: block; }
+}
+
+.ie8 {
+
+}
+/* }}}*/
+/* Print {{{ */
+@media print {
+
+}
+/* }}} */
+/* Media Queries {{{ */
+@media only screen and (min-width: 1224px) {
+
+}
+
+
+@media only screen and (max-width: 1223px) {
+
+}
+
+
+@media only screen and (max-width: 959px) {
+
+}
+
+
+@media only screen and (max-width: 767px) {
+
+}
+
+
+@media only screen and (max-width: 479px) {
+
+}
+
+@media (min--moz-device-pixel-ratio: 1.5),
+(-o-min-device-pixel-ratio: 3/2),
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-device-pixel-ratio: 1.5),
+(min-resolution: 1.5dppx),
+(-moz-min-device-pixel-ratio: 1.5) {
+
+/* "retina" styles */
+
+}
+/* }}} */

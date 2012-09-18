@@ -39,7 +39,7 @@
 
     <div class="wrapper">
       <nav id="meta-nav">
-        <p>Suivez-nous :</p>
+        <p>Suivez-nous : </p>
         <ul>
           <li>
             <a href="@@@" title="Lien vers le compte Twitter du Web À Québec">

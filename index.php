@@ -8,7 +8,7 @@
     <meta name="description" content="<%== @meta_description %>" />
     <?php */ ?>
 
-    <title>Web à Québec - Édition 2013</title>
+    <title>Web à Québec</title>
 
     <link rel="author" href="/humans.txt"/>
     <link rel="stylesheet" href="/assets/stylesheets/global.css">
@@ -22,10 +22,10 @@
 
 
       var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-15315606-1'],
+          _gaq.push(['_setAccount', 'UA-20043510-1'],
                     ['_trackPageview']),
                     ['_setAccount', 'UA-25106796-1'],
-                    ['_setDomainName', 'pulaval.com'],
+                    ['_setDomainName', 'webaquebec.org'],
                     ['_setAllowHash', false],
                     ['_setAllowLinker', true],
                     ['_trackPageview'],);
@@ -59,15 +59,26 @@
 
       <header id="header">
         <section id="event-details">
-            <h1>Web À Québec</h1>
-            <img src="/assets/images/logo-waq.png" alt="Logo - Web À Québec">
+          <h1>Web À Québec</h1>
+          <img src="/assets/images/logo-waq.png" alt="Logo - Web À Québec">
 
-            <span id="dates">du <time datetime="2013-02-20">20 <span class="uppercase">au</span> <time datetime="2013-02-22">22</time> février 2013</span>
-            <span id="location">Espace 400<sup>e</sup> Bell, Québec</span>
+          <span id="dates">du <time datetime="2013-02-20">20 <span class="uppercase">au</span> <time datetime="2013-02-22">22</time> février 2013</span>
+          <span id="location">Espace 400<sup>e</sup> Bell, Québec</span>
         </section>
 
         <div>
           <h1>Le WAQ est enfin de retour !</h1>
+          
+          <section id="register">
+            <span class="until-date">Jusqu'au 12 octobre</span>
+            <span class="uppercase">Tarif «à l'aveuglette»</span>
+
+            <div id="carey-price">
+              <img src="/assets/images/arrow-right-bottom.png" alt="">
+              <span id="current-price">295<sup class="currency">$</sup></span>
+              <span id="price">595<sup class="curreny">$</sup></span>
+            </div>
+          </section>
         </div>
 
       </header>

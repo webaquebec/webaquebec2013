@@ -22,6 +22,8 @@ $(function() {
     $(this).removeClass('focus');
   });
 
+/*
+  var DOMAIN_REGEX = {}
   window.domainWithoutSubdomain = function(domainWithSubdomain) {
     var matches = domainWithSubdomain.match(DOMAIN_REGEX);
     return matches ? matches[0] : null;
@@ -37,6 +39,6 @@ $(function() {
       link.title += link.title ? ' – S’ouvre dans une nouvelle fenêtre.' : 'S’ouvre dans une nouvelle fenêtre.';
       link.className += link.className.indexOf('externe') == -1 ? ' externe' : '';
     }
-  }
+  }*/
   // }}}
 })

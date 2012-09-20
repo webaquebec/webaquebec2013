@@ -37,53 +37,66 @@
 
   <body class="splash">
 
-    <div class="wrapper">
-      <nav id="meta-nav">
-        <p>Suivez-nous : </p>
-        <ul>
-          <li>
-            <a href="@@@" title="Lien vers le compte Twitter du Web À Québec">
-              <img src="/assets/images/ico-twitter.png" alt="Icône Twitter">
-              <span class="shy">Twitter</span>
-            </a>
-          </li>
+    <div id="wrapper">
+      <div class="width">
+        <div class="group">
+          <nav id="meta-nav">
+            <p class="uppercase">Suivez-nous : </p>
+            <ul>
+              <li>
+                <a href="https://twitter.com/webaquebec" title="Lien vers le compte Twitter du Web À Québec">
+                  <img src="/assets/images/layout/ico-twitter.png" alt="Icône Twitter">
+                  <span class="shy">Twitter</span>
+                </a>
+              </li>
 
-          <li>
-            <a href="@@@" title="Lien vers le compte Facebook du Web À Québec">
-              <img src="/assets/images/ico-twitter.png" alt="Icône Facebook">
-              <span class="shy">Facebook</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <header id="header">
-        <section id="event-details">
-          <h1>Web À Québec</h1>
-          <img src="/assets/images/logo-waq.png" alt="Logo - Web À Québec">
-
-          <span id="dates">du <time datetime="2013-02-20">20 <span class="uppercase">au</span> <time datetime="2013-02-22">22</time> février 2013</span>
-          <span id="location">Espace 400<sup>e</sup> Bell, Québec</span>
-        </section>
-
-        <div>
-          <h1>Le WAQ est enfin de retour !</h1>
-          
-          <section id="register">
-            <span class="until-date">Jusqu'au 12 octobre</span>
-            <span class="uppercase">Tarif «à l'aveuglette»</span>
-
-            <div id="carey-price">
-              <img src="/assets/images/arrow-right-bottom.png" alt="">
-              <span id="current-price">295<sup class="currency">$</sup></span>
-              <span id="price">595<sup class="curreny">$</sup></span>
-            </div>
-          </section>
+              <li>
+                <a href="http://www.facebook.com/webaquebec" title="Lien vers le compte Facebook du Web À Québec">
+                  <img src="/assets/images/layout/ico-facebook.png" alt="Icône Facebook">
+                  <span class="shy">Facebook</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
 
-      </header>
-    </div>
+        <header id="header">
+          <div>
+            <section id="event-details">
+              <h1 class="shy">Web À Québec</h1>
+              <img src="/assets/images/layout/logo-webaquebec.png" alt="Logo - Web À Québec">
 
-    <script type="text/javascript" src="/assets/javascripts/global.js"></script>
+              <span id="dates">du <time datetime="2013-02-20">20 <span class="uppercase">au</span> <time datetime="2013-02-22">22</time> février 2013</span>
+              <span id="location">Espace 400<sup>e</sup> Bell, Québec</span>
+            </section>
+
+            <section id="suggest-a-talk">
+              <a href="https://docs.google.com/spreadsheet/viewform?fromEmail=true&amp;formkey=dGJ3RmRFRXBYRUhGbG1mZFAxbUVTWmc6MQ " class="uppercase">Proposez une présentation</a>
+            </section>
+          </div>
+
+          <div>
+            <h1 class="uppercase">Le WAQ est enfin de retour !</h1>
+
+            <section id="register">
+              <span id="until-date" class="uppercase">Jusqu'au 12 octobre</span>
+              <span class="uppercase">Tarif «à l'aveuglette»</span>
+
+              <div id="carey-price">
+                <span id="current-price">295<sup class="currency">$</sup></span>
+                <span id="price">
+                  595<sup class="curreny">$</sup>
+                  <span id="red-line"></span>
+                </span>
+
+                <a href="#" class="subscribe uppercase">Inscription</a>
+              </div>
+
+              <p><strong>Vous connaissez un sujet intéressant?</strong> Vous désirez être conférencier pour le WAQ 2013? L'équipe de la programmation du Web à Québec aimerait en savoir davantage!</p>
+            </section>
+          </div>
+        </header>
+      </div>
+    </div>
   </body>
 </html>

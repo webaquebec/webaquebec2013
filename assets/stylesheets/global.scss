@@ -213,7 +213,12 @@ body {
     li {
       display: inline-block;
       margin: 0 20px;
-      
+
+      &#facebook {
+        position: relative;
+        top: 1px;
+      }
+
       a { display: block; }
     }
   }

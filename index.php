@@ -31,7 +31,7 @@
     <?php */ ?>
   </head>
 
-  <body style="background-image:url('/assets/images/backgrounds/bg-waq<?= rand(1,11); ?>.jpg')">
+  <body style="background-image:url('/assets/images/backgrounds/bg-waq<?= rand(1,10); ?>.jpg')">
 
     <div id="big-container">
       <div id="wrapper">
@@ -47,7 +47,7 @@
                   </a>
                 </li>
 
-                <li>
+                <li id="facebook">
                   <a href="http://www.facebook.com/webaquebec" title="Lien vers le compte Facebook du Web À Québec">
                     <img src="/assets/images/layout/ico-facebook.png" alt="Icône Facebook">
                     <span class="shy">Facebook</span>
@@ -76,7 +76,7 @@
               <h1 class="uppercase">Le WAQ est enfin de retour !</h1>
 
               <section id="register">
-                <span id="until-date" class="uppercase">Jusqu'au 12 octobre</span>
+                <span id="until-date" class="uppercase">Jusqu'au 19 octobre</span>
                 <span class="uppercase">Tarif «à l'aveuglette»</span>
 
                 <div id="carey-price">
@@ -86,7 +86,7 @@
                     <span id="red-line"></span>
                   </span>
 
-                  <a href="#" class="subscribe uppercase">Inscription</a>
+                  <a href="http://webaquebec2013.eventbrite.ca/" class="subscribe uppercase">Inscription</a>
                 </div>
 
                 <p><strong>Vous connaissez un sujet intéressant?</strong> Vous désirez être conférencier pour le WAQ 2013? L'équipe de la programmation du Web à Québec aimerait en savoir davantage!</p>

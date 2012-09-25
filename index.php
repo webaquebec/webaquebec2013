@@ -17,85 +17,83 @@
 
     <?php /* ?>
     <script type="text/javascript">
-      var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-15315606-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script>
-          _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-25106796-1']); _gaq.push(['_setDomainName', 'pulaval.com']); _gaq.push(['_setAllowHash', 'false']); _gaq.push(['_setAllowLinker', true]); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
-
-
       var _gaq = _gaq || [];
           _gaq.push(['_setAccount', 'UA-20043510-1'],
                     ['_trackPageview']),
-                    ['_setAccount', 'UA-25106796-1'],
-                    ['_setDomainName', 'webaquebec.org'],
-                    ['_setAllowHash', false],
-                    ['_setAllowLinker', true],
-                    ['_trackPageview'],);
+                    ['ix_setAccount', 'UA-25106796-1'],
+                    ['ix_setDomainName', 'webaquebec.org'],
+                    ['ix_setAllowHash', false],
+                    ['ix_setAllowLinker', true],
+                    ['ix_trackPageview'],);
 
       (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script>
     </script>
     <?php */ ?>
   </head>
 
-  <body class="splash">
+  <body style="background-image:url('/assets/images/backgrounds/bg-waq<?= rand(1,11); ?>.jpg')">
 
-    <div id="wrapper">
-      <div class="width">
-        <div class="group">
-          <nav id="meta-nav">
-            <p class="uppercase">Suivez-nous : </p>
-            <ul>
-              <li>
-                <a href="https://twitter.com/webaquebec" title="Lien vers le compte Twitter du Web À Québec">
-                  <img src="/assets/images/layout/ico-twitter.png" alt="Icône Twitter">
-                  <span class="shy">Twitter</span>
-                </a>
-              </li>
+    <div id="big-container">
+      <div id="wrapper">
+        <div class="width">
+          <div class="group">
+            <nav id="meta-nav">
+              <p class="uppercase">Suivez-nous : </p>
+              <ul>
+                <li>
+                  <a href="https://twitter.com/webaquebec" title="Lien vers le compte Twitter du Web À Québec">
+                    <img src="/assets/images/layout/ico-twitter.png" alt="Icône Twitter">
+                    <span class="shy">Twitter</span>
+                  </a>
+                </li>
 
-              <li>
-                <a href="http://www.facebook.com/webaquebec" title="Lien vers le compte Facebook du Web À Québec">
-                  <img src="/assets/images/layout/ico-facebook.png" alt="Icône Facebook">
-                  <span class="shy">Facebook</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+                <li>
+                  <a href="http://www.facebook.com/webaquebec" title="Lien vers le compte Facebook du Web À Québec">
+                    <img src="/assets/images/layout/ico-facebook.png" alt="Icône Facebook">
+                    <span class="shy">Facebook</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <header id="header">
+            <div>
+              <section id="event-details">
+                <h1 class="shy">Web À Québec</h1>
+                <img src="/assets/images/layout/logo-webaquebec.png" alt="Logo - Web À Québec">
+
+                <span id="dates">du <time datetime="2013-02-20">20 <span class="uppercase">au</span> <time datetime="2013-02-22">22</time> février 2013</span>
+                <span id="location">Espace 400<sup>e</sup> Bell, Québec</span>
+              </section>
+
+              <section id="suggest-a-talk">
+                <a href="https://docs.google.com/spreadsheet/viewform?fromEmail=true&amp;formkey=dGJ3RmRFRXBYRUhGbG1mZFAxbUVTWmc6MQ " class="uppercase">Proposez une présentation</a>
+              </section>
+            </div>
+
+            <div>
+              <h1 class="uppercase">Le WAQ est enfin de retour !</h1>
+
+              <section id="register">
+                <span id="until-date" class="uppercase">Jusqu'au 12 octobre</span>
+                <span class="uppercase">Tarif «à l'aveuglette»</span>
+
+                <div id="carey-price">
+                  <span id="current-price">295<sup class="currency">$</sup></span>
+                  <span id="price">
+                    595<sup class="curreny">$</sup>
+                    <span id="red-line"></span>
+                  </span>
+
+                  <a href="#" class="subscribe uppercase">Inscription</a>
+                </div>
+
+                <p><strong>Vous connaissez un sujet intéressant?</strong> Vous désirez être conférencier pour le WAQ 2013? L'équipe de la programmation du Web à Québec aimerait en savoir davantage!</p>
+              </section>
+            </div>
+          </header>
         </div>
-
-        <header id="header">
-          <div>
-            <section id="event-details">
-              <h1 class="shy">Web À Québec</h1>
-              <img src="/assets/images/layout/logo-webaquebec.png" alt="Logo - Web À Québec">
-
-              <span id="dates">du <time datetime="2013-02-20">20 <span class="uppercase">au</span> <time datetime="2013-02-22">22</time> février 2013</span>
-              <span id="location">Espace 400<sup>e</sup> Bell, Québec</span>
-            </section>
-
-            <section id="suggest-a-talk">
-              <a href="https://docs.google.com/spreadsheet/viewform?fromEmail=true&amp;formkey=dGJ3RmRFRXBYRUhGbG1mZFAxbUVTWmc6MQ " class="uppercase">Proposez une présentation</a>
-            </section>
-          </div>
-
-          <div>
-            <h1 class="uppercase">Le WAQ est enfin de retour !</h1>
-
-            <section id="register">
-              <span id="until-date" class="uppercase">Jusqu'au 12 octobre</span>
-              <span class="uppercase">Tarif «à l'aveuglette»</span>
-
-              <div id="carey-price">
-                <span id="current-price">295<sup class="currency">$</sup></span>
-                <span id="price">
-                  595<sup class="curreny">$</sup>
-                  <span id="red-line"></span>
-                </span>
-
-                <a href="#" class="subscribe uppercase">Inscription</a>
-              </div>
-
-              <p><strong>Vous connaissez un sujet intéressant?</strong> Vous désirez être conférencier pour le WAQ 2013? L'équipe de la programmation du Web à Québec aimerait en savoir davantage!</p>
-            </section>
-          </div>
-        </header>
       </div>
     </div>
   </body>

@@ -4,7 +4,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Le Web À Québec c'est trois jours de rencontres par et pour les gens qui imaginent le web." />
+    <?php /* ?>
+    <meta name="description" content="<%== @meta_description %>" />
+    <?php */ ?>
 
     <title>Web à Québec</title>
 
@@ -25,6 +27,7 @@
 
       (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script>
     </script>
+
   </head>
 
   <body style="background-image:url('/assets/images/backgrounds/bg-waq<?= rand(1,4); ?>.jpg')">
@@ -63,7 +66,7 @@
                 <span id="location">Espace 400<sup>e</sup> Bell, Québec</span>
               </section>
 
-              <h2>Trois jours de rencontres par et pour les gens qui imaginent le web.</h2>
+              <h2>Trois jours de rencontres par et pour les gens qui font le Web.</h2>
             </div>
 
             <div>

@@ -1,0 +1,3 @@
+AuthName "WAQ"
+Require ldap-group cn=ixmedia,ou=groupes,dc=ixmedia,dc=com
+Require user waq

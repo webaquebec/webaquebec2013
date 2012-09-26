@@ -66,14 +66,12 @@
                 <span id="dates">du <time datetime="2013-02-20">20 <span class="uppercase">au</span> <time datetime="2013-02-22">22</time> février 2013</span>
                 <span id="location">Espace 400<sup>e</sup> Bell, Québec</span>
               </section>
-
-              <section id="suggest-a-talk">
-                <a href="https://docs.google.com/spreadsheet/viewform?fromEmail=true&amp;formkey=dGJ3RmRFRXBYRUhGbG1mZFAxbUVTWmc6MQ " class="uppercase">Proposez une présentation</a>
-              </section>
             </div>
 
             <div>
               <h1 class="uppercase">Le WAQ est enfin de retour !</h1>
+
+              <h2>Trois jours de rencontres par et pour les gens qui font le Web.</h2>
 
               <section id="register">
                 <span id="until-date" class="uppercase">Jusqu'au 19 octobre</span>
@@ -90,6 +88,10 @@
                 </div>
 
                 <p><strong>Vous connaissez un sujet intéressant?</strong> Vous désirez être conférencier pour le WAQ 2013? L'équipe de la programmation du Web à Québec aimerait en savoir davantage!</p>
+
+                <section id="suggest-a-talk">
+                  <a href="https://docs.google.com/spreadsheet/viewform?fromEmail=true&amp;formkey=dGJ3RmRFRXBYRUhGbG1mZFAxbUVTWmc6MQ " class="uppercase">Proposez une présentation</a>
+                </section>
               </section>
             </div>
           </header>

@@ -64,7 +64,7 @@
                 <span id="location">Espace 400<sup>e</sup> Bell, Québec</span>
               </section>
 
-              <h2>Trois jours de rencontres par et pour les gens qui font le Web.</h2>
+              <h2>Trois jours de rencontres par et pour les gens qui imaginent le web.</h2>
             </div>
 
             <div>

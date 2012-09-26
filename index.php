@@ -66,12 +66,12 @@
                 <span id="dates">du <time datetime="2013-02-20">20 <span class="uppercase">au</span> <time datetime="2013-02-22">22</time> février 2013</span>
                 <span id="location">Espace 400<sup>e</sup> Bell, Québec</span>
               </section>
+
+              <h2>Trois jours de rencontres par et pour les gens qui font le Web.</h2>
             </div>
 
             <div>
               <h1 class="uppercase">Le WAQ est enfin de retour !</h1>
-
-              <h2>Trois jours de rencontres par et pour les gens qui font le Web.</h2>
 
               <section id="register">
                 <span id="until-date" class="uppercase">Jusqu'au 19 octobre</span>
@@ -98,5 +98,7 @@
         </div>
       </div>
     </div>
+
+    <p id="copyright">Crédit photo : Marc-Antoine Jean</p>
   </body>
 </html>

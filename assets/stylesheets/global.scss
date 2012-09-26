@@ -171,8 +171,11 @@ form {
 /*---------------------------------------- LAYOUT
 *************************************************/
 /* Wrapper {{{ */
+html {
+  min-width: 1180px;
+}
+
 body { 
-  min-width: 1180px; 
   background-size: cover;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -237,7 +240,7 @@ body {
     width: 466px;
     float: left;
   }
-  
+
   h1 {
     color: $turquoise;
     font-family: $misoLight;
@@ -246,17 +249,19 @@ body {
     font-size: 4rem;
     margin: 35px 0 10px;
   }
-  
+
   h2 {
     color: $marine;
     font-family: $miso;
     font-size: 30px;
     font-size: 3rem;
-    margin: 0 0 25px;
-    width: 440px;
+    line-height: 40px;
+    margin: 30px 70px 0 30px;
   }
 }
 
+/* }}} */
+/* Content {{{ */
 #event-details {
   color: white;
   background: #0089bb url('/assets/images/layout/bg-event-details.jpg') no-repeat top left;
@@ -312,20 +317,20 @@ body {
     font-size: 2.2rem;
     display: block;
   }
-  
+
   #until-date {
     color: #666666;
     font-size: 18px;
     font-size: 1.8rem;
   }
-  
+
   p {
     color: $grey;
     font-family: $miso;
     font-size: 24px;
     font-size: 2.4rem;
     margin: 0;
-    
+
     strong {
       color: #0087ba;
     }
@@ -334,15 +339,16 @@ body {
 
 #carey-price {
   position: relative;
+  margin: 3px 0 40px;
 
   &>span { font-family: $misoLight; }
-  
+
   #current-price {
     color: #444;
     font-size: 125px;
     font-size: 12.5rem;
     padding-left: 27px;
-    
+
     &:before {
       content: ' ';
       background: transparent url('/assets/images/layout/ico-big-arrow-bottom-right.png') no-repeat top left;
@@ -353,7 +359,7 @@ body {
       top: 44px;
     }
   }
-  
+
   #price {
     color: #666;
     font-size: 40px;
@@ -379,7 +385,7 @@ body {
       -o-transform: rotate(-50deg); /* Opera */
     }
   }
-  
+
   .subscribe {
     color: white;
     font-family: $miso;
@@ -400,49 +406,24 @@ body {
     -o-transition: 0.1s linear;
     transition: 0.1s linear;
     -webkit-font-smoothing: antialiased;
-    
+
     &:hover {
       color: $marine;
     };
   }
 }
-
 /* }}} */
-
-/* Header > Banner {{{ */
-#banner {
-
-}
-/* }}} */
-/* Header > Main-nav {{{ */
-#main-nav {
-
-}
-/* }}} */
-
-/* Content {{{ */
-#content {
-
-}
-/* }}} */
-/* Content > Main-content {{{ */
-/* }}} */
-/* Content > Sidebar {{{ */
-
-/* }}} */
-
 /* Footer {{{ */
-#footer {
-
+#copyright {
+  color: white;
+  font-size: 20px;
+  font-size: 2rem;
+  margin: 0;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
 /* }}} */
-
-/*-------------------------------------------- UI
-*************************************************/
-
-/*---------------------------------------- SECTIONS
-**************************************************/
-
 
 /*------------------------------------------- PAGES
 **************************************************/

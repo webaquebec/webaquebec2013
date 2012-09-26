@@ -244,7 +244,16 @@ body {
     font-weight: normal;
     font-size: 40px;
     font-size: 4rem;
-    margin: 35px 0 20px;
+    margin: 35px 0 10px;
+  }
+  
+  h2 {
+    color: $marine;
+    font-family: $miso;
+    font-size: 30px;
+    font-size: 3rem;
+    margin: 0 0 25px;
+    width: 440px;
   }
 }
 
@@ -277,7 +286,7 @@ body {
 #suggest-a-talk {
   color: $turquoise;
   font-family: $miso;
-  margin-top: 60px;
+  margin-top: 30px;
 
   p { 
     font-size: 20px;

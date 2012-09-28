@@ -21,7 +21,7 @@
  * distributing this font software.
  *
  * (c) 2010-2012 Fontspring
- *
+ *   
  *
  *
  *
@@ -39,7 +39,7 @@
     src: url('/assets/stylesheets/fonts/miso/miso-webfont.eot?#iefix') format('embedded-opentype'),
          url('/assets/stylesheets/fonts/miso/miso-webfont.woff') format('woff'),
          url('/assets/stylesheets/fonts/miso/miso-webfont.ttf') format('truetype'),
-         url('/assets/stylesheets/fonts/miso/miso-webfont.svg#MisoRegular') format('svg');
+         url('/assets/stylesheets/fonts/miso/miso-webfont.svg#MisoRegular') format('svg'); 
     font-weight: normal;
     font-style: normal;
 }
@@ -257,6 +257,17 @@ body {
     font-size: 3rem;
     line-height: 40px;
     margin: 30px 70px 0 30px;
+  }
+  
+  #archive-2012 {
+    margin: 48px 0 0 30px;
+
+    a {
+      color: $marine;
+      font-size: 21px;
+      font-size: 2.1rem;
+      text-transform: uppercase;
+    }
   }
 }
 

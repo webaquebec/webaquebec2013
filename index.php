@@ -8,7 +8,6 @@
 
     <title>Web à Québec</title>
 
-    <link rel="author" href="/humans.txt"/>
     <link rel="stylesheet" href="/assets/stylesheets/global.css">
 
     <!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -65,6 +64,7 @@
               </section>
 
               <h2>Trois jours de rencontres par et pour les gens qui imaginent le web.</h2>
+              <p id="archive-2012"><a href="http://2012.webaquebec.org">Archives du site de l'édition 2012</a></p>
             </div>
 
             <div>

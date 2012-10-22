@@ -303,13 +303,18 @@ td {
 /*}}}*/
 /* Common 
 **********************{{{*/
-/* line 42, png/*.png */
-.png-sprite, .png-arrow-white-down {
-  background: url('/assets/images/png-s05c9ba5b87.png') no-repeat;
+/* line 50, png/*.png */
+.png-sprite, .png-arrow-white-down, .png-logo-waq, #siteLogo {
+  background: url('/assets/images/png-s3e8ddac007.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-arrow-white-down {
+  background-position: 0 -103px;
+}
+
+/* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.png-logo-waq, #siteLogo {
   background-position: 0 0;
 }
 
@@ -332,26 +337,69 @@ body {
 }
 
 /* line 89, scss/global.scss */
-.group:before, .group:after {
+.group:before, #header:before, .group:after, #header:after {
   content: "";
   display: table;
 }
 
 /* line 90, scss/global.scss */
-.group:after {
+.group:after, #header:after {
   clear: both;
 }
 
 /* line 91, scss/global.scss */
-.group {
+.group, #header {
   *zoom: 1;
 }
 
 /* line 93, scss/global.scss */
-.width {
+.width, #header {
   min-width: 960px;
-  max-width: 1440px;
+  max-width: 1140px;
   margin: 0 auto;
+}
+
+/* line 98, scss/global.scss */
+.padding, #header {
+  padding: 0 20px;
+}
+
+/* line 101, scss/global.scss */
+.shy {
+  position: absolute;
+  left: -9999em;
+}
+
+/* }}} */
+/* Layout
+**********************{{{*/
+/* line 108, scss/global.scss */
+#header {
+  padding-top: 25px;
+}
+
+/* line 113, scss/global.scss */
+#siteLogo {
+  float: left;
+  display: block;
+  width: 223px;
+  height: 98px;
+}
+
+/* line 121, scss/global.scss */
+#event-desc {
+  float: left;
+  font-size: 21px;
+  font-size: 2.1rem;
+  color: #4e4e4e;
+}
+/* line 126, scss/global.scss */
+#event-desc h1 {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-size: 3.2rem;
+  color: #006186;
+  margin: 0 0 0px 0;
 }
 
 /* }}} */

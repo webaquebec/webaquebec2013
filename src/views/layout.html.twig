@@ -21,10 +21,24 @@
 </head>
 <body class="layout{% block body_classes %}{% endblock %}">
       <header id="header">
-          <h2>Hello world</h2>
+          <a id="siteLogo" href="/"><span class="shy">Le Web à Québec</span></a>
+          <div id="event-desc" itemscope itemtype="schema.org/Event">
+              <h1 itemprop="name">Le web à Québec</h1>
+              Du <time itemprop="startDate" datetime="2013-02-20T07:30-17:30">20</time> au <time itemprop="startDate" datetime="2013-02-22T07:30-17:30">22</time> février 2013,
+              <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+                  <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                      <span itemprop="name">Espace 400<sup>e</sup> Bell</span>,
+                      <span itemprop="addressRegion">Québec</span>
+                  </span>
+
+              </span>
+          </div>
       </header>
       <div role="main">
-          <p>content</p>
+          <div class="width">
+              <p>content</p>
+          </div>
+            
       </div>
 
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

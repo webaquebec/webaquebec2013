@@ -320,7 +320,7 @@ td {
 /* Common 
 **********************{{{*/
 /* line 122, png/*.png */
-.png-sprite, .png-arrow-white-down, .png-facebook, #social li.facebook a, .png-h2-thingy-hr, .png-h2-thingy, #one-pager h2:after, #one-pager .h2:after, .png-iron-web-small-hr, .png-iron-web-small, nav[role="navigation"] .iron-web:after, .png-logo-waq-small, nav[role="navigation"] .small-logo, .png-logo-waq, #siteLogo, .png-nav-dash, nav[role="navigation"] ul a:after, .png-slider-mask, #slider .mask, .png-twitter, #social li.twitter a {
+.png-sprite, .png-arrow-white-down, .png-facebook, #social li.facebook a, .png-h2-thingy-hr, .png-h2-thingy, #one-pager h2:after, #one-pager .h2:after, .png-iron-web-small-hr, .png-iron-web-small, #main-nav .iron-web:after, .png-logo-waq-small, #main-nav .small-logo, .png-logo-waq, #siteLogo, .png-nav-dash, #main-nav ul#nav-wrap a:after, .png-slider-mask, #slider .mask, .png-twitter, #social li.twitter a {
   background: url('/assets/images/png-s5db1706af6.png') no-repeat;
 }
 
@@ -350,12 +350,12 @@ td {
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.png-iron-web-small, nav[role="navigation"] .iron-web:after {
+.png-iron-web-small, #main-nav .iron-web:after {
   background-position: 0 -635px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.png-logo-waq-small, nav[role="navigation"] .small-logo {
+.png-logo-waq-small, #main-nav .small-logo {
   background-position: 0 -476px;
 }
 
@@ -365,7 +365,7 @@ td {
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.png-nav-dash, nav[role="navigation"] ul a:after {
+.png-nav-dash, #main-nav ul#nav-wrap a:after {
   background-position: 0 -767px;
 }
 
@@ -410,18 +410,18 @@ a:hover {
 }
 
 /* line 126, scss/global.scss */
-.group:before, #header:before, nav[role="navigation"]:before, #slider .slides-wrap:before, .group:after, #header:after, nav[role="navigation"]:after, #slider .slides-wrap:after {
+.group:before, #header:before, #main-nav:before, #slider .slides-wrap:before, .group:after, #header:after, #main-nav:after, #slider .slides-wrap:after {
   content: "";
   display: table;
 }
 
 /* line 127, scss/global.scss */
-.group:after, #header:after, nav[role="navigation"]:after, #slider .slides-wrap:after {
+.group:after, #header:after, #main-nav:after, #slider .slides-wrap:after {
   clear: both;
 }
 
 /* line 128, scss/global.scss */
-.group, #header, nav[role="navigation"], #slider .slides-wrap {
+.group, #header, #main-nav, #slider .slides-wrap {
   *zoom: 1;
 }
 
@@ -433,7 +433,7 @@ a:hover {
 }
 
 /* line 135, scss/global.scss */
-.padding, #header, nav[role="navigation"] .width, nav[role="navigation"] #header, nav[role="navigation"] #slider {
+.padding, #header, #main-nav .width, #main-nav #header, #main-nav #slider {
   padding: 0 20px;
 }
 
@@ -454,7 +454,7 @@ a:hover {
 }
 
 /* line 144, scss/global.scss */
-.blue-btn, nav[role="navigation"] .inscription {
+.blue-btn, #main-nav .inscription {
   background: #0086b9;
   color: white;
   padding: 5px 10px;
@@ -476,15 +476,20 @@ a:hover {
   -ms-transition-timing-function: linear;
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -o-transform: translateZ(0);
+  -moz-tform: translateZ(0);
+  transform: translateZ(0);
 }
-/* line 171, scss/global.scss */
-.blue-btn:hover, nav[role="navigation"] .inscription:hover, .blue-btn:focus, nav[role="navigation"] .inscription:focus {
+/* line 177, scss/global.scss */
+.blue-btn:hover, #main-nav .inscription:hover, .blue-btn:focus, #main-nav .inscription:focus {
   background: #38a9d4;
   text-decoration: none;
 }
 
-/* line 176, scss/global.scss */
-.orange-btn, nav[role="navigation"] .iron-web {
+/* line 182, scss/global.scss */
+.orange-btn, #main-nav .iron-web {
   background: #f47920;
   color: white;
   padding: 5px 10px;
@@ -506,18 +511,23 @@ a:hover {
   -ms-transition-timing-function: linear;
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -o-transform: translateZ(0);
+  -moz-tform: translateZ(0);
+  transform: translateZ(0);
 }
-/* line 203, scss/global.scss */
-.orange-btn:hover, nav[role="navigation"] .iron-web:hover, .orange-btn:focus, nav[role="navigation"] .iron-web:focus {
+/* line 215, scss/global.scss */
+.orange-btn:hover, #main-nav .iron-web:hover, .orange-btn:focus, #main-nav .iron-web:focus {
   background: #faaa71;
   text-decoration: none;
 }
 
-/* line 210, scss/global.scss */
+/* line 222, scss/global.scss */
 #one-pager section {
   padding-top: 30px;
 }
-/* line 214, scss/global.scss */
+/* line 226, scss/global.scss */
 #one-pager h2, #one-pager .h2 {
   position: relative;
   font-weight: normal;
@@ -526,7 +536,7 @@ a:hover {
   text-transform: uppercase;
   color: #006186;
 }
-/* line 223, scss/global.scss */
+/* line 235, scss/global.scss */
 #one-pager h2:after, #one-pager .h2:after {
   display: inline-block;
   position: relative;
@@ -539,12 +549,12 @@ a:hover {
 /* }}} */
 /* header
 **********************{{{*/
-/* line 239, scss/global.scss */
+/* line 251, scss/global.scss */
 #header {
   padding: 25px 0 53px 0;
 }
 
-/* line 244, scss/global.scss */
+/* line 256, scss/global.scss */
 #siteLogo {
   float: left;
   display: block;
@@ -552,7 +562,7 @@ a:hover {
   height: 98px;
 }
 
-/* line 252, scss/global.scss */
+/* line 264, scss/global.scss */
 #event-desc {
   float: left;
   font-size: 21px;
@@ -560,7 +570,7 @@ a:hover {
   color: #4e4e4e;
   margin: 6px 0 0 45px;
 }
-/* line 258, scss/global.scss */
+/* line 270, scss/global.scss */
 #event-desc h1 {
   text-transform: uppercase;
   font-size: 32px;
@@ -570,7 +580,7 @@ a:hover {
   margin: 0 0 0px 0;
 }
 
-/* line 268, scss/global.scss */
+/* line 280, scss/global.scss */
 #social {
   text-align: right;
   font-family: "misobold", Arial, Sans-serif;
@@ -579,27 +589,27 @@ a:hover {
   font-size: 1.8rem;
   vertical-align: top;
 }
-/* line 276, scss/global.scss */
+/* line 288, scss/global.scss */
 #social li {
   position: relative;
   display: inline-block;
   margin: 0 15px;
 }
-/* line 281, scss/global.scss */
+/* line 293, scss/global.scss */
 #social li:first-child {
   top: -6px;
 }
-/* line 285, scss/global.scss */
+/* line 297, scss/global.scss */
 #social li.twitter {
   top: -3px;
 }
-/* line 287, scss/global.scss */
+/* line 299, scss/global.scss */
 #social li.twitter a {
   display: block;
   width: 21px;
   height: 19px;
 }
-/* line 294, scss/global.scss */
+/* line 306, scss/global.scss */
 #social li.facebook a {
   display: block;
   width: 22px;
@@ -609,8 +619,8 @@ a:hover {
 /* }}} */
 /* Main nav
 **********************{{{*/
-/* line 307, scss/global.scss */
-nav[role="navigation"] {
+/* line 319, scss/global.scss */
+#main-nav {
   position: absolute;
   z-index: 100;
   background: white;
@@ -623,18 +633,19 @@ nav[role="navigation"] {
   text-align: center;
   padding-top: 20px;
 }
-/* line 321, scss/global.scss */
-nav[role="navigation"] .width, nav[role="navigation"] #header, nav[role="navigation"] #slider {
+/* line 333, scss/global.scss */
+#main-nav .width, #main-nav #header, #main-nav #slider {
   position: relative;
 }
-/* line 323, scss/global.scss */
-nav[role="navigation"] ul {
+/* line 335, scss/global.scss */
+#main-nav ul#nav-wrap {
   position: relative;
   display: inline-block;
   width: 515px;
   text-align: center;
   font-size: 24px;
   font-size: 2.4rem;
+  left: 0;
   -webkit-transition-property: all;
   -moz-transition-property: all;
   -ms-transition-property: all;
@@ -650,19 +661,40 @@ nav[role="navigation"] ul {
   -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -o-transform: translateZ(0);
+  -moz-tform: translateZ(0);
+  transform: translateZ(0);
 }
-/* line 348, scss/global.scss */
-nav[role="navigation"] ul li {
+/* line 368, scss/global.scss */
+#main-nav ul#nav-wrap li {
   margin: 0 18px;
   display: inline-block;
 }
-/* line 353, scss/global.scss */
-nav[role="navigation"] ul a {
+/* line 373, scss/global.scss */
+#main-nav ul#nav-wrap a {
   display: block;
   position: relative;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -ms-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+  -webkit-backface-visibility: hidden;
 }
-/* line 356, scss/global.scss */
-nav[role="navigation"] ul a:after {
+/* line 397, scss/global.scss */
+#main-nav ul#nav-wrap a:after {
   content: "";
   position: absolute;
   top: 8px;
@@ -671,46 +703,52 @@ nav[role="navigation"] ul a:after {
   width: 17px;
   height: 17px;
 }
-/* line 369, scss/global.scss */
-nav[role="navigation"] ul a:hover, nav[role="navigation"] ul a:focus, nav[role="navigation"] ul a.active {
+/* line 410, scss/global.scss */
+#main-nav ul#nav-wrap a:hover, #main-nav ul#nav-wrap a:focus, #main-nav ul#nav-wrap a.active {
+  text-decoration: none;
   color: red;
 }
-/* line 375, scss/global.scss */
-nav[role="navigation"] .left {
+/* line 417, scss/global.scss */
+#main-nav .left {
   position: absolute;
   display: inline-block;
   opacity: 0;
   left: -50px;
   top: 0;
-  -webkit-transition-property: opacity left;
-  -moz-transition-property: opacity left;
-  -ms-transition-property: opacity left;
-  -o-transition-property: opacity left;
-  transition-property: opacity left;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
   -webkit-transition-duration: 150ms;
   -moz-transition-duration: 150ms;
   -ms-transition-duration: 150ms;
   -o-transition-duration: 150ms;
   transition-duration: 150ms;
-  -webkit-transition-timing-function: linear;
-  -moz-transition-timing-function: linear;
-  -ms-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  transition-timing-function: linear;
+  -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -o-transform: translateZ(0);
+  -moz-tform: translateZ(0);
+  transform: translateZ(0);
 }
-/* line 399, scss/global.scss */
-nav[role="navigation"] .left a {
+/* line 447, scss/global.scss */
+#main-nav .left a {
   position: relative;
   left: -9999em;
 }
-/* line 405, scss/global.scss */
-nav[role="navigation"] .small-logo {
+/* line 453, scss/global.scss */
+#main-nav .small-logo {
   display: inline-block;
   width: 97px;
   height: 33px;
 }
-/* line 412, scss/global.scss */
-nav[role="navigation"] .inscription {
+/* line 460, scss/global.scss */
+#main-nav .inscription {
   position: relative;
   top: -11px;
   font-size: 18px;
@@ -718,15 +756,15 @@ nav[role="navigation"] .inscription {
   font-family: "misobold", Arial, Sans-serif;
   margin-left: 27px;
 }
-/* line 422, scss/global.scss */
-nav[role="navigation"] .iron-web {
+/* line 470, scss/global.scss */
+#main-nav .iron-web {
   position: relative;
   top: 4px;
   float: right;
   padding-left: 86px;
 }
-/* line 429, scss/global.scss */
-nav[role="navigation"] .iron-web:after {
+/* line 477, scss/global.scss */
+#main-nav .iron-web:after {
   content: "";
   display: block;
   position: absolute;
@@ -735,33 +773,34 @@ nav[role="navigation"] .iron-web:after {
   width: 66px;
   height: 13px;
 }
-/* line 441, scss/global.scss */
-nav[role="navigation"].sticky {
+/* line 489, scss/global.scss */
+#main-nav.sticky {
   position: fixed;
   top: 0px;
 }
-/* line 445, scss/global.scss */
-nav[role="navigation"].sticky ul {
+/* line 493, scss/global.scss */
+#main-nav.sticky ul#nav-wrap {
   top: 5px;
   left: 163px;
   font-size: 18px;
   font-size: 1.8rem;
 }
-/* line 452, scss/global.scss */
-nav[role="navigation"].sticky .left {
+/* line 500, scss/global.scss */
+#main-nav.sticky .left {
   opacity: 1;
   left: 20px;
+  top: 0;
 }
-/* line 456, scss/global.scss */
-nav[role="navigation"].sticky .left a {
+/* line 505, scss/global.scss */
+#main-nav.sticky .left a {
   position: relative;
-  left: auto;
+  left: 0;
 }
 
 /* }}} */
 /* Slider
 **********************{{{*/
-/* line 467, scss/global.scss */
+/* line 516, scss/global.scss */
 #slider {
   position: relative;
   z-index: 10;
@@ -769,7 +808,7 @@ nav[role="navigation"].sticky .left a {
   background: #0a6183;
   overflow: hidden;
 }
-/* line 475, scss/global.scss */
+/* line 524, scss/global.scss */
 #slider .texture-mask {
   position: absolute;
   z-index: 11;
@@ -780,7 +819,7 @@ nav[role="navigation"].sticky .left a {
   display: block;
   background: url("/assets/images/interface/slider-texture.png") repeat transparent;
 }
-/* line 485, scss/global.scss */
+/* line 534, scss/global.scss */
 #slider .mask {
   display: block;
   position: absolute;
@@ -790,7 +829,7 @@ nav[role="navigation"].sticky .left a {
   width: 575px;
   height: 347px;
 }
-/* line 495, scss/global.scss */
+/* line 544, scss/global.scss */
 #slider .slider-info {
   position: absolute;
   z-index: 13;
@@ -801,13 +840,13 @@ nav[role="navigation"].sticky .left a {
   font-size: 42px;
   font-size: 4.2rem;
 }
-/* line 505, scss/global.scss */
+/* line 554, scss/global.scss */
 #slider .desc-nav-wrap {
   margin: 5px 0 0 71px;
   font-size: 14px;
   font-size: 1.4rem;
 }
-/* line 511, scss/global.scss */
+/* line 560, scss/global.scss */
 #slider .slider-nav a {
   display: inline-block;
   background: white;
@@ -829,25 +868,31 @@ nav[role="navigation"].sticky .left a {
   -ms-transition-timing-function: linear;
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -o-transform: translateZ(0);
+  -moz-tform: translateZ(0);
+  transform: translateZ(0);
 }
-/* line 537, scss/global.scss */
+/* line 592, scss/global.scss */
 #slider .slider-nav a:hover, #slider .slider-nav a:focus, #slider .slider-nav a.active {
   background: #1fc2dd;
 }
-/* line 542, scss/global.scss */
+/* line 597, scss/global.scss */
 #slider .descs {
   position: relative;
   display: block;
   font-size: 24px;
   font-size: 2.4rem;
 }
-/* line 548, scss/global.scss */
+/* line 603, scss/global.scss */
 #slider .descs span {
   position: absolute;
   display: inline-block;
   opacity: 0;
   width: 430px;
   top: -9999em;
+  left: -50px;
   -webkit-transition-property: left opacity;
   -moz-transition-property: left opacity;
   -ms-transition-property: left opacity;
@@ -869,24 +914,24 @@ nav[role="navigation"].sticky .left a {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 578, scss/global.scss */
+/* line 634, scss/global.scss */
 #slider .descs span.backstage {
   opacity: 0;
   top: 0;
-  left: -50px;
 }
-/* line 584, scss/global.scss */
+/* line 639, scss/global.scss */
 #slider .descs span.on-stage {
   opacity: 1;
   top: 0;
   left: 0;
 }
-/* line 592, scss/global.scss */
+/* line 647, scss/global.scss */
 #slider .slides-wrap {
   position: relative;
   z-index: 10;
   width: 200%;
   height: 100%;
+  left: 0;
   -webkit-transition-property: left;
   -moz-transition-property: left;
   -ms-transition-property: left;
@@ -907,7 +952,7 @@ nav[role="navigation"].sticky .left a {
   -o-transform: translateZ(0);
   -moz-tform: translateZ(0);
 }
-/* line 621, scss/global.scss */
+/* line 677, scss/global.scss */
 #slider .slides-wrap .slide {
   position: relative;
   float: left;
@@ -915,7 +960,7 @@ nav[role="navigation"].sticky .left a {
   height: 100%;
   overflow: hidden;
 }
-/* line 628, scss/global.scss */
+/* line 684, scss/global.scss */
 #slider .slides-wrap .slide img {
   position: absolute;
   height: 100%;

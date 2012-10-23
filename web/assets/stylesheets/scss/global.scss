@@ -166,6 +166,12 @@ a:hover { color: #06e; text-decoration: underline;}
   -ms-transition-timing-function: linear;
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
+  
+  -webkit-transform : translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -o-transform : translateZ(0);
+  -moz-tform : translateZ(0);
+  transform : translateZ(0);
 
   &:hover,
   &:focus {
@@ -198,6 +204,12 @@ a:hover { color: #06e; text-decoration: underline;}
   -ms-transition-timing-function: linear;
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
+  
+  -webkit-transform : translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -o-transform : translateZ(0);
+  -moz-tform : translateZ(0);
+  transform : translateZ(0);
 
   &:hover,
   &:focus {
@@ -304,7 +316,7 @@ a:hover { color: #06e; text-decoration: underline;}
 
 /* Main nav
 **********************{{{*/
-nav[role="navigation"] {
+#main-nav {
   @extend .group;
   position: absolute;
   z-index: 100;
@@ -320,13 +332,15 @@ nav[role="navigation"] {
   
   .width { @extend .padding; position: relative;}
   
-  ul {
+  ul#nav-wrap {
     position: relative;
     display: inline-block;
     width: 515px;
     text-align: center;
     font-size: 24px;
     font-size: 2.4rem;
+    left: 0;
+    
     -webkit-transition-property: all;
     -moz-transition-property: all;
     -ms-transition-property: all;
@@ -344,6 +358,12 @@ nav[role="navigation"] {
     -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
     -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
     transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    
+    -webkit-transform : translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -o-transform : translateZ(0);
+    -moz-tform : translateZ(0);
+    transform : translateZ(0);
 
     li {
       margin: 0 18px;
@@ -353,6 +373,27 @@ nav[role="navigation"] {
     a {
       display: block;
       position: relative;
+      
+      -webkit-transition-property: color;
+      -moz-transition-property: color;
+      -ms-transition-property: color;
+      -o-transition-property: color;
+      transition-property: color;
+
+      -webkit-transition-duration: 200ms;
+      -moz-transition-duration: 200ms;
+      -ms-transition-duration: 200ms;
+      -o-transition-duration: 200ms;
+      transition-duration: 200ms;
+
+      -webkit-transition-timing-function: linear;
+      -moz-transition-timing-function: linear;
+      -ms-transition-timing-function: linear;
+      -o-transition-timing-function: linear;
+      transition-timing-function: linear;
+
+      -webkit-backface-visibility: hidden;
+      
       &:after {
         @extend .png-nav-dash;
         content: "";
@@ -367,6 +408,7 @@ nav[role="navigation"] {
       &:hover,
       &:focus,
       &.active {
+        text-decoration: none;
         color: red;
       }
     }
@@ -378,11 +420,11 @@ nav[role="navigation"] {
     opacity: 0;
     left: -50px;
     top: 0;
-    -webkit-transition-property: opacity left;
-    -moz-transition-property: opacity left;
-    -ms-transition-property: opacity left;
-    -o-transition-property: opacity left;
-    transition-property: opacity left;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
 
     -webkit-transition-duration: 150ms;
     -moz-transition-duration: 150ms;
@@ -390,11 +432,17 @@ nav[role="navigation"] {
     -o-transition-duration: 150ms;
     transition-duration: 150ms;
 
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -ms-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
+    -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    
+    -webkit-transform : translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -o-transform : translateZ(0);
+    -moz-tform : translateZ(0);
+    transform : translateZ(0);
     
     a {
       position: relative;
@@ -442,7 +490,7 @@ nav[role="navigation"] {
     position: fixed;
     top: 0px;
     
-    ul {
+    ul#nav-wrap {
       top: 5px;
       left: 163px;
       font-size: 18px;
@@ -452,10 +500,11 @@ nav[role="navigation"] {
     .left {
       opacity: 1;
       left: 20px;
+      top: 0;
       
       a {
         position: relative;
-        left: auto;
+        left: 0;
       }
     }
   } // &.sticky
@@ -531,6 +580,12 @@ nav[role="navigation"] {
       -ms-transition-timing-function: linear;
       -o-transition-timing-function: linear;
       transition-timing-function: linear;
+      
+      -webkit-transform : translateZ(0);
+      -webkit-backface-visibility: hidden;
+      -o-transform : translateZ(0);
+      -moz-tform : translateZ(0);
+      transform : translateZ(0);
 
       &:hover,
       &:focus,
@@ -551,6 +606,7 @@ nav[role="navigation"] {
       opacity: 0;
       width: 430px;
       top: -9999em;
+      left: -50px;
       -webkit-transition-property: left opacity;
       -moz-transition-property: left opacity;
       -ms-transition-property: left opacity;
@@ -578,7 +634,6 @@ nav[role="navigation"] {
       &.backstage {
         opacity: 0;
         top: 0;
-        left: -50px;
       }
       
       &.on-stage {
@@ -595,6 +650,7 @@ nav[role="navigation"] {
     z-index: 10;
     width: 200%;
     height: 100%;
+    left: 0;
     -webkit-transition-property: left;
     -moz-transition-property: left;
     -ms-transition-property: left;

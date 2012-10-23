@@ -199,6 +199,7 @@ Author: @louisdumas
       this.isAnimated = true;
       this.currentPage = this.getPageIndex(targetId);
       this.setActiveMenu(targetLink);
+      targetScrollTop = targetScrollTop <= 0 ? 0 : targetScrollTop;
       if (this.sectionsWrapp.attr('data-transitions') === 'on') {
         return $('body, html').stop().animate({
           'scrollTop': targetScrollTop

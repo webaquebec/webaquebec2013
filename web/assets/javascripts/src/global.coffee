@@ -157,6 +157,7 @@ class OnePager
     @currentPage = @getPageIndex(targetId)
     @setActiveMenu(targetLink)
     
+    targetScrollTop = if targetScrollTop <= 0 then 0 else targetScrollTop
     if @sectionsWrapp.attr('data-transitions') is 'on'
       $('body, html').stop().animate({'scrollTop' : targetScrollTop},speed, $.bez([0.80, 0, 0.20, 1.0]), () =>
         @isAnimated = false

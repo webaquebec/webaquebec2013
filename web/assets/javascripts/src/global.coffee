@@ -26,22 +26,22 @@ class OnePager
     @didScroll   = false
     @isAnimated  = false
     @currentPage = 0
-    @navWrap     = $('#secondary-nav')
+    @navWrap     = $('nav[role="navigation"]')
     @nav         = @navWrap.find('a')
-    @sectionsWrapp = $('#one-page-sections')
+    @sectionsWrapp = $('#one-pager')
     @sections    = $('[data-section]')
-    @navHeight   = ($('#header').outerHeight())
+    @navHeight   = @navWrap.outerHeight()
     @navOffset  = @navHeight
     @pagesOffset = {}
     @resetSectionsOffset()
-
     
     debounced = jQuery.debounce( 250, ()=>
       @slideTo("##{@pagesOffset[@currentPage]['id']}", 250)
     )
     
-    $(window).scroll () =>
+    $(window).on('scroll', =>
       @didScroll = true;
+    )
 
     setInterval () =>
       if @didScroll
@@ -76,28 +76,7 @@ class OnePager
   setActiveMenu: (target) ->
     @nav.removeClass 'active'
     target.addClass('active')
-  
-  handleKeyboard: ->
-    $(document).bind('keydown', (e) =>
-      if e.keyCode == 40
-        e.preventDefault() 
-        @prevNext.filter('.next').trigger('click')
-      else if e.keyCode == 38
-        e.preventDefault() 
-        @prevNext.filter('.prev').trigger('click')
-    )
-  handlePrevNextClick: ->
-    @prevNext.click((e) =>
-      e.preventDefault()
-      this_ = $(e.currentTarget)
-      if this_.hasClass('prev') && (@currentPage-1) >= 0
-        newHash = "#section=#{@pagesOffset[(@currentPage-1)]['id']}"
-        location.hash = newHash
-      else if this_.hasClass('next') && (@currentPage+1) < @sections.length
-        newHash = "#section=#{@pagesOffset[(@currentPage+1)]['id']}"
-        location.hash = newHash
-    )    
-      
+        
   slideTo: (target ,speed, moreOffsets) ->
     target          = @sections.filter(target)
     targetId        = target.attr('id')
@@ -140,9 +119,9 @@ class OnePager
         scroll = scroll - @pagesOffset[@currentPage]['offset'][0]
         precentIn = scroll/(@pagesOffset[@currentPage]['offset'][1]-@pagesOffset[@currentPage]['offset'][0])
         precentIn = Math.round((precentIn * 100))
-        if precentIn >= 51
+        if precentIn >= 80
           @currentPage = @currentPage + 1
-        else if precentIn < -49
+        else if precentIn < -20
           @currentPage = @currentPage - 1
       
         pageId = @pagesOffset[@currentPage]['id']
@@ -157,6 +136,8 @@ class OnePager
 ###
 # }}}
 ###
+
+
 
 $ () ->
   # Common 
@@ -201,12 +182,25 @@ $ () ->
   `
   #}}}
 
-  # Page
-  #####################{{{
   
-  # OnePager instanciation
+  # StickyHeader instanciation {{{
+  stickyHeader = ( ->
+    header = $('nav[role="navigation"]')
+    headerOffsetTop = header.offset().top
+    viewport        = $(window)
+
+    viewport.scroll( () ->
+      if (headerOffsetTop - viewport.scrollTop()) > 0
+        header.removeClass('sticky')
+      else
+        header.addClass('sticky')
+    )   
+  )()
+  #}}}
+  
+  # OnePager instanciation {{{
   if $('#one-pager').length
     do ->
       myOnePager = new OnePager()
-              
   #}}}
+              

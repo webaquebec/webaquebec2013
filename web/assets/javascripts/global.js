@@ -39,18 +39,18 @@ Author: @louisdumas
       this.didScroll = false;
       this.isAnimated = false;
       this.currentPage = 0;
-      this.navWrap = $('#secondary-nav');
+      this.navWrap = $('nav[role="navigation"]');
       this.nav = this.navWrap.find('a');
-      this.sectionsWrapp = $('#one-page-sections');
+      this.sectionsWrapp = $('#one-pager');
       this.sections = $('[data-section]');
-      this.navHeight = $('#header').outerHeight();
+      this.navHeight = this.navWrap.outerHeight();
       this.navOffset = this.navHeight;
       this.pagesOffset = {};
       this.resetSectionsOffset();
       debounced = jQuery.debounce(250, function() {
         return _this.slideTo("#" + _this.pagesOffset[_this.currentPage]['id'], 250);
       });
-      $(window).scroll(function() {
+      $(window).on('scroll', function() {
         return _this.didScroll = true;
       });
       setInterval(function() {
@@ -93,35 +93,6 @@ Author: @louisdumas
     OnePager.prototype.setActiveMenu = function(target) {
       this.nav.removeClass('active');
       return target.addClass('active');
-    };
-
-    OnePager.prototype.handleKeyboard = function() {
-      var _this = this;
-      return $(document).bind('keydown', function(e) {
-        if (e.keyCode === 40) {
-          e.preventDefault();
-          return _this.prevNext.filter('.next').trigger('click');
-        } else if (e.keyCode === 38) {
-          e.preventDefault();
-          return _this.prevNext.filter('.prev').trigger('click');
-        }
-      });
-    };
-
-    OnePager.prototype.handlePrevNextClick = function() {
-      var _this = this;
-      return this.prevNext.click(function(e) {
-        var newHash, this_;
-        e.preventDefault();
-        this_ = $(e.currentTarget);
-        if (this_.hasClass('prev') && (_this.currentPage - 1) >= 0) {
-          newHash = "#section=" + _this.pagesOffset[_this.currentPage - 1]['id'];
-          return location.hash = newHash;
-        } else if (this_.hasClass('next') && (_this.currentPage + 1) < _this.sections.length) {
-          newHash = "#section=" + _this.pagesOffset[_this.currentPage + 1]['id'];
-          return location.hash = newHash;
-        }
-      });
     };
 
     OnePager.prototype.slideTo = function(target, speed, moreOffsets) {
@@ -184,9 +155,9 @@ Author: @louisdumas
         scroll = scroll - this.pagesOffset[this.currentPage]['offset'][0];
         precentIn = scroll / (this.pagesOffset[this.currentPage]['offset'][1] - this.pagesOffset[this.currentPage]['offset'][0]);
         precentIn = Math.round(precentIn * 100);
-        if (precentIn >= 51) {
+        if (precentIn >= 80) {
           this.currentPage = this.currentPage + 1;
-        } else if (precentIn < -49) {
+        } else if (precentIn < -20) {
           this.currentPage = this.currentPage - 1;
         }
         pageId = this.pagesOffset[this.currentPage]['id'];
@@ -211,7 +182,7 @@ Author: @louisdumas
 
 
   $(function() {
-    var $links, body, l, links;
+    var $links, body, l, links, stickyHeader;
     body = $('body');
     if (!window.console) {
       (function() {
@@ -267,6 +238,19 @@ Author: @louisdumas
   }
   ;
 
+    stickyHeader = (function() {
+      var header, headerOffsetTop, viewport;
+      header = $('nav[role="navigation"]');
+      headerOffsetTop = header.offset().top;
+      viewport = $(window);
+      return viewport.scroll(function() {
+        if ((headerOffsetTop - viewport.scrollTop()) > 0) {
+          return header.removeClass('sticky');
+        } else {
+          return header.addClass('sticky');
+        }
+      });
+    })();
     if ($('#one-pager').length) {
       return (function() {
         var myOnePager;

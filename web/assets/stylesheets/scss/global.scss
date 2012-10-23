@@ -11,9 +11,6 @@ html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-a { color: #00e; }
-a:hover { color: #06e; }
-a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 abbr[title] { border-bottom: 1px dotted; }
 b, strong { font-weight: bold; }
@@ -30,7 +27,8 @@ small { font-size: 85%; }
 sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+ul { margin: 0; padding: 0; list-style: none;}
+ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
@@ -58,7 +56,38 @@ td { vertical-align: top; }
 
 /* @Font-face
 *********************{{{*/
+@font-face {
+    font-family: 'misoregular';
+    src: url('fonts/miso/miso-regular-webfont.eot');
+    src: url('fonts/miso/miso-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/miso/miso-regular-webfont.woff') format('woff'),
+         url('fonts/miso/miso-regular-webfont.ttf') format('truetype'),
+         url('fonts/miso/miso-regular-webfont.svg#misoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'misobold';
+    src: url('fonts/miso-bold/miso-bold-webfont.eot');
+    src: url('fonts/miso-bold/miso-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/miso-bold/miso-bold-webfont.woff') format('woff'),
+         url('fonts/miso-bold/miso-bold-webfont.ttf') format('truetype'),
+         url('fonts/miso-bold/miso-bold-webfont.svg#misobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'misolight';
+    src: url('fonts/miso-light/miso-light-webfont.eot');
+    src: url('fonts/miso-light/miso-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/miso-light/miso-light-webfont.woff') format('woff'),
+         url('fonts/miso-light/miso-light-webfont.ttf') format('truetype'),
+         url('fonts/miso-light/miso-light-webfont.svg#misolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /*}}}*/
 
@@ -67,6 +96,13 @@ td { vertical-align: top; }
 $png-spacing: 5px;
 @import "png/*.png";
 @include all-png-sprites;
+
+$darkblue: #006186;
+$linkblue: #0086b9;
+
+$miso: 'misoregular', Arial, Sans-serif;
+$misoBold: 'misobold', Arial, Sans-serif;
+$misoLight: 'misolight', Arial, Sans-serif;
 
 html, body {
   height: 100%;
@@ -78,13 +114,14 @@ body {
   font-size: 14px; 
   font-size: 1.4em; 
   line-height: 1.4;
-  font-family: 'montserratregular', Arial, Sans-serif;
+  font-family: $miso;
   color: black;
   background-color: white;
   min-width: 960px;
 }
 
-$darkblue: #006186;
+a { color: $linkblue;  text-decoration: none;}
+a:hover { color: #06e; text-decoration: underline;}
 
 .group:before, .group:after { content: ""; display: table; }
 .group:after { clear: both; }
@@ -98,16 +135,83 @@ $darkblue: #006186;
 .padding {
   padding: 0 20px;
 }
+.left { float: left;}
+.right { float: right;}
 .shy {
   position: absolute;
   left: -9999em;
 }
+.blue-btn {
+  background: #0086b9;
+  color: white;
+  padding: 5px 10px;
+  -webkit-box-shadow:  2px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  box-shadow:  2px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -ms-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+
+  &:hover,
+  &:focus {
+    background: #38a9d4;
+    text-decoration: none;
+  }
+}
+.orange-btn {
+  background: #f47920;
+  color: white;
+  padding: 5px 10px;
+  -webkit-box-shadow:  2px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  box-shadow:  2px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -ms-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+
+  &:hover,
+  &:focus {
+    background: #faaa71;
+    text-decoration: none;
+  }
+}
 /* }}} */
+
 /* Layout
 **********************{{{*/
 #header { 
   @extend .width, .padding, .group; 
-  padding-top: 25px;
+  padding: 25px 0 33px 0;
 }
 
 #siteLogo {
@@ -123,12 +227,208 @@ $darkblue: #006186;
   font-size: 21px;
   font-size: 2.1rem;
   color: #4e4e4e;
+  margin: 6px 0 0 45px;
   h1 {
     text-transform: uppercase;
     font-size: 32px;
     font-size: 3.2rem;
+    line-height: 30px;
     color: $darkblue;
     margin: 0 0 0px 0;
   }
 }
+
+#social {
+  text-align: right;
+  font-family: $misoBold;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-size: 1.8rem;
+  vertical-align: top;
+  
+  li {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+    
+    &:first-child {
+      top: -6px;
+    }
+    
+    &.twitter {
+      top: -3px;
+      a {
+        @extend .png-twitter;
+        display: block;
+        width: image-width('png/twitter.png');
+        height: image-height('png/twitter.png');
+      }
+    }
+    &.facebook a{
+      @extend .png-facebook;
+      display: block;
+      width: image-width('png/facebook.png');
+      height: image-height('png/facebook.png');
+    }
+    
+  }
+}
+
+nav[role="navigation"] {
+  @extend .group;
+  position: absolute;
+  background: white;
+  top: 105px;
+  left: 0;
+  width: 100%;
+  font-family: $misoBold;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 20px;
+  
+  .width { @extend .padding; position: relative;}
+  
+  ul {
+    position: relative;
+    display: inline-block;
+    width: 515px;
+    text-align: center;
+    font-size: 24px;
+    font-size: 2.4rem;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+
+    -webkit-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    -ms-transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+    transition-duration: 200ms;
+
+    -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+
+    li {
+      margin: 0 18px;
+      display: inline-block;
+    }
+    
+    a {
+      display: block;
+      position: relative;
+      &:after {
+        @extend .png-nav-dash;
+        content: "";
+        position: absolute;
+        top: 8px;
+        right: -(image-width('png/nav-dash.png') + 5);
+        display: block;
+        width: image-width('png/nav-dash.png');
+        height: image-height('png/nav-dash.png');
+      }
+      
+      &:hover,
+      &:focus,
+      &.active {
+        color: red;
+      }
+    }
+  } // ul
+  
+  .left {
+    position: absolute;
+    display: inline-block;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -ms-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+
+    -webkit-transition-duration: 150ms;
+    -moz-transition-duration: 150ms;
+    -ms-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    transition-duration: 150ms;
+
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    
+    a {
+      position: relative;
+      left: -9999em;
+    }
+  }
+  
+  .small-logo {
+    @extend .png-logo-waq-small;
+    display: inline-block;
+    width: image-width('png/logo-waq-small.png');
+    height: image-height('png/logo-waq-small.png');
+  }
+  
+  .inscription {
+    @extend .blue-btn;
+    position: relative;
+    top: -11px;
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-family: $misoBold;
+    margin-left: 27px;
+  }
+  
+  .iron-web {
+    @extend .orange-btn;
+    position: relative;
+    top: 4px;
+    float: right;
+    padding-left: image-width('png/iron-web-small.png') + 20;
+    
+    &:after {
+      @extend .png-iron-web-small;
+      content: "";
+      display: block;
+      position: absolute;
+      left: 10px;
+      top: 7.5px;
+      width: image-width('png/iron-web-small.png');
+      height: image-height('png/iron-web-small.png');
+    }
+  }
+  
+  &.sticky {
+    position: fixed;
+    top: 0px;
+    
+    ul {
+      top: 5px;
+      left: 163px;
+      font-size: 18px;
+      font-size: 1.8rem;
+    }
+    
+    .left {
+      opacity: 1;
+      
+      a {
+        position: relative;
+        left: auto;
+      }
+    }
+  } // &.sticky
+}
 /* }}} */
+
+#one-pager section {
+  height: 2000px;
+}

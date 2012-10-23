@@ -6,7 +6,7 @@ Author: @louisdumas
 
 
 (function() {
-  var OnePager, html,
+  var OnePager, Slider, html,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   window.App = {};
@@ -21,6 +21,102 @@ Author: @louisdumas
   } else {
     html.className += " no-opacity";
   }
+
+  /*
+  # Class Slider {{{
+  */
+
+
+  Slider = (function() {
+
+    Slider.name = 'Slider';
+
+    function Slider(slider) {
+      var _this = this;
+      this.slider = slider;
+      this.slidesWrap = this.slider.find('.slides-wrap');
+      this.navWrap = this.slider.find('.slider-nav');
+      this.descWrap = this.slider.find('.descs');
+      this.currentIndex = 0;
+      this.isAnimated = false;
+      this.slides = (function() {
+        var key, slide, slideObject, slides, _i, _len, _ref;
+        slides = [];
+        _ref = _this.slidesWrap.find('.slide');
+        for (key = _i = 0, _len = _ref.length; _i < _len; key = ++_i) {
+          slide = _ref[key];
+          slideObject = $(slide);
+          slides.push(slideObject);
+          if (key === _this.currentIndex) {
+            _this.navWrap.append('<a href="javascript://" class="active" data-index="' + key + '"></a>');
+            _this.descWrap.append('<span class="on-stage">' + slideObject.attr('data-desc') + '</span>');
+          } else {
+            _this.navWrap.append('<a href="javascript://" data-index="' + key + '"></a>');
+            _this.descWrap.append('<span>' + slideObject.attr('data-desc') + '</span>');
+          }
+        }
+        return slides;
+      })();
+      this.navElements = this.navWrap.find('a');
+      this.descElements = this.descWrap.find('span');
+      this.slides[this.currentIndex].addClass('active');
+      this.handleNav();
+      this.i = setInterval(function() {
+        if (!_this.isAnimated) {
+          _this.handleNextSlide();
+          _this.isAnimated = true;
+          return _this.slide();
+        }
+      }, 5000);
+    }
+
+    Slider.prototype.handleNav = function() {
+      var _this = this;
+      return this.navElements.click(function(e) {
+        var index, this_;
+        this_ = $(e.target);
+        index = parseInt(this_.attr('data-index'));
+        if (_this.currentIndex !== index && !_this.isAnimated) {
+          _this.nextSlideIndex = index;
+          _this.isAnimated = true;
+          return _this.slide();
+        }
+      });
+    };
+
+    Slider.prototype.handleNextSlide = function() {
+      return this.nextSlideIndex = this.currentIndex === (this.slides.length - 1) ? 0 : this.currentIndex + 1;
+    };
+
+    Slider.prototype.slide = function() {
+      var pos, t1, t2,
+        _this = this;
+      pos = this.slides[this.nextSlideIndex].position().left;
+      this.descElements.removeClass('on-stage').addClass('backstage');
+      this.descElements.eq(this.nextSlideIndex).addClass('backstage');
+      t1 = setTimeout(function() {
+        return _this.descElements.eq(_this.nextSlideIndex).removeClass('backstage').addClass('on-stage');
+      }, 150);
+      this.navElements.removeClass('active');
+      this.navElements.eq(this.nextSlideIndex).addClass('active');
+      this.slidesWrap.css({
+        'left': -pos
+      });
+      return t2 = setTimeout(function() {
+        _this.descElements.eq(_this.currentIndex).removeClass('backstage');
+        _this.currentIndex = _this.nextSlideIndex;
+        return _this.isAnimated = false;
+      }, 500);
+    };
+
+    return Slider;
+
+  })();
+
+  /*
+  # }}}
+  */
+
 
   /*
   # Class OnePager {{{
@@ -76,9 +172,6 @@ Author: @louisdumas
         } else {
           slideHeight = $(window).height() - $('footer').outerHeight() - $('#header').outerHeight();
         }
-        this_.css({
-          'min-height': slideHeight
-        });
         pageId = this_.attr('id');
         pageStart = this_.offset().top;
         pageEnd = this_.outerHeight() + this_.offset().top;
@@ -182,7 +275,7 @@ Author: @louisdumas
 
 
   $(function() {
-    var $links, body, l, links, stickyHeader;
+    var $links, body, l, links, myHomeSlider, myOnePager, stickyHeader;
     body = $('body');
     if (!window.console) {
       (function() {
@@ -238,7 +331,9 @@ Author: @louisdumas
   }
   ;
 
-    stickyHeader = (function() {
+    myOnePager = new OnePager();
+    myHomeSlider = new Slider($('#slider'));
+    return stickyHeader = (function() {
       var header, headerOffsetTop, viewport;
       header = $('nav[role="navigation"]');
       headerOffsetTop = header.offset().top;
@@ -251,12 +346,6 @@ Author: @louisdumas
         }
       });
     })();
-    if ($('#one-pager').length) {
-      return (function() {
-        var myOnePager;
-        return myOnePager = new OnePager();
-      })();
-    }
   });
 
 }).call(this);

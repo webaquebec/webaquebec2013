@@ -19,6 +19,79 @@ else
 #############
 
 ###
+# Class Slider {{{
+###
+class Slider
+  constructor: (slider) ->
+    @slider       = slider
+    @slidesWrap   = @slider.find('.slides-wrap')
+    @navWrap      = @slider.find('.slider-nav')
+    @descWrap     = @slider.find('.descs')
+    @currentIndex = 0
+    @isAnimated   = no
+
+    @slides = (() =>
+      slides = []
+      for slide, key in @slidesWrap.find('.slide')
+        slideObject = $(slide)
+        slides.push(slideObject)
+        if key is @currentIndex
+          @navWrap.append('<a href="javascript://" class="active" data-index="'+key+'"></a>')
+          @descWrap.append('<span class="on-stage">'+slideObject.attr('data-desc')+'</span>')
+        else
+          @navWrap.append('<a href="javascript://" data-index="'+key+'"></a>')
+          @descWrap.append('<span>'+slideObject.attr('data-desc')+'</span>')
+      slides
+    )()
+    
+    @navElements  = @navWrap.find('a')
+    @descElements = @descWrap.find('span')
+    
+    @slides[@currentIndex].addClass('active')
+    @handleNav()
+    @i = setInterval( =>
+      if !@isAnimated
+        @handleNextSlide()
+        @isAnimated = yes
+        @slide()
+    , 5000)
+    
+  handleNav: ->
+    @navElements.click( (e) =>
+      this_ = $(e.target)
+      index = parseInt(this_.attr('data-index'))
+
+      if @currentIndex isnt index && !@isAnimated
+        @nextSlideIndex = index
+        @isAnimated = yes
+        @slide()
+    )
+    
+  handleNextSlide:  ->
+    @nextSlideIndex = if @currentIndex == (@slides.length - 1) then 0 else @currentIndex + 1
+
+  slide: ->
+    pos = @slides[@nextSlideIndex].position().left
+    
+    @descElements.removeClass('on-stage').addClass('backstage')
+    @descElements.eq(@nextSlideIndex).addClass('backstage')
+    t1 = setTimeout( =>
+      @descElements.eq(@nextSlideIndex).removeClass('backstage').addClass('on-stage')
+    , 150)
+
+    @navElements.removeClass('active')
+    @navElements.eq(@nextSlideIndex).addClass('active')
+    @slidesWrap.css({'left' : -pos})
+    
+    t2 = setTimeout( =>
+      @descElements.eq(@currentIndex).removeClass('backstage')
+      @currentIndex = @nextSlideIndex
+      @isAnimated   = no
+    , 500)
+###
+# }}}
+###
+###
 # Class OnePager {{{
 ###
 class OnePager
@@ -61,9 +134,6 @@ class OnePager
         slideHeight = $(window).height() - $('#header').outerHeight()
       else
         slideHeight = $(window).height() - $('footer').outerHeight() - $('#header').outerHeight()
-      this_.css({
-        'min-height' : slideHeight
-      })
       
       pageId    = this_.attr 'id'
       pageStart = this_.offset().top
@@ -137,8 +207,6 @@ class OnePager
 # }}}
 ###
 
-
-
 $ () ->
   # Common 
   ################{{{
@@ -182,8 +250,13 @@ $ () ->
   `
   #}}}
 
+  # OnePager instanciation
+  myOnePager = new OnePager()
   
-  # StickyHeader instanciation {{{
+  # Home slider instanciation
+  myHomeSlider = new Slider($('#slider'))
+
+  # StickyHeader {{{
   stickyHeader = ( ->
     header = $('nav[role="navigation"]')
     headerOffsetTop = header.offset().top
@@ -197,10 +270,6 @@ $ () ->
     )   
   )()
   #}}}
-  
-  # OnePager instanciation {{{
-  if $('#one-pager').length
-    do ->
-      myOnePager = new OnePager()
-  #}}}
+
+
               

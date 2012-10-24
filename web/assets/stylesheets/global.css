@@ -1380,43 +1380,108 @@ a:hover {
   font-size: 13px;
   font-size: 1.3rem;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  padding: 12px;
+  padding: 8px;
+  background: transparent;
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -ms-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
 }
-/* line 931, scss/global.scss */
+/* line 949, scss/global.scss */
+#schedule .wrapper .slides-wrap .conferences .conference:hover {
+  background: #88dcec;
+}
+/* line 953, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white {
   position: relative;
   display: block;
   background: white;
   height: 100%;
   padding: 10px 10px 10px 55px;
-  border-radius: 5px;
-  border: 1px solid #F2F2F2;
+  border-radius: 0px 0px 5px 5px;
   box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
 }
-/* line 942, scss/global.scss */
+/* line 980, scss/global.scss */
+#schedule .wrapper .slides-wrap .conferences .conference .white:hover {
+  color: white;
+  background: #0587b9;
+  text-decoration: none;
+}
+/* line 985, scss/global.scss */
+#schedule .wrapper .slides-wrap .conferences .conference .white:hover h2 {
+  color: white;
+}
+/* line 991, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference h2 {
   color: #0687b9;
   font-weight: bold;
   font-size: 13px;
   font-size: 1.3rem;
   margin: 0;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -ms-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -o-transform: translateZ(0);
+  -moz-tform: translateZ(0);
+  transform: translateZ(0);
 }
-/* line 950, scss/global.scss */
+/* line 1023, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference img {
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 956, scss/global.scss */
+/* line 1029, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference span[itemprop="description"] {
   display: block;
   width: 122px;
 }
-/* line 962, scss/global.scss */
+/* line 1035, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference.t90m .white {
   padding: 130px 10px 10px 10px;
 }
-/* line 968, scss/global.scss */
+/* line 1041, scss/global.scss */
 #schedule .wrapper .slides-wrap .break {
   display: block;
   z-index: 12;

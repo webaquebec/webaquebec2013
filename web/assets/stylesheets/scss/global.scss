@@ -926,7 +926,29 @@ $t15m:40px;
           font-size: 13px;
           font-size: 1.3rem;
           font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-          padding: 12px;
+          padding: 8px;
+          background: transparent;
+          -webkit-transition-property: background;
+          -moz-transition-property: background;
+          -ms-transition-property: background;
+          -o-transition-property: background;
+          transition-property: background;
+
+          -webkit-transition-duration: 200ms;
+          -moz-transition-duration: 200ms;
+          -ms-transition-duration: 200ms;
+          -o-transition-duration: 200ms;
+          transition-duration: 200ms;
+
+          -webkit-transition-timing-function: linear;
+          -moz-transition-timing-function: linear;
+          -ms-transition-timing-function: linear;
+          -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+          
+          &:hover {
+            background: #88dcec;
+          }
           
           .white {
             position: relative;
@@ -934,9 +956,36 @@ $t15m:40px;
             background: white;
             height: 100%;
             padding: 10px 10px 10px 55px;
-            border-radius: 5px;
-            border: 1px solid #F2F2F2;
+            border-radius: 0px 0px 5px 5px;
             box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            -webkit-transition-property: all;
+            -moz-transition-property: all;
+            -ms-transition-property: all;
+            -o-transition-property: all;
+            transition-property: all;
+
+            -webkit-transition-duration: 200ms;
+            -moz-transition-duration: 200ms;
+            -ms-transition-duration: 200ms;
+            -o-transition-duration: 200ms;
+            transition-duration: 200ms;
+
+            -webkit-transition-timing-function: linear;
+            -moz-transition-timing-function: linear;
+            -ms-transition-timing-function: linear;
+            -o-transition-timing-function: linear;
+            transition-timing-function: linear;
+
+            &:hover {
+              color: white;
+              background: #0587b9;
+              text-decoration: none;
+              
+              h2 {
+                color: white;
+              }
+            }
           }
           
           h2 {
@@ -945,6 +994,30 @@ $t15m:40px;
             font-size: 13px;
             font-size: 1.3rem;
             margin: 0;
+            -webkit-transition-property: color;
+            -moz-transition-property: color;
+            -ms-transition-property: color;
+            -o-transition-property: color;
+            transition-property: color;
+
+            -webkit-transition-duration: 200ms;
+            -moz-transition-duration: 200ms;
+            -ms-transition-duration: 200ms;
+            -o-transition-duration: 200ms;
+            transition-duration: 200ms;
+
+            -webkit-transition-timing-function: linear;
+            -moz-transition-timing-function: linear;
+            -ms-transition-timing-function: linear;
+            -o-transition-timing-function: linear;
+            transition-timing-function: linear;
+
+            -webkit-transform : translateZ(0);
+            -webkit-backface-visibility: hidden;
+            -o-transform : translateZ(0);
+            -moz-tform : translateZ(0);
+            transform : translateZ(0);
+            
           }
           
           img {

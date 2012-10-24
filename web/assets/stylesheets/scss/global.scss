@@ -223,7 +223,7 @@ a:hover { color: #06e; text-decoration: underline;}
     padding-top: 30px;
   }
   
-  h2, .h2 {
+  .h2 {
     position: relative;
     font-weight: normal;
     font-size: 36px;
@@ -719,32 +719,42 @@ $t15m:40px;
 .t10h30 { top: (14 * $t15m)}
 .t10h45 { top: (15 * $t15m)}
 
-.t11h15 { top: (16 * $t15m)}
-.t11h30 { top: (17 * $t15m)}
-.t11h45 { top: (18 * $t15m)}
-.t12h00 { top: (19 * $t15m)}
 
-.t13h00 { top: (23 * $t15m)}
-.t13h15 { top: (24 * $t15m)}
-.t13h30 { top: (25 * $t15m)}
-.t13h45 { top: (26 * $t15m)}
+.t11h00 { top: (16 * $t15m)}
+.t11h15 { top: (17 * $t15m)}
+.t11h30 { top: (18 * $t15m)}
+.t11h45 { top: (19 * $t15m)}
 
-.t14h00 { top: (27 * $t15m)}
-.t14h15 { top: (28 * $t15m)}
-.t14h30 { top: (29 * $t15m)}
-.t14h45 { top: (30 * $t15m)}
+.t12h00 { top: (20 * $t15m)}
 
-.t15h00 { top: (31 * $t15m)}
-.t15h15 { top: (32 * $t15m)}
-.t15h30 { top: (33 * $t15m)}
-.t15h45 { top: (34 * $t15m)}
+.t13h00 { top: (24 * $t15m)}
+.t13h15 { top: (25 * $t15m)}
+.t13h30 { top: (26 * $t15m)}
+.t13h45 { top: (27 * $t15m)}
 
-.t16h00 { top: (35 * $t15m)}
-.t16h15 { top: (36 * $t15m)}
-.t16h30 { top: (37 * $t15m)}
-.t16h45 { top: (38 * $t15m)}
+.t14h00 { top: (28 * $t15m)}
+.t14h15 { top: (29 * $t15m)}
+.t14h30 { top: (30 * $t15m)}
+.t14h45 { top: (31 * $t15m)}
 
-.t17h00 { top: (39 * $t15m)}
+.t15h00 { top: (32 * $t15m)}
+.t15h15 { top: (33 * $t15m)}
+.t15h30 { top: (34 * $t15m)}
+.t15h45 { top: (35 * $t15m)}
+
+.t16h00 { top: (36 * $t15m)}
+.t16h15 { top: (37 * $t15m)}
+.t16h30 { top: (38 * $t15m)}
+.t16h45 { top: (39 * $t15m)}
+
+.t17h00 { top: (40 * $t15m)}
+
+.t15m { height: $t15m;}
+.t30m { height: (2 * $t15m);}
+.t45m { height: (3 * $t15m);}
+.t60m { height: (4 * $t15m);}
+.t75m { height: (5 * $t15m);}
+.t90m { height: (6 * $t15m);}
 
 .blue-line {
   position: absolute;
@@ -874,7 +884,7 @@ $t15m:40px;
         float: left;
         height: 100%;
         width: 33.33333333333%;
-        padding-left: $timeZoneWidth;
+        padding-left: $timeZoneWidth/3;
         
         &#wednesday { background: transparent;}
         &#thursday { background: blue;}
@@ -886,7 +896,7 @@ $t15m:40px;
         width: 100%;
         top: 0;
         left: 0;
-        z-index: 11;
+        z-index: 13;
         height: 100%;
         
         span {
@@ -895,6 +905,71 @@ $t15m:40px;
         }
         
       } // .lines
+      
+      .conferences,
+      .break {
+        position: absolute;
+        z-index: 14;
+        display: block;
+        width: $scheduleWidth;
+      }
+      
+      .conferences {
+        @extend .group;
+        margin: 0;
+        padding: 0;
+        
+        .conference {
+          width: 24.9%;
+//          float: left;
+          color: #006287;
+          font-size: 13px;
+          font-size: 1.3rem;
+          font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+          padding: 12px;
+          
+          .white {
+            position: relative;
+            display: block;
+            background: white;
+            height: 100%;
+            padding: 10px 10px 10px 55px;
+            border-radius: 5px;
+            border: 1px solid #F2F2F2;
+            box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.2);
+          }
+          
+          h2 {
+            color: #0687b9;
+            font-weight: bold;
+            font-size: 13px;
+            font-size: 1.3rem;
+            margin: 0;
+          }
+          
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          
+          span[itemprop="description"] {
+            display: block;
+            width: 122px;
+          }
+          
+          &.t90m {
+            .white {
+              padding: 130px 10px 10px 10px;
+            }
+          }
+        } // .conference
+      } // .conferences 
+      .break {
+        display: block;
+        z-index: 12;
+        background: url('/assets/images/interface/break-texture.png') repeat transparent;
+      }
     }
   }
 } // #schedule

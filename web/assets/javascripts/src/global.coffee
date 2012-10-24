@@ -256,6 +256,17 @@ $ () ->
   
   # Home slider instanciation
   myHomeSlider = new Slider($('#slider'))
+  
+  # Masonry on conferences
+  $('.conferences').masonry(
+    itemSelector : '.conference'
+    containerStyle : { 'position' : 'absolute'}
+    columnWidth: (containerWidth) ->
+      console.log containerWidth
+      containerWidth / 4
+    isAnimated : true
+    animationOptions: { duration: 100 }
+  )
 
   # StickyHeader {{{
   stickyHeader = ( ->

@@ -19,7 +19,7 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
 </head>
-<body class="layout{% block body_classes %}{% endblock %}">
+<body class="layout{% block body_classes %}{% endblock %}" itemscope itemtype="schema.org/Event">
     <nav role="navigation" id="main-nav">
         <div class="width">
             <span class="left">
@@ -40,7 +40,7 @@
         <div id="home" data-section>
             <header id="header">
                 <a id="siteLogo" href="/"><span class="shy">Le Web à Québec</span></a>
-                <div id="event-desc" itemscope itemtype="schema.org/Event">
+                <div id="event-desc">
                     <h1 itemprop="name">Le web à Québec</h1>
                     Du <time itemprop="startDate" datetime="2013-02-20T07:30-17:30">20</time> au <time itemprop="startDate" datetime="2013-02-22T07:30-17:30">22</time> février 2013,
                     <span itemprop="location" itemscope itemtype="http://schema.org/Place">
@@ -60,9 +60,11 @@
                 <span class="texture-mask"></span>
                 <span class="mask"></span>
                 <div class="slider-info">
-                    Trois jours de rencontres<br>
-                    par et pour les gens<br>
-                    qui imaginent le web
+                    <span itemprop="description">
+                        Trois jours de rencontres<br>
+                        par et pour les gens<br>
+                        qui imaginent le web
+                    </span>
                     <div class="desc-nav-wrap">
                         <span class="slider-nav"></span>
                         <span class="descs"></span>
@@ -76,7 +78,7 @@
         </div> {# #home #}
         <section id="horaire" data-section style="height: 2500px;">
             <div class="width padding">
-                <h2>Horaire</h2>
+                <h1 class="h2">Horaire</h1>
             </div>
             <div id="schedule">
                 <ul id="rooms-name">
@@ -93,9 +95,74 @@
                             <div id="wednesday" class="slide">
                                 <span id="separators"><span></span><span></span><span></span><span></span></span>
                                 <span class="lines">
-                                    <span class="t9h00"></span>
+                                    <span class="t7h15"></span>
                                     <span class="t10h00"></span>
+                                    <span class="t10h30"></span>
                                 </span>
+                                
+                                <div class="break t10h00 t30m">
+                                    Pause
+                                </div>
+                                <div class="conferences t7h30 t90m">
+                                    <div class="conference t45m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
+                                        <a class="white">
+                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
+                                                <img src="/assets/images/performers/thumb.png" width="47" height="52" alt=" " itemprop="image" />
+                                                <figcaption><h2 itemprop="name">Ti lp</h2></figcaption>
+                                            </figure>
+                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
+                                        </a>
+                                    </div>
+                                    <div class="conference t90m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
+                                        <a class="white">
+                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
+                                                <img src="/assets/images/performers/thumb.png" width="107" height="116" alt=" " itemprop="image" />
+                                                <figcaption><h2 itemprop="name">Ti Luc</h2></figcaption>
+                                            </figure>
+                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
+                                        </a>
+                                    </div>
+                                    <div class="conference t45m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
+                                        <a class="white">
+                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
+                                                <img src="/assets/images/performers/thumb.png" width="47" height="52" alt=" " itemprop="image" />
+                                                <figcaption><h2 itemprop="name">Ti jean</h2></figcaption>
+                                            </figure>
+                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
+                                        </a>
+                                    </div>
+                                    <div class="conference t90m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
+                                        <a class="white">
+                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
+                                                <img src="/assets/images/performers/thumb.png" width="47" height="52" alt=" " itemprop="image" />
+                                                <figcaption><h2 itemprop="name">Ti cul</h2></figcaption>
+                                            </figure>
+                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="conference t45m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
+                                        <a class="white">
+                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
+                                                <img src="/assets/images/performers/thumb.png" width="47" height="52" alt=" " itemprop="image" />
+                                                <figcaption><h2 itemprop="name">Ti bob</h2></figcaption>
+                                            </figure>
+                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
+                                        </a>
+                                    </div>
+                                    <div class="conference t45m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
+                                        <a class="white">
+                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
+                                                <img src="/assets/images/performers/thumb.png" width="47" height="52" alt=" " itemprop="image" />
+                                                <figcaption><h2 itemprop="name">Ti louis</h2></figcaption>
+                                            </figure>
+                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="break t12h00 t60m">
+                                    Diner
+                                </div>
                             </div>
                             <div id="thursday" class="slide"></div>
                             <div id="friday" class="slide"></div>
@@ -112,6 +179,7 @@
       <script>window.jQuery || document.write('<script src="/assets/javascripts/libs/jquery.js"><\/script>')</script>
       {% block javascripts %}{% endblock %}
       <script src="/assets/javascripts/libs/jquery.debounce.js"></script>
+      <script src="/assets/javascripts/libs/jquery.masonry.js"></script>
       <script src="/assets/javascripts/global.js"></script>
 </body>
 </html>

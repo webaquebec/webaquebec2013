@@ -334,6 +334,20 @@ Author: @louisdumas
 
     myOnePager = new OnePager();
     myHomeSlider = new Slider($('#slider'));
+    $('.conferences').masonry({
+      itemSelector: '.conference',
+      containerStyle: {
+        'position': 'absolute'
+      },
+      columnWidth: function(containerWidth) {
+        console.log(containerWidth);
+        return containerWidth / 4;
+      },
+      isAnimated: true,
+      animationOptions: {
+        duration: 100
+      }
+    });
     return stickyHeader = (function() {
       var header, headerOffsetTop, viewport;
       header = $('nav[role="navigation"]');

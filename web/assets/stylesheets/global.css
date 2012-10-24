@@ -410,30 +410,30 @@ a:hover {
 }
 
 /* line 126, scss/global.scss */
-.group:before, #header:before, #main-nav:before, #slider .slides-wrap:before, .group:after, #header:after, #main-nav:after, #slider .slides-wrap:after {
+.group:before, #header:before, #main-nav:before, #slider .slides-wrap:before, #schedule #rooms-name:before, #schedule .wrapper #separators:before, #schedule .wrapper .slides-wrap:before, .group:after, #header:after, #main-nav:after, #slider .slides-wrap:after, #schedule #rooms-name:after, #schedule .wrapper #separators:after, #schedule .wrapper .slides-wrap:after {
   content: "";
   display: table;
 }
 
 /* line 127, scss/global.scss */
-.group:after, #header:after, #main-nav:after, #slider .slides-wrap:after {
+.group:after, #header:after, #main-nav:after, #slider .slides-wrap:after, #schedule #rooms-name:after, #schedule .wrapper #separators:after, #schedule .wrapper .slides-wrap:after {
   clear: both;
 }
 
 /* line 128, scss/global.scss */
-.group, #header, #main-nav, #slider .slides-wrap {
+.group, #header, #main-nav, #slider .slides-wrap, #schedule #rooms-name, #schedule .wrapper #separators, #schedule .wrapper .slides-wrap {
   *zoom: 1;
 }
 
 /* line 130, scss/global.scss */
-.width, #header, #slider {
+.width, #header, #slider, #schedule {
   min-width: 960px;
   max-width: 1140px;
   margin: 0 auto;
 }
 
 /* line 135, scss/global.scss */
-.padding, #header, #main-nav .width, #main-nav #header, #main-nav #slider {
+.padding, #header, #main-nav .width, #main-nav #header, #main-nav #slider, #main-nav #schedule {
   padding: 0 20px;
 }
 
@@ -634,7 +634,7 @@ a:hover {
   padding-top: 20px;
 }
 /* line 333, scss/global.scss */
-#main-nav .width, #main-nav #header, #main-nav #slider {
+#main-nav .width, #main-nav #header, #main-nav #slider, #main-nav #schedule {
   position: relative;
 }
 /* line 335, scss/global.scss */
@@ -966,6 +966,364 @@ a:hover {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+/* }}} */
+/* Schedule
+**********************{{{*/
+/* line 702, scss/global.scss */
+.t7h00 {
+  top: 0;
+}
+
+/* line 703, scss/global.scss */
+.t7h15 {
+  top: 40px;
+}
+
+/* line 704, scss/global.scss */
+.t7h30 {
+  top: 80px;
+}
+
+/* line 705, scss/global.scss */
+.t7h45 {
+  top: 120px;
+}
+
+/* line 707, scss/global.scss */
+.t8h00 {
+  top: 160px;
+}
+
+/* line 708, scss/global.scss */
+.t8h15 {
+  top: 200px;
+}
+
+/* line 709, scss/global.scss */
+.t8h30 {
+  top: 240px;
+}
+
+/* line 710, scss/global.scss */
+.t8h45 {
+  top: 280px;
+}
+
+/* line 712, scss/global.scss */
+.t9h00 {
+  top: 320px;
+}
+
+/* line 713, scss/global.scss */
+.t9h15 {
+  top: 360px;
+}
+
+/* line 714, scss/global.scss */
+.t9h30 {
+  top: 400px;
+}
+
+/* line 715, scss/global.scss */
+.t9h45 {
+  top: 440px;
+}
+
+/* line 717, scss/global.scss */
+.t10h00 {
+  top: 480px;
+}
+
+/* line 718, scss/global.scss */
+.t10h15 {
+  top: 520px;
+}
+
+/* line 719, scss/global.scss */
+.t10h30 {
+  top: 560px;
+}
+
+/* line 720, scss/global.scss */
+.t10h45 {
+  top: 600px;
+}
+
+/* line 722, scss/global.scss */
+.t11h15 {
+  top: 640px;
+}
+
+/* line 723, scss/global.scss */
+.t11h30 {
+  top: 680px;
+}
+
+/* line 724, scss/global.scss */
+.t11h45 {
+  top: 720px;
+}
+
+/* line 725, scss/global.scss */
+.t12h00 {
+  top: 760px;
+}
+
+/* line 727, scss/global.scss */
+.t13h00 {
+  top: 920px;
+}
+
+/* line 728, scss/global.scss */
+.t13h15 {
+  top: 960px;
+}
+
+/* line 729, scss/global.scss */
+.t13h30 {
+  top: 1000px;
+}
+
+/* line 730, scss/global.scss */
+.t13h45 {
+  top: 1040px;
+}
+
+/* line 732, scss/global.scss */
+.t14h00 {
+  top: 1080px;
+}
+
+/* line 733, scss/global.scss */
+.t14h15 {
+  top: 1120px;
+}
+
+/* line 734, scss/global.scss */
+.t14h30 {
+  top: 1160px;
+}
+
+/* line 735, scss/global.scss */
+.t14h45 {
+  top: 1200px;
+}
+
+/* line 737, scss/global.scss */
+.t15h00 {
+  top: 1240px;
+}
+
+/* line 738, scss/global.scss */
+.t15h15 {
+  top: 1280px;
+}
+
+/* line 739, scss/global.scss */
+.t15h30 {
+  top: 1320px;
+}
+
+/* line 740, scss/global.scss */
+.t15h45 {
+  top: 1360px;
+}
+
+/* line 742, scss/global.scss */
+.t16h00 {
+  top: 1400px;
+}
+
+/* line 743, scss/global.scss */
+.t16h15 {
+  top: 1440px;
+}
+
+/* line 744, scss/global.scss */
+.t16h30 {
+  top: 1480px;
+}
+
+/* line 745, scss/global.scss */
+.t16h45 {
+  top: 1520px;
+}
+
+/* line 747, scss/global.scss */
+.t17h00 {
+  top: 1560px;
+}
+
+/* line 749, scss/global.scss */
+.blue-line, #schedule .wrapper .slides-wrap .lines span {
+  position: absolute;
+  display: block;
+  height: 2px;
+  background: #0686b8;
+  border-bottom: 1px solid #bfedf4;
+}
+
+/* line 757, scss/global.scss */
+.room-col, #schedule #rooms-name li, #schedule .wrapper #separators span {
+  width: 25%;
+}
+
+/* line 760, scss/global.scss */
+#schedule {
+  position: relative;
+}
+/* line 764, scss/global.scss */
+#schedule #rooms-name {
+  padding-left: 8.77193%;
+  text-transform: uppercase;
+  font-size: 21px;
+  font-size: 2.1rem;
+  color: #0686B8;
+}
+/* line 772, scss/global.scss */
+#schedule #rooms-name li {
+  position: relative;
+  display: block;
+  float: left;
+  padding-left: 16px;
+}
+/* line 778, scss/global.scss */
+#schedule #rooms-name li:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 8px;
+  left: 0px;
+  z-index: 1000;
+  border-width: 12px 12px 0 0;
+  border-color: #03D0BC white white #03D0BC;
+  border-style: solid;
+  background: white;
+}
+/* line 791, scss/global.scss */
+#schedule #rooms-name li#ixmedia:before {
+  border-color: #c6ac03 white white #c6ac03;
+}
+/* line 792, scss/global.scss */
+#schedule #rooms-name li#vetiq:before {
+  border-color: #02c66a white white #02c66a;
+}
+/* line 793, scss/global.scss */
+#schedule #rooms-name li#korem:before {
+  border-color: #c61d5a white white #c61d5a;
+}
+/* line 797, scss/global.scss */
+#schedule .shadow-top {
+  content: '';
+  position: relative;
+  z-index: 11;
+  bottom: -9px;
+  display: block;
+  width: 100%;
+  height: 9px;
+  background: url("/assets/images/interface/shadow.png") repeat-x top center;
+}
+/* line 807, scss/global.scss */
+#schedule .shadow-bottom {
+  content: '';
+  position: relative;
+  z-index: 11;
+  top: -9px;
+  display: block;
+  width: 100%;
+  height: 9px;
+  background: url("/assets/images/interface/shadow-bottom.png") repeat-x bottom center;
+}
+/* line 818, scss/global.scss */
+#schedule .wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+/* line 826, scss/global.scss */
+#schedule .wrapper #schedule-wrap {
+  position: relative;
+  height: 1760px;
+}
+/* line 831, scss/global.scss */
+#schedule .wrapper #separators {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 8.77193%;
+  width: 91.22807%;
+  height: 100%;
+}
+/* line 840, scss/global.scss */
+#schedule .wrapper #separators span {
+  position: relative;
+  display: block;
+  float: left;
+  height: 100%;
+}
+/* line 846, scss/global.scss */
+#schedule .wrapper #separators span + span {
+  border-left: 1px solid black;
+}
+/* line 850, scss/global.scss */
+#schedule .wrapper #time-zone {
+  position: absolute;
+  z-index: 15;
+  left: 0;
+  top: 0;
+  width: 8.77193%;
+  background: white;
+  box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.4);
+  border-right: 1px solid #bbbdbf;
+  height: 1760px;
+}
+/* line 862, scss/global.scss */
+#schedule .wrapper .slides-wrap {
+  position: absolute;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  background: url("/assets/images/interface/squared-texture.png") repeat;
+}
+/* line 872, scss/global.scss */
+#schedule .wrapper .slides-wrap .slide {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 33.33333333333%;
+  padding-left: 8.77193%;
+}
+/* line 879, scss/global.scss */
+#schedule .wrapper .slides-wrap .slide#wednesday {
+  background: transparent;
+}
+/* line 880, scss/global.scss */
+#schedule .wrapper .slides-wrap .slide#thursday {
+  background: blue;
+}
+/* line 881, scss/global.scss */
+#schedule .wrapper .slides-wrap .slide#friday {
+  background: green;
+}
+/* line 884, scss/global.scss */
+#schedule .wrapper .slides-wrap .lines {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  height: 100%;
+}
+/* line 892, scss/global.scss */
+#schedule .wrapper .slides-wrap .lines span {
+  width: 100%;
 }
 
 /* }}} */

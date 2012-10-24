@@ -691,3 +691,212 @@ a:hover { color: #06e; text-decoration: underline;}
   }
 }
 /* }}} */
+
+/* Schedule
+**********************{{{*/
+
+$scheduleWidth: 91.2280702%;
+$timeZoneWidth: 8.7719298%;
+
+$t15m:40px;
+.t7h00 { top: 0;}
+.t7h15 { top: (1 * $t15m)}
+.t7h30 { top: (2 * $t15m)}
+.t7h45 { top: (3 * $t15m)}
+
+.t8h00 { top: (4 * $t15m)}
+.t8h15 { top: (5 * $t15m)}
+.t8h30 { top: (6 * $t15m)}
+.t8h45 { top: (7 * $t15m)}
+
+.t9h00 { top: (8 * $t15m)}
+.t9h15 { top: (9 * $t15m)}
+.t9h30 { top: (10 * $t15m)}
+.t9h45 { top: (11 * $t15m)}
+
+.t10h00 { top: (12 * $t15m)}
+.t10h15 { top: (13 * $t15m)}
+.t10h30 { top: (14 * $t15m)}
+.t10h45 { top: (15 * $t15m)}
+
+.t11h15 { top: (16 * $t15m)}
+.t11h30 { top: (17 * $t15m)}
+.t11h45 { top: (18 * $t15m)}
+.t12h00 { top: (19 * $t15m)}
+
+.t13h00 { top: (23 * $t15m)}
+.t13h15 { top: (24 * $t15m)}
+.t13h30 { top: (25 * $t15m)}
+.t13h45 { top: (26 * $t15m)}
+
+.t14h00 { top: (27 * $t15m)}
+.t14h15 { top: (28 * $t15m)}
+.t14h30 { top: (29 * $t15m)}
+.t14h45 { top: (30 * $t15m)}
+
+.t15h00 { top: (31 * $t15m)}
+.t15h15 { top: (32 * $t15m)}
+.t15h30 { top: (33 * $t15m)}
+.t15h45 { top: (34 * $t15m)}
+
+.t16h00 { top: (35 * $t15m)}
+.t16h15 { top: (36 * $t15m)}
+.t16h30 { top: (37 * $t15m)}
+.t16h45 { top: (38 * $t15m)}
+
+.t17h00 { top: (39 * $t15m)}
+
+.blue-line {
+  position: absolute;
+  display: block;
+  height: 2px;
+  background: #0686b8;
+  border-bottom: 1px solid #bfedf4;
+}
+
+.room-col {
+   width: 25%;
+}
+#schedule {
+  @extend .width;
+  position: relative;
+  
+  #rooms-name {
+    @extend .group;
+    padding-left: $timeZoneWidth;
+    text-transform: uppercase;
+    font-size: 21px;
+    font-size: 2.1rem;
+    color: #0686B8;
+    
+    li {
+      @extend .room-col;
+      position: relative;
+      display: block;
+      float: left;
+      padding-left: 16px;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 8px;
+        left: 0px;
+        z-index: 1000;
+        border-width: 12px 12px 0 0;
+        border-color: #03D0BC white white #03D0BC;
+        border-style: solid;
+        background: white;
+      }
+      
+      &#ixmedia:before { border-color: #c6ac03 white white #c6ac03;}
+      &#vetiq:before { border-color: #02c66a white white #02c66a;}
+      &#korem:before { border-color: #c61d5a white white #c61d5a;}
+    }
+  } // #rooms-name
+  
+  .shadow-top {
+    content: '';
+    position: relative;
+    z-index: 11;
+    bottom: -(image-height('interface/shadow.png'));
+    display: block;
+    width: 100%;
+    height: image-height('interface/shadow.png');
+    background: url('/assets/images/interface/shadow.png') repeat-x top center;
+  }
+  .shadow-bottom {
+    content: '';
+    position: relative;
+    z-index: 11;
+    top: -(image-height('interface/shadow-bottom.png'));
+    display: block;
+    width: 100%;
+    height: image-height('interface/shadow-bottom.png');
+    background: url('/assets/images/interface/shadow-bottom.png') repeat-x bottom center;
+  }
+  
+  .wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
+    
+    #schedule-wrap {
+      position: relative;
+      height: (11 * image-height('interface/squared-texture.png'));
+    }
+    
+    #separators {
+      @extend .group;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: $timeZoneWidth;
+      width: $scheduleWidth;
+      height: 100%;
+      
+      span {
+        @extend .room-col;
+        position: relative;
+        display: block;
+        float: left;
+        height: 100%;
+        & + span { border-left: 1px solid black;}
+      }
+    }
+    
+    #time-zone {
+      position: absolute;
+      z-index: 15;
+      left: 0;
+      top: 0;
+      width: $timeZoneWidth;
+      background: white;
+      box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.4);
+      border-right: 1px solid #bbbdbf;
+      height: (11 * image-height('interface/squared-texture.png'));
+    }
+    
+    .slides-wrap {
+      @extend .group;
+      position: absolute;
+      z-index: 12;
+      top: 0;
+      left: 0;
+      width: 300%;
+      height: 100%;
+      background: url('/assets/images/interface/squared-texture.png') repeat;
+      
+      .slide {
+        position: relative;
+        float: left;
+        height: 100%;
+        width: 33.33333333333%;
+        padding-left: $timeZoneWidth;
+        
+        &#wednesday { background: transparent;}
+        &#thursday { background: blue;}
+        &#friday { background: green;}
+      } // .slide
+      
+      .lines {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 11;
+        height: 100%;
+        
+        span {
+          @extend .blue-line;
+          width: 100%;
+        }
+        
+      } // .lines
+    }
+  }
+} // #schedule
+
+/* }}} */

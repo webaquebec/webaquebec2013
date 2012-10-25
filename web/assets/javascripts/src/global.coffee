@@ -107,12 +107,10 @@ class Schedule
   slideTo: (id) ->
     target = @slides.filter("##{id}")
     posX   = target.position().left
-
     @navElement.removeClass('active')
-
     $('[data-ref="'+id+'"]').addClass('active')
     @wrapper.css({ 'left' : -posX})
-    # console.log posX
+
 ###
 # }}}
 ###
@@ -135,10 +133,6 @@ class OnePager
     @resetSectionsOffset()
     @animatWhenSliding = no
     
-    debounced = jQuery.debounce( 250, ()=>
-      @slideTo("##{@pagesOffset[@currentPage]['id']}", 250)
-    )
-    
     $(window).on('scroll', =>
       @didScroll = true;
     )
@@ -148,9 +142,6 @@ class OnePager
         @didScroll = false
         @HandleScrollEvents()
     , 20
-    
-    # window.onhashchange = @hashHasChange
-    # window.onhashchange()
   
   resetSectionsOffset: ->
     i = 0
@@ -175,6 +166,7 @@ class OnePager
     target.addClass('active')
         
   slideTo: (target ,speed, moreOffsets) ->
+    console.log 'slideTo'
     target          = @sections.filter(target)
     targetId        = target.attr('id')
     moreOffsets     = moreOffsets || 0
@@ -201,17 +193,7 @@ class OnePager
   
   hashHasChange: (target) =>
     newhash = "##{target}"
-    console.log 'sliding'
     @slideTo(newhash, 650)
-    # if location.hash
-      # newhash = '#' + location.hash.replace('#/', '')
-      # if @sections.filter(newhash).length
-        # @slideTo(newhash, 650)
-    # else
-    # target = "##{@pagesOffset[@currentPage]['id']}"
-    # targetLink = $("a[href='#{target.replace('#', '#/')}']")
-    # @slideTo(target , 650)
-    # @setActiveMenu(targetLink)
   
   HandleScrollEvents: ->
       if !@isAnimated

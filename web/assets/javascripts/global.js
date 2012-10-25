@@ -169,8 +169,7 @@ Author: @louisdumas
     function OnePager() {
       this.hashHasChange = __bind(this.hashHasChange, this);
 
-      var debounced,
-        _this = this;
+      var _this = this;
       this.didScroll = false;
       this.isAnimated = false;
       this.currentPage = 0;
@@ -183,9 +182,6 @@ Author: @louisdumas
       this.pagesOffset = {};
       this.resetSectionsOffset();
       this.animatWhenSliding = false;
-      debounced = jQuery.debounce(250, function() {
-        return _this.slideTo("#" + _this.pagesOffset[_this.currentPage]['id'], 250);
-      });
       $(window).on('scroll', function() {
         return _this.didScroll = true;
       });
@@ -229,6 +225,7 @@ Author: @louisdumas
     OnePager.prototype.slideTo = function(target, speed, moreOffsets) {
       var targetId, targetLink, targetScrollTop,
         _this = this;
+      console.log('slideTo');
       target = this.sections.filter(target);
       targetId = target.attr('id');
       moreOffsets = moreOffsets || 0;
@@ -267,7 +264,6 @@ Author: @louisdumas
     OnePager.prototype.hashHasChange = function(target) {
       var newhash;
       newhash = "#" + target;
-      console.log('sliding');
       return this.slideTo(newhash, 650);
     };
 

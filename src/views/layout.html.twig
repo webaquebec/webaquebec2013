@@ -71,8 +71,8 @@
                     </div>
                 </div>
                 <div class="slides-wrap">
-                    <div id="slide01" class="slide" data-desc="ux \ design web \ mobile \ médias sociaux \ données ouvertes \ seo \ css3 \ html5"><img src="/assets/images/slider/slide-01.jpg"  alt=" " /></div>
-                    <div id="slide02" class="slide" data-desc="This is another awesome desc ... lorem ipsum dolor sit amet, consectetur."><img src="/assets/images/slider/slide-02.jpg"  alt=" " /></div>
+                    <div id="slide01" class="slide" data-desc="ux \ design web \ mobile \ médias sociaux \ données ouvertes \ seo \ css3 \ html5"><img src="/assets/images/slider/slide-01.jpg" width="1140" height="420"  alt=" " /></div>
+                    <div id="slide02" class="slide" data-desc="This is another awesome desc ... lorem ipsum dolor sit amet, consectetur."><img src="/assets/images/slider/slide-02.jpg" width="1140" height="420" alt=" " /></div>
                 </div>
             </div>{# #slider #}
         </div> {# #home #}
@@ -104,61 +104,27 @@
                                     Pause
                                 </div>
                                 <div class="conferences t7h30 t90m">
-                                    <div class="conference t45m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
-                                        <a class="white">
-                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
-                                                <img src="/assets/images/performers/thumb.png" width="47" height="52" alt=" " itemprop="image" />
-                                                <figcaption><h2 itemprop="name">Ti lp</h2></figcaption>
-                                            </figure>
-                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
-                                        </a>
-                                    </div>
-                                    <div class="conference t90m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
-                                        <a class="white">
-                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
-                                                <img src="/assets/images/performers/thumb.png" width="107" height="116" alt=" " itemprop="image" />
-                                                <figcaption><h2 itemprop="name">Ti Luc</h2></figcaption>
-                                            </figure>
-                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
-                                        </a>
-                                    </div>
-                                    <div class="conference t45m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
-                                        <a class="white">
-                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
-                                                <img src="/assets/images/performers/thumb.png" width="47" height="52" alt=" " itemprop="image" />
-                                                <figcaption><h2 itemprop="name">Ti jean</h2></figcaption>
-                                            </figure>
-                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
-                                        </a>
-                                    </div>
-                                    <div class="conference t90m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
-                                        <a class="white">
-                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
-                                                <img src="/assets/images/performers/thumb.png" width="47" height="52" alt=" " itemprop="image" />
-                                                <figcaption><h2 itemprop="name">Ti cul</h2></figcaption>
-                                            </figure>
-                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
-                                        </a>
-                                    </div>
                                     
-                                    <div class="conference t45m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
-                                        <a class="white">
-                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
-                                                <img src="/assets/images/performers/thumb.png" width="47" height="52" alt=" " itemprop="image" />
-                                                <figcaption><h2 itemprop="name">Ti bob</h2></figcaption>
-                                            </figure>
-                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
-                                        </a>
-                                    </div>
-                                    <div class="conference t45m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
-                                        <a class="white">
-                                            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
-                                                <img src="/assets/images/performers/thumb.png" width="47" height="52" alt=" " itemprop="image" />
-                                                <figcaption><h2 itemprop="name">Ti louis</h2></figcaption>
-                                            </figure>
-                                            <span itemprop="description">Lorem ipsum dolor sit amet [...]</span>
-                                        </a>
-                                    </div>
+                                    {% include 'include/conference-thumb.html.twig' with {
+                                        duration  : 45,
+                                        performer : 'Ti lp',
+                                        img       : "/assets/images/performers/thumb.png",
+                                        desc      : "Lorem ipsum dolor sit amet [...]"
+                                    } %}
+                                    
+                                    {% include 'include/conference-thumb.html.twig' with {
+                                        duration  : 90,
+                                        performer : 'Ti Luc',
+                                        img       : "/assets/images/performers/thumb.png",
+                                        desc      : "Lorem ipsum dolor sit amet [...]"
+                                    } %}
+                                    
+                                    {% include 'include/conference-thumb.html.twig' with {
+                                        duration  : 45,
+                                        performer : 'Ti lou',
+                                        img       : "/assets/images/performers/thumb.png",
+                                        desc      : "Lorem ipsum dolor sit amet [...]"
+                                    } %}
                                 </div>
                                 <div class="break t12h00 t60m">
                                     Diner

@@ -695,6 +695,11 @@ a:hover { color: #06e; text-decoration: underline;}
 /* Schedule
 **********************{{{*/
 
+$libeo: #03D0BC;
+$ixmedia: #c6ac03;
+$vetiq: #02c66a;
+$korem: #c61d5a;
+
 $scheduleWidth: 91.2280702%;
 $timeZoneWidth: 8.7719298%;
 
@@ -793,14 +798,14 @@ $t15m:40px;
         left: 0px;
         z-index: 1000;
         border-width: 12px 12px 0 0;
-        border-color: #03D0BC white white #03D0BC;
+        border-color: $libeo white white $libeo;
         border-style: solid;
         background: white;
       }
       
-      &#ixmedia:before { border-color: #c6ac03 white white #c6ac03;}
-      &#vetiq:before { border-color: #02c66a white white #02c66a;}
-      &#korem:before { border-color: #c61d5a white white #c61d5a;}
+      &#ixmedia:before { border-color: $ixmedia white white $ixmedia;}
+      &#vetiq:before { border-color: $vetiq white white $vetiq;}
+      &#korem:before { border-color: $korem white white $korem;}
     }
   } // #rooms-name
   
@@ -921,7 +926,7 @@ $t15m:40px;
         
         .conference {
           width: 24.9%;
-//          float: left;
+          float: left;
           color: #006287;
           font-size: 13px;
           font-size: 1.3rem;
@@ -976,6 +981,18 @@ $t15m:40px;
             -ms-transition-timing-function: linear;
             -o-transition-timing-function: linear;
             transition-timing-function: linear;
+            
+            &:after {
+              content: "";
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 0px;
+              height: 0px;
+              border-style: solid;
+              border-width: 0 10px 10px 0;
+              border-color: transparent #007bff transparent transparent;
+            }
 
             &:hover {
               color: white;

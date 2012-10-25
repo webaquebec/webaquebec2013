@@ -13,7 +13,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 // INDEX
 $index = function () use ($app) {
     $data['page'] = "index";
-    return $app['twig']->render('page/home.html.twig', $data);
+    return $app['twig']->render('layout.html.twig', $data);
 };
 $app->get('/', $index)
     ->bind('index');

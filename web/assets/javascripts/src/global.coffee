@@ -99,8 +99,20 @@ class Slider
 ###
 class Schedule
   constructor: ->
-    @wrapper = $('#schedule .slides-wrap')
-    # console.log @wrapper
+    @wrapper      = $('#schedule .slides-wrap')
+    @navElement   = $('#schedule-nav a')
+    @slides       = @wrapper.find('.slide')
+    @navElement.eq(0).addClass('active')
+    
+  slideTo: (id) ->
+    target = @slides.filter("##{id}")
+    posX   = target.position().left
+
+    @navElement.removeClass('active')
+
+    $('[data-ref="'+id+'"]').addClass('active')
+    @wrapper.css({ 'left' : -posX})
+    # console.log posX
 ###
 # }}}
 ###
@@ -167,7 +179,7 @@ class OnePager
     targetId        = target.attr('id')
     moreOffsets     = moreOffsets || 0
     targetScrollTop = target.offset().top - @navOffset - moreOffsets
-    targetLink      = $("a[href='#/#{targetId}']")
+    targetLink      = $("a[href='#/#{targetId}/']")
     @isAnimated = true
     @currentPage = @getPageIndex(targetId)
     @setActiveMenu(targetLink)
@@ -213,10 +225,10 @@ class OnePager
           @currentPage = @currentPage - 1
       
         pageId = @pagesOffset[@currentPage]['id']
-        targetLink = $("a[href='#/#{pageId}']")
+        targetLink = $("a[href='#/#{pageId}/']")
       
         if !targetLink.hasClass('active')
-          this.setActiveMenu($("a[href='#/#{pageId}']"))
+          this.setActiveMenu($("a[href='#/#{pageId}/']"))
 
   currentPage: @currentPage
   isAnimated : @isAnimated
@@ -267,26 +279,21 @@ $ () ->
   }
   `
   #}}}
-
-  # OnePager instanciation
-  myOnePager = new OnePager()
   
-  # Home slider instanciation
+  # Class instaciation
+  myOnePager   = new OnePager()
   myHomeSlider = new Slider($('#slider'), {timer : 5000})
-  
-  # Schedule instanciation
-  mySchedule = new Schedule()
-  
-  # Masonry on conferences
-  $('.conferences').masonry(
+  mySchedule   = new Schedule()
+  myMasonry    = new $.Mason(
     itemSelector : '.conference'
     containerStyle : { 'position' : 'absolute'}
     columnWidth: (containerWidth) ->
       containerWidth / 4
     isAnimated : true
     animationOptions: { duration: 100 }
-  )
-  
+  , $('.conferences'))
+
+
   #############
   #-- ROUTER --#
   #############
@@ -296,18 +303,20 @@ $ () ->
       myOnePager.hashHasChange(this.params['splat'][0])
     )
     
-    @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, (cx, match) ->
+    @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, (cx, day) ->
       myOnePager.hashHasChange('horaire')
+      mySchedule.slideTo(day)
     )
     
-    @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, (cx, match, match2) ->
-      console.log match2
+    @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, (cx, day, conf) ->
+      console.log conf
       myOnePager.hashHasChange('horaire')
     )
 
   )
   router.run()
   myOnePager.animatWhenSliding = yes
+
   # StickyHeader {{{
   stickyHeader = ( ->
     header = $('nav[role="navigation"]')

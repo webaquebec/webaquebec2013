@@ -132,7 +132,21 @@ Author: @louisdumas
 
     function Schedule() {
       this.wrapper = $('#schedule .slides-wrap');
+      this.navElement = $('#schedule-nav a');
+      this.slides = this.wrapper.find('.slide');
+      this.navElement.eq(0).addClass('active');
     }
+
+    Schedule.prototype.slideTo = function(id) {
+      var posX, target;
+      target = this.slides.filter("#" + id);
+      posX = target.position().left;
+      this.navElement.removeClass('active');
+      $('[data-ref="' + id + '"]').addClass('active');
+      return this.wrapper.css({
+        'left': -posX
+      });
+    };
 
     return Schedule;
 
@@ -219,7 +233,7 @@ Author: @louisdumas
       targetId = target.attr('id');
       moreOffsets = moreOffsets || 0;
       targetScrollTop = target.offset().top - this.navOffset - moreOffsets;
-      targetLink = $("a[href='#/" + targetId + "']");
+      targetLink = $("a[href='#/" + targetId + "/']");
       this.isAnimated = true;
       this.currentPage = this.getPageIndex(targetId);
       this.setActiveMenu(targetLink);
@@ -270,9 +284,9 @@ Author: @louisdumas
           this.currentPage = this.currentPage - 1;
         }
         pageId = this.pagesOffset[this.currentPage]['id'];
-        targetLink = $("a[href='#/" + pageId + "']");
+        targetLink = $("a[href='#/" + pageId + "/']");
         if (!targetLink.hasClass('active')) {
-          return this.setActiveMenu($("a[href='#/" + pageId + "']"));
+          return this.setActiveMenu($("a[href='#/" + pageId + "/']"));
         }
       }
     };
@@ -291,7 +305,7 @@ Author: @louisdumas
 
 
   $(function() {
-    var $links, body, l, links, myHomeSlider, myOnePager, mySchedule, router, stickyHeader;
+    var $links, body, l, links, myHomeSlider, myMasonry, myOnePager, mySchedule, router, stickyHeader;
     body = $('body');
     if (!window.console) {
       (function() {
@@ -352,7 +366,7 @@ Author: @louisdumas
       timer: 5000
     });
     mySchedule = new Schedule();
-    $('.conferences').masonry({
+    myMasonry = new $.Mason({
       itemSelector: '.conference',
       containerStyle: {
         'position': 'absolute'
@@ -364,16 +378,17 @@ Author: @louisdumas
       animationOptions: {
         duration: 100
       }
-    });
+    }, $('.conferences'));
     router = $.sammy(function() {
       this.get(/\#\/(home|horaire|lieux-et-infos|partenaires|a-propos)\/*$/, function(context) {
         return myOnePager.hashHasChange(this.params['splat'][0]);
       });
-      this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, function(cx, match) {
-        return myOnePager.hashHasChange('horaire');
+      this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, function(cx, day) {
+        myOnePager.hashHasChange('horaire');
+        return mySchedule.slideTo(day);
       });
-      return this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, function(cx, match, match2) {
-        console.log(match2);
+      return this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, function(cx, day, conf) {
+        console.log(conf);
         return myOnePager.hashHasChange('horaire');
       });
     });

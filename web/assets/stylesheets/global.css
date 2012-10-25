@@ -1251,8 +1251,8 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 818, scss/global.scss */
-#schedule-nav a:hover {
+/* line 820, scss/global.scss */
+#schedule-nav a:hover, #schedule-nav a:focus, #schedule-nav a.active {
   background: #d7ecf4;
   border-top: 1px solid #c6e1eb;
   border-left: 1px solid #c6e1eb;
@@ -1260,11 +1260,11 @@ a:hover {
   text-decoration: none;
 }
 
-/* line 827, scss/global.scss */
+/* line 829, scss/global.scss */
 #schedule {
   position: relative;
 }
-/* line 831, scss/global.scss */
+/* line 833, scss/global.scss */
 #schedule #rooms-name {
   padding-left: 8.77193%;
   text-transform: uppercase;
@@ -1272,7 +1272,7 @@ a:hover {
   font-size: 2.1rem;
   color: #0686B8;
 }
-/* line 839, scss/global.scss */
+/* line 841, scss/global.scss */
 #schedule #rooms-name li {
   position: relative;
   z-index: 10;
@@ -1280,7 +1280,7 @@ a:hover {
   float: left;
   padding-left: 16px;
 }
-/* line 846, scss/global.scss */
+/* line 848, scss/global.scss */
 #schedule #rooms-name li:before {
   content: '';
   display: block;
@@ -1294,19 +1294,19 @@ a:hover {
   border-style: solid;
   background: white;
 }
-/* line 860, scss/global.scss */
+/* line 862, scss/global.scss */
 #schedule #rooms-name li#ixmedia:before {
   border-color: #c6ac03 white white #c6ac03;
 }
-/* line 861, scss/global.scss */
+/* line 863, scss/global.scss */
 #schedule #rooms-name li#vetiq:before {
   border-color: #02c66a white white #02c66a;
 }
-/* line 862, scss/global.scss */
+/* line 864, scss/global.scss */
 #schedule #rooms-name li#korem:before {
   border-color: #c61d5a white white #c61d5a;
 }
-/* line 866, scss/global.scss */
+/* line 868, scss/global.scss */
 #schedule .shadow-top {
   content: '';
   position: relative;
@@ -1317,7 +1317,7 @@ a:hover {
   height: 9px;
   background: url("/assets/images/interface/shadow.png") repeat-x top center;
 }
-/* line 876, scss/global.scss */
+/* line 878, scss/global.scss */
 #schedule .shadow-bottom {
   content: '';
   position: relative;
@@ -1328,7 +1328,7 @@ a:hover {
   height: 9px;
   background: url("/assets/images/interface/shadow-bottom.png") repeat-x bottom center;
 }
-/* line 887, scss/global.scss */
+/* line 889, scss/global.scss */
 #schedule .wrapper {
   position: relative;
   z-index: 10;
@@ -1337,12 +1337,12 @@ a:hover {
   overflow: hidden;
   overflow-y: scroll;
 }
-/* line 895, scss/global.scss */
+/* line 897, scss/global.scss */
 #schedule .wrapper #schedule-wrap {
   position: relative;
   height: 1760px;
 }
-/* line 900, scss/global.scss */
+/* line 902, scss/global.scss */
 #schedule .wrapper #separators {
   position: absolute;
   z-index: 10;
@@ -1351,18 +1351,18 @@ a:hover {
   width: 91.22807%;
   height: 100%;
 }
-/* line 909, scss/global.scss */
+/* line 911, scss/global.scss */
 #schedule .wrapper #separators span {
   position: relative;
   display: block;
   float: left;
   height: 100%;
 }
-/* line 915, scss/global.scss */
+/* line 917, scss/global.scss */
 #schedule .wrapper #separators span + span {
   border-left: 1px solid black;
 }
-/* line 919, scss/global.scss */
+/* line 921, scss/global.scss */
 #schedule .wrapper #time-zone {
   position: absolute;
   z-index: 15;
@@ -1374,7 +1374,7 @@ a:hover {
   border-right: 1px solid #bbbdbf;
   height: 1760px;
 }
-/* line 931, scss/global.scss */
+/* line 933, scss/global.scss */
 #schedule .wrapper .slides-wrap {
   position: absolute;
   z-index: 12;
@@ -1383,8 +1383,28 @@ a:hover {
   width: 300%;
   height: 100%;
   background: url("/assets/images/interface/squared-texture.png") repeat;
+  -webkit-transition-property: left;
+  -moz-transition-property: left;
+  -ms-transition-property: left;
+  -o-transition-property: left;
+  transition-property: left;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -o-transform: translateZ(0);
+  -moz-tform: translateZ(0);
+  transform: translateZ(0);
 }
-/* line 941, scss/global.scss */
+/* line 967, scss/global.scss */
 #schedule .wrapper .slides-wrap .slide {
   position: relative;
   float: left;
@@ -1392,19 +1412,7 @@ a:hover {
   width: 33.33333333333%;
   padding-left: 2.92398%;
 }
-/* line 948, scss/global.scss */
-#schedule .wrapper .slides-wrap .slide#wednesday {
-  background: transparent;
-}
-/* line 949, scss/global.scss */
-#schedule .wrapper .slides-wrap .slide#thursday {
-  background: blue;
-}
-/* line 950, scss/global.scss */
-#schedule .wrapper .slides-wrap .slide#friday {
-  background: green;
-}
-/* line 953, scss/global.scss */
+/* line 979, scss/global.scss */
 #schedule .wrapper .slides-wrap .lines {
   position: absolute;
   width: 100%;
@@ -1413,11 +1421,11 @@ a:hover {
   z-index: 13;
   height: 100%;
 }
-/* line 961, scss/global.scss */
+/* line 987, scss/global.scss */
 #schedule .wrapper .slides-wrap .lines span {
   width: 100%;
 }
-/* line 969, scss/global.scss */
+/* line 995, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences,
 #schedule .wrapper .slides-wrap .break {
   position: absolute;
@@ -1425,12 +1433,12 @@ a:hover {
   display: block;
   width: 91.22807%;
 }
-/* line 976, scss/global.scss */
+/* line 1002, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences {
   margin: 0;
   padding: 0;
 }
-/* line 981, scss/global.scss */
+/* line 1007, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference {
   width: 24.9%;
   float: left;
@@ -1456,11 +1464,11 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1008, scss/global.scss */
+/* line 1034, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference:hover {
   background: #88dcec;
 }
-/* line 1012, scss/global.scss */
+/* line 1038, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white {
   position: relative;
   display: block;
@@ -1486,7 +1494,7 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1039, scss/global.scss */
+/* line 1065, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white:after {
   content: "";
   position: absolute;
@@ -1498,29 +1506,29 @@ a:hover {
   border-width: 0 15px 15px 0;
   border-color: transparent #03d0bc transparent transparent;
 }
-/* line 1051, scss/global.scss */
+/* line 1077, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white.ixmedia:after {
   border-color: transparent #c6ac03 transparent transparent;
 }
-/* line 1052, scss/global.scss */
+/* line 1078, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white.vetiq:after {
   border-color: transparent #02c66a transparent transparent;
 }
-/* line 1053, scss/global.scss */
+/* line 1079, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white.korem:after {
   border-color: transparent #c61d5a transparent transparent;
 }
-/* line 1055, scss/global.scss */
+/* line 1081, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white:hover {
   color: white;
   background: #0587b9;
   text-decoration: none;
 }
-/* line 1060, scss/global.scss */
+/* line 1086, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white:hover h2 {
   color: white;
 }
-/* line 1066, scss/global.scss */
+/* line 1092, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference h2 {
   color: #0687b9;
   font-weight: bold;
@@ -1548,22 +1556,22 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 1098, scss/global.scss */
+/* line 1124, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference img {
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 1104, scss/global.scss */
+/* line 1130, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference span[itemprop="description"] {
   display: block;
   width: 122px;
 }
-/* line 1110, scss/global.scss */
+/* line 1136, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference.t90m .white {
   padding: 130px 10px 10px 10px;
 }
-/* line 1116, scss/global.scss */
+/* line 1142, scss/global.scss */
 #schedule .wrapper .slides-wrap .break {
   display: block;
   z-index: 12;

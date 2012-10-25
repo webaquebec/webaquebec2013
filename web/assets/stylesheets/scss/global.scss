@@ -815,7 +815,9 @@ $t15m:40px;
     -o-transition-timing-function: linear;
     transition-timing-function: linear;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &.active {
       background: #d7ecf4;
       border-top: 1px solid #c6e1eb;
       border-left: 1px solid #c6e1eb;
@@ -937,6 +939,30 @@ $t15m:40px;
       width: 300%;
       height: 100%;
       background: url('/assets/images/interface/squared-texture.png') repeat;
+      -webkit-transition-property: left;
+      -moz-transition-property: left;
+      -ms-transition-property: left;
+      -o-transition-property: left;
+      transition-property: left;
+
+      -webkit-transition-duration: 200ms;
+      -moz-transition-duration: 200ms;
+      -ms-transition-duration: 200ms;
+      -o-transition-duration: 200ms;
+      transition-duration: 200ms;
+
+      -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+      -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+      -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+      -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+      transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+
+      -webkit-transform : translateZ(0);
+      -webkit-backface-visibility: hidden;
+      -o-transform : translateZ(0);
+      -moz-tform : translateZ(0);
+      transform : translateZ(0);
+      
       
       .slide {
         position: relative;
@@ -945,9 +971,9 @@ $t15m:40px;
         width: 33.33333333333%;
         padding-left: $timeZoneWidth/3;
         
-        &#wednesday { background: transparent;}
-        &#thursday { background: blue;}
-        &#friday { background: green;}
+//        &#mercredi { background: transparent;}
+//        &#jeudi { background: blue;}
+//        &#vendredi { background: green;}
       } // .slide
       
       .lines {

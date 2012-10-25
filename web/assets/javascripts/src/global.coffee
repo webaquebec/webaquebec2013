@@ -22,13 +22,14 @@ else
 # Class Slider {{{
 ###
 class Slider
-  constructor: (slider) ->
+  constructor: (slider, opts) ->
     @slider       = slider
     @slidesWrap   = @slider.find('.slides-wrap')
     @navWrap      = @slider.find('.slider-nav')
     @descWrap     = @slider.find('.descs')
     @currentIndex = 0
     @isAnimated   = no
+    @timer        = if opts.timer? then opts.timer else 5000
 
     @slides = (() =>
       slides = []
@@ -49,12 +50,13 @@ class Slider
     
     @slides[@currentIndex].addClass('active')
     @handleNav()
-    @i = setInterval( =>
-      if !@isAnimated
-        @handleNextSlide()
-        @isAnimated = yes
-        @slide()
-    , 5000)
+    if @timer > 0
+      @i = setInterval( =>
+        if !@isAnimated
+          @handleNextSlide()
+          @isAnimated = yes
+          @slide()
+      , @timer)
     
   handleNav: ->
     @navElements.click( (e) =>
@@ -91,6 +93,18 @@ class Slider
 ###
 # }}}
 ###
+
+###
+# Class Schedule {{{
+###
+class Schedule
+  constructor: ->
+    @wrapper = $('#schedule .slides-wrap')
+    # console.log @wrapper
+###
+# }}}
+###
+
 ###
 # Class OnePager {{{
 ###
@@ -107,6 +121,7 @@ class OnePager
     @navOffset  = @navHeight
     @pagesOffset = {}
     @resetSectionsOffset()
+    @animatWhenSliding = no
     
     debounced = jQuery.debounce( 250, ()=>
       @slideTo("##{@pagesOffset[@currentPage]['id']}", 250)
@@ -122,8 +137,8 @@ class OnePager
         @HandleScrollEvents()
     , 20
     
-    window.onhashchange = @hashHasChange
-    window.onhashchange()
+    # window.onhashchange = @hashHasChange
+    # window.onhashchange()
   
   resetSectionsOffset: ->
     i = 0
@@ -158,14 +173,13 @@ class OnePager
     @setActiveMenu(targetLink)
     
     targetScrollTop = if targetScrollTop <= 0 then 0 else targetScrollTop
-    if @sectionsWrapp.attr('data-transitions') is 'on'
+    if @animatWhenSliding
       $('body, html').stop().animate({'scrollTop' : targetScrollTop},speed, $.bez([0.80, 0, 0.20, 1.0]), () =>
         @isAnimated = false
       )
     else
       $('body, html').stop().animate({'scrollTop' : targetScrollTop}, 0, () =>
         @isAnimated = false
-        @sectionsWrapp.attr('data-transitions', 'on')
       )
   
   getPageIndex: (id)->
@@ -173,16 +187,19 @@ class OnePager
       if object.id == id
         return parseInt(i)
   
-  hashHasChange: =>
-    if location.hash
-      newhash = '#' + location.hash.replace('#/', '')
-      if @sections.filter(newhash).length
-        @slideTo(newhash, 650)
-    else
-      target = "##{@pagesOffset[@currentPage]['id']}"
-      targetLink = $("a[href='#{target.replace('#', '#/')}']")
-      @slideTo(target , 650)
-      @setActiveMenu(targetLink)
+  hashHasChange: (target) =>
+    newhash = "##{target}"
+    console.log 'sliding'
+    @slideTo(newhash, 650)
+    # if location.hash
+      # newhash = '#' + location.hash.replace('#/', '')
+      # if @sections.filter(newhash).length
+        # @slideTo(newhash, 650)
+    # else
+    # target = "##{@pagesOffset[@currentPage]['id']}"
+    # targetLink = $("a[href='#{target.replace('#', '#/')}']")
+    # @slideTo(target , 650)
+    # @setActiveMenu(targetLink)
   
   HandleScrollEvents: ->
       if !@isAnimated
@@ -255,19 +272,42 @@ $ () ->
   myOnePager = new OnePager()
   
   # Home slider instanciation
-  myHomeSlider = new Slider($('#slider'))
+  myHomeSlider = new Slider($('#slider'), {timer : 5000})
+  
+  # Schedule instanciation
+  mySchedule = new Schedule()
   
   # Masonry on conferences
   $('.conferences').masonry(
     itemSelector : '.conference'
     containerStyle : { 'position' : 'absolute'}
     columnWidth: (containerWidth) ->
-      console.log containerWidth
       containerWidth / 4
     isAnimated : true
     animationOptions: { duration: 100 }
   )
+  
+  #############
+  #-- ROUTER --#
+  #############
+  router = $.sammy(() ->
 
+    @.get(/\#\/(home|horaire|lieux-et-infos|partenaires|a-propos)\/*$/, (context) ->
+      myOnePager.hashHasChange(this.params['splat'][0])
+    )
+    
+    @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, (cx, match) ->
+      myOnePager.hashHasChange('horaire')
+    )
+    
+    @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, (cx, match, match2) ->
+      console.log match2
+      myOnePager.hashHasChange('horaire')
+    )
+
+  )
+  router.run()
+  myOnePager.animatWhenSliding = yes
   # StickyHeader {{{
   stickyHeader = ( ->
     header = $('nav[role="navigation"]')

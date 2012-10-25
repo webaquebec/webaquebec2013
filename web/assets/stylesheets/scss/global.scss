@@ -772,6 +772,58 @@ $t15m:40px;
 .room-col {
    width: 25%;
 }
+#horaire .width {
+  position: relative;
+}
+#schedule-nav {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  font-size: 18px;
+  font-size: 1.8rem;
+  
+  li {
+    display: inline-block;
+
+    & + li {
+      margin-left: 10px;
+    }
+  }
+  a {
+    display: inline-block;
+    padding: 5px 16px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    color: #27c1dc;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+
+    -webkit-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    -ms-transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+    transition-duration: 200ms;
+
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+
+    &:hover {
+      background: #d7ecf4;
+      border-top: 1px solid #c6e1eb;
+      border-left: 1px solid #c6e1eb;
+      color: #006286;
+      text-decoration: none;
+    }
+  }
+}
 #schedule {
   @extend .width;
   position: relative;
@@ -787,6 +839,7 @@ $t15m:40px;
     li {
       @extend .room-col;
       position: relative;
+      z-index: 10;
       display: block;
       float: left;
       padding-left: 16px;
@@ -794,6 +847,7 @@ $t15m:40px;
         content: '';
         display: block;
         position: absolute;
+        z-index: 10;
         bottom: 8px;
         left: 0px;
         z-index: 1000;
@@ -990,9 +1044,13 @@ $t15m:40px;
               width: 0px;
               height: 0px;
               border-style: solid;
-              border-width: 0 10px 10px 0;
-              border-color: transparent #007bff transparent transparent;
+              border-width: 0 15px 15px 0;
+              border-color: transparent $libeo transparent transparent;
             }
+            
+            &.ixmedia:after { border-color: transparent $ixmedia transparent transparent;}
+            &.vetiq:after { border-color: transparent $vetiq transparent transparent;}
+            &.korem:after { border-color: transparent $korem transparent transparent;}
 
             &:hover {
               color: white;

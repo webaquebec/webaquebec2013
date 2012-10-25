@@ -6,7 +6,7 @@ Author: @louisdumas
 
 
 (function() {
-  var OnePager, Slider, html,
+  var OnePager, Schedule, Slider, html,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   window.App = {};
@@ -31,7 +31,7 @@ Author: @louisdumas
 
     Slider.name = 'Slider';
 
-    function Slider(slider) {
+    function Slider(slider, opts) {
       var _this = this;
       this.slider = slider;
       this.slidesWrap = this.slider.find('.slides-wrap');
@@ -39,6 +39,7 @@ Author: @louisdumas
       this.descWrap = this.slider.find('.descs');
       this.currentIndex = 0;
       this.isAnimated = false;
+      this.timer = opts.timer != null ? opts.timer : 5000;
       this.slides = (function() {
         var key, slide, slideObject, slides, _i, _len, _ref;
         slides = [];
@@ -61,13 +62,15 @@ Author: @louisdumas
       this.descElements = this.descWrap.find('span');
       this.slides[this.currentIndex].addClass('active');
       this.handleNav();
-      this.i = setInterval(function() {
-        if (!_this.isAnimated) {
-          _this.handleNextSlide();
-          _this.isAnimated = true;
-          return _this.slide();
-        }
-      }, 5000);
+      if (this.timer > 0) {
+        this.i = setInterval(function() {
+          if (!_this.isAnimated) {
+            _this.handleNextSlide();
+            _this.isAnimated = true;
+            return _this.slide();
+          }
+        }, this.timer);
+      }
     }
 
     Slider.prototype.handleNav = function() {
@@ -119,6 +122,28 @@ Author: @louisdumas
 
 
   /*
+  # Class Schedule {{{
+  */
+
+
+  Schedule = (function() {
+
+    Schedule.name = 'Schedule';
+
+    function Schedule() {
+      this.wrapper = $('#schedule .slides-wrap');
+    }
+
+    return Schedule;
+
+  })();
+
+  /*
+  # }}}
+  */
+
+
+  /*
   # Class OnePager {{{
   */
 
@@ -143,6 +168,7 @@ Author: @louisdumas
       this.navOffset = this.navHeight;
       this.pagesOffset = {};
       this.resetSectionsOffset();
+      this.animatWhenSliding = false;
       debounced = jQuery.debounce(250, function() {
         return _this.slideTo("#" + _this.pagesOffset[_this.currentPage]['id'], 250);
       });
@@ -155,8 +181,6 @@ Author: @louisdumas
           return _this.HandleScrollEvents();
         }
       }, 20);
-      window.onhashchange = this.hashHasChange;
-      window.onhashchange();
     }
 
     OnePager.prototype.resetSectionsOffset = function() {
@@ -200,7 +224,7 @@ Author: @louisdumas
       this.currentPage = this.getPageIndex(targetId);
       this.setActiveMenu(targetLink);
       targetScrollTop = targetScrollTop <= 0 ? 0 : targetScrollTop;
-      if (this.sectionsWrapp.attr('data-transitions') === 'on') {
+      if (this.animatWhenSliding) {
         return $('body, html').stop().animate({
           'scrollTop': targetScrollTop
         }, speed, $.bez([0.80, 0, 0.20, 1.0]), function() {
@@ -210,8 +234,7 @@ Author: @louisdumas
         return $('body, html').stop().animate({
           'scrollTop': targetScrollTop
         }, 0, function() {
-          _this.isAnimated = false;
-          return _this.sectionsWrapp.attr('data-transitions', 'on');
+          return _this.isAnimated = false;
         });
       }
     };
@@ -227,19 +250,11 @@ Author: @louisdumas
       }
     };
 
-    OnePager.prototype.hashHasChange = function() {
-      var newhash, target, targetLink;
-      if (location.hash) {
-        newhash = '#' + location.hash.replace('#/', '');
-        if (this.sections.filter(newhash).length) {
-          return this.slideTo(newhash, 650);
-        }
-      } else {
-        target = "#" + this.pagesOffset[this.currentPage]['id'];
-        targetLink = $("a[href='" + (target.replace('#', '#/')) + "']");
-        this.slideTo(target, 650);
-        return this.setActiveMenu(targetLink);
-      }
+    OnePager.prototype.hashHasChange = function(target) {
+      var newhash;
+      newhash = "#" + target;
+      console.log('sliding');
+      return this.slideTo(newhash, 650);
     };
 
     OnePager.prototype.HandleScrollEvents = function() {
@@ -276,7 +291,7 @@ Author: @louisdumas
 
 
   $(function() {
-    var $links, body, l, links, myHomeSlider, myOnePager, stickyHeader;
+    var $links, body, l, links, myHomeSlider, myOnePager, mySchedule, router, stickyHeader;
     body = $('body');
     if (!window.console) {
       (function() {
@@ -333,14 +348,16 @@ Author: @louisdumas
   ;
 
     myOnePager = new OnePager();
-    myHomeSlider = new Slider($('#slider'));
+    myHomeSlider = new Slider($('#slider'), {
+      timer: 5000
+    });
+    mySchedule = new Schedule();
     $('.conferences').masonry({
       itemSelector: '.conference',
       containerStyle: {
         'position': 'absolute'
       },
       columnWidth: function(containerWidth) {
-        console.log(containerWidth);
         return containerWidth / 4;
       },
       isAnimated: true,
@@ -348,6 +365,20 @@ Author: @louisdumas
         duration: 100
       }
     });
+    router = $.sammy(function() {
+      this.get(/\#\/(home|horaire|lieux-et-infos|partenaires|a-propos)\/*$/, function(context) {
+        return myOnePager.hashHasChange(this.params['splat'][0]);
+      });
+      this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, function(cx, match) {
+        return myOnePager.hashHasChange('horaire');
+      });
+      return this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, function(cx, match, match2) {
+        console.log(match2);
+        return myOnePager.hashHasChange('horaire');
+      });
+    });
+    router.run();
+    myOnePager.animatWhenSliding = true;
     return stickyHeader = (function() {
       var header, headerOffsetTop, viewport;
       header = $('nav[role="navigation"]');

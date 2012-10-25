@@ -23,12 +23,12 @@
     <nav role="navigation" id="main-nav">
         <div class="width">
             <span class="left">
-                <a class="small-logo" href="#/home"><span class="shy">WAQ</span></a>
+                <a class="small-logo" href="#/home/"><span class="shy">WAQ</span></a>
                 <a class="inscription" href="{# FIXME #}#">Inscrivez-vous</a>
             </span>
             <a href="{# FIXME #}#" class="iron-web"><span class="shy">Iron web</span> Deloitte</a>
             <ul id="nav-wrap">
-              <li><a href="#/horaire">Horaire</a></li>
+              <li><a href="#/horaire/">Horaire</a></li>
               <li><a href="#">Lieu et infos</a></li>
               <li><a href="#">Partenaires</a></li>
               <li><a href="#">À propos</a></li>
@@ -79,6 +79,11 @@
         <section id="horaire" data-section style="height: 2500px;">
             <div class="width padding">
                 <h1 class="h2">Horaire</h1>
+                <ul id="schedule-nav">
+                    <li><a href="#/horaire/mercredi">mercredi le 20 février</a></li>
+                    <li><a href="#/horaire/jeudi">jeudi le 21 février</a></li>
+                    <li><a href="#/horaire/vendredi">vendredi le 22 février</a></li>
+                </ul>
             </div>
             <div id="schedule">
                 <ul id="rooms-name">
@@ -109,22 +114,26 @@
                                         duration  : 45,
                                         performer : 'Ti lp',
                                         img       : "/assets/images/performers/thumb.png",
-                                        desc      : "Lorem ipsum dolor sit amet [...]"
+                                        desc      : "Lorem ipsum dolor sit amet [...]",
+                                        room      : 'libeo'
                                     } %}
                                     
                                     {% include 'include/conference-thumb.html.twig' with {
                                         duration  : 90,
                                         performer : 'Ti Luc',
                                         img       : "/assets/images/performers/thumb.png",
-                                        desc      : "Lorem ipsum dolor sit amet [...]"
+                                        desc      : "Lorem ipsum dolor sit amet [...]",
+                                        room      : 'ixmedia'
                                     } %}
                                     
                                     {% include 'include/conference-thumb.html.twig' with {
                                         duration  : 45,
                                         performer : 'Ti lou',
                                         img       : "/assets/images/performers/thumb.png",
-                                        desc      : "Lorem ipsum dolor sit amet [...]"
+                                        desc      : "Lorem ipsum dolor sit amet [...]",
+                                        room      : 'vetiq'
                                     } %}
+                                    
                                 </div>
                                 <div class="break t12h00 t60m">
                                     Diner
@@ -144,8 +153,8 @@
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
       <script>window.jQuery || document.write('<script src="/assets/javascripts/libs/jquery.js"><\/script>')</script>
       {% block javascripts %}{% endblock %}
-      <script src="/assets/javascripts/libs/jquery.debounce.js"></script>
-      <script src="/assets/javascripts/libs/jquery.masonry.js"></script>
+      <script src="/assets/javascripts/libs/sammy.js"></script>
+      <script src="/assets/javascripts/libs/libs.js"></script>
       <script src="/assets/javascripts/global.js"></script>
 </body>
 </html>

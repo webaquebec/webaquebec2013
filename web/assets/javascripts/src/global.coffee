@@ -106,7 +106,7 @@ class Schedule
     @slides              = @slideWrapper.find('.slide')
     @startingHeight      = 500
     @slideWrapperHeight  = @slideWrapper.outerHeight()
-    @openBtn             = $('#schedule #open-shedule')
+    @openBtn             = $('#schedule #open-shedule a')
     
     @navElement.eq(0).addClass('active')
 
@@ -132,7 +132,7 @@ class Schedule
 
   open: =>
     $(@).trigger('onOpen')
-    
+    @openBtn.html('Fermer')
     @openBtn.addClass('active')
     @overFlowwRapper.css(
       'height'     : @slideWrapperHeight
@@ -140,6 +140,7 @@ class Schedule
     
   close: =>
     $(@).trigger('onClose')
+    @openBtn.html('Tout afficher')
     @openBtn.removeClass('active')
     t = setTimeout( =>
       @overFlowwRapper.css(
@@ -213,7 +214,6 @@ class OnePager
     target.addClass('active')
         
   slideTo: (target ,speed, moreOffsets) ->
-    console.log 'slideTo'
     target          = @sections.filter(target)
     targetId        = target.attr('id')
     moreOffsets     = moreOffsets || 0
@@ -266,6 +266,27 @@ class OnePager
 # }}}
 ###
 
+###
+# Class Gmap {{{
+###
+class customGmap
+  constructor: (elementId) ->
+    console.log "foobar"
+    gMapOptions = 
+      zoom: 17
+      center: new google.maps.LatLng(46.817682, -71.2065922)
+      mapTypeControl: false
+      streetViewControl: false
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    
+    @map = new google.maps.Map($(elementId)[0], gMapOptions)
+  
+  test: ->
+    console.log 'sti'
+###
+# }}}
+###
+
 $ () ->
   # Common 
   ################{{{
@@ -312,6 +333,7 @@ $ () ->
   # Class instaciation
   myOnePager   = new OnePager()
   myHomeSlider = new Slider($('#slider'), {timer : 5000})
+  myGmap       = new customGmap('#gmap')
   mySchedule   = new Schedule(
     onOpen : () ->
       myOnePager.hashHasChange('horaire')
@@ -335,7 +357,6 @@ $ () ->
 
     # @.get(/\/$/, -> )
     @.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, (cx, section) ->
-      console.log section
       myOnePager.hashHasChange(section)
     )
     

@@ -221,7 +221,8 @@ a:hover { color: #06e; text-decoration: underline;}
 #one-pager {
   section {
     @extend .width;
-    padding-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 30px;
   }
   
   .h2 {
@@ -1226,5 +1227,10 @@ $t15m:40px;
 
 /* Google map
 **********************{{{*/
-
+#gmap {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border: 1px solid #cdcdcd;
+}
 /*}}}*/

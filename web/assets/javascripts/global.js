@@ -6,7 +6,7 @@ Author: @louisdumas
 
 
 (function() {
-  var OnePager, Schedule, Slider, html,
+  var OnePager, Schedule, Slider, customGmap, html,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   window.App = {};
@@ -143,7 +143,7 @@ Author: @louisdumas
       this.slides = this.slideWrapper.find('.slide');
       this.startingHeight = 500;
       this.slideWrapperHeight = this.slideWrapper.outerHeight();
-      this.openBtn = $('#schedule #open-shedule');
+      this.openBtn = $('#schedule #open-shedule a');
       this.navElement.eq(0).addClass('active');
       this.openBtn.click(function() {
         if (_this.openBtn.hasClass('active')) {
@@ -171,6 +171,7 @@ Author: @louisdumas
 
     Schedule.prototype.open = function() {
       $(this).trigger('onOpen');
+      this.openBtn.html('Fermer');
       this.openBtn.addClass('active');
       return this.overFlowwRapper.css({
         'height': this.slideWrapperHeight
@@ -181,6 +182,7 @@ Author: @louisdumas
       var t,
         _this = this;
       $(this).trigger('onClose');
+      this.openBtn.html('Tout afficher');
       this.openBtn.removeClass('active');
       return t = setTimeout(function() {
         return _this.overFlowwRapper.css({
@@ -276,7 +278,6 @@ Author: @louisdumas
     OnePager.prototype.slideTo = function(target, speed, moreOffsets) {
       var targetId, targetLink, targetScrollTop,
         _this = this;
-      console.log('slideTo');
       target = this.sections.filter(target);
       targetId = target.attr('id');
       moreOffsets = moreOffsets || 0;
@@ -351,8 +352,43 @@ Author: @louisdumas
   */
 
 
+  /*
+  # Class Gmap {{{
+  */
+
+
+  customGmap = (function() {
+
+    customGmap.name = 'customGmap';
+
+    function customGmap(elementId) {
+      var gMapOptions;
+      console.log("foobar");
+      gMapOptions = {
+        zoom: 17,
+        center: new google.maps.LatLng(46.817682, -71.2065922),
+        mapTypeControl: false,
+        streetViewControl: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      this.map = new google.maps.Map($(elementId)[0], gMapOptions);
+    }
+
+    customGmap.prototype.test = function() {
+      return console.log('sti');
+    };
+
+    return customGmap;
+
+  })();
+
+  /*
+  # }}}
+  */
+
+
   $(function() {
-    var $links, body, l, links, myHomeSlider, myMasonry, myOnePager, mySchedule, router, stickyHeader;
+    var $links, body, l, links, myGmap, myHomeSlider, myMasonry, myOnePager, mySchedule, router, stickyHeader;
     body = $('body');
     if (!window.console) {
       (function() {
@@ -412,6 +448,7 @@ Author: @louisdumas
     myHomeSlider = new Slider($('#slider'), {
       timer: 5000
     });
+    myGmap = new customGmap('#gmap');
     mySchedule = new Schedule({
       onOpen: function() {
         return myOnePager.hashHasChange('horaire');
@@ -435,7 +472,6 @@ Author: @louisdumas
     }, $('.conferences'));
     router = $.sammy(function() {
       this.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, function(cx, section) {
-        console.log(section);
         return myOnePager.hashHasChange(section);
       });
       this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, function(cx, day) {

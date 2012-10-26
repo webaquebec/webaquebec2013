@@ -257,7 +257,7 @@ class OnePager
         targetLink = $("a[href='#/#{pageId}/']")
       
         if !targetLink.hasClass('active')
-          this.setActiveMenu($("a[href='#/#{pageId}/']"))
+          @setActiveMenu($("a[href='#/#{pageId}/']"))
 
   currentPage: @currentPage
   isAnimated : @isAnimated
@@ -271,12 +271,13 @@ class OnePager
 ###
 class customGmap
   constructor: (elementId) ->
-    console.log "foobar"
+    coord = new google.maps.LatLng(46.817682, -71.2065922)
     gMapOptions = 
       zoom: 17
-      center: new google.maps.LatLng(46.817682, -71.2065922)
+      center: coord
       mapTypeControl: false
       streetViewControl: false
+      panControl: false
       mapTypeId: google.maps.MapTypeId.ROADMAP
     
     mapStyle = [
@@ -312,11 +313,89 @@ class customGmap
     styledMap = new google.maps.StyledMapType(mapStyle, {name: "Styled Map"})
     @map.mapTypes.set('map_style', styledMap)
     @map.setMapTypeId('map_style')
+    @infoWindow = new CustomInfoWindow(coord, @map)
+    
     
 ###
 # }}}
 ###
 
+###
+# Class CustomInfoWindow {{{
+###
+class CustomInfoWindow
+  constructor: (position, map) ->
+    console.log "@@@@@@@@"
+    @position = position 
+    @map      = map
+    wrap = '''
+    <div class="customInfoWindow">    
+      <div class="padding">
+        <span class="address">
+          Espace 400e Bell<br>
+          100, Quai Saint-André<br>
+          Québec, QC
+        </span>
+        <img src="/assets/images/png/logo-waq-gray.png" alt="" width="121px" height="41px">
+      </div>
+    </div>
+    '''
+    @wrap = $(wrap)
+    @setMap(@map)
+    @isVisible = true
+    
+    console.log "---------------"
+    console.log position
+  
+  CustomInfoWindow:: = new google.maps.OverlayView()
+  
+  onAdd: ->
+    @wrap.css(
+      display: "block"
+      position: "absolute"
+    )
+    panes = @getPanes()
+    panes.overlayMouseTarget.appendChild(@wrap[0])
+    @iWidth = @wrap.outerWidth()
+    @iHeight = @wrap.outerHeight()
+    
+    cancelHandler = (e) ->
+      e.cancelBubble = true
+      if e.stopPropagation
+        e.stopPropagation()
+    
+    events = ['mousedown', 'touchstart', 'touchend', 'touchmove', 'contextmenu', 'click', 'dblclick', 'mousewheel', 'DOMMouseScroll']
+    @listeners = []
+    for event in events
+      @listeners.push(google.maps.event.addDomListener(@wrap[0], event, cancelHandler);)
+      
+  draw: ->
+    overlayProjection = @getProjection()
+    pos = overlayProjection.fromLatLngToDivPixel(@position)
+    @oX = pos.x - @wrap.outerWidth() / 2
+    @oY = pos.y - @wrap.outerHeight()
+    @wrap.css({
+      left: @oX,
+      top: @oY
+    })
+    
+  panMap: ->
+    if @map.getZoom() < 3
+      @map.setZoom(3)
+      
+    scale = Math.pow(2, @map.getZoom());
+    worldCoordinateCenter = @map.getProjection().fromLatLngToPoint(@position)
+    worldCoordinateNewCenter = new google.maps.Point(
+        worldCoordinateCenter.x - 150/scale,
+        worldCoordinateCenter.y + 200/scale
+    )
+    newCenter = @map.getProjection().fromPointToLatLng(worldCoordinateNewCenter)
+    
+    @map.panTo(newCenter)
+    
+###
+# }}}
+###
 $ () ->
   # Common 
   ################{{{
@@ -385,7 +464,6 @@ $ () ->
   #############
   router = $.sammy(() ->
 
-    # @.get(/\/$/, -> )
     @.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, (cx, section) ->
       myOnePager.hashHasChange(section)
     )

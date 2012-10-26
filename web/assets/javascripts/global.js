@@ -6,7 +6,7 @@ Author: @louisdumas
 
 
 (function() {
-  var OnePager, Schedule, Slider, customGmap, html,
+  var CustomInfoWindow, OnePager, Schedule, Slider, customGmap, html,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   window.App = {};
@@ -362,13 +362,14 @@ Author: @louisdumas
     customGmap.name = 'customGmap';
 
     function customGmap(elementId) {
-      var gMapOptions, mapStyle, styledMap;
-      console.log("foobar");
+      var coord, gMapOptions, mapStyle, styledMap;
+      coord = new google.maps.LatLng(46.817682, -71.2065922);
       gMapOptions = {
         zoom: 17,
-        center: new google.maps.LatLng(46.817682, -71.2065922),
+        center: coord,
         mapTypeControl: false,
         streetViewControl: false,
+        panControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       mapStyle = [
@@ -420,9 +421,93 @@ Author: @louisdumas
       });
       this.map.mapTypes.set('map_style', styledMap);
       this.map.setMapTypeId('map_style');
+      this.infoWindow = new CustomInfoWindow(coord, this.map);
     }
 
     return customGmap;
+
+  })();
+
+  /*
+  # }}}
+  */
+
+
+  /*
+  # Class CustomInfoWindow {{{
+  */
+
+
+  CustomInfoWindow = (function() {
+
+    CustomInfoWindow.name = 'CustomInfoWindow';
+
+    function CustomInfoWindow(position, map) {
+      var wrap;
+      console.log("@@@@@@@@");
+      this.position = position;
+      this.map = map;
+      wrap = '<div class="customInfoWindow">    \n  <div class="padding">\n    <span class="address">\n      Espace 400e Bell<br>\n      100, Quai Saint-André<br>\n      Québec, QC\n    </span>\n    <img src="/assets/images/png/logo-waq-gray.png" alt="" width="121px" height="41px">\n  </div>\n</div>';
+      this.wrap = $(wrap);
+      this.setMap(this.map);
+      this.isVisible = true;
+      console.log("---------------");
+      console.log(position);
+    }
+
+    CustomInfoWindow.prototype = new google.maps.OverlayView();
+
+    CustomInfoWindow.prototype.onAdd = function() {
+      var cancelHandler, event, events, panes, _i, _len, _results;
+      this.wrap.css({
+        display: "block",
+        position: "absolute"
+      });
+      panes = this.getPanes();
+      panes.overlayMouseTarget.appendChild(this.wrap[0]);
+      this.iWidth = this.wrap.outerWidth();
+      this.iHeight = this.wrap.outerHeight();
+      cancelHandler = function(e) {
+        e.cancelBubble = true;
+        if (e.stopPropagation) {
+          return e.stopPropagation();
+        }
+      };
+      events = ['mousedown', 'touchstart', 'touchend', 'touchmove', 'contextmenu', 'click', 'dblclick', 'mousewheel', 'DOMMouseScroll'];
+      this.listeners = [];
+      _results = [];
+      for (_i = 0, _len = events.length; _i < _len; _i++) {
+        event = events[_i];
+        _results.push(this.listeners.push(google.maps.event.addDomListener(this.wrap[0], event, cancelHandler)));
+      }
+      return _results;
+    };
+
+    CustomInfoWindow.prototype.draw = function() {
+      var overlayProjection, pos;
+      overlayProjection = this.getProjection();
+      pos = overlayProjection.fromLatLngToDivPixel(this.position);
+      this.oX = pos.x - this.wrap.outerWidth() / 2;
+      this.oY = pos.y - this.wrap.outerHeight();
+      return this.wrap.css({
+        left: this.oX,
+        top: this.oY
+      });
+    };
+
+    CustomInfoWindow.prototype.panMap = function() {
+      var newCenter, scale, worldCoordinateCenter, worldCoordinateNewCenter;
+      if (this.map.getZoom() < 3) {
+        this.map.setZoom(3);
+      }
+      scale = Math.pow(2, this.map.getZoom());
+      worldCoordinateCenter = this.map.getProjection().fromLatLngToPoint(this.position);
+      worldCoordinateNewCenter = new google.maps.Point(worldCoordinateCenter.x - 150 / scale, worldCoordinateCenter.y + 200 / scale);
+      newCenter = this.map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
+      return this.map.panTo(newCenter);
+    };
+
+    return CustomInfoWindow;
 
   })();
 

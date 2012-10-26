@@ -547,6 +547,7 @@ a:hover {
 #one-pager section {
   padding-top: 10px;
   padding-bottom: 30px;
+  position: relative;
 }
 /* line 232, scss/global.scss */
 #one-pager .h2 {

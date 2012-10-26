@@ -223,7 +223,7 @@ a:hover { color: #06e; text-decoration: underline;}
     @extend .width;
     padding-top: 10px;
     padding-bottom: 30px;
-    
+    position: relative;
     h1 {
       @extend .padding;
     }

@@ -35,7 +35,7 @@
             </ul>
         </div>
     </nav>
-    
+
     <div id="one-pager">
         <div id="home" data-section>
             <header id="header">
@@ -80,67 +80,63 @@
             <div class="width padding">
                 <h1 class="h2">Horaire</h1>
                 <ul id="schedule-nav">
-                    <li><a href="#/horaire/mercredi" data-ref="mercredi">mercredi le 20 février</a></li>
-                    <li><a href="#/horaire/jeudi" data-ref="jeudi">jeudi le 21 février</a></li>
-                    <li><a href="#/horaire/vendredi" data-ref="vendredi">vendredi le 22 février</a></li>
+                    {% for date, dateData in sessions %}
+                        <li><a href="#/horaire/{{ date }}" data-ref="{{ date }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
             <div id="schedule">
                 <ul id="rooms-name">
-                    <li id="libeo">Salle Libéo</li>
-                    <li id="ixmedia">Salle iXmédia</li>
-                    <li id="vetiq">Salle Vétiq</li>
-                    <li id="korem">Salle Korem</li>
+                    {% for room in rooms %}
+                        <li id="room{{ room.id }}">Salle {{ room.name }}</li>
+                    {% endfor %}
                 </ul>
                 <span class="shadow-top"></span>
                 <div class="wrapper">
                     <div id="schedule-wrap">
                         <div id="time-zone"></div>
                         <div class="slides-wrap">
-                            <div id="mercredi" class="slide">
-                                <span id="separators"><span></span><span></span><span></span><span></span></span>
-                                <span class="lines">
-                                    <span class="t7h15"></span>
-                                    <span class="t10h00"></span>
-                                    <span class="t10h30"></span>
-                                </span>
-                                
-                                <div class="break t10h00 t30m">
-                                    Pause
+                            {% for date, dateData in sessions %}
+                                <div id="{{ date }}" class="slide">
+                                    <span id="separators">{% for i in 0..rooms|length %}<span></span>{% endfor %}</span>
+                                    <span class="lines">
+                                        {% for line in lines[date] %}
+                                            <span class="t{{ line }}"></span>
+                                        {% endfor %}
+                                    </span>
+
+                                    {% for blockData in dateData.blocks %}
+                                        {% if blockData.session is defined %}
+                                            {% if blockData.session.break %}
+                                                <div class="break t{{ blockData.session.line }} t{{ blockData.size }}m">
+                                                    {{ blockData.session.description }}
+                                                </div>
+                                            {% else %}
+                                                <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m">
+                                                    {{ blockData.session.description }}
+                                                </div>
+                                            {% endif %}
+                                        {% else %}
+                                            <div class="conferences t{{ blockData.line }} t{{ blockData.size }}m">
+                                                {% for roomId, sessions in blockData.list %}
+                                                    <div class="col">
+                                                        {% for session in sessions %}
+                                                            {% include 'include/conference-thumb.html.twig' with {
+                                                                duration  : session.duration,
+                                                                line  : session.line,
+                                                                performer : speakers[session.speaker_id].name,
+                                                                img       : "/assets/images/performers/" ~ speakers[session.speaker_id].image,
+                                                                desc      : "Lorem ipsum dolor sit amet [...]",
+                                                                room      : session.room_id
+                                                            } %}
+                                                        {% endfor %}
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
-                                <div class="conferences t7h30 t90m">
-                                    
-                                    {% include 'include/conference-thumb.html.twig' with {
-                                        duration  : 45,
-                                        performer : 'Ti lp',
-                                        img       : "/assets/images/performers/thumb.png",
-                                        desc      : "Lorem ipsum dolor sit amet [...]",
-                                        room      : 'libeo'
-                                    } %}
-                                    
-                                    {% include 'include/conference-thumb.html.twig' with {
-                                        duration  : 90,
-                                        performer : 'Ti Luc',
-                                        img       : "/assets/images/performers/thumb.png",
-                                        desc      : "Lorem ipsum dolor sit amet [...]",
-                                        room      : 'ixmedia'
-                                    } %}
-                                    
-                                    {% include 'include/conference-thumb.html.twig' with {
-                                        duration  : 45,
-                                        performer : 'Ti lou',
-                                        img       : "/assets/images/performers/thumb.png",
-                                        desc      : "Lorem ipsum dolor sit amet [...]",
-                                        room      : 'vetiq'
-                                    } %}
-                                    
-                                </div>
-                                <div class="break t12h00 t60m">
-                                    Diner
-                                </div>
-                            </div>
-                            <div id="jeudi" class="slide"></div>
-                            <div id="vendredi" class="slide"></div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

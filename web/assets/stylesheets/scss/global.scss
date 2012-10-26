@@ -223,6 +223,10 @@ a:hover { color: #06e; text-decoration: underline;}
     @extend .width;
     padding-top: 10px;
     padding-bottom: 30px;
+    
+    h1 {
+      @extend .padding;
+    }
   }
   
   .h2 {
@@ -1227,6 +1231,7 @@ $t15m:40px;
 
 /* Google map
 **********************{{{*/
+
 #gmap {
   display: block;
   width: 100%;
@@ -1285,6 +1290,31 @@ $t15m:40px;
     	left: 50%;
     	margin-left: -31px;
     }
+  }
+}
+/*}}}*/
+
+/* Sponsors
+**********************{{{*/
+#partenaires {
+  .group {
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #0686b8;
+    font-size: 21px;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+    float: left;
+    width: 18.1578947%;
+    padding-left: 5%;
+  }
+  
+  ul {
+    background: #f0f8fb;
+    padding: 10px;
+    float: left;
+    width: 81.8421053%;
   }
 }
 /*}}}*/

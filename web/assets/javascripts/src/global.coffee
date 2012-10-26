@@ -279,7 +279,39 @@ class customGmap
       streetViewControl: false
       mapTypeId: google.maps.MapTypeId.ROADMAP
     
+    mapStyle = [
+      {
+        "featureType": "poi",
+        "stylers": [
+          { "hue": "#005eff" },
+          { "lightness": -6 },
+          { "saturation": -100 }
+        ]
+      },{
+        "featureType": "water",
+        "stylers": [
+          { "invert_lightness": true },
+          { "visibility": "on" },
+          { "color": "#0086b8" }
+        ]
+      },{
+        "featureType": "road",
+        "stylers": [
+          { "visibility": "on" },
+          { "hue": "#0099ff" },
+          { "gamma": 1.13 }
+        ]
+      },{
+        "featureType": "landscape",
+        "stylers": [
+          { "saturation": -100 }
+        ]
+      }]
+    
     @map = new google.maps.Map($(elementId)[0], gMapOptions)
+    styledMap = new google.maps.StyledMapType(mapStyle, {name: "Styled Map"})
+    @map.mapTypes.set('map_style', styledMap)
+    @map.setMapTypeId('map_style')
   
   test: ->
     console.log 'sti'
@@ -331,7 +363,6 @@ $ () ->
   #}}}
   
   # Class instaciation
-  myOnePager   = new OnePager()
   myHomeSlider = new Slider($('#slider'), {timer : 5000})
   myGmap       = new customGmap('#gmap')
   mySchedule   = new Schedule(
@@ -340,6 +371,7 @@ $ () ->
     onClose : () ->
       myOnePager.hashHasChange('horaire')
   )
+  myOnePager   = new OnePager()
   
   myMasonry    = new $.Mason(
     itemSelector : '.conference'

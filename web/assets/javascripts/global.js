@@ -362,7 +362,7 @@ Author: @louisdumas
     customGmap.name = 'customGmap';
 
     function customGmap(elementId) {
-      var gMapOptions;
+      var gMapOptions, mapStyle, styledMap;
       console.log("foobar");
       gMapOptions = {
         zoom: 17,
@@ -371,7 +371,55 @@ Author: @louisdumas
         streetViewControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
+      mapStyle = [
+        {
+          "featureType": "poi",
+          "stylers": [
+            {
+              "hue": "#005eff"
+            }, {
+              "lightness": -6
+            }, {
+              "saturation": -100
+            }
+          ]
+        }, {
+          "featureType": "water",
+          "stylers": [
+            {
+              "invert_lightness": true
+            }, {
+              "visibility": "on"
+            }, {
+              "color": "#0086b8"
+            }
+          ]
+        }, {
+          "featureType": "road",
+          "stylers": [
+            {
+              "visibility": "on"
+            }, {
+              "hue": "#0099ff"
+            }, {
+              "gamma": 1.13
+            }
+          ]
+        }, {
+          "featureType": "landscape",
+          "stylers": [
+            {
+              "saturation": -100
+            }
+          ]
+        }
+      ];
       this.map = new google.maps.Map($(elementId)[0], gMapOptions);
+      styledMap = new google.maps.StyledMapType(mapStyle, {
+        name: "Styled Map"
+      });
+      this.map.mapTypes.set('map_style', styledMap);
+      this.map.setMapTypeId('map_style');
     }
 
     customGmap.prototype.test = function() {
@@ -444,7 +492,6 @@ Author: @louisdumas
   }
   ;
 
-    myOnePager = new OnePager();
     myHomeSlider = new Slider($('#slider'), {
       timer: 5000
     });
@@ -457,6 +504,7 @@ Author: @louisdumas
         return myOnePager.hashHasChange('horaire');
       }
     });
+    myOnePager = new OnePager();
     myMasonry = new $.Mason({
       itemSelector: '.conference',
       containerStyle: {

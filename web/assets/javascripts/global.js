@@ -130,11 +130,32 @@ Author: @louisdumas
 
     Schedule.name = 'Schedule';
 
-    function Schedule() {
-      this.wrapper = $('#schedule .slides-wrap');
+    function Schedule(opts) {
+      this.close = __bind(this.close, this);
+
+      this.open = __bind(this.open, this);
+
+      var onClose, onOpen,
+        _this = this;
+      this.slideWrapper = $('#schedule .slides-wrap');
+      this.overFlowwRapper = $('#schedule .wrapper');
       this.navElement = $('#schedule-nav a');
-      this.slides = this.wrapper.find('.slide');
+      this.slides = this.slideWrapper.find('.slide');
+      this.startingHeight = 500;
+      this.slideWrapperHeight = this.slideWrapper.outerHeight();
+      this.openBtn = $('#schedule #open-shedule');
       this.navElement.eq(0).addClass('active');
+      this.openBtn.click(function() {
+        if (_this.openBtn.hasClass('active')) {
+          return _this.close();
+        } else {
+          return _this.open();
+        }
+      });
+      onOpen = (opts != null) && (opts.onOpen != null) ? opts.onOpen : function() {};
+      onClose = (opts != null) && (opts.onClose != null) ? opts.onClose : function() {};
+      $(this).bind('onOpen', onOpen);
+      $(this).bind('onClose', onClose);
     }
 
     Schedule.prototype.slideTo = function(id) {
@@ -143,9 +164,29 @@ Author: @louisdumas
       posX = target.position().left;
       this.navElement.removeClass('active');
       $('[data-ref="' + id + '"]').addClass('active');
-      return this.wrapper.css({
+      return this.slideWrapper.css({
         'left': -posX
       });
+    };
+
+    Schedule.prototype.open = function() {
+      $(this).trigger('onOpen');
+      this.openBtn.addClass('active');
+      return this.overFlowwRapper.css({
+        'height': this.slideWrapperHeight
+      });
+    };
+
+    Schedule.prototype.close = function() {
+      var t,
+        _this = this;
+      $(this).trigger('onClose');
+      this.openBtn.removeClass('active');
+      return t = setTimeout(function() {
+        return _this.overFlowwRapper.css({
+          'height': _this.startingHeight
+        });
+      }, 200);
     };
 
     return Schedule;
@@ -191,7 +232,17 @@ Author: @louisdumas
           return _this.HandleScrollEvents();
         }
       }, 20);
+      this.stopScrollOnMouseScroll();
     }
+
+    OnePager.prototype.stopScrollOnMouseScroll = function() {
+      var stopScroll;
+      stopScroll = function() {
+        return $('body, html').stop();
+      };
+      window.addEventListener('DOMMouseScroll', stopScroll, false);
+      return window.addEventListener('mousewheel', stopScroll, false);
+    };
 
     OnePager.prototype.resetSectionsOffset = function() {
       var i,
@@ -361,7 +412,14 @@ Author: @louisdumas
     myHomeSlider = new Slider($('#slider'), {
       timer: 5000
     });
-    mySchedule = new Schedule();
+    mySchedule = new Schedule({
+      onOpen: function() {
+        return myOnePager.hashHasChange('horaire');
+      },
+      onClose: function() {
+        return myOnePager.hashHasChange('horaire');
+      }
+    });
     myMasonry = new $.Mason({
       itemSelector: '.conference',
       containerStyle: {
@@ -376,18 +434,19 @@ Author: @louisdumas
       }
     }, $('.conferences'));
     router = $.sammy(function() {
-      this.get(/\#\/(home|horaire|lieux-et-infos|partenaires|a-propos)\/*$/, function(context) {
-        return myOnePager.hashHasChange(this.params['splat'][0]);
+      this.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, function(cx, section) {
+        console.log(section);
+        return myOnePager.hashHasChange(section);
       });
       this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, function(cx, day) {
         myOnePager.hashHasChange('horaire');
         return mySchedule.slideTo(day);
       });
       return this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, function(cx, day, conf) {
-        console.log(conf);
         return myOnePager.hashHasChange('horaire');
       });
     });
+    router.debug = true;
     router.run();
     myOnePager.animatWhenSliding = true;
     return stickyHeader = (function() {

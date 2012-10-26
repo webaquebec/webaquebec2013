@@ -12,6 +12,7 @@ if html.style.opacity != undefined
   App.OPACITY = yes 
 else
   html.className += " no-opacity"
+
 #}}}
 
 #############
@@ -98,18 +99,53 @@ class Slider
 # Class Schedule {{{
 ###
 class Schedule
-  constructor: ->
-    @wrapper      = $('#schedule .slides-wrap')
-    @navElement   = $('#schedule-nav a')
-    @slides       = @wrapper.find('.slide')
+  constructor: (opts)->
+    @slideWrapper        = $('#schedule .slides-wrap')
+    @overFlowwRapper     = $('#schedule .wrapper')
+    @navElement          = $('#schedule-nav a')
+    @slides              = @slideWrapper.find('.slide')
+    @startingHeight      = 500
+    @slideWrapperHeight  = @slideWrapper.outerHeight()
+    @openBtn             = $('#schedule #open-shedule')
+    
     @navElement.eq(0).addClass('active')
+
+    @openBtn.click( =>
+      if @openBtn.hasClass('active')
+        @close()
+      else
+        @open()
+    )
+    
+    onOpen  = if opts? && opts.onOpen? then opts.onOpen else () ->
+    onClose = if opts? && opts.onClose? then opts.onClose else () ->
+    
+    $(@).bind('onOpen', onOpen)
+    $(@).bind('onClose', onClose)
     
   slideTo: (id) ->
     target = @slides.filter("##{id}")
     posX   = target.position().left
     @navElement.removeClass('active')
     $('[data-ref="'+id+'"]').addClass('active')
-    @wrapper.css({ 'left' : -posX})
+    @slideWrapper.css({ 'left' : -posX})
+
+  open: =>
+    $(@).trigger('onOpen')
+    
+    @openBtn.addClass('active')
+    @overFlowwRapper.css(
+      'height'     : @slideWrapperHeight
+    )
+    
+  close: =>
+    $(@).trigger('onClose')
+    @openBtn.removeClass('active')
+    t = setTimeout( =>
+      @overFlowwRapper.css(
+        'height'     : @startingHeight
+      )
+    ,200)
 
 ###
 # }}}
@@ -143,6 +179,17 @@ class OnePager
         @HandleScrollEvents()
     , 20
   
+    @stopScrollOnMouseScroll()
+  
+  stopScrollOnMouseScroll: ->
+    stopScroll = ->
+      $('body, html').stop()
+
+    # firefox
+    window.addEventListener('DOMMouseScroll', stopScroll, false);
+    # Everything else
+    window.addEventListener('mousewheel', stopScroll, false)
+
   resetSectionsOffset: ->
     i = 0
     @sections.length
@@ -265,7 +312,13 @@ $ () ->
   # Class instaciation
   myOnePager   = new OnePager()
   myHomeSlider = new Slider($('#slider'), {timer : 5000})
-  mySchedule   = new Schedule()
+  mySchedule   = new Schedule(
+    onOpen : () ->
+      myOnePager.hashHasChange('horaire')
+    onClose : () ->
+      myOnePager.hashHasChange('horaire')
+  )
+  
   myMasonry    = new $.Mason(
     itemSelector : '.conference'
     containerStyle : { 'position' : 'absolute'}
@@ -275,14 +328,15 @@ $ () ->
     animationOptions: { duration: 100 }
   , $('.conferences'))
 
-
   #############
   #-- ROUTER --#
   #############
   router = $.sammy(() ->
 
-    @.get(/\#\/(home|horaire|lieux-et-infos|partenaires|a-propos)\/*$/, (context) ->
-      myOnePager.hashHasChange(this.params['splat'][0])
+    # @.get(/\/$/, -> )
+    @.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, (cx, section) ->
+      console.log section
+      myOnePager.hashHasChange(section)
     )
     
     @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, (cx, day) ->
@@ -291,11 +345,11 @@ $ () ->
     )
     
     @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, (cx, day, conf) ->
-      console.log conf
       myOnePager.hashHasChange('horaire')
     )
 
   )
+  router.debug = true
   router.run()
   myOnePager.animatWhenSliding = yes
 

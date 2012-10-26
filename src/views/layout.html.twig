@@ -29,7 +29,7 @@
             <a href="{# FIXME #}#" class="iron-web"><span class="shy">Iron web</span> Deloitte</a>
             <ul id="nav-wrap">
               <li><a href="#/horaire/">Horaire</a></li>
-              <li><a href="#">Lieu et infos</a></li>
+              <li><a href="#/lieu-et-infos/">Lieu et infos</a></li>
               <li><a href="#">Partenaires</a></li>
               <li><a href="#">À propos</a></li>
             </ul>
@@ -76,8 +76,8 @@
                 </div>
             </div>{# #slider #}
         </div> {# #home #}
-        <section id="horaire" data-section style="height: 2500px;">
-            <div class="width padding">
+        <section id="horaire" data-section>
+            <div class="padding">
                 <h1 class="h2">Horaire</h1>
                 <ul id="schedule-nav">
                     <li><a href="#/horaire/mercredi" data-ref="mercredi">mercredi le 20 février</a></li>
@@ -142,17 +142,23 @@
                             <div id="jeudi" class="slide"></div>
                             <div id="vendredi" class="slide"></div>
                         </div>
-                    </div>
-                </div>
+                    </div> {# #schedule-wrap #}
+                </div> {# .wrapper #}
                 <span class="shadow-bottom"></span>
+                <span id="open-shedule"><a href="javascript://">Tout afficher</a></span>
             </div>
         </section>{# #horaire #}
+        
+        <section id="lieu-et-infos">
+            <h1 class="h2">Lieu et infos</h1>
+        </section>
       </div>
     </div>
 
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
       <script>window.jQuery || document.write('<script src="/assets/javascripts/libs/jquery.js"><\/script>')</script>
       {% block javascripts %}{% endblock %}
+      <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
       <script src="/assets/javascripts/libs/sammy.js"></script>
       <script src="/assets/javascripts/libs/libs.js"></script>
       <script src="/assets/javascripts/global.js"></script>

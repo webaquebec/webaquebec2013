@@ -319,19 +319,29 @@ td {
 /*}}}*/
 /* Common 
 **********************{{{*/
-/* line 122, png/*.png */
-.png-sprite, .png-arrow-white-down, .png-facebook, #social li.facebook a, .png-h2-thingy-hr, .png-h2-thingy, #one-pager .h2:after, .png-iron-web-small-hr, .png-iron-web-small, #main-nav .iron-web:after, .png-logo-waq-small, #main-nav .small-logo, .png-logo-waq, #siteLogo, .png-nav-dash, #main-nav ul#nav-wrap a:after, .png-slider-mask, #slider .mask, .png-twitter, #social li.twitter a {
-  background: url('/assets/images/png-s5db1706af6.png') no-repeat;
+/* line 146, png/*.png */
+.png-sprite, .png-arrow-white-down-hr, .png-arrow-white-down, .png-down-arrow, #schedule #open-shedule a:after, .png-facebook, #social li.facebook a, .png-h2-thingy-hr, .png-h2-thingy, #one-pager .h2:after, .png-iron-web-small-hr, .png-iron-web-small, #main-nav .iron-web:after, .png-logo-waq-small, #main-nav .small-logo, .png-logo-waq, #siteLogo, .png-nav-dash, #main-nav ul#nav-wrap a:after, .png-schedule-btn, #schedule #open-shedule a, .png-slider-mask, #slider .mask, .png-twitter, #social li.twitter a {
+  background: url('/assets/images/png-s9b31ff101d.png') no-repeat;
+}
+
+/* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.png-arrow-white-down-hr {
+  background-position: 0 -752px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-arrow-white-down {
-  background-position: 0 -789px;
+  background-position: 0 -888px;
+}
+
+/* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.png-down-arrow, #schedule #open-shedule a:after {
+  background-position: 0 -843px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-facebook, #social li.facebook a {
-  background-position: 0 -716px;
+  background-position: 0 -792px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -341,7 +351,7 @@ td {
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-h2-thingy, #one-pager .h2:after {
-  background-position: 0 -653px;
+  background-position: 0 -689px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -366,7 +376,12 @@ td {
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-nav-dash, #main-nav ul#nav-wrap a:after {
-  background-position: 0 -767px;
+  background-position: 0 -866px;
+}
+
+/* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.png-schedule-btn, #schedule #open-shedule a {
+  background-position: 0 -653px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -376,7 +391,7 @@ td {
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-twitter, #social li.twitter a {
-  background-position: 0 -743px;
+  background-position: 0 -819px;
 }
 
 /* line 107, scss/global.scss */
@@ -426,14 +441,14 @@ a:hover {
 }
 
 /* line 130, scss/global.scss */
-.width, #header, #slider, #schedule {
+.width, #one-pager section, #header, #slider {
   min-width: 960px;
   max-width: 1140px;
   margin: 0 auto;
 }
 
 /* line 135, scss/global.scss */
-.padding, #header, #main-nav .width, #main-nav #header, #main-nav #slider, #main-nav #schedule {
+.padding, #header, #main-nav .width, #main-nav #one-pager section, #one-pager #main-nav section, #main-nav #header, #main-nav #slider {
   padding: 0 20px;
 }
 
@@ -527,7 +542,7 @@ a:hover {
 #one-pager section {
   padding-top: 30px;
 }
-/* line 226, scss/global.scss */
+/* line 227, scss/global.scss */
 #one-pager .h2 {
   position: relative;
   font-weight: normal;
@@ -536,7 +551,7 @@ a:hover {
   text-transform: uppercase;
   color: #006186;
 }
-/* line 235, scss/global.scss */
+/* line 236, scss/global.scss */
 #one-pager .h2:after {
   display: inline-block;
   position: relative;
@@ -549,12 +564,12 @@ a:hover {
 /* }}} */
 /* header
 **********************{{{*/
-/* line 251, scss/global.scss */
+/* line 252, scss/global.scss */
 #header {
   padding: 25px 0 53px 0;
 }
 
-/* line 256, scss/global.scss */
+/* line 257, scss/global.scss */
 #siteLogo {
   float: left;
   display: block;
@@ -562,7 +577,7 @@ a:hover {
   height: 98px;
 }
 
-/* line 264, scss/global.scss */
+/* line 265, scss/global.scss */
 #event-desc {
   float: left;
   font-size: 21px;
@@ -570,7 +585,7 @@ a:hover {
   color: #4e4e4e;
   margin: 6px 0 0 45px;
 }
-/* line 270, scss/global.scss */
+/* line 271, scss/global.scss */
 #event-desc h1 {
   text-transform: uppercase;
   font-size: 32px;
@@ -580,7 +595,7 @@ a:hover {
   margin: 0 0 0px 0;
 }
 
-/* line 280, scss/global.scss */
+/* line 281, scss/global.scss */
 #social {
   text-align: right;
   font-family: "misobold", Arial, Sans-serif;
@@ -589,27 +604,27 @@ a:hover {
   font-size: 1.8rem;
   vertical-align: top;
 }
-/* line 288, scss/global.scss */
+/* line 289, scss/global.scss */
 #social li {
   position: relative;
   display: inline-block;
   margin: 0 15px;
 }
-/* line 293, scss/global.scss */
+/* line 294, scss/global.scss */
 #social li:first-child {
   top: -6px;
 }
-/* line 297, scss/global.scss */
+/* line 298, scss/global.scss */
 #social li.twitter {
   top: -3px;
 }
-/* line 299, scss/global.scss */
+/* line 300, scss/global.scss */
 #social li.twitter a {
   display: block;
   width: 21px;
   height: 19px;
 }
-/* line 306, scss/global.scss */
+/* line 307, scss/global.scss */
 #social li.facebook a {
   display: block;
   width: 22px;
@@ -619,7 +634,7 @@ a:hover {
 /* }}} */
 /* Main nav
 **********************{{{*/
-/* line 319, scss/global.scss */
+/* line 320, scss/global.scss */
 #main-nav {
   position: absolute;
   z-index: 100;
@@ -633,11 +648,11 @@ a:hover {
   text-align: center;
   padding-top: 20px;
 }
-/* line 333, scss/global.scss */
-#main-nav .width, #main-nav #header, #main-nav #slider, #main-nav #schedule {
+/* line 334, scss/global.scss */
+#main-nav .width, #main-nav #one-pager section, #one-pager #main-nav section, #main-nav #header, #main-nav #slider {
   position: relative;
 }
-/* line 335, scss/global.scss */
+/* line 336, scss/global.scss */
 #main-nav ul#nav-wrap {
   position: relative;
   display: inline-block;
@@ -667,12 +682,12 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 368, scss/global.scss */
+/* line 369, scss/global.scss */
 #main-nav ul#nav-wrap li {
   margin: 0 18px;
   display: inline-block;
 }
-/* line 373, scss/global.scss */
+/* line 374, scss/global.scss */
 #main-nav ul#nav-wrap a {
   display: block;
   position: relative;
@@ -693,7 +708,7 @@ a:hover {
   transition-timing-function: linear;
   -webkit-backface-visibility: hidden;
 }
-/* line 397, scss/global.scss */
+/* line 398, scss/global.scss */
 #main-nav ul#nav-wrap a:after {
   content: "";
   position: absolute;
@@ -703,12 +718,12 @@ a:hover {
   width: 17px;
   height: 17px;
 }
-/* line 410, scss/global.scss */
+/* line 411, scss/global.scss */
 #main-nav ul#nav-wrap a:hover, #main-nav ul#nav-wrap a:focus, #main-nav ul#nav-wrap a.active {
   text-decoration: none;
   color: red;
 }
-/* line 417, scss/global.scss */
+/* line 418, scss/global.scss */
 #main-nav .left {
   position: absolute;
   display: inline-block;
@@ -736,18 +751,18 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 447, scss/global.scss */
+/* line 448, scss/global.scss */
 #main-nav .left a {
   position: relative;
   left: -9999em;
 }
-/* line 453, scss/global.scss */
+/* line 454, scss/global.scss */
 #main-nav .small-logo {
   display: inline-block;
   width: 97px;
   height: 33px;
 }
-/* line 460, scss/global.scss */
+/* line 461, scss/global.scss */
 #main-nav .inscription {
   position: relative;
   top: -11px;
@@ -756,14 +771,14 @@ a:hover {
   font-family: "misobold", Arial, Sans-serif;
   margin-left: 27px;
 }
-/* line 470, scss/global.scss */
+/* line 471, scss/global.scss */
 #main-nav .iron-web {
   position: relative;
   top: 4px;
   float: right;
   padding-left: 86px;
 }
-/* line 477, scss/global.scss */
+/* line 478, scss/global.scss */
 #main-nav .iron-web:after {
   content: "";
   display: block;
@@ -773,25 +788,25 @@ a:hover {
   width: 66px;
   height: 13px;
 }
-/* line 489, scss/global.scss */
+/* line 490, scss/global.scss */
 #main-nav.sticky {
   position: fixed;
   top: 0px;
 }
-/* line 493, scss/global.scss */
+/* line 494, scss/global.scss */
 #main-nav.sticky ul#nav-wrap {
   top: 5px;
   left: 163px;
   font-size: 18px;
   font-size: 1.8rem;
 }
-/* line 500, scss/global.scss */
+/* line 501, scss/global.scss */
 #main-nav.sticky .left {
   opacity: 1;
   left: 20px;
   top: 0;
 }
-/* line 505, scss/global.scss */
+/* line 506, scss/global.scss */
 #main-nav.sticky .left a {
   position: relative;
   left: 0;
@@ -800,7 +815,7 @@ a:hover {
 /* }}} */
 /* Slider
 **********************{{{*/
-/* line 516, scss/global.scss */
+/* line 517, scss/global.scss */
 #slider {
   position: relative;
   z-index: 10;
@@ -808,7 +823,7 @@ a:hover {
   background: #0a6183;
   overflow: hidden;
 }
-/* line 524, scss/global.scss */
+/* line 525, scss/global.scss */
 #slider .texture-mask {
   position: absolute;
   z-index: 11;
@@ -819,7 +834,7 @@ a:hover {
   display: block;
   background: url("/assets/images/interface/slider-texture.png") repeat transparent;
 }
-/* line 534, scss/global.scss */
+/* line 535, scss/global.scss */
 #slider .mask {
   display: block;
   position: absolute;
@@ -829,7 +844,7 @@ a:hover {
   width: 575px;
   height: 347px;
 }
-/* line 544, scss/global.scss */
+/* line 545, scss/global.scss */
 #slider .slider-info {
   position: absolute;
   z-index: 13;
@@ -840,13 +855,13 @@ a:hover {
   font-size: 42px;
   font-size: 4.2rem;
 }
-/* line 554, scss/global.scss */
+/* line 555, scss/global.scss */
 #slider .desc-nav-wrap {
   margin: 5px 0 0 71px;
   font-size: 14px;
   font-size: 1.4rem;
 }
-/* line 560, scss/global.scss */
+/* line 561, scss/global.scss */
 #slider .slider-nav a {
   display: inline-block;
   background: white;
@@ -874,18 +889,18 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 592, scss/global.scss */
+/* line 593, scss/global.scss */
 #slider .slider-nav a:hover, #slider .slider-nav a:focus, #slider .slider-nav a.active {
   background: #1fc2dd;
 }
-/* line 597, scss/global.scss */
+/* line 598, scss/global.scss */
 #slider .descs {
   position: relative;
   display: block;
   font-size: 24px;
   font-size: 2.4rem;
 }
-/* line 603, scss/global.scss */
+/* line 604, scss/global.scss */
 #slider .descs span {
   position: absolute;
   display: inline-block;
@@ -914,18 +929,18 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 634, scss/global.scss */
+/* line 635, scss/global.scss */
 #slider .descs span.backstage {
   opacity: 0;
   top: 0;
 }
-/* line 639, scss/global.scss */
+/* line 640, scss/global.scss */
 #slider .descs span.on-stage {
   opacity: 1;
   top: 0;
   left: 0;
 }
-/* line 647, scss/global.scss */
+/* line 648, scss/global.scss */
 #slider .slides-wrap {
   position: relative;
   z-index: 10;
@@ -952,7 +967,7 @@ a:hover {
   -o-transform: translateZ(0);
   -moz-tform: translateZ(0);
 }
-/* line 677, scss/global.scss */
+/* line 678, scss/global.scss */
 #slider .slides-wrap .slide {
   position: relative;
   float: left;
@@ -960,7 +975,7 @@ a:hover {
   height: 100%;
   overflow: hidden;
 }
-/* line 684, scss/global.scss */
+/* line 685, scss/global.scss */
 #slider .slides-wrap .slide img {
   position: absolute;
   height: 100%;
@@ -971,227 +986,227 @@ a:hover {
 /* }}} */
 /* Schedule
 **********************{{{*/
-/* line 707, scss/global.scss */
+/* line 708, scss/global.scss */
 .t7h00 {
   top: 0;
 }
 
-/* line 708, scss/global.scss */
+/* line 709, scss/global.scss */
 .t7h15 {
   top: 40px;
 }
 
-/* line 709, scss/global.scss */
+/* line 710, scss/global.scss */
 .t7h30 {
   top: 80px;
 }
 
-/* line 710, scss/global.scss */
+/* line 711, scss/global.scss */
 .t7h45 {
   top: 120px;
 }
 
-/* line 712, scss/global.scss */
+/* line 713, scss/global.scss */
 .t8h00 {
   top: 160px;
 }
 
-/* line 713, scss/global.scss */
+/* line 714, scss/global.scss */
 .t8h15 {
   top: 200px;
 }
 
-/* line 714, scss/global.scss */
+/* line 715, scss/global.scss */
 .t8h30 {
   top: 240px;
 }
 
-/* line 715, scss/global.scss */
+/* line 716, scss/global.scss */
 .t8h45 {
   top: 280px;
 }
 
-/* line 717, scss/global.scss */
+/* line 718, scss/global.scss */
 .t9h00 {
   top: 320px;
 }
 
-/* line 718, scss/global.scss */
+/* line 719, scss/global.scss */
 .t9h15 {
   top: 360px;
 }
 
-/* line 719, scss/global.scss */
+/* line 720, scss/global.scss */
 .t9h30 {
   top: 400px;
 }
 
-/* line 720, scss/global.scss */
+/* line 721, scss/global.scss */
 .t9h45 {
   top: 440px;
 }
 
-/* line 722, scss/global.scss */
+/* line 723, scss/global.scss */
 .t10h00 {
   top: 480px;
 }
 
-/* line 723, scss/global.scss */
+/* line 724, scss/global.scss */
 .t10h15 {
   top: 520px;
 }
 
-/* line 724, scss/global.scss */
+/* line 725, scss/global.scss */
 .t10h30 {
   top: 560px;
 }
 
-/* line 725, scss/global.scss */
+/* line 726, scss/global.scss */
 .t10h45 {
   top: 600px;
 }
 
-/* line 728, scss/global.scss */
+/* line 729, scss/global.scss */
 .t11h00 {
   top: 640px;
 }
 
-/* line 729, scss/global.scss */
+/* line 730, scss/global.scss */
 .t11h15 {
   top: 680px;
 }
 
-/* line 730, scss/global.scss */
+/* line 731, scss/global.scss */
 .t11h30 {
   top: 720px;
 }
 
-/* line 731, scss/global.scss */
+/* line 732, scss/global.scss */
 .t11h45 {
   top: 760px;
 }
 
-/* line 733, scss/global.scss */
+/* line 734, scss/global.scss */
 .t12h00 {
   top: 800px;
 }
 
-/* line 735, scss/global.scss */
+/* line 736, scss/global.scss */
 .t13h00 {
   top: 960px;
 }
 
-/* line 736, scss/global.scss */
+/* line 737, scss/global.scss */
 .t13h15 {
   top: 1000px;
 }
 
-/* line 737, scss/global.scss */
+/* line 738, scss/global.scss */
 .t13h30 {
   top: 1040px;
 }
 
-/* line 738, scss/global.scss */
+/* line 739, scss/global.scss */
 .t13h45 {
   top: 1080px;
 }
 
-/* line 740, scss/global.scss */
+/* line 741, scss/global.scss */
 .t14h00 {
   top: 1120px;
 }
 
-/* line 741, scss/global.scss */
+/* line 742, scss/global.scss */
 .t14h15 {
   top: 1160px;
 }
 
-/* line 742, scss/global.scss */
+/* line 743, scss/global.scss */
 .t14h30 {
   top: 1200px;
 }
 
-/* line 743, scss/global.scss */
+/* line 744, scss/global.scss */
 .t14h45 {
   top: 1240px;
 }
 
-/* line 745, scss/global.scss */
+/* line 746, scss/global.scss */
 .t15h00 {
   top: 1280px;
 }
 
-/* line 746, scss/global.scss */
+/* line 747, scss/global.scss */
 .t15h15 {
   top: 1320px;
 }
 
-/* line 747, scss/global.scss */
+/* line 748, scss/global.scss */
 .t15h30 {
   top: 1360px;
 }
 
-/* line 748, scss/global.scss */
+/* line 749, scss/global.scss */
 .t15h45 {
   top: 1400px;
 }
 
-/* line 750, scss/global.scss */
+/* line 751, scss/global.scss */
 .t16h00 {
   top: 1440px;
 }
 
-/* line 751, scss/global.scss */
+/* line 752, scss/global.scss */
 .t16h15 {
   top: 1480px;
 }
 
-/* line 752, scss/global.scss */
+/* line 753, scss/global.scss */
 .t16h30 {
   top: 1520px;
 }
 
-/* line 753, scss/global.scss */
+/* line 754, scss/global.scss */
 .t16h45 {
   top: 1560px;
 }
 
-/* line 755, scss/global.scss */
+/* line 756, scss/global.scss */
 .t17h00 {
   top: 1600px;
 }
 
-/* line 757, scss/global.scss */
+/* line 758, scss/global.scss */
 .t15m {
   height: 40px;
 }
 
-/* line 758, scss/global.scss */
+/* line 759, scss/global.scss */
 .t30m {
   height: 80px;
 }
 
-/* line 759, scss/global.scss */
+/* line 760, scss/global.scss */
 .t45m {
   height: 120px;
 }
 
-/* line 760, scss/global.scss */
+/* line 761, scss/global.scss */
 .t60m {
   height: 160px;
 }
 
-/* line 761, scss/global.scss */
+/* line 762, scss/global.scss */
 .t75m {
   height: 200px;
 }
 
-/* line 762, scss/global.scss */
+/* line 763, scss/global.scss */
 .t90m {
   height: 240px;
 }
 
-/* line 764, scss/global.scss */
+/* line 765, scss/global.scss */
 .blue-line, #schedule .wrapper .slides-wrap .lines span {
   position: absolute;
   display: block;
@@ -1200,17 +1215,17 @@ a:hover {
   border-bottom: 1px solid #bfedf4;
 }
 
-/* line 772, scss/global.scss */
+/* line 773, scss/global.scss */
 .room-col, #schedule #rooms-name li, #schedule .wrapper #separators span {
   width: 25%;
 }
 
-/* line 775, scss/global.scss */
-#horaire .width, #horaire #header, #horaire #slider, #horaire #schedule {
+/* line 776, scss/global.scss */
+#horaire .padding, #horaire #header, #horaire #main-nav .width, #main-nav #horaire .width, #horaire #main-nav #one-pager section, #main-nav #one-pager #horaire section, #horaire #one-pager #main-nav section, #one-pager #main-nav #horaire section, #horaire #main-nav #header, #main-nav #horaire #header, #horaire #main-nav #slider, #main-nav #horaire #slider {
   position: relative;
 }
 
-/* line 778, scss/global.scss */
+/* line 779, scss/global.scss */
 #schedule-nav {
   position: absolute;
   z-index: 10;
@@ -1219,15 +1234,15 @@ a:hover {
   font-size: 18px;
   font-size: 1.8rem;
 }
-/* line 786, scss/global.scss */
+/* line 787, scss/global.scss */
 #schedule-nav li {
   display: inline-block;
 }
-/* line 789, scss/global.scss */
+/* line 790, scss/global.scss */
 #schedule-nav li + li {
   margin-left: 10px;
 }
-/* line 793, scss/global.scss */
+/* line 794, scss/global.scss */
 #schedule-nav a {
   display: inline-block;
   padding: 5px 16px;
@@ -1251,7 +1266,7 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 820, scss/global.scss */
+/* line 821, scss/global.scss */
 #schedule-nav a:hover, #schedule-nav a:focus, #schedule-nav a.active {
   background: #d7ecf4;
   border-top: 1px solid #c6e1eb;
@@ -1260,7 +1275,7 @@ a:hover {
   text-decoration: none;
 }
 
-/* line 829, scss/global.scss */
+/* line 830, scss/global.scss */
 #schedule {
   position: relative;
 }
@@ -1336,13 +1351,33 @@ a:hover {
   height: 500px;
   overflow: hidden;
   overflow-y: scroll;
+  -webkit-transition-property: height;
+  -moz-transition-property: height;
+  -ms-transition-property: height;
+  -o-transition-property: height;
+  transition-property: height;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -ms-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+  -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -o-transform: translateZ(0);
+  -moz-tform: translateZ(0);
+  transform: translateZ(0);
 }
-/* line 897, scss/global.scss */
+/* line 920, scss/global.scss */
 #schedule .wrapper #schedule-wrap {
   position: relative;
   height: 1760px;
 }
-/* line 902, scss/global.scss */
+/* line 925, scss/global.scss */
 #schedule .wrapper #separators {
   position: absolute;
   z-index: 10;
@@ -1351,18 +1386,18 @@ a:hover {
   width: 91.22807%;
   height: 100%;
 }
-/* line 911, scss/global.scss */
+/* line 934, scss/global.scss */
 #schedule .wrapper #separators span {
   position: relative;
   display: block;
   float: left;
   height: 100%;
 }
-/* line 917, scss/global.scss */
+/* line 940, scss/global.scss */
 #schedule .wrapper #separators span + span {
   border-left: 1px solid black;
 }
-/* line 921, scss/global.scss */
+/* line 944, scss/global.scss */
 #schedule .wrapper #time-zone {
   position: absolute;
   z-index: 15;
@@ -1374,7 +1409,7 @@ a:hover {
   border-right: 1px solid #bbbdbf;
   height: 1760px;
 }
-/* line 933, scss/global.scss */
+/* line 956, scss/global.scss */
 #schedule .wrapper .slides-wrap {
   position: absolute;
   z-index: 12;
@@ -1404,7 +1439,7 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 967, scss/global.scss */
+/* line 990, scss/global.scss */
 #schedule .wrapper .slides-wrap .slide {
   position: relative;
   float: left;
@@ -1412,7 +1447,7 @@ a:hover {
   width: 33.33333333333%;
   padding-left: 2.92398%;
 }
-/* line 979, scss/global.scss */
+/* line 998, scss/global.scss */
 #schedule .wrapper .slides-wrap .lines {
   position: absolute;
   width: 100%;
@@ -1421,11 +1456,11 @@ a:hover {
   z-index: 13;
   height: 100%;
 }
-/* line 987, scss/global.scss */
+/* line 1006, scss/global.scss */
 #schedule .wrapper .slides-wrap .lines span {
   width: 100%;
 }
-/* line 995, scss/global.scss */
+/* line 1014, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences,
 #schedule .wrapper .slides-wrap .break {
   position: absolute;
@@ -1433,12 +1468,12 @@ a:hover {
   display: block;
   width: 91.22807%;
 }
-/* line 1002, scss/global.scss */
+/* line 1021, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences {
   margin: 0;
   padding: 0;
 }
-/* line 1007, scss/global.scss */
+/* line 1026, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference {
   width: 24.9%;
   float: left;
@@ -1464,11 +1499,11 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1034, scss/global.scss */
+/* line 1053, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference:hover {
   background: #88dcec;
 }
-/* line 1038, scss/global.scss */
+/* line 1057, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white {
   position: relative;
   display: block;
@@ -1494,7 +1529,7 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1065, scss/global.scss */
+/* line 1084, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white:after {
   content: "";
   position: absolute;
@@ -1506,29 +1541,29 @@ a:hover {
   border-width: 0 15px 15px 0;
   border-color: transparent #03d0bc transparent transparent;
 }
-/* line 1077, scss/global.scss */
+/* line 1096, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white.ixmedia:after {
   border-color: transparent #c6ac03 transparent transparent;
 }
-/* line 1078, scss/global.scss */
+/* line 1097, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white.vetiq:after {
   border-color: transparent #02c66a transparent transparent;
 }
-/* line 1079, scss/global.scss */
+/* line 1098, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white.korem:after {
   border-color: transparent #c61d5a transparent transparent;
 }
-/* line 1081, scss/global.scss */
+/* line 1100, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white:hover {
   color: white;
   background: #0587b9;
   text-decoration: none;
 }
-/* line 1086, scss/global.scss */
+/* line 1105, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white:hover h2 {
   color: white;
 }
-/* line 1092, scss/global.scss */
+/* line 1111, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference h2 {
   color: #0687b9;
   font-weight: bold;
@@ -1556,26 +1591,78 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 1124, scss/global.scss */
+/* line 1143, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference img {
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 1130, scss/global.scss */
+/* line 1149, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference span[itemprop="description"] {
   display: block;
   width: 122px;
 }
-/* line 1136, scss/global.scss */
+/* line 1155, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference.t90m .white {
   padding: 130px 10px 10px 10px;
 }
-/* line 1142, scss/global.scss */
+/* line 1161, scss/global.scss */
 #schedule .wrapper .slides-wrap .break {
   display: block;
   z-index: 12;
   background: url("/assets/images/interface/break-texture.png") repeat transparent;
 }
+/* line 1169, scss/global.scss */
+#schedule #open-shedule {
+  display: block;
+  text-align: center;
+}
+/* line 1173, scss/global.scss */
+#schedule #open-shedule a {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #0086b9;
+  font-size: 22px;
+  font-size: 2.2rem;
+  font-family: "misobold", Arial, Sans-serif;
+  padding: 2px 50px 2px 10px;
+  width: 216px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -ms-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+/* line 1204, scss/global.scss */
+#schedule #open-shedule a:after {
+  content: "";
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  margin-top: -8px;
+  width: 16px;
+  height: 18px;
+}
+/* line 1217, scss/global.scss */
+#schedule #open-shedule a:hover, #schedule #open-shedule a:focus, #schedule #open-shedule a:active {
+  opacity: 0.7;
+  text-decoration: none;
+}
 
 /* }}} */
+/* Google map
+**********************{{{*/
+/*}}}*/

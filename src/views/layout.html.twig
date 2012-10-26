@@ -96,7 +96,7 @@
                         <div class="slides-wrap">
                             {% for date, dateData in sessions %}
                                 <div id="{{ date }}" class="slide">
-                                    <span id="separators">{% for i in 0..rooms|length %}<span></span>{% endfor %}</span>
+                                    <span id="separators">{% for i in 1..rooms|length %}<span></span>{% endfor %}</span>
                                     <span class="lines">
                                         {% for line in lines[date] %}
                                             <span class="t{{ line }}"></span>

@@ -310,11 +310,9 @@ class customGmap
     
     @map = new google.maps.Map($(elementId)[0], gMapOptions)
     styledMap = new google.maps.StyledMapType(mapStyle, {name: "Styled Map"})
-    @map.mapTypes.set('map_style', styledMap)
+    @+map.mapTypes.set('map_style', styledMap)
     @map.setMapTypeId('map_style')
-  
-  test: ->
-    console.log 'sti'
+    
 ###
 # }}}
 ###

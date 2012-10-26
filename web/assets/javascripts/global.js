@@ -418,13 +418,9 @@ Author: @louisdumas
       styledMap = new google.maps.StyledMapType(mapStyle, {
         name: "Styled Map"
       });
-      this.map.mapTypes.set('map_style', styledMap);
+      this + map.mapTypes.set('map_style', styledMap);
       this.map.setMapTypeId('map_style');
     }
-
-    customGmap.prototype.test = function() {
-      return console.log('sti');
-    };
 
     return customGmap;
 

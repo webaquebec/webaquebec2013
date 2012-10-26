@@ -6,7 +6,7 @@ Author: @louisdumas
 
 
 (function() {
-  var OnePager, Schedule, Slider, html,
+  var CustomInfoWindow, OnePager, Schedule, Slider, customGmap, html,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   window.App = {};
@@ -130,11 +130,32 @@ Author: @louisdumas
 
     Schedule.name = 'Schedule';
 
-    function Schedule() {
-      this.wrapper = $('#schedule .slides-wrap');
+    function Schedule(opts) {
+      this.close = __bind(this.close, this);
+
+      this.open = __bind(this.open, this);
+
+      var onClose, onOpen,
+        _this = this;
+      this.slideWrapper = $('#schedule .slides-wrap');
+      this.overFlowwRapper = $('#schedule .wrapper');
       this.navElement = $('#schedule-nav a');
-      this.slides = this.wrapper.find('.slide');
+      this.slides = this.slideWrapper.find('.slide');
+      this.startingHeight = 500;
+      this.slideWrapperHeight = this.slideWrapper.outerHeight();
+      this.openBtn = $('#schedule #open-shedule a');
       this.navElement.eq(0).addClass('active');
+      this.openBtn.click(function() {
+        if (_this.openBtn.hasClass('active')) {
+          return _this.close();
+        } else {
+          return _this.open();
+        }
+      });
+      onOpen = (opts != null) && (opts.onOpen != null) ? opts.onOpen : function() {};
+      onClose = (opts != null) && (opts.onClose != null) ? opts.onClose : function() {};
+      $(this).bind('onOpen', onOpen);
+      $(this).bind('onClose', onClose);
     }
 
     Schedule.prototype.slideTo = function(id) {
@@ -143,9 +164,31 @@ Author: @louisdumas
       posX = target.position().left;
       this.navElement.removeClass('active');
       $('[data-ref="' + id + '"]').addClass('active');
-      return this.wrapper.css({
+      return this.slideWrapper.css({
         'left': -posX
       });
+    };
+
+    Schedule.prototype.open = function() {
+      $(this).trigger('onOpen');
+      this.openBtn.html('Fermer');
+      this.openBtn.addClass('active');
+      return this.overFlowwRapper.css({
+        'height': this.slideWrapperHeight
+      });
+    };
+
+    Schedule.prototype.close = function() {
+      var t,
+        _this = this;
+      $(this).trigger('onClose');
+      this.openBtn.html('Tout afficher');
+      this.openBtn.removeClass('active');
+      return t = setTimeout(function() {
+        return _this.overFlowwRapper.css({
+          'height': _this.startingHeight
+        });
+      }, 200);
     };
 
     return Schedule;
@@ -191,7 +234,17 @@ Author: @louisdumas
           return _this.HandleScrollEvents();
         }
       }, 20);
+      this.stopScrollOnMouseScroll();
     }
+
+    OnePager.prototype.stopScrollOnMouseScroll = function() {
+      var stopScroll;
+      stopScroll = function() {
+        return $('body, html').stop();
+      };
+      window.addEventListener('DOMMouseScroll', stopScroll, false);
+      return window.addEventListener('mousewheel', stopScroll, false);
+    };
 
     OnePager.prototype.resetSectionsOffset = function() {
       var i,
@@ -225,7 +278,6 @@ Author: @louisdumas
     OnePager.prototype.slideTo = function(target, speed, moreOffsets) {
       var targetId, targetLink, targetScrollTop,
         _this = this;
-      console.log('slideTo');
       target = this.sections.filter(target);
       targetId = target.attr('id');
       moreOffsets = moreOffsets || 0;
@@ -300,8 +352,172 @@ Author: @louisdumas
   */
 
 
+  /*
+  # Class Gmap {{{
+  */
+
+
+  customGmap = (function() {
+
+    customGmap.name = 'customGmap';
+
+    function customGmap(elementId) {
+      var coord, gMapOptions, mapStyle, styledMap;
+      coord = new google.maps.LatLng(46.817682, -71.2065922);
+      gMapOptions = {
+        zoom: 17,
+        center: coord,
+        mapTypeControl: false,
+        streetViewControl: false,
+        panControl: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      mapStyle = [
+        {
+          "featureType": "poi",
+          "stylers": [
+            {
+              "hue": "#005eff"
+            }, {
+              "lightness": -6
+            }, {
+              "saturation": -100
+            }
+          ]
+        }, {
+          "featureType": "water",
+          "stylers": [
+            {
+              "invert_lightness": true
+            }, {
+              "visibility": "on"
+            }, {
+              "color": "#0086b8"
+            }
+          ]
+        }, {
+          "featureType": "road",
+          "stylers": [
+            {
+              "visibility": "on"
+            }, {
+              "hue": "#0099ff"
+            }, {
+              "gamma": 1.13
+            }
+          ]
+        }, {
+          "featureType": "landscape",
+          "stylers": [
+            {
+              "saturation": -100
+            }
+          ]
+        }
+      ];
+      this.map = new google.maps.Map($(elementId)[0], gMapOptions);
+      styledMap = new google.maps.StyledMapType(mapStyle, {
+        name: "Styled Map"
+      });
+      this.map.mapTypes.set('map_style', styledMap);
+      this.map.setMapTypeId('map_style');
+      this.infoWindow = new CustomInfoWindow(coord, this.map);
+    }
+
+    return customGmap;
+
+  })();
+
+  /*
+  # }}}
+  */
+
+
+  /*
+  # Class CustomInfoWindow {{{
+  */
+
+
+  CustomInfoWindow = (function() {
+
+    CustomInfoWindow.name = 'CustomInfoWindow';
+
+    function CustomInfoWindow(position, map) {
+      var wrap;
+      console.log("@@@@@@@@");
+      this.position = position;
+      this.map = map;
+      wrap = '<div class="customInfoWindow">    \n  <div class="padding">\n    <span class="address">\n      Espace 400e Bell<br>\n      100, Quai Saint-André<br>\n      Québec, QC\n    </span>\n    <img src="/assets/images/png/logo-waq-gray.png" alt="" width="121px" height="41px">\n  </div>\n</div>';
+      this.wrap = $(wrap);
+      this.setMap(this.map);
+      this.isVisible = true;
+      console.log("---------------");
+      console.log(position);
+    }
+
+    CustomInfoWindow.prototype = new google.maps.OverlayView();
+
+    CustomInfoWindow.prototype.onAdd = function() {
+      var cancelHandler, event, events, panes, _i, _len, _results;
+      this.wrap.css({
+        display: "block",
+        position: "absolute"
+      });
+      panes = this.getPanes();
+      panes.overlayMouseTarget.appendChild(this.wrap[0]);
+      this.iWidth = this.wrap.outerWidth();
+      this.iHeight = this.wrap.outerHeight();
+      cancelHandler = function(e) {
+        e.cancelBubble = true;
+        if (e.stopPropagation) {
+          return e.stopPropagation();
+        }
+      };
+      events = ['mousedown', 'touchstart', 'touchend', 'touchmove', 'contextmenu', 'click', 'dblclick', 'mousewheel', 'DOMMouseScroll'];
+      this.listeners = [];
+      _results = [];
+      for (_i = 0, _len = events.length; _i < _len; _i++) {
+        event = events[_i];
+        _results.push(this.listeners.push(google.maps.event.addDomListener(this.wrap[0], event, cancelHandler)));
+      }
+      return _results;
+    };
+
+    CustomInfoWindow.prototype.draw = function() {
+      var overlayProjection, pos;
+      overlayProjection = this.getProjection();
+      pos = overlayProjection.fromLatLngToDivPixel(this.position);
+      this.oX = pos.x - this.wrap.outerWidth() / 2;
+      this.oY = pos.y - this.wrap.outerHeight();
+      return this.wrap.css({
+        left: this.oX,
+        top: this.oY
+      });
+    };
+
+    CustomInfoWindow.prototype.panMap = function() {
+      var newCenter, scale, worldCoordinateCenter, worldCoordinateNewCenter;
+      if (this.map.getZoom() < 3) {
+        this.map.setZoom(3);
+      }
+      scale = Math.pow(2, this.map.getZoom());
+      worldCoordinateCenter = this.map.getProjection().fromLatLngToPoint(this.position);
+      worldCoordinateNewCenter = new google.maps.Point(worldCoordinateCenter.x - 150 / scale, worldCoordinateCenter.y + 200 / scale);
+      newCenter = this.map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
+      return this.map.panTo(newCenter);
+    };
+
+    return CustomInfoWindow;
+
+  })();
+
+  /*
+  # }}}
+  */
+
+
   $(function() {
-    var $links, body, l, links, myHomeSlider, myMasonry, myOnePager, mySchedule, router, stickyHeader;
+    var $links, body, l, links, myGmap, myHomeSlider, myMasonry, myOnePager, mySchedule, router, stickyHeader;
     body = $('body');
     if (!window.console) {
       (function() {
@@ -357,11 +573,19 @@ Author: @louisdumas
   }
   ;
 
-    myOnePager = new OnePager();
     myHomeSlider = new Slider($('#slider'), {
       timer: 5000
     });
-    mySchedule = new Schedule();
+    myGmap = new customGmap('#gmap');
+    mySchedule = new Schedule({
+      onOpen: function() {
+        return myOnePager.hashHasChange('horaire');
+      },
+      onClose: function() {
+        return myOnePager.hashHasChange('horaire');
+      }
+    });
+    myOnePager = new OnePager();
     myMasonry = new $.Mason({
       itemSelector: '.conference',
       containerStyle: {
@@ -376,18 +600,18 @@ Author: @louisdumas
       }
     }, $('.conferences'));
     router = $.sammy(function() {
-      this.get(/\#\/(home|horaire|lieux-et-infos|partenaires|a-propos)\/*$/, function(context) {
-        return myOnePager.hashHasChange(this.params['splat'][0]);
+      this.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, function(cx, section) {
+        return myOnePager.hashHasChange(section);
       });
       this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, function(cx, day) {
         myOnePager.hashHasChange('horaire');
         return mySchedule.slideTo(day);
       });
       return this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, function(cx, day, conf) {
-        console.log(conf);
         return myOnePager.hashHasChange('horaire');
       });
     });
+    router.debug = true;
     router.run();
     myOnePager.animatWhenSliding = true;
     return stickyHeader = (function() {

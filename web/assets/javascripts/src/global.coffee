@@ -12,6 +12,7 @@ if html.style.opacity != undefined
   App.OPACITY = yes 
 else
   html.className += " no-opacity"
+
 #}}}
 
 #############
@@ -98,18 +99,54 @@ class Slider
 # Class Schedule {{{
 ###
 class Schedule
-  constructor: ->
-    @wrapper      = $('#schedule .slides-wrap')
-    @navElement   = $('#schedule-nav a')
-    @slides       = @wrapper.find('.slide')
+  constructor: (opts)->
+    @slideWrapper        = $('#schedule .slides-wrap')
+    @overFlowwRapper     = $('#schedule .wrapper')
+    @navElement          = $('#schedule-nav a')
+    @slides              = @slideWrapper.find('.slide')
+    @startingHeight      = 500
+    @slideWrapperHeight  = @slideWrapper.outerHeight()
+    @openBtn             = $('#schedule #open-shedule a')
+    
     @navElement.eq(0).addClass('active')
+
+    @openBtn.click( =>
+      if @openBtn.hasClass('active')
+        @close()
+      else
+        @open()
+    )
+    
+    onOpen  = if opts? && opts.onOpen? then opts.onOpen else () ->
+    onClose = if opts? && opts.onClose? then opts.onClose else () ->
+    
+    $(@).bind('onOpen', onOpen)
+    $(@).bind('onClose', onClose)
     
   slideTo: (id) ->
     target = @slides.filter("##{id}")
     posX   = target.position().left
     @navElement.removeClass('active')
     $('[data-ref="'+id+'"]').addClass('active')
-    @wrapper.css({ 'left' : -posX})
+    @slideWrapper.css({ 'left' : -posX})
+
+  open: =>
+    $(@).trigger('onOpen')
+    @openBtn.html('Fermer')
+    @openBtn.addClass('active')
+    @overFlowwRapper.css(
+      'height'     : @slideWrapperHeight
+    )
+    
+  close: =>
+    $(@).trigger('onClose')
+    @openBtn.html('Tout afficher')
+    @openBtn.removeClass('active')
+    t = setTimeout( =>
+      @overFlowwRapper.css(
+        'height'     : @startingHeight
+      )
+    ,200)
 
 ###
 # }}}
@@ -143,6 +180,17 @@ class OnePager
         @HandleScrollEvents()
     , 20
   
+    @stopScrollOnMouseScroll()
+  
+  stopScrollOnMouseScroll: ->
+    stopScroll = ->
+      $('body, html').stop()
+
+    # firefox
+    window.addEventListener('DOMMouseScroll', stopScroll, false);
+    # Everything else
+    window.addEventListener('mousewheel', stopScroll, false)
+
   resetSectionsOffset: ->
     i = 0
     @sections.length
@@ -166,7 +214,6 @@ class OnePager
     target.addClass('active')
         
   slideTo: (target ,speed, moreOffsets) ->
-    console.log 'slideTo'
     target          = @sections.filter(target)
     targetId        = target.attr('id')
     moreOffsets     = moreOffsets || 0
@@ -210,7 +257,7 @@ class OnePager
         targetLink = $("a[href='#/#{pageId}/']")
       
         if !targetLink.hasClass('active')
-          this.setActiveMenu($("a[href='#/#{pageId}/']"))
+          @setActiveMenu($("a[href='#/#{pageId}/']"))
 
   currentPage: @currentPage
   isAnimated : @isAnimated
@@ -219,6 +266,136 @@ class OnePager
 # }}}
 ###
 
+###
+# Class Gmap {{{
+###
+class customGmap
+  constructor: (elementId) ->
+    coord = new google.maps.LatLng(46.817682, -71.2065922)
+    gMapOptions = 
+      zoom: 17
+      center: coord
+      mapTypeControl: false
+      streetViewControl: false
+      panControl: false
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    
+    mapStyle = [
+      {
+        "featureType": "poi",
+        "stylers": [
+          { "hue": "#005eff" },
+          { "lightness": -6 },
+          { "saturation": -100 }
+        ]
+      },{
+        "featureType": "water",
+        "stylers": [
+          { "invert_lightness": true },
+          { "visibility": "on" },
+          { "color": "#0086b8" }
+        ]
+      },{
+        "featureType": "road",
+        "stylers": [
+          { "visibility": "on" },
+          { "hue": "#0099ff" },
+          { "gamma": 1.13 }
+        ]
+      },{
+        "featureType": "landscape",
+        "stylers": [
+          { "saturation": -100 }
+        ]
+      }]
+    
+    @map = new google.maps.Map($(elementId)[0], gMapOptions)
+    styledMap = new google.maps.StyledMapType(mapStyle, {name: "Styled Map"})
+    @map.mapTypes.set('map_style', styledMap)
+    @map.setMapTypeId('map_style')
+    @infoWindow = new CustomInfoWindow(coord, @map)
+    
+    
+###
+# }}}
+###
+
+###
+# Class CustomInfoWindow {{{
+###
+class CustomInfoWindow
+  constructor: (position, map) ->
+    console.log "@@@@@@@@"
+    @position = position 
+    @map      = map
+    wrap = '''
+    <div class="customInfoWindow">    
+      <div class="padding">
+        <span class="address">
+          Espace 400e Bell<br>
+          100, Quai Saint-André<br>
+          Québec, QC
+        </span>
+        <img src="/assets/images/png/logo-waq-gray.png" alt="" width="121px" height="41px">
+      </div>
+    </div>
+    '''
+    @wrap = $(wrap)
+    @setMap(@map)
+    @isVisible = true
+    
+    console.log "---------------"
+    console.log position
+  
+  CustomInfoWindow:: = new google.maps.OverlayView()
+  
+  onAdd: ->
+    @wrap.css(
+      display: "block"
+      position: "absolute"
+    )
+    panes = @getPanes()
+    panes.overlayMouseTarget.appendChild(@wrap[0])
+    @iWidth = @wrap.outerWidth()
+    @iHeight = @wrap.outerHeight()
+    
+    cancelHandler = (e) ->
+      e.cancelBubble = true
+      if e.stopPropagation
+        e.stopPropagation()
+    
+    events = ['mousedown', 'touchstart', 'touchend', 'touchmove', 'contextmenu', 'click', 'dblclick', 'mousewheel', 'DOMMouseScroll']
+    @listeners = []
+    for event in events
+      @listeners.push(google.maps.event.addDomListener(@wrap[0], event, cancelHandler);)
+      
+  draw: ->
+    overlayProjection = @getProjection()
+    pos = overlayProjection.fromLatLngToDivPixel(@position)
+    @oX = pos.x - @wrap.outerWidth() / 2
+    @oY = pos.y - @wrap.outerHeight()
+    @wrap.css({
+      left: @oX,
+      top: @oY
+    })
+    
+  panMap: ->
+    if @map.getZoom() < 3
+      @map.setZoom(3)
+      
+    scale = Math.pow(2, @map.getZoom());
+    worldCoordinateCenter = @map.getProjection().fromLatLngToPoint(@position)
+    worldCoordinateNewCenter = new google.maps.Point(
+        worldCoordinateCenter.x - 150/scale,
+        worldCoordinateCenter.y + 200/scale
+    )
+    newCenter = @map.getProjection().fromPointToLatLng(worldCoordinateNewCenter)
+    
+    @map.panTo(newCenter)
+    
+###
+# }}}
+###
 $ () ->
   # Common 
   ################{{{
@@ -263,9 +440,16 @@ $ () ->
   #}}}
   
   # Class instaciation
-  myOnePager   = new OnePager()
   myHomeSlider = new Slider($('#slider'), {timer : 5000})
-  mySchedule   = new Schedule()
+  myGmap       = new customGmap('#gmap')
+  mySchedule   = new Schedule(
+    onOpen : () ->
+      myOnePager.hashHasChange('horaire')
+    onClose : () ->
+      myOnePager.hashHasChange('horaire')
+  )
+  myOnePager   = new OnePager()
+  
   myMasonry    = new $.Mason(
     itemSelector : '.conference'
     containerStyle : { 'position' : 'absolute'}
@@ -275,14 +459,13 @@ $ () ->
     animationOptions: { duration: 100 }
   , $('.conferences'))
 
-
   #############
   #-- ROUTER --#
   #############
   router = $.sammy(() ->
 
-    @.get(/\#\/(home|horaire|lieux-et-infos|partenaires|a-propos)\/*$/, (context) ->
-      myOnePager.hashHasChange(this.params['splat'][0])
+    @.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, (cx, section) ->
+      myOnePager.hashHasChange(section)
     )
     
     @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, (cx, day) ->
@@ -291,11 +474,11 @@ $ () ->
     )
     
     @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, (cx, day, conf) ->
-      console.log conf
       myOnePager.hashHasChange('horaire')
     )
 
   )
+  router.debug = true
   router.run()
   myOnePager.animatWhenSliding = yes
 

@@ -220,7 +220,9 @@ a:hover { color: #06e; text-decoration: underline;}
 
 #one-pager {
   section {
-    padding-top: 30px;
+    @extend .width;
+    padding-top: 10px;
+    padding-bottom: 30px;
   }
   
   .h2 {
@@ -772,7 +774,7 @@ $t15m:40px;
 .room-col {
    width: 25%;
 }
-#horaire .width {
+#horaire .padding {
   position: relative;
 }
 #schedule-nav {
@@ -827,7 +829,6 @@ $t15m:40px;
   }
 }
 #schedule {
-  @extend .width;
   position: relative;
   
   #rooms-name {
@@ -893,6 +894,29 @@ $t15m:40px;
     height: 500px;
     overflow: hidden;
     overflow-y: scroll;
+    -webkit-transition-property: height;
+    -moz-transition-property: height;
+    -ms-transition-property: height;
+    -o-transition-property: height;
+    transition-property: height;
+
+    -webkit-transition-duration: 500ms;
+    -moz-transition-duration: 500ms;
+    -ms-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+
+    -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+
+    -webkit-transform : translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -o-transform : translateZ(0);
+    -moz-tform : translateZ(0);
+    transform : translateZ(0);
     
     #schedule-wrap {
       position: relative;
@@ -970,10 +994,6 @@ $t15m:40px;
         height: 100%;
         width: 33.33333333333%;
         padding-left: $timeZoneWidth/3;
-        
-//        &#mercredi { background: transparent;}
-//        &#jeudi { background: blue;}
-//        &#vendredi { background: green;}
       } // .slide
       
       .lines {
@@ -1146,6 +1166,125 @@ $t15m:40px;
       }
     }
   }
+  
+  #open-shedule {
+    display: block;
+    text-align: center;
+    
+    a {
+      @extend .png-schedule-btn;
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+      color: #0086b9;
+      font-size: 22px;
+      font-size: 2.2rem;
+      font-family: $misoBold;
+      padding: 2px 50px 2px 10px;
+      width: image-width('png/schedule-btn.png');
+      margin: 0 auto;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+      -webkit-transition-property: opacity;
+      -moz-transition-property: opacity;
+      -ms-transition-property: opacity;
+      -o-transition-property: opacity;
+      transition-property: opacity;
+
+      -webkit-transition-duration: 200ms;
+      -moz-transition-duration: 200ms;
+      -ms-transition-duration: 200ms;
+      -o-transition-duration: 200ms;
+      transition-duration: 200ms;
+
+      -webkit-transition-timing-function: linear;
+      -moz-transition-timing-function: linear;
+      -ms-transition-timing-function: linear;
+      -o-transition-timing-function: linear;
+      transition-timing-function: linear;
+      
+      &:after {
+        @extend .png-down-arrow;
+        content: "";
+        position: absolute;
+        right: 35px;
+        top: 50%;
+        margin-top: -(image-width('png/down-arrow.png') / 2);
+        width: image-width('png/down-arrow.png');
+        height: image-height('png/down-arrow.png');
+      }
+      
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 0.7;
+        text-decoration: none;
+      }
+    }
+  }
 } // #schedule
 
 /* }}} */
+
+/* Google map
+**********************{{{*/
+#gmap {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border: 1px solid #cdcdcd;
+  
+  .customInfoWindow {
+    @extend .group;
+    display: block;
+    color: #005674;
+    min-width: 400px;
+    background: white;
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 21px;
+    font-family: $misoBold;
+    text-transform: uppercase;
+    border: 1px solid #e2e2e2;
+    
+    .padding {
+      @extend .group;
+      padding: 20px;
+    }
+    .address {
+      display: block;
+      float: left;
+    }
+    
+    img {
+      position: relative;
+      top: 11px;
+      float: right;
+    }
+    
+    &:after, &:before {
+    	top: 100%;
+    	border: solid transparent;
+    	content: " ";
+    	height: 0;
+    	width: 0;
+    	position: absolute;
+    	pointer-events: none;
+    }
+
+    &:after {
+    	border-color: rgba(255, 255, 255, 0);
+    	border-top-color: #fff;
+    	border-width: 30px;
+    	left: 50%;
+    	margin-left: -30px;
+    }
+    &:before {
+    	border-color: rgba(226, 226, 226, 0);
+    	border-top-color: #e2e2e2;
+    	border-width: 31px;
+    	left: 50%;
+    	margin-left: -31px;
+    }
+  }
+}
+/*}}}*/

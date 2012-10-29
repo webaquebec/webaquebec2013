@@ -1448,11 +1448,39 @@ body {
   transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
 
   -webkit-backface-visibility: hidden;
+  
+  #overlay {
+    position: fixed;
+    z-index: 90;
+    display: block;
+    opacity: 0;
+    top: -9999em;
+    width: 100%;
+    bottom: auto;
+    background: rgba(255, 255, 255, 0.4);
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -ms-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+
+    -webkit-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    -ms-transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+    transition-duration: 200ms;
+
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+  }
 }
 
 #conf-desc {
   position: fixed;
-  z-index: 90;
+  z-index: 95;
   top: 0;
   background: white;
   width: 300px;
@@ -1482,12 +1510,28 @@ body {
   -o-transform : translateZ(0);
   -moz-tform : translateZ(0);
   transform : translateZ(0);
+  
+  .content {
+    background: #0086b9;
+    height: 100%;
+    
+    h1 {
+      margin: 0;
+    }
+  }
 }
 
-body.get-out-the-way {
+body.lock {
   left: -300px;
+  overflow: hidden;
   #conf-desc {
     right: 0;
+  }
+  
+  #overlay {
+    opacity: 1;
+    top: 0;
+    bottom: 0;
   }
 }
 

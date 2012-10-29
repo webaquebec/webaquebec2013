@@ -1898,11 +1898,37 @@ body {
   transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   -webkit-backface-visibility: hidden;
 }
-
-/* line 1453, scss/global.scss */
-#conf-desc {
+/* line 1452, scss/global.scss */
+body #overlay {
   position: fixed;
   z-index: 90;
+  display: block;
+  opacity: 0;
+  top: -9999em;
+  width: 100%;
+  bottom: auto;
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -ms-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+/* line 1481, scss/global.scss */
+#conf-desc {
+  position: fixed;
+  z-index: 95;
   top: 0;
   background: white;
   width: 300px;
@@ -1930,27 +1956,43 @@ body {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-
-/* line 1487, scss/global.scss */
-body.get-out-the-way {
-  left: -300px;
+/* line 1514, scss/global.scss */
+#conf-desc .content {
+  background: #0086b9;
+  height: 100%;
 }
-/* line 1489, scss/global.scss */
-body.get-out-the-way #conf-desc {
+/* line 1518, scss/global.scss */
+#conf-desc .content h1 {
+  margin: 0;
+}
+
+/* line 1524, scss/global.scss */
+body.lock {
+  left: -300px;
+  overflow: hidden;
+}
+/* line 1527, scss/global.scss */
+body.lock #conf-desc {
   right: 0;
+}
+/* line 1531, scss/global.scss */
+body.lock #overlay {
+  opacity: 1;
+  top: 0;
+  bottom: 0;
 }
 
 /* }}} */
 /* Google map
 **********************{{{*/
-/* line 1499, scss/global.scss */
+/* line 1543, scss/global.scss */
 #gmap {
   display: block;
   width: 100%;
   height: 420px;
   border: 1px solid #cdcdcd;
 }
-/* line 1505, scss/global.scss */
+/* line 1549, scss/global.scss */
 #gmap .customInfoWindow {
   display: block;
   color: #005674;
@@ -1963,22 +2005,22 @@ body.get-out-the-way #conf-desc {
   text-transform: uppercase;
   border: 1px solid #e2e2e2;
 }
-/* line 1518, scss/global.scss */
+/* line 1562, scss/global.scss */
 #gmap .customInfoWindow .padding, #gmap .customInfoWindow #one-pager section h1, #one-pager section #gmap .customInfoWindow h1, #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav .width, #main-nav #gmap .customInfoWindow .width, #gmap .customInfoWindow #main-nav #one-pager section, #main-nav #one-pager #gmap .customInfoWindow section, #gmap .customInfoWindow #one-pager #main-nav section, #one-pager #main-nav #gmap .customInfoWindow section, #gmap .customInfoWindow #main-nav #header, #main-nav #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav #slider, #main-nav #gmap .customInfoWindow #slider {
   padding: 20px;
 }
-/* line 1522, scss/global.scss */
+/* line 1566, scss/global.scss */
 #gmap .customInfoWindow .address {
   display: block;
   float: left;
 }
-/* line 1527, scss/global.scss */
+/* line 1571, scss/global.scss */
 #gmap .customInfoWindow img {
   position: relative;
   top: 11px;
   float: right;
 }
-/* line 1533, scss/global.scss */
+/* line 1577, scss/global.scss */
 #gmap .customInfoWindow:after, #gmap .customInfoWindow:before {
   top: 100%;
   border: solid transparent;
@@ -1988,7 +2030,7 @@ body.get-out-the-way #conf-desc {
   position: absolute;
   pointer-events: none;
 }
-/* line 1543, scss/global.scss */
+/* line 1587, scss/global.scss */
 #gmap .customInfoWindow:after {
   border-color: rgba(255, 255, 255, 0);
   border-top-color: #fff;
@@ -1996,7 +2038,7 @@ body.get-out-the-way #conf-desc {
   left: 50%;
   margin-left: -30px;
 }
-/* line 1550, scss/global.scss */
+/* line 1594, scss/global.scss */
 #gmap .customInfoWindow:before {
   border-color: rgba(226, 226, 226, 0);
   border-top-color: #e2e2e2;
@@ -2011,62 +2053,62 @@ body.get-out-the-way #conf-desc {
 /*}}}*/
 /* About
 **********************{{{*/
-/* line 1568, scss/global.scss */
+/* line 1612, scss/global.scss */
 #a-propos {
   width: 100%;
   color: white;
   font-size: 16px;
   font-size: 1.6rem;
 }
-/* line 1574, scss/global.scss */
+/* line 1618, scss/global.scss */
 #a-propos .intro {
   padding: 35px 37px 35px 3.9583333%;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   min-height: 298px;
   background: url("/assets/images/interface/a-propos-banner.jpg") left top no-repeat;
 }
-/* line 1581, scss/global.scss */
+/* line 1625, scss/global.scss */
 #a-propos .intro h2 {
   font-weight: normal;
   font-family: "misobold", Arial, Sans-serif;
   margin: 0;
   text-transform: uppercase;
 }
-/* line 1588, scss/global.scss */
+/* line 1632, scss/global.scss */
 #a-propos .intro h2 ~ p {
   margin-top: 0;
 }
-/* line 1593, scss/global.scss */
+/* line 1637, scss/global.scss */
 #a-propos .desc {
   float: left;
   width: 55%;
   padding: 0 70px 0 0;
 }
-/* line 1599, scss/global.scss */
+/* line 1643, scss/global.scss */
 #a-propos .benevoles {
   float: left;
   width: 45%;
 }
-/* line 1603, scss/global.scss */
+/* line 1647, scss/global.scss */
 #a-propos .benevoles ul {
   width: 100%;
   font-size: 13px;
   font-size: 1.3rem;
   font-family: Arial, "Lucida Grande", sans-serif;
 }
-/* line 1610, scss/global.scss */
+/* line 1654, scss/global.scss */
 #a-propos .benevoles ul li {
   float: left;
   width: 33.3333333%;
   margin-bottom: 2px;
 }
-/* line 1615, scss/global.scss */
+/* line 1659, scss/global.scss */
 #a-propos .benevoles ul span {
   display: inline-block;
   padding: 2px 3px;
   background: #006186;
 }
-/* line 1623, scss/global.scss */
+/* line 1667, scss/global.scss */
 #a-propos #team {
   background: url("/assets/images/interface/team-head.png") top center no-repeat;
   background-size: 98%;
@@ -2075,7 +2117,7 @@ body.get-out-the-way #conf-desc {
   padding: 30px 38px 0 0;
   top: -50px;
 }
-/* line 1631, scss/global.scss */
+/* line 1675, scss/global.scss */
 #a-propos #team figure {
   position: relative;
   -webkit-transition-property: all;
@@ -2094,7 +2136,7 @@ body.get-out-the-way #conf-desc {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1651, scss/global.scss */
+/* line 1695, scss/global.scss */
 #a-propos #team figure:before {
   position: absolute;
   background: rgba(31, 194, 221, 0.2);
@@ -2120,19 +2162,19 @@ body.get-out-the-way #conf-desc {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1679, scss/global.scss */
+/* line 1723, scss/global.scss */
 #a-propos #team figure:hover {
   border: 2px solid #0086b9;
 }
-/* line 1682, scss/global.scss */
+/* line 1726, scss/global.scss */
 #a-propos #team figure:hover:before {
   opacity: 1;
 }
-/* line 1686, scss/global.scss */
+/* line 1730, scss/global.scss */
 #a-propos #team figure:hover figcaption {
   opacity: 1;
 }
-/* line 1691, scss/global.scss */
+/* line 1735, scss/global.scss */
 #a-propos #team figcaption {
   position: absolute;
   display: inline-block;

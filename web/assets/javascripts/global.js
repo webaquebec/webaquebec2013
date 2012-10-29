@@ -148,7 +148,7 @@ Author: @louisdumas
       this.openBtn = $('#schedule #open-shedule a');
       this.confLinks = $('#schedule a.white');
       this.body = $('body');
-      this.template = '<div id="conf-desc">\n  <img src="http://cageme.herokuapp.com/g/300/281" width="100%">\n  <h1>Foo Bar</h1>\n</div>';
+      this.template = '<section id="conf-desc">\n  <img src="http://cageme.herokuapp.com/g/300/281" width="100%">\n  <div class="content">\n    <h1>Foo Bar</h1>\n  </div>\n</section>\n<span id="overlay"></span>';
       if (!$('#conf-desc').length) {
         this.body.append(this.template);
       }
@@ -173,8 +173,8 @@ Author: @louisdumas
     }
 
     Schedule.prototype.showConf = function(id) {
-      if (!this.body.hasClass('get-out-the-way')) {
-        return this.body.addClass('get-out-the-way');
+      if (!this.body.hasClass('lock')) {
+        return this.body.addClass('lock');
       }
     };
 
@@ -605,6 +605,9 @@ Author: @louisdumas
     });
     myOnePager = new OnePager();
     router = $.sammy(function() {
+      var canScroll;
+      canScroll = false;
+      console.log(canScroll);
       this.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, function(cx, section) {
         return myOnePager.hashHasChange(section);
       });

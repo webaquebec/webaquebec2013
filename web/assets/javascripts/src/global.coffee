@@ -110,10 +110,13 @@ class Schedule
     @confLinks           = $('#schedule a.white')
     @body                = $('body')
     @template            = '''
-    <div id="conf-desc">
+    <section id="conf-desc">
       <img src="http://cageme.herokuapp.com/g/300/281" width="100%">
-      <h1>Foo Bar</h1>
-    </div>
+      <div class="content">
+        <h1>Foo Bar</h1>
+      </div>
+    </section>
+    <span id="overlay"></span>
     '''
     if !$('#conf-desc').length
       @body.append(@template)
@@ -140,8 +143,8 @@ class Schedule
     $(@).bind('onClose', onClose)
     
   showConf: (id) =>
-    if !@body.hasClass('get-out-the-way')
-      @body.addClass('get-out-the-way')
+    if !@body.hasClass('lock')
+      @body.addClass('lock')
     
   slideTo: (id) ->
     target = @slides.filter("##{id}")
@@ -480,7 +483,8 @@ $ () ->
   #-- ROUTER --#
   #############
   router = $.sammy(() ->
-
+    canScroll = false
+    console.log canScroll
     @.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, (cx, section) ->
       myOnePager.hashHasChange(section)
     )

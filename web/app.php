@@ -33,6 +33,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 
 // INDEX
 $index = function () use ($app) {
+    date_default_timezone_set('GMT');
     $sql = "SELECT * FROM room ORDER BY id ASC";
     $rooms = $app['db']->fetchAll($sql);
 
@@ -50,7 +51,7 @@ $index = function () use ($app) {
     $block = array();
     $lines = array();
     $firstLine = "";
-    $start = $sessionsTmp[0]["start"];
+    $start = 0;
     $end = 0;
     foreach ($sessionsTmp as $session) {
         $dateTime = new DateTime();
@@ -76,11 +77,15 @@ $index = function () use ($app) {
         // Verify if we have a new block
         if ($session["break"] == 1 || $session["row"] == 1) {
             // New block
-            $sessions[$dateTime->format("dmY")]["blocks"][] = array(
-                "size" => ($end - $start) / 60,
-                "line" => $firstLine,
-                "list" => $block,
-            );
+
+            if (!empty($block)) {
+                // Save block
+                $sessions[$dateTime->format("dmY")]["blocks"][] = array(
+                    "size" => ($end - $start) / 60,
+                    "line" => $firstLine,
+                    "list" => $block,
+                );
+            }
 
             // Add break/row
             $sessions[$dateTime->format("dmY")]["blocks"][] = array(
@@ -88,8 +93,9 @@ $index = function () use ($app) {
                 "session" => $session,
             );
             $block = array();
-            $start = $session["start"];
+            $start = 0;
             $end = 0;
+            continue;
         }
 
         if (empty($block)) {
@@ -100,6 +106,9 @@ $index = function () use ($app) {
             $block[$session["room_id"]] = array();
         }
 
+        if ($start == 0) {
+            $start = $session["start"];
+        }
         $start = min($start, $session["start"]);
         $end = max($end, $session["end"]);
         $block[$session["room_id"]][] = $session;

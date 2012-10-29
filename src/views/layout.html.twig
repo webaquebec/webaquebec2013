@@ -80,22 +80,28 @@
             <h1 class="h2">Horaire</h1>
             <ul id="schedule-nav">
                 {% for date, dateData in sessions %}
-                    <li><a href="#/horaire/{{ date }}" data-ref="{{ date }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
+                    <li><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
                 {% endfor %}
             </ul>
             <div id="schedule">
                 <ul id="rooms-name">
                     {% for room in rooms %}
-                        <li id="room{{ room.id }}">Salle {{ room.name }}</li>
+                        <li id="room-{{ room.id }}">Salle {{ room.name }}</li>
                     {% endfor %}
                 </ul>
                 <span class="shadow-top"></span>
                 <div class="wrapper">
                     <div id="schedule-wrap">
-                        <div id="time-zone"></div>
+                        <div id="time-zone">
+                            {% for date, dateData in sessions %}
+                                {% for line in lines[date] %}
+                                    <span class="time t{{ line }}"><span>{{ line }}</span></span>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
                         <div class="slides-wrap">
                             {% for date, dateData in sessions %}
-                                <div id="{{ date }}" class="slide">
+                                <div id="{{ dateData.day | dateTime("%A") }}" class="slide">
                                     <span id="separators">{% for i in 1..rooms|length %}<span></span>{% endfor %}</span>
                                     <span class="lines">
                                         {% for line in lines[date] %}
@@ -107,11 +113,12 @@
                                         {% if blockData.session is defined %}
                                             {% if blockData.session.break %}
                                                 <div class="break t{{ blockData.session.line }} t{{ blockData.size }}m">
-                                                    {{ blockData.session.description }}
+                                                    <span class="type">{{ blockData.session.name }}</span>
                                                 </div>
                                             {% else %}
                                                 <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
                                                     {% include 'include/conference-full.html.twig' with {
+                                                        id        : blockData.session.id,
                                                         performer : speakers[blockData.session.speaker_id].name,
                                                         img       : "/assets/images/performers/" ~ speakers[blockData.session.speaker_id].image,
                                                         desc      : blockData.session.description,
@@ -127,12 +134,14 @@
                                                     <div class="col">
                                                         {% for session in sessions %}
                                                             {% include 'include/conference-thumb.html.twig' with {
+                                                                id        : session.id,
                                                                 duration  : session.duration,
-                                                                line  : session.line,
+                                                                line      : session.line,
                                                                 performer : speakers[session.speaker_id].name,
                                                                 img       : "/assets/images/performers/" ~ speakers[session.speaker_id].image,
-                                                                desc      : "Lorem ipsum dolor sit amet [...]",
-                                                                room      : session.room_id
+                                                                desc      : session.description,
+                                                                room      : session.room_id,
+                                                                start     : session.start
                                                             } %}
                                                         {% endfor %}
                                                     </div>

@@ -1,5 +1,5 @@
-<div class="conference t{{ line }} t{{ duration }}m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
-    <a class="white {{ room }}">
+<div id="conf-{{ id }}" class="conference t{{ line }} t{{ duration }}m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
+    <a href="/horaire/{{ start | dateTime("%A") }}/conf-{{ id }}" class="white room-{{ room }}">
         <figure itemprop="performer" itemscope itemtype="schema.org/Person">
             <img src="{{ img }}" width="47" height="52" alt=" " itemprop="image" />
             <figcaption><h2 itemprop="name">{{ performer }}</h2></figcaption>

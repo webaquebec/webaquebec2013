@@ -107,7 +107,23 @@ class Schedule
     @startingHeight      = 500
     @slideWrapperHeight  = @slideWrapper.outerHeight()
     @openBtn             = $('#schedule #open-shedule a')
-    
+    @confLinks           = $('#schedule a.white')
+    @body                = $('body')
+    @template            = '''
+    <div id="conf-desc">
+      <img src="http://cageme.herokuapp.com/g/300/281" width="100%">
+      <h1>Foo Bar</h1>
+    </div>
+    '''
+    if !$('#conf-desc').length
+      @body.append(@template)
+      
+    @confLinks.each( ->
+      this_    = $(this)
+      newHref  = this_.attr('href').replace('/horaire', '#/horaire')
+      this_.attr('href', newHref)
+    )
+      
     @navElement.eq(0).addClass('active')
 
     @openBtn.click( =>
@@ -122,6 +138,10 @@ class Schedule
     
     $(@).bind('onOpen', onOpen)
     $(@).bind('onClose', onClose)
+    
+  showConf: (id) =>
+    if !@body.hasClass('get-out-the-way')
+      @body.addClass('get-out-the-way')
     
   slideTo: (id) ->
     target = @slides.filter("##{id}")
@@ -326,7 +346,6 @@ class customGmap
 ###
 class CustomInfoWindow
   constructor: (position, map) ->
-    console.log "@@@@@@@@"
     @position = position 
     @map      = map
     wrap = '''
@@ -344,9 +363,6 @@ class CustomInfoWindow
     @wrap = $(wrap)
     @setMap(@map)
     @isVisible = true
-    
-    console.log "---------------"
-    console.log position
   
   CustomInfoWindow:: = new google.maps.OverlayView()
   
@@ -474,8 +490,10 @@ $ () ->
       mySchedule.slideTo(day)
     )
     
-    @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, (cx, day, conf) ->
+    @.get(/\#\/horaire\/(.*)\/conf-([0-9]+)\/*$/, (cx, day, id) ->
       myOnePager.hashHasChange('horaire')
+      mySchedule.slideTo(day)
+      mySchedule.showConf(id)
     )
 
   )

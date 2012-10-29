@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Auhtor: @louisdumas */
 /* reset {{{*/
 /* line 3, scss/global.scss */
@@ -1257,7 +1258,7 @@ a:hover {
 }
 
 /* line 807, scss/global.scss */
-.blue-line, #schedule .wrapper .slides-wrap .lines span {
+.blue-line, #schedule .wrapper #time-zone .time, #schedule .wrapper .slides-wrap .lines span {
   position: absolute;
   display: block;
   height: 2px;
@@ -1370,7 +1371,7 @@ a:hover {
 }
 /* line 914, scss/global.scss */
 .conference-box .white:hover:after, #schedule .wrapper .slides-wrap .conferences .conference .white:hover:after, #schedule .wrapper .slides-wrap .row .conference .white:hover:after {
-  border-color: transparent white transparent transparent;
+  border-color: transparent white transparent transparent !important;
 }
 /* line 920, scss/global.scss */
 .conference-box .white h2, #schedule .wrapper .slides-wrap .conferences .conference .white h2, #schedule .wrapper .slides-wrap .row .conference .white h2 {
@@ -1519,15 +1520,15 @@ a:hover {
   background: white;
 }
 /* line 1067, scss/global.scss */
-#schedule #rooms-name li#ixmedia:before {
+#schedule #rooms-name li#room-2:before {
   border-color: #c6ac03 white white #c6ac03;
 }
 /* line 1068, scss/global.scss */
-#schedule #rooms-name li#vetiq:before {
+#schedule #rooms-name li#room-3:before {
   border-color: #02c66a white white #02c66a;
 }
 /* line 1069, scss/global.scss */
-#schedule #rooms-name li#korem:before {
+#schedule #rooms-name li#room-4:before {
   border-color: #c61d5a white white #c61d5a;
 }
 /* line 1073, scss/global.scss */
@@ -1618,7 +1619,35 @@ a:hover {
   border-right: 1px solid #bbbdbf;
   height: 1760px;
 }
-/* line 1161, scss/global.scss */
+/* line 1160, scss/global.scss */
+#schedule .wrapper #time-zone .time {
+  z-index: 15;
+  width: 30px;
+  right: -3px;
+}
+/* line 1166, scss/global.scss */
+#schedule .wrapper #time-zone .time:before {
+  content: "•";
+  font-family: Arial;
+  font-size: 150%;
+  position: absolute;
+  left: -3px;
+  top: -14px;
+  color: #006287;
+}
+/* line 1175, scss/global.scss */
+#schedule .wrapper #time-zone .time span {
+  display: inline-block;
+  position: absolute;
+  left: -50px;
+  top: -10px;
+  color: #666666;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+/* line 1189, scss/global.scss */
 #schedule .wrapper .slides-wrap {
   position: absolute;
   z-index: 12;
@@ -1648,7 +1677,7 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 1195, scss/global.scss */
+/* line 1223, scss/global.scss */
 #schedule .wrapper .slides-wrap .slide {
   position: relative;
   float: left;
@@ -1656,7 +1685,7 @@ a:hover {
   width: 33.33333333333%;
   padding-left: 2.92398%;
 }
-/* line 1203, scss/global.scss */
+/* line 1231, scss/global.scss */
 #schedule .wrapper .slides-wrap .lines {
   position: absolute;
   width: 100%;
@@ -1665,11 +1694,12 @@ a:hover {
   z-index: 13;
   height: 100%;
 }
-/* line 1211, scss/global.scss */
+/* line 1239, scss/global.scss */
 #schedule .wrapper .slides-wrap .lines span {
+  z-index: 13;
   width: 100%;
 }
-/* line 1220, scss/global.scss */
+/* line 1249, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences,
 #schedule .wrapper .slides-wrap .row,
 #schedule .wrapper .slides-wrap .break {
@@ -1678,70 +1708,77 @@ a:hover {
   display: block;
   width: 91.22807%;
 }
-/* line 1227, scss/global.scss */
+/* line 1256, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences {
   margin: 0;
   padding: 0;
 }
-/* line 1232, scss/global.scss */
-#schedule .wrapper .slides-wrap .conferences .conference {
+/* line 1261, scss/global.scss */
+#schedule .wrapper .slides-wrap .conferences .col {
   width: 24.9%;
+  height: 100%;
+  float: left;
+}
+/* line 1266, scss/global.scss */
+#schedule .wrapper .slides-wrap .conferences .conference {
+  float: none;
+  width: 100%;
   font-size: 13px;
   font-size: 1.3rem;
 }
-/* line 1238, scss/global.scss */
+/* line 1273, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white {
   padding: 10px 10px 10px 55px;
 }
-/* line 1241, scss/global.scss */
-#schedule .wrapper .slides-wrap .conferences .conference .white.ixmedia:after {
+/* line 1276, scss/global.scss */
+#schedule .wrapper .slides-wrap .conferences .conference .white.room-2:after {
   border-color: transparent #c6ac03 transparent transparent;
 }
-/* line 1242, scss/global.scss */
-#schedule .wrapper .slides-wrap .conferences .conference .white.vetiq:after {
+/* line 1277, scss/global.scss */
+#schedule .wrapper .slides-wrap .conferences .conference .white.room-3:after {
   border-color: transparent #02c66a transparent transparent;
 }
-/* line 1243, scss/global.scss */
-#schedule .wrapper .slides-wrap .conferences .conference .white.korem:after {
+/* line 1278, scss/global.scss */
+#schedule .wrapper .slides-wrap .conferences .conference .white.room-4:after {
   border-color: transparent #c61d5a transparent transparent;
 }
-/* line 1247, scss/global.scss */
+/* line 1282, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference h2 {
   font-size: 13px;
   font-size: 1.3rem;
 }
-/* line 1252, scss/global.scss */
+/* line 1287, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference span[itemprop="description"] {
   display: block;
   width: 122px;
 }
-/* line 1258, scss/global.scss */
+/* line 1293, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference.t90m .white {
   padding: 130px 10px 10px 10px;
 }
-/* line 1266, scss/global.scss */
+/* line 1301, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference {
   width: 100%;
   height: 100%;
 }
-/* line 1271, scss/global.scss */
+/* line 1306, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white {
   padding: 10px 10px 10px 210px;
 }
-/* line 1274, scss/global.scss */
+/* line 1309, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white .info {
   max-width: 450px;
 }
-/* line 1278, scss/global.scss */
+/* line 1313, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white img {
   top: 10px;
   left: 10px;
 }
-/* line 1283, scss/global.scss */
+/* line 1318, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white h2 {
   margin: 15px 0;
 }
-/* line 1287, scss/global.scss */
+/* line 1322, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white .place {
   position: absolute;
   top: 10px;
@@ -1753,7 +1790,7 @@ a:hover {
   font-size: 2.3rem;
   text-transform: uppercase;
 }
-/* line 1299, scss/global.scss */
+/* line 1334, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white time {
   display: block;
   color: #b3b3b3;
@@ -1761,7 +1798,7 @@ a:hover {
   font-size: 14px;
   font-size: 1.4rem;
 }
-/* line 1307, scss/global.scss */
+/* line 1342, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white span[itemprop="description"] {
   display: block;
   color: #006287;
@@ -1770,22 +1807,32 @@ a:hover {
   font-size: 1.4rem;
   margin: 10px 0;
 }
-/* line 1316, scss/global.scss */
+/* line 1351, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white:after {
   border-color: transparent #0687b9 transparent transparent;
 }
-/* line 1320, scss/global.scss */
+/* line 1355, scss/global.scss */
 #schedule .wrapper .slides-wrap .break {
   display: block;
   z-index: 12;
   background: url("/assets/images/interface/break-texture.png") repeat transparent;
 }
-/* line 1328, scss/global.scss */
+/* line 1360, scss/global.scss */
+#schedule .wrapper .slides-wrap .break .type {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 21px;
+  font-size: 2.1rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #0687b9;
+  margin: 22px 0 0 40px;
+}
+/* line 1373, scss/global.scss */
 #schedule #open-shedule {
   display: block;
   text-align: center;
 }
-/* line 1332, scss/global.scss */
+/* line 1377, scss/global.scss */
 #schedule #open-shedule a {
   position: relative;
   display: inline-block;
@@ -1814,7 +1861,7 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1363, scss/global.scss */
+/* line 1408, scss/global.scss */
 #schedule #open-shedule a:after {
   content: "";
   position: absolute;
@@ -1824,23 +1871,86 @@ a:hover {
   width: 16px;
   height: 18px;
 }
-/* line 1376, scss/global.scss */
+/* line 1421, scss/global.scss */
 #schedule #open-shedule a:hover, #schedule #open-shedule a:focus, #schedule #open-shedule a:active {
   opacity: 0.7;
   text-decoration: none;
 }
 
+/* line 1429, scss/global.scss */
+body {
+  position: relative;
+  left: 0;
+  -webkit-transition-property: left;
+  -moz-transition-property: left;
+  -ms-transition-property: left;
+  -o-transition-property: left;
+  transition-property: left;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -webkit-backface-visibility: hidden;
+}
+
+/* line 1453, scss/global.scss */
+#conf-desc {
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  background: white;
+  width: 300px;
+  height: 100%;
+  right: -300px;
+  padding-top: 70px;
+  -webkit-transition-property: right;
+  -moz-transition-property: right;
+  -ms-transition-property: right;
+  -o-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -o-transform: translateZ(0);
+  -moz-tform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* line 1487, scss/global.scss */
+body.get-out-the-way {
+  left: -300px;
+}
+/* line 1489, scss/global.scss */
+body.get-out-the-way #conf-desc {
+  right: 0;
+}
+
 /* }}} */
 /* Google map
 **********************{{{*/
-/* line 1389, scss/global.scss */
+/* line 1499, scss/global.scss */
 #gmap {
   display: block;
   width: 100%;
   height: 420px;
   border: 1px solid #cdcdcd;
 }
-/* line 1395, scss/global.scss */
+/* line 1505, scss/global.scss */
 #gmap .customInfoWindow {
   display: block;
   color: #005674;
@@ -1853,22 +1963,22 @@ a:hover {
   text-transform: uppercase;
   border: 1px solid #e2e2e2;
 }
-/* line 1408, scss/global.scss */
+/* line 1518, scss/global.scss */
 #gmap .customInfoWindow .padding, #gmap .customInfoWindow #one-pager section h1, #one-pager section #gmap .customInfoWindow h1, #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav .width, #main-nav #gmap .customInfoWindow .width, #gmap .customInfoWindow #main-nav #one-pager section, #main-nav #one-pager #gmap .customInfoWindow section, #gmap .customInfoWindow #one-pager #main-nav section, #one-pager #main-nav #gmap .customInfoWindow section, #gmap .customInfoWindow #main-nav #header, #main-nav #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav #slider, #main-nav #gmap .customInfoWindow #slider {
   padding: 20px;
 }
-/* line 1412, scss/global.scss */
+/* line 1522, scss/global.scss */
 #gmap .customInfoWindow .address {
   display: block;
   float: left;
 }
-/* line 1417, scss/global.scss */
+/* line 1527, scss/global.scss */
 #gmap .customInfoWindow img {
   position: relative;
   top: 11px;
   float: right;
 }
-/* line 1423, scss/global.scss */
+/* line 1533, scss/global.scss */
 #gmap .customInfoWindow:after, #gmap .customInfoWindow:before {
   top: 100%;
   border: solid transparent;
@@ -1878,7 +1988,7 @@ a:hover {
   position: absolute;
   pointer-events: none;
 }
-/* line 1433, scss/global.scss */
+/* line 1543, scss/global.scss */
 #gmap .customInfoWindow:after {
   border-color: rgba(255, 255, 255, 0);
   border-top-color: #fff;
@@ -1886,7 +1996,7 @@ a:hover {
   left: 50%;
   margin-left: -30px;
 }
-/* line 1440, scss/global.scss */
+/* line 1550, scss/global.scss */
 #gmap .customInfoWindow:before {
   border-color: rgba(226, 226, 226, 0);
   border-top-color: #e2e2e2;
@@ -1901,62 +2011,62 @@ a:hover {
 /*}}}*/
 /* About
 **********************{{{*/
-/* line 1458, scss/global.scss */
+/* line 1568, scss/global.scss */
 #a-propos {
   width: 100%;
   color: white;
   font-size: 16px;
   font-size: 1.6rem;
 }
-/* line 1464, scss/global.scss */
+/* line 1574, scss/global.scss */
 #a-propos .intro {
   padding: 35px 37px 35px 3.9583333%;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   min-height: 298px;
   background: url("/assets/images/interface/a-propos-banner.jpg") left top no-repeat;
 }
-/* line 1471, scss/global.scss */
+/* line 1581, scss/global.scss */
 #a-propos .intro h2 {
   font-weight: normal;
   font-family: "misobold", Arial, Sans-serif;
   margin: 0;
   text-transform: uppercase;
 }
-/* line 1478, scss/global.scss */
+/* line 1588, scss/global.scss */
 #a-propos .intro h2 ~ p {
   margin-top: 0;
 }
-/* line 1483, scss/global.scss */
+/* line 1593, scss/global.scss */
 #a-propos .desc {
   float: left;
   width: 55%;
   padding: 0 70px 0 0;
 }
-/* line 1489, scss/global.scss */
+/* line 1599, scss/global.scss */
 #a-propos .benevoles {
   float: left;
   width: 45%;
 }
-/* line 1493, scss/global.scss */
+/* line 1603, scss/global.scss */
 #a-propos .benevoles ul {
   width: 100%;
   font-size: 13px;
   font-size: 1.3rem;
   font-family: Arial, "Lucida Grande", sans-serif;
 }
-/* line 1500, scss/global.scss */
+/* line 1610, scss/global.scss */
 #a-propos .benevoles ul li {
   float: left;
   width: 33.3333333%;
   margin-bottom: 2px;
 }
-/* line 1505, scss/global.scss */
+/* line 1615, scss/global.scss */
 #a-propos .benevoles ul span {
   display: inline-block;
   padding: 2px 3px;
   background: #006186;
 }
-/* line 1513, scss/global.scss */
+/* line 1623, scss/global.scss */
 #a-propos #team {
   background: url("/assets/images/interface/team-head.png") top center no-repeat;
   background-size: 98%;
@@ -1965,7 +2075,7 @@ a:hover {
   padding: 30px 38px 0 0;
   top: -50px;
 }
-/* line 1521, scss/global.scss */
+/* line 1631, scss/global.scss */
 #a-propos #team figure {
   position: relative;
   -webkit-transition-property: all;
@@ -1984,7 +2094,7 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1541, scss/global.scss */
+/* line 1651, scss/global.scss */
 #a-propos #team figure:before {
   position: absolute;
   background: rgba(31, 194, 221, 0.2);
@@ -2010,19 +2120,19 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1569, scss/global.scss */
+/* line 1679, scss/global.scss */
 #a-propos #team figure:hover {
   border: 2px solid #0086b9;
 }
-/* line 1572, scss/global.scss */
+/* line 1682, scss/global.scss */
 #a-propos #team figure:hover:before {
   opacity: 1;
 }
-/* line 1576, scss/global.scss */
+/* line 1686, scss/global.scss */
 #a-propos #team figure:hover figcaption {
   opacity: 1;
 }
-/* line 1581, scss/global.scss */
+/* line 1691, scss/global.scss */
 #a-propos #team figcaption {
   position: absolute;
   display: inline-block;

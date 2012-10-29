@@ -135,6 +135,8 @@ Author: @louisdumas
 
       this.open = __bind(this.open, this);
 
+      this.showConf = __bind(this.showConf, this);
+
       var onClose, onOpen,
         _this = this;
       this.slideWrapper = $('#schedule .slides-wrap');
@@ -144,6 +146,18 @@ Author: @louisdumas
       this.startingHeight = 500;
       this.slideWrapperHeight = this.slideWrapper.outerHeight();
       this.openBtn = $('#schedule #open-shedule a');
+      this.confLinks = $('#schedule a.white');
+      this.body = $('body');
+      this.template = '<div id="conf-desc">\n  <img src="http://cageme.herokuapp.com/g/300/281" width="100%">\n  <h1>Foo Bar</h1>\n</div>';
+      if (!$('#conf-desc').length) {
+        this.body.append(this.template);
+      }
+      this.confLinks.each(function() {
+        var newHref, this_;
+        this_ = $(this);
+        newHref = this_.attr('href').replace('/horaire', '#/horaire');
+        return this_.attr('href', newHref);
+      });
       this.navElement.eq(0).addClass('active');
       this.openBtn.click(function() {
         if (_this.openBtn.hasClass('active')) {
@@ -157,6 +171,12 @@ Author: @louisdumas
       $(this).bind('onOpen', onOpen);
       $(this).bind('onClose', onClose);
     }
+
+    Schedule.prototype.showConf = function(id) {
+      if (!this.body.hasClass('get-out-the-way')) {
+        return this.body.addClass('get-out-the-way');
+      }
+    };
 
     Schedule.prototype.slideTo = function(id) {
       var posX, target;
@@ -445,15 +465,12 @@ Author: @louisdumas
 
     function CustomInfoWindow(position, map) {
       var wrap;
-      console.log("@@@@@@@@");
       this.position = position;
       this.map = map;
       wrap = '<div class="customInfoWindow">    \n  <div class="padding">\n    <span class="address">\n      Espace 400e Bell<br>\n      100, Quai Saint-André<br>\n      Québec, QC\n    </span>\n    <img src="/assets/images/png/logo-waq-gray.png" alt="" width="121px" height="41px">\n  </div>\n</div>';
       this.wrap = $(wrap);
       this.setMap(this.map);
       this.isVisible = true;
-      console.log("---------------");
-      console.log(position);
     }
 
     CustomInfoWindow.prototype = new google.maps.OverlayView();
@@ -595,8 +612,10 @@ Author: @louisdumas
         myOnePager.hashHasChange('horaire');
         return mySchedule.slideTo(day);
       });
-      return this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/([a-zA-Z0-9\-]+)\/*$/, function(cx, day, conf) {
-        return myOnePager.hashHasChange('horaire');
+      return this.get(/\#\/horaire\/(.*)\/conf-([0-9]+)\/*$/, function(cx, day, id) {
+        myOnePager.hashHasChange('horaire');
+        mySchedule.slideTo(day);
+        return mySchedule.showConf(id);
       });
     });
     router.debug = true;

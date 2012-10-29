@@ -1,5 +1,5 @@
 <div class="conference">
-    <a class="white {{ room }}">
+    <a href="/horaire/{{ start | dateTime("%A") }}/conf-{{ id }}" class="white room-{{ room }}">
         <span class="place">Grand Hall</span>
         <div class="info">
             <figure itemprop="performer" itemscope itemtype="schema.org/Person">
@@ -7,7 +7,7 @@
                 <figcaption><h2 itemprop="name">{{ performer }}</h2></figcaption>
             </figure>
             <span itemprop="description">{{ desc }}</span>
-            <time><span itemprop="startDate" datetime="{{ start|dateTime("%Y-%m-%dT%Hh%M") }}">{{ start|dateTime("%Hh%M") }}</span> à <span itemprop="endDate" datetime="{{ end|dateTime("%Y-%m-%dT%Hh%M") }}">{{ end|dateTime("%Hh%M") }}</span></time>
+            <time><span itemprop="startDate" datetime="{{ start | dateTime("%Y-%m-%dT%Hh%M:00") }}">{{ start | dateTime("%Hh%M") }}</span> à <span itemprop="endDate" datetime="{{ end|dateTime("%Y-%m-%dT%Hh%M:00") }}">{{ end|dateTime("%Hh%M") }}</span></time>
         </div>
     </a>
 </div>

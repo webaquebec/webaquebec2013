@@ -46,6 +46,13 @@ $index = function () use ($app) {
         $speakers[$speaker["id"]] = $speaker;
     }
 
+    $sql = "SELECT * FROM sponsor ORDER BY id ASC";
+    $query = $app['db']->executeQuery($sql);
+    $sponsors = array();
+    while ($sponsor = $query->fetch(\PDO::FETCH_ASSOC)) {
+        $sponsors[$sponsor["id"]] = $sponsor;
+    }
+
     $sql = "SELECT * FROM session ORDER BY start ASC";
     $sessionsTmp = $app['db']->fetchAll($sql);
 
@@ -118,6 +125,7 @@ $index = function () use ($app) {
     return $app['twig']->render('layout.html.twig', array(
         "page" => "index",
         "speakers" => $speakers,
+        "sponsors" => $sponsors,
         "rooms" => $rooms,
         "lines" => $lines,
         "sessions" => $sessions

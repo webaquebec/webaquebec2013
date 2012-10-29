@@ -518,7 +518,7 @@ Author: @louisdumas
 
 
   $(function() {
-    var $links, body, l, links, myGmap, myHomeSlider, myMasonry, myOnePager, mySchedule, router, stickyHeader;
+    var $links, body, l, links, myGmap, myHomeSlider, myOnePager, mySchedule, router, stickyHeader;
     body = $('body');
     if (!window.console) {
       (function() {
@@ -587,19 +587,6 @@ Author: @louisdumas
       }
     });
     myOnePager = new OnePager();
-    myMasonry = new $.Mason({
-      itemSelector: '.conference',
-      containerStyle: {
-        'position': 'absolute'
-      },
-      columnWidth: function(containerWidth) {
-        return containerWidth / 4;
-      },
-      isAnimated: true,
-      animationOptions: {
-        duration: 100
-      }
-    }, $('.conferences'));
     router = $.sammy(function() {
       this.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, function(cx, section) {
         return myOnePager.hashHasChange(section);

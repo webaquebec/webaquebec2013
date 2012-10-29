@@ -31,7 +31,7 @@
               <li><a href="#/horaire/">Horaire</a></li>
               <li><a href="#/lieu-et-infos/">Lieu et infos</a></li>
               <li><a href="#/partenaires/">Partenaires</a></li>
-              <li><a href="#">À propos</a></li>
+              <li><a href="#/a-propos/">À propos</a></li>
             </ul>
         </div>
     </nav>
@@ -110,8 +110,15 @@
                                                     {{ blockData.session.description }}
                                                 </div>
                                             {% else %}
-                                                <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m">
-                                                    {{ blockData.session.description }}
+                                                <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
+                                                    {% include 'include/conference-full.html.twig' with {
+                                                        performer : speakers[blockData.session.speaker_id].name,
+                                                        img       : "/assets/images/performers/" ~ speakers[blockData.session.speaker_id].image,
+                                                        desc      : blockData.session.description,
+                                                        room      : blockData.session.room_id,
+                                                        start     : blockData.session.start,
+                                                        end       : blockData.session.end
+                                                    } %}
                                                 </div>
                                             {% endif %}
                                         {% else %}
@@ -148,31 +155,79 @@
             <h1 class="h2">Lieu et infos</h1>
             <div id="gmap"></div>
         </section>
-        <section id="partenaires" data-section style="height: 2500px">
+        <section id="partenaires" class="listing" data-section>
             <h1 class="h2">Partenaires</h1>
             <div class="group">
                 <h2>Principaux</h2>
-                <ul>
+                <ul class="list">
                     <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
                 </ul>
             </div>
             <div class="group">
                 <h2>Associés</h2>
-                <ul>
+                <ul class="list">
                     <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
                 </ul>
             </div>
             <div class="group">
                 <h2>Supporteurs</h2>
-                <ul>
+                <ul class="list">
                     <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
                 </ul>
             </div>
             <div class="group">
                 <h2>Médias et collaborateurs</h2>
-                <ul>
+                <ul class="list">
                     <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
                 </ul>
+            </div>
+        </section>
+        <section id="a-propos" data-section style="height: 2500px">
+            <h1 class="h2">À propos</h1>
+            <div class="intro">
+                <div class="desc">
+                    <h2>Par et pour les gens</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="benevoles">
+                    <h2>Des bénécoles essentiels</h2>                    
+                    <p>Un merci tout spécial à notre équipe du tonnerre !</p>
+                    <ul>
+                        <li><span>Luc Vaillancourt</span></li>
+                        <li><span>Alain Léveillé-Simard</span></li>
+                        <li><span>Audrey-Ève Dalh</span></li>
+                        <li><span>Luc Vaillancourt</span></li>
+                        <li><span>Félix Lapointe</span></li>
+                        <li><span>Luc Vaillancourt</span></li>
+                        <li><span>Audrey-Ève Dalh</span></li>
+                        <li><span>Luc Vaillancourt</span></li>
+                        <li><span>Félix Lapointe</span></li>
+                        <li><span>Alain Léveillé-Simard</span></li>
+                        <li><span>Luc Vaillancourt</span></li>
+                        <li><span>Alain Léveillé-Simard</span></li>
+                        <li><span>Audrey-Ève Dalh</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="team" class="listing">
+                <div class="group">
+                    <h2>Comité programmation</h2>
+                    <div class="list"> 
+                        <figure itemprop="attendees" itemscope itemtype="http://schema.org/Person">
+                            <img itemprop="image" src="http://cageme.herokuapp.com/g/80/80" alt="Nicolas Cage" />
+                            <figcaption itemprop="name">Nicolas Cage</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="group">
+                    <h2>Comité opérations et logistique</h2>
+                </div>
+                <div class="group">
+                    <h2 style="margin-top: 29px;">Comité IRON WEB</h2>
+                </div>
+                <div class="group">
+                    <h2>Conseil d’administration<br>et permanence</h2>
+                </div>
             </div>
         </section>
       </div>

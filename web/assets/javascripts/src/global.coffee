@@ -451,14 +451,14 @@ $ () ->
   )
   myOnePager   = new OnePager()
   
-  myMasonry    = new $.Mason(
-    itemSelector : '.conference'
-    containerStyle : { 'position' : 'absolute'}
-    columnWidth: (containerWidth) ->
-      containerWidth / 4
-    isAnimated : true
-    animationOptions: { duration: 100 }
-  , $('.conferences'))
+  # myMasonry    = new $.Mason(
+  #   itemSelector : '.conference'
+  #   containerStyle : { 'position' : 'absolute'}
+  #   columnWidth: (containerWidth) ->
+  #     containerWidth / 4
+  #   isAnimated : true
+  #   animationOptions: { duration: 100 }
+  # , $('.conferences'))
 
   #############
   #-- ROUTER --#

@@ -30,7 +30,7 @@
             <ul id="nav-wrap">
               <li><a href="#/horaire/">Horaire</a></li>
               <li><a href="#/lieu-et-infos/">Lieu et infos</a></li>
-              <li><a href="#">Partenaires</a></li>
+              <li><a href="#/partenaires/">Partenaires</a></li>
               <li><a href="#">À propos</a></li>
             </ul>
         </div>
@@ -77,14 +77,12 @@
             </div>{# #slider #}
         </div> {# #home #}
         <section id="horaire" data-section>
-            <div class="padding">
-                <h1 class="h2">Horaire</h1>
-                <ul id="schedule-nav">
-                    {% for date, dateData in sessions %}
-                        <li><a href="#/horaire/{{ date }}" data-ref="{{ date }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
+            <h1 class="h2">Horaire</h1>
+            <ul id="schedule-nav">
+                {% for date, dateData in sessions %}
+                    <li><a href="#/horaire/{{ date }}" data-ref="{{ date }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
+                {% endfor %}
+            </ul>
             <div id="schedule">
                 <ul id="rooms-name">
                     {% for room in rooms %}
@@ -98,7 +96,7 @@
                         <div class="slides-wrap">
                             {% for date, dateData in sessions %}
                                 <div id="{{ date }}" class="slide">
-                                    <span id="separators">{% for i in 0..rooms|length %}<span></span>{% endfor %}</span>
+                                    <span id="separators">{% for i in 1..rooms|length %}<span></span>{% endfor %}</span>
                                     <span class="lines">
                                         {% for line in lines[date] %}
                                             <span class="t{{ line }}"></span>
@@ -145,9 +143,37 @@
             </div>
         </section>{# #horaire #}
         
-        <section id="lieu-et-infos" data-section style="height: 2500px">
+        
+        <section id="lieu-et-infos" data-section>
             <h1 class="h2">Lieu et infos</h1>
             <div id="gmap"></div>
+        </section>
+        <section id="partenaires" data-section style="height: 2500px">
+            <h1 class="h2">Partenaires</h1>
+            <div class="group">
+                <h2>Principaux</h2>
+                <ul>
+                    <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+                </ul>
+            </div>
+            <div class="group">
+                <h2>Associés</h2>
+                <ul>
+                    <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+                </ul>
+            </div>
+            <div class="group">
+                <h2>Supporteurs</h2>
+                <ul>
+                    <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+                </ul>
+            </div>
+            <div class="group">
+                <h2>Médias et collaborateurs</h2>
+                <ul>
+                    <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+                </ul>
+            </div>
         </section>
       </div>
     </div>

@@ -370,6 +370,7 @@ Author: @louisdumas
         mapTypeControl: false,
         streetViewControl: false,
         panControl: false,
+        scrollwheel: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       mapStyle = [

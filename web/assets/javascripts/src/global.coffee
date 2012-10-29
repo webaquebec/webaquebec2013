@@ -273,13 +273,14 @@ class customGmap
   constructor: (elementId) ->
     coord = new google.maps.LatLng(46.817682, -71.2065922)
     gMapOptions = 
-      zoom: 17
-      center: coord
-      mapTypeControl: false
-      streetViewControl: false
-      panControl: false
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    
+      zoom              : 17
+      center            : coord
+      mapTypeControl    : false
+      streetViewControl : false
+      panControl        : false
+      scrollwheel       : false
+      mapTypeId         : google.maps.MapTypeId.ROADMAP
+      
     mapStyle = [
       {
         "featureType": "poi",

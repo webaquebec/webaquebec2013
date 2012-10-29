@@ -250,6 +250,38 @@ a:hover { color: #06e; text-decoration: underline;}
     }
   }
 }
+.listing {
+  .group {
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #0686b8;
+    font-size: 21px;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+    float: left;
+    width: 18.1578947%;
+    padding-left: 3%;
+    margin: 10px 0 0 0;
+  }
+  
+  ul {
+    @extend .group;
+    background: #f0f8fb;
+    padding: 10px;
+    float: left;
+    width: 81.8421053%;
+    
+    li {
+      display: inline-block;
+      float: left;
+      border: 2px solid #f0f8fb;
+      
+      & + li { margin-left: 6px;}
+    }
+  }
+  
+}
 
 /* }}} */
 
@@ -1297,25 +1329,72 @@ $t15m:40px;
 
 /* Sponsors
 **********************{{{*/
-#partenaires {
-  .group {
-    margin-bottom: 20px;
-  }
-  h2 {
-    color: #0686b8;
-    font-size: 21px;
-    font-size: 2.1rem;
-    text-transform: uppercase;
-    float: left;
-    width: 18.1578947%;
-    padding-left: 5%;
+
+/*}}}*/
+
+/* About
+**********************{{{*/
+#a-propos {
+  width: 100%;
+  color: white;
+  font-size: 18px;
+  font-size: 1.8rem;
+  
+  .intro {
+    @extend .group;
+    padding: 35px 37px 35px 3.9583333%;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    min-height: image-height('interface/a-propos-banner.jpg');
+    background: url('/assets/images/interface/a-propos-banner.jpg') left top no-repeat;
+    
+    h2 {
+      font-weight: normal;
+      font-family: $misoBold;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    h2 ~ p {
+      margin-top: 0;
+    }
   }
   
-  ul {
-    background: #f0f8fb;
-    padding: 10px;
+  .desc {
     float: left;
-    width: 81.8421053%;
+    width: 55%;
+    padding: 0 70px 0 0;
+  }
+  
+  .benevoles {
+    float: left;
+    width: 45%;
+    
+    ul {
+      @extend .group;
+      width: 100%;
+      font-size: 13px;
+      font-size: 1.3rem;
+      font-family: Arial, "Lucida Grande", sans-serif;
+
+      li {
+        float: left;
+        width: 33.3333333%;
+        margin-bottom: 2px;
+      }
+      span {
+        display: inline-block;
+        padding: 2px 3px;
+        background: #006186;
+      }
+    } 
+  }
+  
+  #team {
+    position: relative;
+    width: 100%;
+    padding-right: 30px;
+    top: -50px;
+    
   }
 }
 /*}}}*/

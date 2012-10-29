@@ -1,9 +1,13 @@
 <div class="conference">
     <a class="white {{ room }}">
-        <figure itemprop="performer" itemscope itemtype="schema.org/Person">
-            <img src="http://cageme.herokuapp.com/g/184/160" width="184" height="160" alt=" " itemprop="image" />
-            <figcaption><h2 itemprop="name">{{ performer }}</h2></figcaption>
-        </figure>
-        <span itemprop="description">{{ desc }}</span>
+        <span class="place">Grand Hall</span>
+        <div class="info">
+            <figure itemprop="performer" itemscope itemtype="schema.org/Person">
+                <img src="http://cageme.herokuapp.com/g/184/160" width="184" height="160" alt=" " itemprop="image" />
+                <figcaption><h2 itemprop="name">{{ performer }}</h2></figcaption>
+            </figure>
+            <span itemprop="description">{{ desc }}</span>
+            <time><span itemprop="startDate" datetime="{{ start|dateTime("%Y-%m-%dT%Hh%M") }}">{{ start|dateTime("%Hh%M") }}</span> à <span itemprop="endDate" datetime="{{ end|dateTime("%Y-%m-%dT%Hh%M") }}">{{ end|dateTime("%Hh%M") }}</span></time>
+        </div>
     </a>
 </div>

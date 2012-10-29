@@ -880,6 +880,23 @@ $t15m:40px;
       border-style: solid;
       border-width: 0 15px 15px 0;
       border-color: transparent $libeo transparent transparent;
+      -webkit-transition-property: all;
+      -moz-transition-property: all;
+      -ms-transition-property: all;
+      -o-transition-property: all;
+      transition-property: all;
+
+      -webkit-transition-duration: 200ms;
+      -moz-transition-duration: 200ms;
+      -ms-transition-duration: 200ms;
+      -o-transition-duration: 200ms;
+      transition-duration: 200ms;
+
+      -webkit-transition-timing-function: linear;
+      -moz-transition-timing-function: linear;
+      -ms-transition-timing-function: linear;
+      -o-transition-timing-function: linear;
+      transition-timing-function: linear;
     }
     
     &:hover {
@@ -887,9 +904,70 @@ $t15m:40px;
       background: #0587b9;
       text-decoration: none;
       
-      h2 {
+      h2,
+      time,
+      .place,
+      span[itemprop="description"] {
         color: white;
       }
+      
+      &:after {
+        border-color: transparent white transparent transparent;
+      }
+      
+    }
+    
+    h2 {
+      color: #0687b9;
+      font-weight: bold;
+      margin: 0;
+      -webkit-transition-property: color;
+      -moz-transition-property: color;
+      -ms-transition-property: color;
+      -o-transition-property: color;
+      transition-property: color;
+
+      -webkit-transition-duration: 200ms;
+      -moz-transition-duration: 200ms;
+      -ms-transition-duration: 200ms;
+      -o-transition-duration: 200ms;
+      transition-duration: 200ms;
+
+      -webkit-transition-timing-function: linear;
+      -moz-transition-timing-function: linear;
+      -ms-transition-timing-function: linear;
+      -o-transition-timing-function: linear;
+      transition-timing-function: linear;
+
+      -webkit-transform : translateZ(0);
+      -webkit-backface-visibility: hidden;
+      -o-transform : translateZ(0);
+      -moz-tform : translateZ(0);
+      transform : translateZ(0);
+      
+    }
+    
+    span[itemprop="description"],
+    time,
+    .place,
+    &:after {
+      -webkit-transition-property: color;
+      -moz-transition-property: color;
+      -ms-transition-property: color;
+      -o-transition-property: color;
+      transition-property: color;
+
+      -webkit-transition-duration: 200ms;
+      -moz-transition-duration: 200ms;
+      -ms-transition-duration: 200ms;
+      -o-transition-duration: 200ms;
+      transition-duration: 200ms;
+
+      -webkit-transition-timing-function: linear;
+      -moz-transition-timing-function: linear;
+      -ms-transition-timing-function: linear;
+      -o-transition-timing-function: linear;
+      transition-timing-function: linear;
     }
     
     img {
@@ -1167,35 +1245,8 @@ $t15m:40px;
           }
           
           h2 {
-            color: #0687b9;
-            font-weight: bold;
             font-size: 13px;
             font-size: 1.3rem;
-            margin: 0;
-            -webkit-transition-property: color;
-            -moz-transition-property: color;
-            -ms-transition-property: color;
-            -o-transition-property: color;
-            transition-property: color;
-
-            -webkit-transition-duration: 200ms;
-            -moz-transition-duration: 200ms;
-            -ms-transition-duration: 200ms;
-            -o-transition-duration: 200ms;
-            transition-duration: 200ms;
-
-            -webkit-transition-timing-function: linear;
-            -moz-transition-timing-function: linear;
-            -ms-transition-timing-function: linear;
-            -o-transition-timing-function: linear;
-            transition-timing-function: linear;
-
-            -webkit-transform : translateZ(0);
-            -webkit-backface-visibility: hidden;
-            -o-transform : translateZ(0);
-            -moz-tform : translateZ(0);
-            transform : translateZ(0);
-            
           }
           
           span[itemprop="description"] {
@@ -1220,10 +1271,49 @@ $t15m:40px;
           .white {
             padding: 10px 10px 10px 210px;
             
+            .info {
+              max-width: 450px;
+            }
+            
             img {
               top: 10px;
               left: 10px;
             }
+            
+            h2 {
+              margin: 15px 0;
+            }
+            
+            .place {
+              position: absolute;
+              top: 10px;
+              right: 46px;
+              display: inline-block;
+              color: #006287;
+              font-family: $miso;
+              font-size: 23px;
+              font-size: 2.3rem;
+              text-transform: uppercase;
+            }
+            
+            time{
+              display: block;
+              color: #b3b3b3;
+              font-weight: bold;
+              font-size: 14px;
+              font-size: 1.4rem;
+            }
+            
+            span[itemprop="description"] {
+              display: block;
+              color: #006287;
+              font-weight: bold;
+              font-size: 14px;
+              font-size: 1.4rem;
+              margin: 10px 0;
+            }
+            
+            &:after { border-color: transparent #0687b9 transparent transparent;}
           }
         }
       }

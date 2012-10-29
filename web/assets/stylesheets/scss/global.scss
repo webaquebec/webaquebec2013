@@ -815,6 +815,91 @@ $t15m:40px;
 .room-col {
    width: 25%;
 }
+
+.conference-box {
+  float: left;
+  color: #006287;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  padding: 8px;
+  background: transparent;
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -ms-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+  
+  &:hover {
+    background: #88dcec;
+  }
+  
+  .white {
+    position: relative;
+    display: block;
+    background: white;
+    height: 100%;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+
+    -webkit-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    -ms-transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+    transition-duration: 200ms;
+
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 0 15px 15px 0;
+      border-color: transparent $libeo transparent transparent;
+    }
+    
+    &:hover {
+      color: white;
+      background: #0587b9;
+      text-decoration: none;
+      
+      h2 {
+        color: white;
+      }
+    }
+    
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
 #horaire .padding {
   position: relative;
 }
@@ -1053,6 +1138,7 @@ $t15m:40px;
       } // .lines
       
       .conferences,
+      .row,
       .break {
         position: absolute;
         z-index: 14;
@@ -1066,88 +1152,18 @@ $t15m:40px;
         padding: 0;
         
         .conference {
+          @extend .conference-box;
           width: 24.9%;
-          float: left;
-          color: #006287;
           font-size: 13px;
           font-size: 1.3rem;
-          font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-          padding: 8px;
-          background: transparent;
-          -webkit-transition-property: background;
-          -moz-transition-property: background;
-          -ms-transition-property: background;
-          -o-transition-property: background;
-          transition-property: background;
-
-          -webkit-transition-duration: 200ms;
-          -moz-transition-duration: 200ms;
-          -ms-transition-duration: 200ms;
-          -o-transition-duration: 200ms;
-          transition-duration: 200ms;
-
-          -webkit-transition-timing-function: linear;
-          -moz-transition-timing-function: linear;
-          -ms-transition-timing-function: linear;
-          -o-transition-timing-function: linear;
-          transition-timing-function: linear;
-          
-          &:hover {
-            background: #88dcec;
-          }
           
           .white {
-            position: relative;
-            display: block;
-            background: white;
-            height: 100%;
             padding: 10px 10px 10px 55px;
-            border-radius: 0px 0px 5px 5px;
-            box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            -webkit-transition-property: all;
-            -moz-transition-property: all;
-            -ms-transition-property: all;
-            -o-transition-property: all;
-            transition-property: all;
-
-            -webkit-transition-duration: 200ms;
-            -moz-transition-duration: 200ms;
-            -ms-transition-duration: 200ms;
-            -o-transition-duration: 200ms;
-            transition-duration: 200ms;
-
-            -webkit-transition-timing-function: linear;
-            -moz-transition-timing-function: linear;
-            -ms-transition-timing-function: linear;
-            -o-transition-timing-function: linear;
-            transition-timing-function: linear;
-            
-            &:after {
-              content: "";
-              position: absolute;
-              top: 0;
-              right: 0;
-              width: 0px;
-              height: 0px;
-              border-style: solid;
-              border-width: 0 15px 15px 0;
-              border-color: transparent $libeo transparent transparent;
-            }
             
             &.ixmedia:after { border-color: transparent $ixmedia transparent transparent;}
             &.vetiq:after { border-color: transparent $vetiq transparent transparent;}
             &.korem:after { border-color: transparent $korem transparent transparent;}
 
-            &:hover {
-              color: white;
-              background: #0587b9;
-              text-decoration: none;
-              
-              h2 {
-                color: white;
-              }
-            }
           }
           
           h2 {
@@ -1182,12 +1198,6 @@ $t15m:40px;
             
           }
           
-          img {
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-          
           span[itemprop="description"] {
             display: block;
             width: 122px;
@@ -1200,6 +1210,23 @@ $t15m:40px;
           }
         } // .conference
       } // .conferences 
+      
+      .row {
+        .conference {
+          @extend .conference-box;
+          width: 100%;
+          height: 100%;
+          
+          .white {
+            padding: 10px 10px 10px 210px;
+            
+            img {
+              top: 10px;
+              left: 10px;
+            }
+          }
+        }
+      }
       .break {
         display: block;
         z-index: 12;

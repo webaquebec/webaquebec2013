@@ -110,8 +110,13 @@
                                                     {{ blockData.session.description }}
                                                 </div>
                                             {% else %}
-                                                <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m">
-                                                    {{ blockData.session.description }}
+                                                <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m" itemprop="subEvent" itemscope itemtype="schema.org/Event">
+                                                    {% include 'include/conference-full.html.twig' with {
+                                                        performer : speakers[blockData.session.speaker_id].name,
+                                                        img       : "/assets/images/performers/" ~ speakers[blockData.session.speaker_id].image,
+                                                        desc      : blockData.session.description,
+                                                        room      : blockData.session.room_id
+                                                    } %}
                                                 </div>
                                             {% endif %}
                                         {% else %}

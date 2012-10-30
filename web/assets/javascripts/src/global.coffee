@@ -111,10 +111,10 @@ class Schedule
     @body                = $('body')
     @wrapConfContent     = null
     @confScrollbar       = null
-    
+    @loadingGIF          = null
     template            = '''
     <section id="conf-desc">
-      <span class="loading"></span>
+      <span class="loading"><img src="/assets/images/interface/loading.gif" /></span>
       <div class="wrap-content"></div>
     </section>
     <span id="overlay"></span>
@@ -123,6 +123,7 @@ class Schedule
     if !$('#conf-desc').length
       @body.append(template)
       @wrapConfContent = $('#conf-desc .wrap-content')
+      @loadingGIF      = $('#conf-desc .loading')
       
     @overlay = $('#overlay')
       
@@ -180,12 +181,18 @@ class Schedule
     
     request.done((response) =>
       @wrapConfContent.html(response)
-      
       newHeigh = @wrapConfContent.outerHeight() - 480
       @wrapConfContent.find('.viewport').css({ height : newHeigh})
-      
       @confScrollbar = $('#scrollbar1')
       @confScrollbar.tinyscrollbar()
+      
+      t = setTimeout(()=>
+        @loadingGIF.addClass('fadding')
+        # Time for the css transition to end
+        t1 = setTimeout(()=>
+          @loadingGIF.removeClass('fadding').addClass('off')
+        , 200)
+      , 500)
     )
 
     request.fail((response) =>)
@@ -193,6 +200,9 @@ class Schedule
   closeConf: ->
     @confLinks.removeClass('active')
     @body.removeClass('lock')
+    t = setTimeout(()=>
+      @loadingGIF.removeClass('off')
+    , 500)
     
   slideTo: (id) ->
     target = @slides.filter("##{id}")

@@ -1515,6 +1515,62 @@ body {
   -moz-tform : translateZ(0);
   transform : translateZ(0);
   
+  .loading {
+    display: block;
+    background: #0086b9;
+    position: absolute;
+    z-index: 96;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -ms-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+
+    -webkit-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    -ms-transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+    transition-duration: 200ms;
+
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: image-width('interface/shadow-conf-single.png');
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: url('/assets/images/interface/shadow-conf-single.png') left top repeat-y;
+    }
+
+    img {
+      position: absolute;
+      top: 150px;
+      left: 50%;
+      margin-left: - (image-width('interface/loading.gif') / 2);
+    }
+    
+    &.off {
+      opacity: 0;
+      top: -9999em;
+      bottom: auto;
+    }
+    
+    &.fadding {
+      opacity: 0;
+    }
+  }
+  
   .wrap-content {
     position: relative;
     background: #0086b9;
@@ -1599,11 +1655,12 @@ body {
           width: 100%;
           left: 0;
           bottom: 415px;
-          padding-right: 8px;
+          padding-right: 30px;
           top: 0;
           list-style: none;
-//          overflow: hidden;
-//          overflow-y: scroll;
+          font-size: 13px;
+          font-size: 1.3rem;
+          font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         }
       }
 

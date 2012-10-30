@@ -150,10 +150,12 @@ Author: @louisdumas
       this.body = $('body');
       this.wrapConfContent = null;
       this.confScrollbar = null;
-      template = '<section id="conf-desc">\n  <span class="loading"></span>\n  <div class="wrap-content"></div>\n</section>\n<span id="overlay"></span>';
+      this.loadingGIF = null;
+      template = '<section id="conf-desc">\n  <span class="loading"><img src="/assets/images/interface/loading.gif" /></span>\n  <div class="wrap-content"></div>\n</section>\n<span id="overlay"></span>';
       if (!$('#conf-desc').length) {
         this.body.append(template);
         this.wrapConfContent = $('#conf-desc .wrap-content');
+        this.loadingGIF = $('#conf-desc .loading');
       }
       this.overlay = $('#overlay');
       this.confLinks.each(function() {
@@ -214,21 +216,33 @@ Author: @louisdumas
         }
       });
       request.done(function(response) {
-        var newHeigh;
+        var newHeigh, t;
         _this.wrapConfContent.html(response);
         newHeigh = _this.wrapConfContent.outerHeight() - 480;
         _this.wrapConfContent.find('.viewport').css({
           height: newHeigh
         });
         _this.confScrollbar = $('#scrollbar1');
-        return _this.confScrollbar.tinyscrollbar();
+        _this.confScrollbar.tinyscrollbar();
+        return t = setTimeout(function() {
+          var t1;
+          _this.loadingGIF.addClass('fadding');
+          return t1 = setTimeout(function() {
+            return _this.loadingGIF.removeClass('fadding').addClass('off');
+          }, 200);
+        }, 500);
       });
       return request.fail(function(response) {});
     };
 
     Schedule.prototype.closeConf = function() {
+      var t,
+        _this = this;
       this.confLinks.removeClass('active');
-      return this.body.removeClass('lock');
+      this.body.removeClass('lock');
+      return t = setTimeout(function() {
+        return _this.loadingGIF.removeClass('off');
+      }, 500);
     };
 
     Schedule.prototype.slideTo = function(id) {

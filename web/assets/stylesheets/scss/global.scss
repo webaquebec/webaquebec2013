@@ -1487,9 +1487,9 @@ body {
   z-index: 95;
   top: 0;
   background: white;
-  width: 300px;
+  width: 400px;
   height: 100%;
-  right: -300px;
+  right: -400px;
   padding-top: 70px;
   -webkit-transition-property: right;
   -moz-transition-property: right;
@@ -1678,7 +1678,7 @@ body {
 }
 
 body.lock {
-  left: -300px;
+  left: -400px;
   overflow: hidden;
   
   #conf-desc {

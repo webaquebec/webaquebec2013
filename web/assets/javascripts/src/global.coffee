@@ -156,7 +156,7 @@ class Schedule
       
     $(window).on('resize', () =>
       if @confScrollbar && @wrapConfContent
-        newHeigh = @wrapConfContent.outerHeight() - 480
+        newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 )
         @wrapConfContent.find('.viewport').css({ height : newHeigh})
         @confScrollbar.tinyscrollbar_update()
     )
@@ -181,7 +181,7 @@ class Schedule
     
     request.done((response) =>
       @wrapConfContent.html(response)
-      newHeigh = @wrapConfContent.outerHeight() - 480
+      newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 )
       @wrapConfContent.find('.viewport').css({ height : newHeigh})
       @confScrollbar = $('#scrollbar1')
       @confScrollbar.tinyscrollbar()

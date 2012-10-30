@@ -187,7 +187,7 @@ Author: @louisdumas
       $(window).on('resize', function() {
         var newHeigh;
         if (_this.confScrollbar && _this.wrapConfContent) {
-          newHeigh = _this.wrapConfContent.outerHeight() - 480;
+          newHeigh = _this.wrapConfContent.outerHeight() - (_this.wrapConfContent.find('figure').outerHeight() + 125);
           _this.wrapConfContent.find('.viewport').css({
             height: newHeigh
           });
@@ -218,7 +218,7 @@ Author: @louisdumas
       request.done(function(response) {
         var newHeigh, t;
         _this.wrapConfContent.html(response);
-        newHeigh = _this.wrapConfContent.outerHeight() - 480;
+        newHeigh = _this.wrapConfContent.outerHeight() - (_this.wrapConfContent.find('figure').outerHeight() + 125);
         _this.wrapConfContent.find('.viewport').css({
           height: newHeigh
         });

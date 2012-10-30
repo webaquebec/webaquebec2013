@@ -59,7 +59,9 @@
         <div id="schedule">
             <ul id="rooms-name">
                 {% for room in rooms %}
-                    <li id="room-{{ room.id }}">Salle {{ room.name }}</li>
+                    {% if room.id != 6 %}
+                        <li id="room-{{ room.id }}">Salle {{ room.name }}</li>
+                    {% endif %}
                 {% endfor %}
             </ul>
             <span class="shadow-top"></span>

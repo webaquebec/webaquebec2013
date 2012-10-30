@@ -1439,11 +1439,11 @@ body {
   -o-transition-property: left;
   transition-property: left;
 
-  -webkit-transition-duration: 200ms;
-  -moz-transition-duration: 200ms;
-  -ms-transition-duration: 200ms;
-  -o-transition-duration: 200ms;
-  transition-duration: 200ms;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -ms-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
 
   -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
@@ -1468,11 +1468,11 @@ body {
     -o-transition-property: opacity;
     transition-property: opacity;
 
-    -webkit-transition-duration: 200ms;
-    -moz-transition-duration: 200ms;
-    -ms-transition-duration: 200ms;
-    -o-transition-duration: 200ms;
-    transition-duration: 200ms;
+    -webkit-transition-duration: 500ms;
+    -moz-transition-duration: 500ms;
+    -ms-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
 
     -webkit-transition-timing-function: linear;
     -moz-transition-timing-function: linear;
@@ -1497,11 +1497,11 @@ body {
   -o-transition-property: right;
   transition-property: right;
 
-  -webkit-transition-duration: 200ms;
-  -moz-transition-duration: 200ms;
-  -ms-transition-duration: 200ms;
-  -o-transition-duration: 200ms;
-  transition-duration: 200ms;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -ms-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
 
   -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
@@ -1515,13 +1515,108 @@ body {
   -moz-tform : translateZ(0);
   transform : translateZ(0);
   
-  .content {
+  .wrap-content {
+    position: relative;
     background: #0086b9;
     height: 100%;
+    overflow: hidden;
+    
+    figure {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
     
     h1 {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      line-height: 34px;
+      height: 34px;
       margin: 0;
+      color: white;
+      font-weight: normal;
+      text-transform: uppercase;
+      padding-left: 24px;
+      font-family: $misoBold;
+      font-size: 21px;
+      font-size: 2.1rem;
+      background-color: rgba(0, 97, 134, 0.5);
     }
+    
+    .content {
+      position: relative;
+      padding: 10px 15px 10px 24px;
+      color: white;
+      font-size: 18px;
+      font-size: 1.8rem;
+      height: 100%;
+      
+      &:before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: image-width('interface/shadow-conf-single.png');
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: url('/assets/images/interface/shadow-conf-single.png') left top repeat-y;
+      }
+      
+      h2 {
+        color: white;
+        font-weight: normal;
+        text-transform: uppercase;
+        font-family: $misoBold;
+        font-size: 21px;
+        font-size: 2.1rem;
+        margin: 0;
+      }
+      
+      .time {
+        display: block;
+        font-size: 18px;
+        font-size: 1.8rem;
+        margin: 10px 0 0 0;
+      }
+      .room {
+        display: block;
+        font-size: 18px;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      
+      .desc-wrap {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        
+        .viewport { width: 100%; height: 578px; overflow: hidden; position: relative; }
+        
+        .overview {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: 415px;
+          padding-right: 8px;
+          top: 0;
+          list-style: none;
+//          overflow: hidden;
+//          overflow-y: scroll;
+        }
+      }
+
+      #scrollbar1 .thumb .end,
+      #scrollbar1 .thumb { background-color: white; }
+      #scrollbar1 .scrollbar { position: absolute; width: 6px; right: 0; top: 0; }
+      #scrollbar1 .track { background-color: #339ec7; height: 100%; width:6px; position: relative; padding: 0 1px; }
+      #scrollbar1 .thumb { height: 20px; width: 6px; cursor: pointer; overflow: hidden; position: absolute; top: 0; }
+      #scrollbar1 .thumb .end { overflow: hidden; height: 5px; width: 13px; }
+      #scrollbar1 .disable{ display: none; }
+      .noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
+      
+    } //.content
   }
 }
 

@@ -109,19 +109,21 @@ class Schedule
     @openBtn             = $('#schedule #open-shedule a')
     @confLinks           = $('#schedule a.white')
     @body                = $('body')
-    @template            = '''
+    @wrapConfContent     = null
+    @confScrollbar       = null
+    
+    template            = '''
     <section id="conf-desc">
       <span class="loading"></span>
-      <img src="http://cageme.herokuapp.com/g/300/281" width="100%">
-      <div class="content">
-        <h1>Foo Bar</h1>
-      </div>
+      <div class="wrap-content"></div>
     </section>
     <span id="overlay"></span>
     '''
     
     if !$('#conf-desc').length
-      @body.append(@template)
+      @body.append(template)
+      @wrapConfContent = $('#conf-desc .wrap-content')
+      
     @overlay = $('#overlay')
       
     @confLinks.each( ->
@@ -129,13 +131,12 @@ class Schedule
       newHref  = this_.attr('href').replace('/horaire', '#/horaire')
       this_.attr('href', newHref)
     )
-    
     @confLinks.click( ->
       this_ = $(this)
       if window.location.hash is this_.attr('href')
         window.router.refresh()
     )
-
+    
     @navElement.eq(0).addClass('active')
 
     @openBtn.click( =>
@@ -151,14 +152,43 @@ class Schedule
     
     onOpen  = if opts? && opts.onOpen? then opts.onOpen else () ->
     onClose = if opts? && opts.onClose? then opts.onClose else () ->
+      
+    $(window).on('resize', () =>
+      if @confScrollbar && @wrapConfContent
+        newHeigh = @wrapConfContent.outerHeight() - 480
+        @wrapConfContent.find('.viewport').css({ height : newHeigh})
+        @confScrollbar.tinyscrollbar_update()
+    )
     
     $(@).bind('onOpen', onOpen)
     $(@).bind('onClose', onClose)
     
   showConf: (id) =>
-    @confLinks.filter('[data-id="'+id+'"]').addClass('active')
+    link = @confLinks.filter('[data-id="'+id+'"]')
+    url  = link.attr('href').replace('#', '')
+
+    link.addClass('active')  
     if !@body.hasClass('lock')
       @body.addClass('lock')
+    
+    request = $.ajax(
+      url: url
+      type: "GET"
+      dataType: "html"
+      data: { ajax : 1 }
+    )
+    
+    request.done((response) =>
+      @wrapConfContent.html(response)
+      
+      newHeigh = @wrapConfContent.outerHeight() - 480
+      @wrapConfContent.find('.viewport').css({ height : newHeigh})
+      
+      @confScrollbar = $('#scrollbar1')
+      @confScrollbar.tinyscrollbar()
+    )
+
+    request.fail((response) =>)
 
   closeConf: ->
     @confLinks.removeClass('active')

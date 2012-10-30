@@ -2,6 +2,7 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 setlocale(LC_ALL, 'fr_CA.UTF-8');
+date_default_timezone_set('GMT');
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -35,7 +36,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 
 // INDEX
 $index = function ($day = null, $slug = null, $id = null) use ($app) {
-    date_default_timezone_set('GMT');
+    
     $sql = "SELECT * FROM room ORDER BY id ASC";
     $rooms = $app['db']->fetchAll($sql);
 
@@ -136,16 +137,21 @@ $app->get('/', $index)
 
 $app->get('/horaire/{day}/{slug}-{id}', function ($day = null, $slug = null, $id = null) use ($app) {
     $sessionId = (int) $id;
-    $sql = "SELECT * FROM session WHERE id = ?";
+    $sql = "SELECT session.*, speaker.name AS speaker_name, room.name AS room_name FROM session JOIN speaker ON speaker.id = session.speaker_id JOIN room ON room.id = session.room_id WHERE session.id = ?";
     $session = $app['db']->fetchAssoc($sql, array($sessionId));
-    var_dump($session);
+
     if ($session) {
-      return $app['twig']->render('conference/index.html.twig', $session);
+      if (isset($_GET['ajax']) && $_GET['ajax'] === '1') {
+        return $app['twig']->render('conference/show.html.twig', $session);
+      } else {
+        return $app['twig']->render('conference/index.html.twig', array( "session" => $session));
+      }
     } else {
       $app->abort(404);
     }
   
-})->bind('showSchedule');
+})->bind('showSchedule')
+  ->assert('slug', '.*');
 
 
 $app->error(function (\Exception $e, $code) use ($app){ 

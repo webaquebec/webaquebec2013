@@ -137,7 +137,7 @@ Author: @louisdumas
 
       this.showConf = __bind(this.showConf, this);
 
-      var onClose, onOpen,
+      var onClose, onOpen, template,
         _this = this;
       this.slideWrapper = $('#schedule .slides-wrap');
       this.overFlowwRapper = $('#schedule .wrapper');
@@ -148,9 +148,12 @@ Author: @louisdumas
       this.openBtn = $('#schedule #open-shedule a');
       this.confLinks = $('#schedule a.white');
       this.body = $('body');
-      this.template = '<section id="conf-desc">\n  <span class="loading"></span>\n  <img src="http://cageme.herokuapp.com/g/300/281" width="100%">\n  <div class="content">\n    <h1>Foo Bar</h1>\n  </div>\n</section>\n<span id="overlay"></span>';
+      this.wrapConfContent = null;
+      this.confScrollbar = null;
+      template = '<section id="conf-desc">\n  <span class="loading"></span>\n  <div class="wrap-content"></div>\n</section>\n<span id="overlay"></span>';
       if (!$('#conf-desc').length) {
-        this.body.append(this.template);
+        this.body.append(template);
+        this.wrapConfContent = $('#conf-desc .wrap-content');
       }
       this.overlay = $('#overlay');
       this.confLinks.each(function() {
@@ -179,15 +182,48 @@ Author: @louisdumas
       });
       onOpen = (opts != null) && (opts.onOpen != null) ? opts.onOpen : function() {};
       onClose = (opts != null) && (opts.onClose != null) ? opts.onClose : function() {};
+      $(window).on('resize', function() {
+        var newHeigh;
+        if (_this.confScrollbar && _this.wrapConfContent) {
+          newHeigh = _this.wrapConfContent.outerHeight() - 480;
+          _this.wrapConfContent.find('.viewport').css({
+            height: newHeigh
+          });
+          return _this.confScrollbar.tinyscrollbar_update();
+        }
+      });
       $(this).bind('onOpen', onOpen);
       $(this).bind('onClose', onClose);
     }
 
     Schedule.prototype.showConf = function(id) {
-      this.confLinks.filter('[data-id="' + id + '"]').addClass('active');
+      var link, request, url,
+        _this = this;
+      link = this.confLinks.filter('[data-id="' + id + '"]');
+      url = link.attr('href').replace('#', '');
+      link.addClass('active');
       if (!this.body.hasClass('lock')) {
-        return this.body.addClass('lock');
+        this.body.addClass('lock');
       }
+      request = $.ajax({
+        url: url,
+        type: "GET",
+        dataType: "html",
+        data: {
+          ajax: 1
+        }
+      });
+      request.done(function(response) {
+        var newHeigh;
+        _this.wrapConfContent.html(response);
+        newHeigh = _this.wrapConfContent.outerHeight() - 480;
+        _this.wrapConfContent.find('.viewport').css({
+          height: newHeigh
+        });
+        _this.confScrollbar = $('#scrollbar1');
+        return _this.confScrollbar.tinyscrollbar();
+      });
+      return request.fail(function(response) {});
     };
 
     Schedule.prototype.closeConf = function() {

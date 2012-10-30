@@ -192,7 +192,7 @@ class Schedule
         t1 = setTimeout(()=>
           @loadingGIF.removeClass('fadding').addClass('off')
         , 200)
-      , 500)
+      , 400)
     )
 
     request.fail((response) =>)
@@ -202,7 +202,7 @@ class Schedule
     @body.removeClass('lock')
     t = setTimeout(()=>
       @loadingGIF.removeClass('off')
-    , 500)
+    , 400)
     
   slideTo: (id) ->
     target = @slides.filter("##{id}")

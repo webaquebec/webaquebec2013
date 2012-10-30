@@ -230,7 +230,7 @@ Author: @louisdumas
           return t1 = setTimeout(function() {
             return _this.loadingGIF.removeClass('fadding').addClass('off');
           }, 200);
-        }, 500);
+        }, 400);
       });
       return request.fail(function(response) {});
     };
@@ -242,7 +242,7 @@ Author: @louisdumas
       this.body.removeClass('lock');
       return t = setTimeout(function() {
         return _this.loadingGIF.removeClass('off');
-      }, 500);
+      }, 400);
     };
 
     Schedule.prototype.slideTo = function(id) {

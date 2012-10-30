@@ -905,14 +905,15 @@ a:hover {
   text-transform: uppercase;
   font-size: 42px;
   font-size: 4.2rem;
+  line-height: 48px;
 }
-/* line 597, scss/global.scss */
+/* line 598, scss/global.scss */
 #slider .desc-nav-wrap {
   margin: 5px 0 0 71px;
   font-size: 14px;
   font-size: 1.4rem;
 }
-/* line 603, scss/global.scss */
+/* line 604, scss/global.scss */
 #slider .slider-nav a {
   display: inline-block;
   background: white;
@@ -940,18 +941,18 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 635, scss/global.scss */
+/* line 636, scss/global.scss */
 #slider .slider-nav a:hover, #slider .slider-nav a:focus, #slider .slider-nav a.active {
   background: #1fc2dd;
 }
-/* line 640, scss/global.scss */
+/* line 641, scss/global.scss */
 #slider .descs {
   position: relative;
   display: block;
   font-size: 24px;
   font-size: 2.4rem;
 }
-/* line 646, scss/global.scss */
+/* line 647, scss/global.scss */
 #slider .descs span {
   position: absolute;
   display: inline-block;
@@ -980,18 +981,18 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 677, scss/global.scss */
+/* line 678, scss/global.scss */
 #slider .descs span.backstage {
   opacity: 0;
   top: 0;
 }
-/* line 682, scss/global.scss */
+/* line 683, scss/global.scss */
 #slider .descs span.on-stage {
   opacity: 1;
   top: 0;
   left: 0;
 }
-/* line 690, scss/global.scss */
+/* line 691, scss/global.scss */
 #slider .slides-wrap {
   position: relative;
   z-index: 10;
@@ -1018,7 +1019,7 @@ a:hover {
   -o-transform: translateZ(0);
   -moz-tform: translateZ(0);
 }
-/* line 720, scss/global.scss */
+/* line 721, scss/global.scss */
 #slider .slides-wrap .slide {
   position: relative;
   float: left;
@@ -1026,7 +1027,7 @@ a:hover {
   height: 100%;
   overflow: hidden;
 }
-/* line 727, scss/global.scss */
+/* line 728, scss/global.scss */
 #slider .slides-wrap .slide img {
   position: absolute;
   height: 100%;
@@ -1037,227 +1038,227 @@ a:hover {
 /* }}} */
 /* Schedule
 **********************{{{*/
-/* line 750, scss/global.scss */
+/* line 751, scss/global.scss */
 .t7h00 {
   top: 0;
 }
 
-/* line 751, scss/global.scss */
+/* line 752, scss/global.scss */
 .t7h15 {
   top: 40px;
 }
 
-/* line 752, scss/global.scss */
+/* line 753, scss/global.scss */
 .t7h30 {
   top: 80px;
 }
 
-/* line 753, scss/global.scss */
+/* line 754, scss/global.scss */
 .t7h45 {
   top: 120px;
 }
 
-/* line 755, scss/global.scss */
+/* line 756, scss/global.scss */
 .t8h00 {
   top: 160px;
 }
 
-/* line 756, scss/global.scss */
+/* line 757, scss/global.scss */
 .t8h15 {
   top: 200px;
 }
 
-/* line 757, scss/global.scss */
+/* line 758, scss/global.scss */
 .t8h30 {
   top: 240px;
 }
 
-/* line 758, scss/global.scss */
+/* line 759, scss/global.scss */
 .t8h45 {
   top: 280px;
 }
 
-/* line 760, scss/global.scss */
+/* line 761, scss/global.scss */
 .t9h00 {
   top: 320px;
 }
 
-/* line 761, scss/global.scss */
+/* line 762, scss/global.scss */
 .t9h15 {
   top: 360px;
 }
 
-/* line 762, scss/global.scss */
+/* line 763, scss/global.scss */
 .t9h30 {
   top: 400px;
 }
 
-/* line 763, scss/global.scss */
+/* line 764, scss/global.scss */
 .t9h45 {
   top: 440px;
 }
 
-/* line 765, scss/global.scss */
+/* line 766, scss/global.scss */
 .t10h00 {
   top: 480px;
 }
 
-/* line 766, scss/global.scss */
+/* line 767, scss/global.scss */
 .t10h15 {
   top: 520px;
 }
 
-/* line 767, scss/global.scss */
+/* line 768, scss/global.scss */
 .t10h30 {
   top: 560px;
 }
 
-/* line 768, scss/global.scss */
+/* line 769, scss/global.scss */
 .t10h45 {
   top: 600px;
 }
 
-/* line 771, scss/global.scss */
+/* line 772, scss/global.scss */
 .t11h00 {
   top: 640px;
 }
 
-/* line 772, scss/global.scss */
+/* line 773, scss/global.scss */
 .t11h15 {
   top: 680px;
 }
 
-/* line 773, scss/global.scss */
+/* line 774, scss/global.scss */
 .t11h30 {
   top: 720px;
 }
 
-/* line 774, scss/global.scss */
+/* line 775, scss/global.scss */
 .t11h45 {
   top: 760px;
 }
 
-/* line 776, scss/global.scss */
+/* line 777, scss/global.scss */
 .t12h00 {
   top: 800px;
 }
 
-/* line 778, scss/global.scss */
+/* line 779, scss/global.scss */
 .t13h00 {
   top: 960px;
 }
 
-/* line 779, scss/global.scss */
+/* line 780, scss/global.scss */
 .t13h15 {
   top: 1000px;
 }
 
-/* line 780, scss/global.scss */
+/* line 781, scss/global.scss */
 .t13h30 {
   top: 1040px;
 }
 
-/* line 781, scss/global.scss */
+/* line 782, scss/global.scss */
 .t13h45 {
   top: 1080px;
 }
 
-/* line 783, scss/global.scss */
+/* line 784, scss/global.scss */
 .t14h00 {
   top: 1120px;
 }
 
-/* line 784, scss/global.scss */
+/* line 785, scss/global.scss */
 .t14h15 {
   top: 1160px;
 }
 
-/* line 785, scss/global.scss */
+/* line 786, scss/global.scss */
 .t14h30 {
   top: 1200px;
 }
 
-/* line 786, scss/global.scss */
+/* line 787, scss/global.scss */
 .t14h45 {
   top: 1240px;
 }
 
-/* line 788, scss/global.scss */
+/* line 789, scss/global.scss */
 .t15h00 {
   top: 1280px;
 }
 
-/* line 789, scss/global.scss */
+/* line 790, scss/global.scss */
 .t15h15 {
   top: 1320px;
 }
 
-/* line 790, scss/global.scss */
+/* line 791, scss/global.scss */
 .t15h30 {
   top: 1360px;
 }
 
-/* line 791, scss/global.scss */
+/* line 792, scss/global.scss */
 .t15h45 {
   top: 1400px;
 }
 
-/* line 793, scss/global.scss */
+/* line 794, scss/global.scss */
 .t16h00 {
   top: 1440px;
 }
 
-/* line 794, scss/global.scss */
+/* line 795, scss/global.scss */
 .t16h15 {
   top: 1480px;
 }
 
-/* line 795, scss/global.scss */
+/* line 796, scss/global.scss */
 .t16h30 {
   top: 1520px;
 }
 
-/* line 796, scss/global.scss */
+/* line 797, scss/global.scss */
 .t16h45 {
   top: 1560px;
 }
 
-/* line 798, scss/global.scss */
+/* line 799, scss/global.scss */
 .t17h00 {
   top: 1600px;
 }
 
-/* line 800, scss/global.scss */
+/* line 801, scss/global.scss */
 .t15m {
   height: 40px;
 }
 
-/* line 801, scss/global.scss */
+/* line 802, scss/global.scss */
 .t30m {
   height: 80px;
 }
 
-/* line 802, scss/global.scss */
+/* line 803, scss/global.scss */
 .t45m {
   height: 120px;
 }
 
-/* line 803, scss/global.scss */
+/* line 804, scss/global.scss */
 .t60m {
   height: 160px;
 }
 
-/* line 804, scss/global.scss */
+/* line 805, scss/global.scss */
 .t75m {
   height: 200px;
 }
 
-/* line 805, scss/global.scss */
+/* line 806, scss/global.scss */
 .t90m {
   height: 240px;
 }
 
-/* line 807, scss/global.scss */
+/* line 808, scss/global.scss */
 .blue-line, #schedule .wrapper #time-zone .time, #schedule .wrapper .slides-wrap .lines span {
   position: absolute;
   display: block;
@@ -1266,12 +1267,12 @@ a:hover {
   border-bottom: 1px solid #bfedf4;
 }
 
-/* line 815, scss/global.scss */
+/* line 816, scss/global.scss */
 .room-col, #schedule #rooms-name li, #schedule .wrapper #separators span {
   width: 25%;
 }
 
-/* line 819, scss/global.scss */
+/* line 820, scss/global.scss */
 .conference-box, #schedule .wrapper .slides-wrap .conferences .conference, #schedule .wrapper .slides-wrap .row .conference {
   float: left;
   color: #006287;
@@ -1294,11 +1295,11 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 843, scss/global.scss */
+/* line 844, scss/global.scss */
 .conference-box:hover, #schedule .wrapper .slides-wrap .conferences .conference:hover, #schedule .wrapper .slides-wrap .row .conference:hover {
   background: #88dcec;
 }
-/* line 847, scss/global.scss */
+/* line 848, scss/global.scss */
 .conference-box .white, #schedule .wrapper .slides-wrap .conferences .conference .white, #schedule .wrapper .slides-wrap .row .conference .white {
   position: relative;
   display: block;
@@ -1323,7 +1324,7 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 873, scss/global.scss */
+/* line 874, scss/global.scss */
 .conference-box .white:after, #schedule .wrapper .slides-wrap .conferences .conference .white:after, #schedule .wrapper .slides-wrap .row .conference .white:after {
   content: "";
   position: absolute;
@@ -1350,30 +1351,49 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 902, scss/global.scss */
-.conference-box .white:hover, #schedule .wrapper .slides-wrap .conferences .conference .white:hover, #schedule .wrapper .slides-wrap .row .conference .white:hover {
+/* line 905, scss/global.scss */
+.conference-box .white:hover, #schedule .wrapper .slides-wrap .conferences .conference .white:hover, #schedule .wrapper .slides-wrap .row .conference .white:hover, .conference-box .white:focus, #schedule .wrapper .slides-wrap .conferences .conference .white:focus, #schedule .wrapper .slides-wrap .row .conference .white:focus, .conference-box .white.active, #schedule .wrapper .slides-wrap .conferences .conference .white.active, #schedule .wrapper .slides-wrap .row .conference .white.active {
+  z-index: 92;
   color: white;
   background: #0587b9;
   text-decoration: none;
 }
-/* line 910, scss/global.scss */
+/* line 914, scss/global.scss */
 .conference-box .white:hover h2, #schedule .wrapper .slides-wrap .conferences .conference .white:hover h2, #schedule .wrapper .slides-wrap .row .conference .white:hover h2,
-.conference-box .white:hover time,
-#schedule .wrapper .slides-wrap .conferences .conference .white:hover time,
-#schedule .wrapper .slides-wrap .row .conference .white:hover time,
+.conference-box .white:hover .time,
+#schedule .wrapper .slides-wrap .conferences .conference .white:hover .time,
+#schedule .wrapper .slides-wrap .row .conference .white:hover .time,
 .conference-box .white:hover .place,
 #schedule .wrapper .slides-wrap .conferences .conference .white:hover .place,
 #schedule .wrapper .slides-wrap .row .conference .white:hover .place,
 .conference-box .white:hover span[itemprop="description"],
 #schedule .wrapper .slides-wrap .conferences .conference .white:hover span[itemprop="description"],
-#schedule .wrapper .slides-wrap .row .conference .white:hover span[itemprop="description"] {
+#schedule .wrapper .slides-wrap .row .conference .white:hover span[itemprop="description"], .conference-box .white:focus h2, #schedule .wrapper .slides-wrap .conferences .conference .white:focus h2, #schedule .wrapper .slides-wrap .row .conference .white:focus h2,
+.conference-box .white:focus .time,
+#schedule .wrapper .slides-wrap .conferences .conference .white:focus .time,
+#schedule .wrapper .slides-wrap .row .conference .white:focus .time,
+.conference-box .white:focus .place,
+#schedule .wrapper .slides-wrap .conferences .conference .white:focus .place,
+#schedule .wrapper .slides-wrap .row .conference .white:focus .place,
+.conference-box .white:focus span[itemprop="description"],
+#schedule .wrapper .slides-wrap .conferences .conference .white:focus span[itemprop="description"],
+#schedule .wrapper .slides-wrap .row .conference .white:focus span[itemprop="description"], .conference-box .white.active h2, #schedule .wrapper .slides-wrap .conferences .conference .white.active h2, #schedule .wrapper .slides-wrap .row .conference .white.active h2,
+.conference-box .white.active .time,
+#schedule .wrapper .slides-wrap .conferences .conference .white.active .time,
+#schedule .wrapper .slides-wrap .row .conference .white.active .time,
+.conference-box .white.active .place,
+#schedule .wrapper .slides-wrap .conferences .conference .white.active .place,
+#schedule .wrapper .slides-wrap .row .conference .white.active .place,
+.conference-box .white.active span[itemprop="description"],
+#schedule .wrapper .slides-wrap .conferences .conference .white.active span[itemprop="description"],
+#schedule .wrapper .slides-wrap .row .conference .white.active span[itemprop="description"] {
   color: white;
 }
-/* line 914, scss/global.scss */
-.conference-box .white:hover:after, #schedule .wrapper .slides-wrap .conferences .conference .white:hover:after, #schedule .wrapper .slides-wrap .row .conference .white:hover:after {
+/* line 918, scss/global.scss */
+.conference-box .white:hover:after, #schedule .wrapper .slides-wrap .conferences .conference .white:hover:after, #schedule .wrapper .slides-wrap .row .conference .white:hover:after, .conference-box .white:focus:after, #schedule .wrapper .slides-wrap .conferences .conference .white:focus:after, #schedule .wrapper .slides-wrap .row .conference .white:focus:after, .conference-box .white.active:after, #schedule .wrapper .slides-wrap .conferences .conference .white.active:after, #schedule .wrapper .slides-wrap .row .conference .white.active:after {
   border-color: transparent white transparent transparent !important;
 }
-/* line 920, scss/global.scss */
+/* line 924, scss/global.scss */
 .conference-box .white h2, #schedule .wrapper .slides-wrap .conferences .conference .white h2, #schedule .wrapper .slides-wrap .row .conference .white h2 {
   color: #0687b9;
   font-weight: bold;
@@ -1399,11 +1419,11 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 953, scss/global.scss */
+/* line 957, scss/global.scss */
 .conference-box .white span[itemprop="description"], #schedule .wrapper .slides-wrap .conferences .conference .white span[itemprop="description"], #schedule .wrapper .slides-wrap .row .conference .white span[itemprop="description"],
-.conference-box .white time,
-#schedule .wrapper .slides-wrap .conferences .conference .white time,
-#schedule .wrapper .slides-wrap .row .conference .white time,
+.conference-box .white .time,
+#schedule .wrapper .slides-wrap .conferences .conference .white .time,
+#schedule .wrapper .slides-wrap .row .conference .white .time,
 .conference-box .white .place,
 #schedule .wrapper .slides-wrap .conferences .conference .white .place,
 #schedule .wrapper .slides-wrap .row .conference .white .place, .conference-box .white:after, #schedule .wrapper .slides-wrap .conferences .conference .white:after, #schedule .wrapper .slides-wrap .row .conference .white:after {
@@ -1423,19 +1443,19 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 973, scss/global.scss */
+/* line 977, scss/global.scss */
 .conference-box .white img, #schedule .wrapper .slides-wrap .conferences .conference .white img, #schedule .wrapper .slides-wrap .row .conference .white img {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-/* line 981, scss/global.scss */
+/* line 985, scss/global.scss */
 #horaire .padding, #horaire #one-pager section h1, #one-pager section #horaire h1, #horaire #header, #horaire #main-nav .width, #main-nav #horaire .width, #horaire #main-nav #one-pager section, #main-nav #one-pager #horaire section, #horaire #one-pager #main-nav section, #one-pager #main-nav #horaire section, #horaire #main-nav #header, #main-nav #horaire #header, #horaire #main-nav #slider, #main-nav #horaire #slider {
   position: relative;
 }
 
-/* line 984, scss/global.scss */
+/* line 988, scss/global.scss */
 #schedule-nav {
   position: absolute;
   z-index: 10;
@@ -1444,15 +1464,15 @@ a:hover {
   font-size: 18px;
   font-size: 1.8rem;
 }
-/* line 992, scss/global.scss */
+/* line 996, scss/global.scss */
 #schedule-nav li {
   display: inline-block;
 }
-/* line 995, scss/global.scss */
+/* line 999, scss/global.scss */
 #schedule-nav li + li {
   margin-left: 10px;
 }
-/* line 999, scss/global.scss */
+/* line 1003, scss/global.scss */
 #schedule-nav a {
   display: inline-block;
   padding: 5px 16px;
@@ -1476,7 +1496,7 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1026, scss/global.scss */
+/* line 1030, scss/global.scss */
 #schedule-nav a:hover, #schedule-nav a:focus, #schedule-nav a.active {
   background: #d7ecf4;
   border-top: 1px solid #c6e1eb;
@@ -1485,11 +1505,11 @@ a:hover {
   text-decoration: none;
 }
 
-/* line 1035, scss/global.scss */
+/* line 1039, scss/global.scss */
 #schedule {
   position: relative;
 }
-/* line 1038, scss/global.scss */
+/* line 1042, scss/global.scss */
 #schedule #rooms-name {
   padding-left: 8.77193%;
   text-transform: uppercase;
@@ -1497,7 +1517,7 @@ a:hover {
   font-size: 2.1rem;
   color: #0686B8;
 }
-/* line 1046, scss/global.scss */
+/* line 1050, scss/global.scss */
 #schedule #rooms-name li {
   position: relative;
   z-index: 10;
@@ -1505,7 +1525,7 @@ a:hover {
   float: left;
   padding-left: 16px;
 }
-/* line 1053, scss/global.scss */
+/* line 1057, scss/global.scss */
 #schedule #rooms-name li:before {
   content: '';
   display: block;
@@ -1519,19 +1539,19 @@ a:hover {
   border-style: solid;
   background: white;
 }
-/* line 1067, scss/global.scss */
+/* line 1071, scss/global.scss */
 #schedule #rooms-name li#room-2:before {
   border-color: #c6ac03 white white #c6ac03;
 }
-/* line 1068, scss/global.scss */
+/* line 1072, scss/global.scss */
 #schedule #rooms-name li#room-3:before {
   border-color: #02c66a white white #02c66a;
 }
-/* line 1069, scss/global.scss */
+/* line 1073, scss/global.scss */
 #schedule #rooms-name li#room-4:before {
   border-color: #c61d5a white white #c61d5a;
 }
-/* line 1073, scss/global.scss */
+/* line 1077, scss/global.scss */
 #schedule .shadow-top {
   content: '';
   position: relative;
@@ -1542,7 +1562,7 @@ a:hover {
   height: 9px;
   background: url("/assets/images/interface/shadow.png") repeat-x top center;
 }
-/* line 1083, scss/global.scss */
+/* line 1087, scss/global.scss */
 #schedule .shadow-bottom {
   content: '';
   position: relative;
@@ -1553,7 +1573,7 @@ a:hover {
   height: 9px;
   background: url("/assets/images/interface/shadow-bottom.png") repeat-x bottom center;
 }
-/* line 1094, scss/global.scss */
+/* line 1098, scss/global.scss */
 #schedule .wrapper {
   position: relative;
   z-index: 10;
@@ -1582,12 +1602,12 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 1125, scss/global.scss */
+/* line 1129, scss/global.scss */
 #schedule .wrapper #schedule-wrap {
   position: relative;
   height: 1760px;
 }
-/* line 1130, scss/global.scss */
+/* line 1134, scss/global.scss */
 #schedule .wrapper #separators {
   position: absolute;
   z-index: 10;
@@ -1596,18 +1616,18 @@ a:hover {
   width: 91.22807%;
   height: 100%;
 }
-/* line 1139, scss/global.scss */
+/* line 1143, scss/global.scss */
 #schedule .wrapper #separators span {
   position: relative;
   display: block;
   float: left;
   height: 100%;
 }
-/* line 1145, scss/global.scss */
+/* line 1149, scss/global.scss */
 #schedule .wrapper #separators span + span {
   border-left: 1px solid black;
 }
-/* line 1149, scss/global.scss */
+/* line 1153, scss/global.scss */
 #schedule .wrapper #time-zone {
   position: absolute;
   z-index: 15;
@@ -1619,13 +1639,13 @@ a:hover {
   border-right: 1px solid #bbbdbf;
   height: 1760px;
 }
-/* line 1160, scss/global.scss */
+/* line 1164, scss/global.scss */
 #schedule .wrapper #time-zone .time {
   z-index: 15;
   width: 30px;
   right: -3px;
 }
-/* line 1166, scss/global.scss */
+/* line 1170, scss/global.scss */
 #schedule .wrapper #time-zone .time:before {
   content: "•";
   font-family: Arial;
@@ -1635,7 +1655,7 @@ a:hover {
   top: -14px;
   color: #006287;
 }
-/* line 1175, scss/global.scss */
+/* line 1179, scss/global.scss */
 #schedule .wrapper #time-zone .time span {
   display: inline-block;
   position: absolute;
@@ -1647,7 +1667,7 @@ a:hover {
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
-/* line 1189, scss/global.scss */
+/* line 1193, scss/global.scss */
 #schedule .wrapper .slides-wrap {
   position: absolute;
   z-index: 12;
@@ -1677,7 +1697,7 @@ a:hover {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 1223, scss/global.scss */
+/* line 1227, scss/global.scss */
 #schedule .wrapper .slides-wrap .slide {
   position: relative;
   float: left;
@@ -1685,7 +1705,7 @@ a:hover {
   width: 33.33333333333%;
   padding-left: 2.92398%;
 }
-/* line 1231, scss/global.scss */
+/* line 1235, scss/global.scss */
 #schedule .wrapper .slides-wrap .lines {
   position: absolute;
   width: 100%;
@@ -1694,12 +1714,12 @@ a:hover {
   z-index: 13;
   height: 100%;
 }
-/* line 1239, scss/global.scss */
+/* line 1243, scss/global.scss */
 #schedule .wrapper .slides-wrap .lines span {
   z-index: 13;
   width: 100%;
 }
-/* line 1249, scss/global.scss */
+/* line 1253, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences,
 #schedule .wrapper .slides-wrap .row,
 #schedule .wrapper .slides-wrap .break {
@@ -1708,77 +1728,77 @@ a:hover {
   display: block;
   width: 91.22807%;
 }
-/* line 1256, scss/global.scss */
+/* line 1260, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences {
   margin: 0;
   padding: 0;
 }
-/* line 1261, scss/global.scss */
+/* line 1265, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .col {
   width: 24.9%;
   height: 100%;
   float: left;
 }
-/* line 1266, scss/global.scss */
+/* line 1270, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference {
   float: none;
   width: 100%;
   font-size: 13px;
   font-size: 1.3rem;
 }
-/* line 1273, scss/global.scss */
+/* line 1277, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white {
   padding: 10px 10px 10px 55px;
 }
-/* line 1276, scss/global.scss */
+/* line 1280, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white.room-2:after {
   border-color: transparent #c6ac03 transparent transparent;
 }
-/* line 1277, scss/global.scss */
+/* line 1281, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white.room-3:after {
   border-color: transparent #02c66a transparent transparent;
 }
-/* line 1278, scss/global.scss */
+/* line 1282, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference .white.room-4:after {
   border-color: transparent #c61d5a transparent transparent;
 }
-/* line 1282, scss/global.scss */
+/* line 1286, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference h2 {
   font-size: 13px;
   font-size: 1.3rem;
 }
-/* line 1287, scss/global.scss */
+/* line 1291, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference span[itemprop="description"] {
   display: block;
   width: 122px;
 }
-/* line 1293, scss/global.scss */
+/* line 1297, scss/global.scss */
 #schedule .wrapper .slides-wrap .conferences .conference.t90m .white {
   padding: 130px 10px 10px 10px;
 }
-/* line 1301, scss/global.scss */
+/* line 1305, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference {
   width: 100%;
   height: 100%;
 }
-/* line 1306, scss/global.scss */
+/* line 1310, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white {
   padding: 10px 10px 10px 210px;
 }
-/* line 1309, scss/global.scss */
+/* line 1313, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white .info {
   max-width: 450px;
 }
-/* line 1313, scss/global.scss */
+/* line 1317, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white img {
   top: 10px;
   left: 10px;
 }
-/* line 1318, scss/global.scss */
+/* line 1322, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white h2 {
   margin: 15px 0;
 }
-/* line 1322, scss/global.scss */
+/* line 1326, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white .place {
   position: absolute;
   top: 10px;
@@ -1790,15 +1810,15 @@ a:hover {
   font-size: 2.3rem;
   text-transform: uppercase;
 }
-/* line 1334, scss/global.scss */
-#schedule .wrapper .slides-wrap .row .conference .white time {
+/* line 1338, scss/global.scss */
+#schedule .wrapper .slides-wrap .row .conference .white .time {
   display: block;
   color: #b3b3b3;
   font-weight: bold;
   font-size: 14px;
   font-size: 1.4rem;
 }
-/* line 1342, scss/global.scss */
+/* line 1346, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white span[itemprop="description"] {
   display: block;
   color: #006287;
@@ -1807,17 +1827,17 @@ a:hover {
   font-size: 1.4rem;
   margin: 10px 0;
 }
-/* line 1351, scss/global.scss */
+/* line 1355, scss/global.scss */
 #schedule .wrapper .slides-wrap .row .conference .white:after {
   border-color: transparent #0687b9 transparent transparent;
 }
-/* line 1355, scss/global.scss */
+/* line 1359, scss/global.scss */
 #schedule .wrapper .slides-wrap .break {
   display: block;
   z-index: 12;
   background: url("/assets/images/interface/break-texture.png") repeat transparent;
 }
-/* line 1360, scss/global.scss */
+/* line 1364, scss/global.scss */
 #schedule .wrapper .slides-wrap .break .type {
   display: inline-block;
   font-weight: bold;
@@ -1827,12 +1847,12 @@ a:hover {
   color: #0687b9;
   margin: 22px 0 0 40px;
 }
-/* line 1373, scss/global.scss */
+/* line 1377, scss/global.scss */
 #schedule #open-shedule {
   display: block;
   text-align: center;
 }
-/* line 1377, scss/global.scss */
+/* line 1381, scss/global.scss */
 #schedule #open-shedule a {
   position: relative;
   display: inline-block;
@@ -1861,7 +1881,7 @@ a:hover {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1408, scss/global.scss */
+/* line 1412, scss/global.scss */
 #schedule #open-shedule a:after {
   content: "";
   position: absolute;
@@ -1871,13 +1891,13 @@ a:hover {
   width: 16px;
   height: 18px;
 }
-/* line 1421, scss/global.scss */
+/* line 1425, scss/global.scss */
 #schedule #open-shedule a:hover, #schedule #open-shedule a:focus, #schedule #open-shedule a:active {
   opacity: 0.7;
   text-decoration: none;
 }
 
-/* line 1429, scss/global.scss */
+/* line 1433, scss/global.scss */
 body {
   position: relative;
   left: 0;
@@ -1898,7 +1918,7 @@ body {
   transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   -webkit-backface-visibility: hidden;
 }
-/* line 1452, scss/global.scss */
+/* line 1456, scss/global.scss */
 body #overlay {
   position: fixed;
   z-index: 90;
@@ -1925,7 +1945,7 @@ body #overlay {
   transition-timing-function: linear;
 }
 
-/* line 1481, scss/global.scss */
+/* line 1485, scss/global.scss */
 #conf-desc {
   position: fixed;
   z-index: 95;
@@ -1956,26 +1976,26 @@ body #overlay {
   -moz-tform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 1514, scss/global.scss */
+/* line 1518, scss/global.scss */
 #conf-desc .content {
   background: #0086b9;
   height: 100%;
 }
-/* line 1518, scss/global.scss */
+/* line 1522, scss/global.scss */
 #conf-desc .content h1 {
   margin: 0;
 }
 
-/* line 1524, scss/global.scss */
+/* line 1528, scss/global.scss */
 body.lock {
   left: -300px;
   overflow: hidden;
 }
-/* line 1527, scss/global.scss */
+/* line 1532, scss/global.scss */
 body.lock #conf-desc {
   right: 0;
 }
-/* line 1531, scss/global.scss */
+/* line 1536, scss/global.scss */
 body.lock #overlay {
   opacity: 1;
   top: 0;
@@ -1985,14 +2005,14 @@ body.lock #overlay {
 /* }}} */
 /* Google map
 **********************{{{*/
-/* line 1543, scss/global.scss */
+/* line 1548, scss/global.scss */
 #gmap {
   display: block;
   width: 100%;
   height: 420px;
   border: 1px solid #cdcdcd;
 }
-/* line 1549, scss/global.scss */
+/* line 1554, scss/global.scss */
 #gmap .customInfoWindow {
   display: block;
   color: #005674;
@@ -2005,22 +2025,22 @@ body.lock #overlay {
   text-transform: uppercase;
   border: 1px solid #e2e2e2;
 }
-/* line 1562, scss/global.scss */
+/* line 1567, scss/global.scss */
 #gmap .customInfoWindow .padding, #gmap .customInfoWindow #one-pager section h1, #one-pager section #gmap .customInfoWindow h1, #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav .width, #main-nav #gmap .customInfoWindow .width, #gmap .customInfoWindow #main-nav #one-pager section, #main-nav #one-pager #gmap .customInfoWindow section, #gmap .customInfoWindow #one-pager #main-nav section, #one-pager #main-nav #gmap .customInfoWindow section, #gmap .customInfoWindow #main-nav #header, #main-nav #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav #slider, #main-nav #gmap .customInfoWindow #slider {
   padding: 20px;
 }
-/* line 1566, scss/global.scss */
+/* line 1571, scss/global.scss */
 #gmap .customInfoWindow .address {
   display: block;
   float: left;
 }
-/* line 1571, scss/global.scss */
+/* line 1576, scss/global.scss */
 #gmap .customInfoWindow img {
   position: relative;
   top: 11px;
   float: right;
 }
-/* line 1577, scss/global.scss */
+/* line 1582, scss/global.scss */
 #gmap .customInfoWindow:after, #gmap .customInfoWindow:before {
   top: 100%;
   border: solid transparent;
@@ -2030,7 +2050,7 @@ body.lock #overlay {
   position: absolute;
   pointer-events: none;
 }
-/* line 1587, scss/global.scss */
+/* line 1592, scss/global.scss */
 #gmap .customInfoWindow:after {
   border-color: rgba(255, 255, 255, 0);
   border-top-color: #fff;
@@ -2038,7 +2058,7 @@ body.lock #overlay {
   left: 50%;
   margin-left: -30px;
 }
-/* line 1594, scss/global.scss */
+/* line 1599, scss/global.scss */
 #gmap .customInfoWindow:before {
   border-color: rgba(226, 226, 226, 0);
   border-top-color: #e2e2e2;
@@ -2053,62 +2073,62 @@ body.lock #overlay {
 /*}}}*/
 /* About
 **********************{{{*/
-/* line 1612, scss/global.scss */
+/* line 1617, scss/global.scss */
 #a-propos {
   width: 100%;
   color: white;
   font-size: 16px;
   font-size: 1.6rem;
 }
-/* line 1618, scss/global.scss */
+/* line 1623, scss/global.scss */
 #a-propos .intro {
   padding: 35px 37px 35px 3.9583333%;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   min-height: 298px;
   background: url("/assets/images/interface/a-propos-banner.jpg") left top no-repeat;
 }
-/* line 1625, scss/global.scss */
+/* line 1630, scss/global.scss */
 #a-propos .intro h2 {
   font-weight: normal;
   font-family: "misobold", Arial, Sans-serif;
   margin: 0;
   text-transform: uppercase;
 }
-/* line 1632, scss/global.scss */
+/* line 1637, scss/global.scss */
 #a-propos .intro h2 ~ p {
   margin-top: 0;
 }
-/* line 1637, scss/global.scss */
+/* line 1642, scss/global.scss */
 #a-propos .desc {
   float: left;
   width: 55%;
   padding: 0 70px 0 0;
 }
-/* line 1643, scss/global.scss */
+/* line 1648, scss/global.scss */
 #a-propos .benevoles {
   float: left;
   width: 45%;
 }
-/* line 1647, scss/global.scss */
+/* line 1652, scss/global.scss */
 #a-propos .benevoles ul {
   width: 100%;
   font-size: 13px;
   font-size: 1.3rem;
   font-family: Arial, "Lucida Grande", sans-serif;
 }
-/* line 1654, scss/global.scss */
+/* line 1659, scss/global.scss */
 #a-propos .benevoles ul li {
   float: left;
   width: 33.3333333%;
   margin-bottom: 2px;
 }
-/* line 1659, scss/global.scss */
+/* line 1664, scss/global.scss */
 #a-propos .benevoles ul span {
   display: inline-block;
   padding: 2px 3px;
   background: #006186;
 }
-/* line 1667, scss/global.scss */
+/* line 1672, scss/global.scss */
 #a-propos #team {
   background: url("/assets/images/interface/team-head.png") top center no-repeat;
   background-size: 98%;
@@ -2117,7 +2137,7 @@ body.lock #overlay {
   padding: 30px 38px 0 0;
   top: -50px;
 }
-/* line 1675, scss/global.scss */
+/* line 1680, scss/global.scss */
 #a-propos #team figure {
   position: relative;
   -webkit-transition-property: all;
@@ -2136,7 +2156,7 @@ body.lock #overlay {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1695, scss/global.scss */
+/* line 1700, scss/global.scss */
 #a-propos #team figure:before {
   position: absolute;
   background: rgba(31, 194, 221, 0.2);
@@ -2162,19 +2182,19 @@ body.lock #overlay {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1723, scss/global.scss */
+/* line 1728, scss/global.scss */
 #a-propos #team figure:hover {
   border: 2px solid #0086b9;
 }
-/* line 1726, scss/global.scss */
+/* line 1731, scss/global.scss */
 #a-propos #team figure:hover:before {
   opacity: 1;
 }
-/* line 1730, scss/global.scss */
+/* line 1735, scss/global.scss */
 #a-propos #team figure:hover figcaption {
   opacity: 1;
 }
-/* line 1735, scss/global.scss */
+/* line 1740, scss/global.scss */
 #a-propos #team figcaption {
   position: absolute;
   display: inline-block;
@@ -2199,6 +2219,14 @@ body.lock #overlay {
   -ms-transition-timing-function: linear;
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
+}
+
+/*}}}*/
+/* Old browser
+**********************{{{*/
+/* line 1774, scss/global.scss */
+html.no-opacity body #overlay {
+  background: url("/assets/images/interface/white40.png") repeat;
 }
 
 /*}}}*/

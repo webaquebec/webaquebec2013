@@ -593,6 +593,7 @@ a:hover { color: #06e; text-decoration: underline;}
     text-transform: uppercase;
     font-size: 42px;
     font-size: 4.2rem;
+    line-height: 48px;
   }
   .desc-nav-wrap { 
     margin: 5px 0 0 71px; 
@@ -899,13 +900,16 @@ $t15m:40px;
       transition-timing-function: linear;
     }
     
-    &:hover {
+    &:hover,
+    &:focus,
+    &.active {
+      z-index: 92;
       color: white;
       background: #0587b9;
       text-decoration: none;
       
       h2,
-      time,
+      .time,
       .place,
       span[itemprop="description"] {
         color: white;
@@ -948,7 +952,7 @@ $t15m:40px;
     }
     
     span[itemprop="description"],
-    time,
+    .time,
     .place,
     &:after {
       -webkit-transition-property: color;
@@ -1331,7 +1335,7 @@ $t15m:40px;
               text-transform: uppercase;
             }
             
-            time{
+            .time {
               display: block;
               color: #b3b3b3;
               font-weight: bold;
@@ -1524,6 +1528,7 @@ body {
 body.lock {
   left: -300px;
   overflow: hidden;
+  
   #conf-desc {
     right: 0;
   }
@@ -1761,5 +1766,12 @@ body.lock {
 
     }
   }
+}
+/*}}}*/
+
+/* Old browser
+**********************{{{*/
+html.no-opacity body #overlay{
+  background: url('/assets/images/interface/white40.png') repeat;
 }
 /*}}}*/

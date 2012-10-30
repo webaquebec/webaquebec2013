@@ -111,6 +111,7 @@ class Schedule
     @body                = $('body')
     @template            = '''
     <section id="conf-desc">
+      <span class="loading"></span>
       <img src="http://cageme.herokuapp.com/g/300/281" width="100%">
       <div class="content">
         <h1>Foo Bar</h1>
@@ -118,15 +119,23 @@ class Schedule
     </section>
     <span id="overlay"></span>
     '''
+    
     if !$('#conf-desc').length
       @body.append(@template)
+    @overlay = $('#overlay')
       
     @confLinks.each( ->
       this_    = $(this)
       newHref  = this_.attr('href').replace('/horaire', '#/horaire')
       this_.attr('href', newHref)
     )
-      
+    
+    @confLinks.click( ->
+      this_ = $(this)
+      if window.location.hash is this_.attr('href')
+        window.router.refresh()
+    )
+
     @navElement.eq(0).addClass('active')
 
     @openBtn.click( =>
@@ -136,6 +145,10 @@ class Schedule
         @open()
     )
     
+    @overlay.click( =>
+      @closeConf()
+    )
+    
     onOpen  = if opts? && opts.onOpen? then opts.onOpen else () ->
     onClose = if opts? && opts.onClose? then opts.onClose else () ->
     
@@ -143,8 +156,13 @@ class Schedule
     $(@).bind('onClose', onClose)
     
   showConf: (id) =>
+    @confLinks.filter('[data-id="'+id+'"]').addClass('active')
     if !@body.hasClass('lock')
       @body.addClass('lock')
+
+  closeConf: ->
+    @confLinks.removeClass('active')
+    @body.removeClass('lock')
     
   slideTo: (id) ->
     target = @slides.filter("##{id}")
@@ -180,39 +198,46 @@ class Schedule
 ###
 class OnePager
   constructor: ->
-    @didScroll   = false
-    @isAnimated  = false
-    @currentPage = 0
-    @navWrap     = $('nav[role="navigation"]')
-    @nav         = @navWrap.find('a')
+    @didScroll     = false
+    @isAnimated    = false
+    @currentPage   = 0
+    @navWrap       = $('nav[role="navigation"]')
+    @nav           = @navWrap.find('a')
     @sectionsWrapp = $('#one-pager')
-    @sections    = $('[data-section]')
-    @navHeight   = @navWrap.outerHeight()
-    @navOffset  = @navHeight
-    @pagesOffset = {}
+    @sections      = $('[data-section]')
+    @navHeight     = @navWrap.outerHeight()
+    @navOffset     = @navHeight
+    @pagesOffset   = {}
+    
     @resetSectionsOffset()
     @animatWhenSliding = no
     
     $(window).on('scroll', =>
       @didScroll = true;
     )
-
+    
+    @nav.click( ->
+      if window.location.hash is $(this).attr('href')
+        window.router.refresh()
+    )
+    
     setInterval () =>
       if @didScroll
         @didScroll = false
         @HandleScrollEvents()
     , 20
-  
+      
     @stopScrollOnMouseScroll()
   
   stopScrollOnMouseScroll: ->
     stopScroll = ->
       $('body, html').stop()
 
-    # firefox
-    window.addEventListener('DOMMouseScroll', stopScroll, false);
-    # Everything else
-    window.addEventListener('mousewheel', stopScroll, false)
+    if window.addEventListener?
+      # firefox
+      window.addEventListener('DOMMouseScroll', stopScroll, false);
+      # Everything else
+      window.addEventListener('mousewheel', stopScroll, false)
 
   resetSectionsOffset: ->
     i = 0
@@ -469,22 +494,11 @@ $ () ->
       myOnePager.hashHasChange('horaire')
   )
   myOnePager   = new OnePager()
-  
-  # myMasonry    = new $.Mason(
-  #   itemSelector : '.conference'
-  #   containerStyle : { 'position' : 'absolute'}
-  #   columnWidth: (containerWidth) ->
-  #     containerWidth / 4
-  #   isAnimated : true
-  #   animationOptions: { duration: 100 }
-  # , $('.conferences'))
 
   #############
   #-- ROUTER --#
   #############
-  router = $.sammy(() ->
-    canScroll = false
-    console.log canScroll
+  window.router = $.sammy(() ->
     @.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, (cx, section) ->
       myOnePager.hashHasChange(section)
     )
@@ -494,12 +508,11 @@ $ () ->
       mySchedule.slideTo(day)
     )
     
-    @.get(/\#\/horaire\/(.*)\/conf-([0-9]+)\/*$/, (cx, day, id) ->
+    @.get(/\#\/horaire\/(.*)\/(.*)-([0-9]+)\/*$/, (cx, day, slug, id) ->
       myOnePager.hashHasChange('horaire')
       mySchedule.slideTo(day)
       mySchedule.showConf(id)
     )
-
   )
   router.debug = true
   router.run()

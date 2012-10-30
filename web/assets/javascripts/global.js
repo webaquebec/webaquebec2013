@@ -148,15 +148,23 @@ Author: @louisdumas
       this.openBtn = $('#schedule #open-shedule a');
       this.confLinks = $('#schedule a.white');
       this.body = $('body');
-      this.template = '<section id="conf-desc">\n  <img src="http://cageme.herokuapp.com/g/300/281" width="100%">\n  <div class="content">\n    <h1>Foo Bar</h1>\n  </div>\n</section>\n<span id="overlay"></span>';
+      this.template = '<section id="conf-desc">\n  <span class="loading"></span>\n  <img src="http://cageme.herokuapp.com/g/300/281" width="100%">\n  <div class="content">\n    <h1>Foo Bar</h1>\n  </div>\n</section>\n<span id="overlay"></span>';
       if (!$('#conf-desc').length) {
         this.body.append(this.template);
       }
+      this.overlay = $('#overlay');
       this.confLinks.each(function() {
         var newHref, this_;
         this_ = $(this);
         newHref = this_.attr('href').replace('/horaire', '#/horaire');
         return this_.attr('href', newHref);
+      });
+      this.confLinks.click(function() {
+        var this_;
+        this_ = $(this);
+        if (window.location.hash === this_.attr('href')) {
+          return window.router.refresh();
+        }
       });
       this.navElement.eq(0).addClass('active');
       this.openBtn.click(function() {
@@ -166,6 +174,9 @@ Author: @louisdumas
           return _this.open();
         }
       });
+      this.overlay.click(function() {
+        return _this.closeConf();
+      });
       onOpen = (opts != null) && (opts.onOpen != null) ? opts.onOpen : function() {};
       onClose = (opts != null) && (opts.onClose != null) ? opts.onClose : function() {};
       $(this).bind('onOpen', onOpen);
@@ -173,9 +184,15 @@ Author: @louisdumas
     }
 
     Schedule.prototype.showConf = function(id) {
+      this.confLinks.filter('[data-id="' + id + '"]').addClass('active');
       if (!this.body.hasClass('lock')) {
         return this.body.addClass('lock');
       }
+    };
+
+    Schedule.prototype.closeConf = function() {
+      this.confLinks.removeClass('active');
+      return this.body.removeClass('lock');
     };
 
     Schedule.prototype.slideTo = function(id) {
@@ -248,6 +265,11 @@ Author: @louisdumas
       $(window).on('scroll', function() {
         return _this.didScroll = true;
       });
+      this.nav.click(function() {
+        if (window.location.hash === $(this).attr('href')) {
+          return window.router.refresh();
+        }
+      });
       setInterval(function() {
         if (_this.didScroll) {
           _this.didScroll = false;
@@ -262,8 +284,10 @@ Author: @louisdumas
       stopScroll = function() {
         return $('body, html').stop();
       };
-      window.addEventListener('DOMMouseScroll', stopScroll, false);
-      return window.addEventListener('mousewheel', stopScroll, false);
+      if (window.addEventListener != null) {
+        window.addEventListener('DOMMouseScroll', stopScroll, false);
+        return window.addEventListener('mousewheel', stopScroll, false);
+      }
     };
 
     OnePager.prototype.resetSectionsOffset = function() {
@@ -535,7 +559,7 @@ Author: @louisdumas
 
 
   $(function() {
-    var $links, body, l, links, myGmap, myHomeSlider, myOnePager, mySchedule, router, stickyHeader;
+    var $links, body, l, links, myGmap, myHomeSlider, myOnePager, mySchedule, stickyHeader;
     body = $('body');
     if (!window.console) {
       (function() {
@@ -604,10 +628,7 @@ Author: @louisdumas
       }
     });
     myOnePager = new OnePager();
-    router = $.sammy(function() {
-      var canScroll;
-      canScroll = false;
-      console.log(canScroll);
+    window.router = $.sammy(function() {
       this.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, function(cx, section) {
         return myOnePager.hashHasChange(section);
       });
@@ -615,7 +636,7 @@ Author: @louisdumas
         myOnePager.hashHasChange('horaire');
         return mySchedule.slideTo(day);
       });
-      return this.get(/\#\/horaire\/(.*)\/conf-([0-9]+)\/*$/, function(cx, day, id) {
+      return this.get(/\#\/horaire\/(.*)\/(.*)-([0-9]+)\/*$/, function(cx, day, slug, id) {
         myOnePager.hashHasChange('horaire');
         mySchedule.slideTo(day);
         return mySchedule.showConf(id);

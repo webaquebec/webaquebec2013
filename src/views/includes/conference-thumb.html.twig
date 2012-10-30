@@ -1,0 +1,9 @@
+<div id="conf-{{ id }}" class="conference t{{ line }} t{{ duration }}m" itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
+    <a href="/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}" class="white room-{{ room }}" data-id="{{ id }}">
+        <figure itemprop="performer" itemscope itemtype="http://schema.org/Person">
+            <img src="{{ img }}" width="47" height="52" alt=" " itemprop="image" />
+            <figcaption><h2 itemprop="name">{{ performer }}</h2></figcaption>
+        </figure>
+        <span itemprop="description">{{ desc }}</span>
+    </a>
+</div>

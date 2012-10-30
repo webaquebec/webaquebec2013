@@ -1,0 +1,219 @@
+{% extends 'layout.html.twig' %}
+
+{% block javascripts %}
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
+<script src="/assets/javascripts/libs/sammy.js"></script>
+<script src="/assets/javascripts/libs/libs.js"></script>
+<script src="/assets/javascripts/global.js"></script>
+{% endblock %}
+
+{% block body %}
+<nav role="navigation" id="main-nav">
+    <div class="width">
+        <span class="left">
+            <a class="small-logo" href="#/home/"><span class="shy">WAQ</span></a>
+            <a class="inscription" href="{# FIXME #}#">Inscrivez-vous</a>
+        </span>
+        <a href="{# FIXME #}#" class="iron-web"><span class="shy">Iron web</span> Deloitte</a>
+        <ul id="nav-wrap">
+          <li><a href="#/horaire/">Horaire</a></li>
+          <li><a href="#/lieu-et-infos/">Lieu et infos</a></li>
+          <li><a href="#/partenaires/">Partenaires</a></li>
+          <li><a href="#/a-propos/">À propos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div id="one-pager">
+    <div id="home" data-section>
+
+        {% include 'includes/header.html.twig' %}
+
+        <div id="slider">
+            <span class="texture-mask"></span>
+            <span class="mask"></span>
+            <div class="slider-info">
+                <span itemprop="description">
+                    Trois jours de rencontres<br>
+                    par et pour les gens<br>
+                    qui imaginent le web
+                </span>
+                <div class="desc-nav-wrap">
+                    <span class="slider-nav"></span>
+                    <span class="descs"></span>
+                </div>
+            </div>
+            <div class="slides-wrap">
+                <div id="slide01" class="slide" data-desc="ux \ design web \ mobile \ médias sociaux \ données ouvertes \ seo \ css3 \ html5"><img src="/assets/images/slider/slide-01.jpg" width="1140" height="420"  alt=" " /></div>
+                <div id="slide02" class="slide" data-desc="This is another awesome desc ... lorem ipsum dolor sit amet, consectetur."><img src="/assets/images/slider/slide-02.jpg" width="1140" height="420" alt=" " /></div>
+            </div>
+        </div>{# #slider #}
+    </div> {# #home #}
+    <section id="horaire" data-section>
+        <h1 class="h2">Horaire</h1>
+        <ul id="schedule-nav">
+            {% for date, dateData in sessions %}
+                <li><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
+            {% endfor %}
+        </ul>
+        <div id="schedule">
+            <ul id="rooms-name">
+                {% for room in rooms %}
+                    <li id="room-{{ room.id }}">Salle {{ room.name }}</li>
+                {% endfor %}
+            </ul>
+            <span class="shadow-top"></span>
+            <div class="wrapper">
+                <div id="schedule-wrap">
+                    <div id="time-zone">
+                        {% for date, dateData in sessions %}
+                            {% for line in lines[date] %}
+                                <span class="time t{{ line }}"><span>{{ line }}</span></span>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                    <div class="slides-wrap">
+                        {% for date, dateData in sessions %}
+                            <div id="{{ dateData.day | dateTime("%A") }}" class="slide">
+                                <span id="separators">{% for i in 1..rooms|length %}<span></span>{% endfor %}</span>
+                                <span class="lines">
+                                    {% for line in lines[date] %}
+                                        <span class="t{{ line }}"></span>
+                                    {% endfor %}
+                                </span>
+
+                                {% for blockData in dateData.blocks %}
+                                    {% if blockData.session is defined %}
+                                        {% if blockData.session.break %}
+                                            <div class="break t{{ blockData.session.line }} t{{ blockData.size }}m">
+                                                <span class="type">{{ blockData.session.name }}</span>
+                                            </div>
+                                        {% else %}
+                                            <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m" itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
+                                                {% include 'includes/conference-full.html.twig' with {
+                                                    id        : blockData.session.id,
+                                                    slug      : blockData.session.slug,
+                                                    performer : speakers[blockData.session.speaker_id].name,
+                                                    img       : "/assets/images/performers/" ~ speakers[blockData.session.speaker_id].image,
+                                                    desc      : blockData.session.description,
+                                                    room      : blockData.session.room_id,
+                                                    start     : blockData.session.start,
+                                                    end       : blockData.session.end
+                                                } %}
+                                            </div>
+                                        {% endif %}
+                                    {% else %}
+                                        <div class="conferences t{{ blockData.line }} t{{ blockData.size }}m">
+                                            {% for roomId, sessions in blockData.list %}
+                                                <div class="col">
+                                                    {% for session in sessions %}
+                                                        {% include 'includes/conference-thumb.html.twig' with {
+                                                            id        : session.id,
+                                                            slug      : session.slug,
+                                                            duration  : session.duration,
+                                                            line      : session.line,
+                                                            performer : speakers[session.speaker_id].name,
+                                                            img       : "/assets/images/performers/" ~ speakers[session.speaker_id].image,
+                                                            desc      : session.description,
+                                                            room      : session.room_id,
+                                                            start     : session.start
+                                                        } %}
+                                                    {% endfor %}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div> {# #schedule-wrap #}
+            </div> {# .wrapper #}
+            <span class="shadow-bottom"></span>
+            <span id="open-shedule"><a href="javascript://">Tout afficher</a></span>
+        </div>
+    </section>{# #horaire #}
+    
+    
+    <section id="lieu-et-infos" data-section>
+        <h1 class="h2">Lieu et infos</h1>
+        <div id="gmap"></div>
+    </section>
+    <section id="partenaires" class="listing" data-section>
+        <h1 class="h2">Partenaires</h1>
+        <div class="group">
+            <h2>Principaux</h2>
+            <ul class="list">
+                <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+            </ul>
+        </div>
+        <div class="group">
+            <h2>Associés</h2>
+            <ul class="list">
+                <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+            </ul>
+        </div>
+        <div class="group">
+            <h2>Supporteurs</h2>
+            <ul class="list">
+                <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+            </ul>
+        </div>
+        <div class="group">
+            <h2>Médias et collaborateurs</h2>
+            <ul class="list">
+                <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+            </ul>
+        </div>
+    </section>
+    <section id="a-propos" data-section style="height: 2500px">
+        <h1 class="h2">À propos</h1>
+        <div class="intro">
+            <div class="desc">
+                <h2>Par et pour les gens</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="benevoles">
+                <h2>Des bénécoles essentiels</h2>                    
+                <p>Un merci tout spécial à notre équipe du tonnerre !</p>
+                <ul>
+                    <li><span>Luc Vaillancourt</span></li>
+                    <li><span>Alain Léveillé-Simard</span></li>
+                    <li><span>Audrey-Ève Dalh</span></li>
+                    <li><span>Luc Vaillancourt</span></li>
+                    <li><span>Félix Lapointe</span></li>
+                    <li><span>Luc Vaillancourt</span></li>
+                    <li><span>Audrey-Ève Dalh</span></li>
+                    <li><span>Luc Vaillancourt</span></li>
+                    <li><span>Félix Lapointe</span></li>
+                    <li><span>Alain Léveillé-Simard</span></li>
+                    <li><span>Luc Vaillancourt</span></li>
+                    <li><span>Alain Léveillé-Simard</span></li>
+                    <li><span>Audrey-Ève Dalh</span></li>
+                </ul>
+            </div>
+        </div>
+        <div id="team" class="listing">
+            <div class="group">
+                <h2>Comité programmation</h2>
+                <div class="list"> 
+                    <figure itemprop="attendees" itemscope itemtype="http://schema.org/Person">
+                        <img itemprop="image" src="http://cageme.herokuapp.com/g/80/80" alt="Nicolas Cage" />
+                        <figcaption itemprop="name">Nicolas Cage</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="group">
+                <h2>Comité opérations et logistique</h2>
+            </div>
+            <div class="group">
+                <h2 style="margin-top: 29px;">Comité IRON WEB</h2>
+            </div>
+            <div class="group">
+                <h2>Conseil d’administration<br>et permanence</h2>
+            </div>
+        </div>
+    </section>
+  </div>
+
+{% endblock %}

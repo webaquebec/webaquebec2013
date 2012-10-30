@@ -1,0 +1,13 @@
+<div class="conference">
+    <a href="/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}" class="white room-{{ room }}" data-id="{{ id }}">
+        <span class="place">Grand Hall</span>
+        <div class="info">
+            <figure itemprop="performer" itemscope itemtype="http://schema.org/Person">
+                <img src="http://cageme.herokuapp.com/g/184/160" width="184" height="160" alt=" " itemprop="image" />
+                <figcaption><h2 itemprop="name">{{ performer }}</h2></figcaption>
+            </figure>
+            <span itemprop="description">{{ desc }}</span>
+            <span class="time"><time itemprop="startDate" datetime="{{ start | dateTime("%Y-%m-%dT%H:%M:00") }}">{{ start | dateTime("%Hh%M") }}</time> à <time itemprop="endDate" datetime="{{ end|dateTime("%Y-%m-%dT%H:%M:00") }}">{{ end|dateTime("%Hh%M") }}</time></span>
+        </div>
+    </a>
+</div>

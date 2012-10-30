@@ -34,7 +34,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 
 
 // INDEX
-$index = function () use ($app) {
+$index = function ($day = null, $slug = null, $id = null) use ($app) {
     date_default_timezone_set('GMT');
     $sql = "SELECT * FROM room ORDER BY id ASC";
     $rooms = $app['db']->fetchAll($sql);
@@ -122,7 +122,7 @@ $index = function () use ($app) {
         $end = max($end, $session["end"]);
         $block[$session["room_id"]][] = $session;
     }
-    return $app['twig']->render('layout.html.twig', array(
+    return $app['twig']->render('home/index.html.twig', array(
         "page" => "index",
         "speakers" => $speakers,
         "sponsors" => $sponsors,
@@ -133,5 +133,25 @@ $index = function () use ($app) {
 };
 $app->get('/', $index)
     ->bind('index');
+
+$app->get('/horaire/{day}/{slug}-{id}', function ($day = null, $slug = null, $id = null) use ($app) {
+    $sessionId = (int) $id;
+    $sql = "SELECT * FROM session WHERE id = ?";
+    $session = $app['db']->fetchAssoc($sql, array($sessionId));
+    var_dump($session);
+    if ($session) {
+      return $app['twig']->render('conference/index.html.twig', $session);
+    } else {
+      $app->abort(404);
+    }
+  
+})->bind('showSchedule');
+
+
+$app->error(function (\Exception $e, $code) use ($app){ 
+  if (404 == $code) { 
+    return $app['twig']->render('404.html.twig');
+  } 
+});
 
 $app->run();

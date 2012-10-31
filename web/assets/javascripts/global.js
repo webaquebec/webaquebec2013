@@ -151,6 +151,7 @@ Author: @louisdumas
       this.wrapConfContent = null;
       this.confScrollbar = null;
       this.loadingGIF = null;
+      this.confIsOpen = false;
       template = '<section id="conf-desc">\n  <span class="loading"><img src="/assets/images/interface/loading.gif" /></span>\n  <div class="wrap-content"></div>\n</section>\n<span id="overlay"></span>';
       if (!$('#conf-desc').length) {
         this.body.append(template);
@@ -201,9 +202,12 @@ Author: @louisdumas
     Schedule.prototype.showConf = function(id) {
       var link, request, url,
         _this = this;
+      this.confIsOpen = true;
       link = this.confLinks.filter('[data-id="' + id + '"]');
+      console.log(link);
+      this.confThumbParent = link.closest('.conference');
       url = link.attr('href').replace('#', '');
-      link.addClass('active');
+      this.confThumbParent.addClass('active');
       if (!this.body.hasClass('lock')) {
         this.body.addClass('lock');
       }
@@ -238,7 +242,8 @@ Author: @louisdumas
     Schedule.prototype.closeConf = function() {
       var t,
         _this = this;
-      this.confLinks.removeClass('active');
+      this.confIsOpen = false;
+      this.confThumbParent.removeClass('active');
       this.body.removeClass('lock');
       return t = setTimeout(function() {
         return _this.loadingGIF.removeClass('off');
@@ -680,7 +685,10 @@ Author: @louisdumas
     myOnePager = new OnePager();
     window.router = $.sammy(function() {
       this.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, function(cx, section) {
-        return myOnePager.hashHasChange(section);
+        myOnePager.hashHasChange(section);
+        if (mySchedule.confIsOpen) {
+          return mySchedule.closeConf();
+        }
       });
       this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, function(cx, day) {
         myOnePager.hashHasChange('horaire');

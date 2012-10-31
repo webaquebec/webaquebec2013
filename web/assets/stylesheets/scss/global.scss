@@ -219,10 +219,12 @@ a:hover { color: #06e; text-decoration: underline;}
 }
 
 #one-pager {
+  
+  #acceuil,
   section {
     @extend .width;
     padding-top: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 35px;
     position: relative;
     
     h1 {
@@ -841,8 +843,27 @@ $t15m:40px;
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
   
-  &:hover {
+  &:hover,
+  &.active {
     background: #88dcec;
+    
+    .white {
+      z-index: 92;
+      color: white;
+      background: #0587b9;
+      text-decoration: none;
+      
+      h2,
+      .time,
+      .place,
+      span[itemprop="description"] {
+        color: white;
+      }
+      
+      &:after {
+        border-color: transparent white transparent transparent !important;
+      }
+    }
   }
   
   .white {
@@ -900,9 +921,7 @@ $t15m:40px;
       transition-timing-function: linear;
     }
     
-    &:hover,
-    &:focus,
-    &.active {
+    &:focus {
       z-index: 92;
       color: white;
       background: #0587b9;
@@ -989,7 +1008,7 @@ $t15m:40px;
   position: absolute;
   z-index: 10;
   right: 0;
-  top: 0;
+  top: 60px;
   font-size: 18px;
   font-size: 1.8rem;
   
@@ -1433,7 +1452,7 @@ $t15m:40px;
 body {
   position: relative;
   left: 0;
-  -webkit-transition-property: left;
+  -webkit-transition-property: left, -webkit-filter;
   -moz-transition-property: left;
   -ms-transition-property: left;
   -o-transition-property: left;
@@ -1453,6 +1472,12 @@ body {
 
   -webkit-backface-visibility: hidden;
   
+  #one-pager {
+    -webkit-transition-property: -webkit-filter;
+    -webkit-transition-duration: 400ms;
+    -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+  }
+  
   #overlay {
     position: fixed;
     z-index: 90;
@@ -1461,7 +1486,15 @@ body {
     top: -9999em;
     width: 100%;
     bottom: auto;
-    background: rgba(255, 255, 255, 0.4);
+//    background: rgba(0, 0, 0, 0.1);
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0.4) 19%, rgba(51,158,199,0.1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(19%,rgba(255,255,255,0.4)), color-stop(100%,rgba(51,158,199,0.1)));
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0.4) 19%,rgba(51,158,199,0.1) 100%);
+    background: -o-linear-gradient(top,  rgba(255,255,255,0.4) 19%,rgba(51,158,199,0.1) 100%);
+    background: -ms-linear-gradient(top,  rgba(255,255,255,0.4) 19%,rgba(51,158,199,0.1) 100%);
+    background: linear-gradient(to bottom,  rgba(255,255,255,0.4) 19%,rgba(51,158,199,0.1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ffffff', endColorstr='#1a339ec7',GradientType=0 );
+
     -webkit-transition-property: opacity;
     -moz-transition-property: opacity;
     -ms-transition-property: opacity;
@@ -1680,6 +1713,10 @@ body {
 body.lock {
   left: -400px;
   overflow: hidden;
+  
+  #one-pager {
+    -webkit-filter: blur(2px);
+  }
   
   #conf-desc {
     right: 0;

@@ -112,6 +112,7 @@ class Schedule
     @wrapConfContent     = null
     @confScrollbar       = null
     @loadingGIF          = null
+    @confIsOpen          = false 
     template            = '''
     <section id="conf-desc">
       <span class="loading"><img src="/assets/images/interface/loading.gif" /></span>
@@ -165,10 +166,13 @@ class Schedule
     $(@).bind('onClose', onClose)
     
   showConf: (id) =>
-    link = @confLinks.filter('[data-id="'+id+'"]')
-    url  = link.attr('href').replace('#', '')
+    @confIsOpen          = true
+    link             = @confLinks.filter('[data-id="'+id+'"]')
+    console.log link
+    @confThumbParent = link.closest('.conference')
+    url              = link.attr('href').replace('#', '')
 
-    link.addClass('active')  
+    @confThumbParent.addClass('active')
     if !@body.hasClass('lock')
       @body.addClass('lock')
     
@@ -198,7 +202,8 @@ class Schedule
     request.fail((response) =>)
 
   closeConf: ->
-    @confLinks.removeClass('active')
+    @confIsOpen = false
+    @confThumbParent.removeClass('active')
     @body.removeClass('lock')
     t = setTimeout(()=>
       @loadingGIF.removeClass('off')
@@ -541,6 +546,8 @@ $ () ->
   window.router = $.sammy(() ->
     @.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, (cx, section) ->
       myOnePager.hashHasChange(section)
+      if mySchedule.confIsOpen
+        mySchedule.closeConf()
     )
     
     @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, (cx, day) ->

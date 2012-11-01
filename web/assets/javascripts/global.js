@@ -691,8 +691,9 @@ Author: @louisdumas
           return mySchedule.closeConf();
         }
       });
-      this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, function(cx, day) {
+      this.get(/\#\/horaire\/(.*)\/$/, function(cx, day) {
         myOnePager.hashHasChange('horaire');
+        console.log(day);
         return mySchedule.slideTo(day);
       });
       return this.get(/\#\/horaire\/(.*)\/(.*)-([0-9]+)\/*$/, function(cx, day, slug, id) {

@@ -553,7 +553,8 @@ $ () ->
     
     @.get(/\#\/horaire\/(.*)\/$/, (cx, day) ->
       myOnePager.hashHasChange('horaire')
-      console.log day
+      if mySchedule.confIsOpen
+        mySchedule.closeConf()
       mySchedule.slideTo(day)
     )
     

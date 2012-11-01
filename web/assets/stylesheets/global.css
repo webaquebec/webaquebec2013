@@ -320,9 +320,9 @@ td {
 /*}}}*/
 /* Common 
 **********************{{{*/
-/* line 170, png/*.png */
-.png-sprite, .png-arrow-white-down-hr, .png-arrow-white-down, .png-down-arrow, #schedule #open-shedule a:after, .png-facebook, #social li.facebook a, .png-grille, .png-h2-thingy-hr, .png-h2-thingy, #one-pager .h2:after, .png-iron-web-small-hr, .png-iron-web-small, #main-nav .iron-web:after, .png-logo-waq-gray, .png-logo-waq-small, #main-nav .small-logo, .png-logo-waq, #siteLogo, .png-nav-dash, #main-nav ul#nav-wrap a:after, .png-schedule-btn, #schedule #open-shedule a, .png-slider-mask, #slider .mask, .png-twitter, #social li.twitter a, .png-white-diag, #footer .diag {
-  background: url('/assets/images/png-saea7573c63.png') no-repeat;
+/* line 178, png/*.png */
+.png-sprite, .png-arrow-white-down-hr, .png-arrow-white-down, .png-down-arrow, #schedule #open-shedule a:after, .png-facebook, #social li.facebook a, .png-grille, .png-h2-thingy-hr, .png-h2-thingy, #one-pager .h2:after, .png-iron-web-small-hr, .png-iron-web-small, #main-nav .iron-web:after, .png-logo-waq-gray, .png-logo-waq-small, #main-nav .small-logo, .png-logo-waq, #siteLogo, .png-nav-dash, #main-nav ul#nav-wrap a:after, .png-schedule-btn, #schedule #open-shedule a, .png-slider-mask, #slider .mask, .png-twitter, #social li.twitter a, .png-white-diag, #footer .diag, .png-white-right-arrow {
+  background: url('/assets/images/png-s992dadaded.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -332,7 +332,7 @@ td {
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-arrow-white-down {
-  background-position: 0 -1362px;
+  background-position: 0 -1384px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -387,7 +387,7 @@ td {
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-nav-dash, #main-nav ul#nav-wrap a:after {
-  background-position: 0 -1340px;
+  background-position: 0 -1362px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -408,6 +408,11 @@ td {
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-white-diag, #footer .diag {
   background-position: 0 -725px;
+}
+
+/* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.png-white-right-arrow {
+  background-position: 0 -1340px;
 }
 
 /* line 107, scss/global.scss */
@@ -448,13 +453,13 @@ a:hover {
 #gmap .customInfoWindow #main-nav #one-pager section:before,
 #main-nav #one-pager #gmap .customInfoWindow section:before,
 #gmap .customInfoWindow #one-pager #main-nav section:before,
-#one-pager #main-nav #gmap .customInfoWindow section:before, #gmap .customInfoWindow #main-nav #header:before, #main-nav #gmap .customInfoWindow #header:before, #gmap .customInfoWindow #main-nav #slider:before, #main-nav #gmap .customInfoWindow #slider:before, #gmap .customInfoWindow #main-nav #footer:before, #main-nav #gmap .customInfoWindow #footer:before, #a-propos .intro:before, #a-propos .benevoles ul:before, #footer .address:before, .group:after, .listing .list:after, #header:after, #main-nav:after, #slider .slides-wrap:after, #schedule #rooms-name:after, #schedule .wrapper #separators:after, #schedule .wrapper .slides-wrap:after, #schedule .wrapper .slides-wrap .conferences:after, #gmap .customInfoWindow:after, #gmap .customInfoWindow .padding:after, #gmap .customInfoWindow #one-pager #acceuil h1:after, #one-pager #acceuil #gmap .customInfoWindow h1:after,
+#one-pager #main-nav #gmap .customInfoWindow section:before, #gmap .customInfoWindow #main-nav #header:before, #main-nav #gmap .customInfoWindow #header:before, #gmap .customInfoWindow #main-nav #slider:before, #main-nav #gmap .customInfoWindow #slider:before, #gmap .customInfoWindow #main-nav #footer:before, #main-nav #gmap .customInfoWindow #footer:before, #a-propos .intro:before, #a-propos .benevoles ul:before, #footer:before, #footer .address:before, .group:after, .listing .list:after, #header:after, #main-nav:after, #slider .slides-wrap:after, #schedule #rooms-name:after, #schedule .wrapper #separators:after, #schedule .wrapper .slides-wrap:after, #schedule .wrapper .slides-wrap .conferences:after, #gmap .customInfoWindow:after, #gmap .customInfoWindow .padding:after, #gmap .customInfoWindow #one-pager #acceuil h1:after, #one-pager #acceuil #gmap .customInfoWindow h1:after,
 #gmap .customInfoWindow #one-pager section h1:after,
 #one-pager section #gmap .customInfoWindow h1:after, #gmap .customInfoWindow #header:after, #gmap .customInfoWindow #main-nav .width:after, #main-nav #gmap .customInfoWindow .width:after, #gmap .customInfoWindow #main-nav #one-pager #acceuil:after, #main-nav #one-pager #gmap .customInfoWindow #acceuil:after, #gmap .customInfoWindow #one-pager #main-nav #acceuil:after, #one-pager #main-nav #gmap .customInfoWindow #acceuil:after,
 #gmap .customInfoWindow #main-nav #one-pager section:after,
 #main-nav #one-pager #gmap .customInfoWindow section:after,
 #gmap .customInfoWindow #one-pager #main-nav section:after,
-#one-pager #main-nav #gmap .customInfoWindow section:after, #gmap .customInfoWindow #main-nav #header:after, #main-nav #gmap .customInfoWindow #header:after, #gmap .customInfoWindow #main-nav #slider:after, #main-nav #gmap .customInfoWindow #slider:after, #gmap .customInfoWindow #main-nav #footer:after, #main-nav #gmap .customInfoWindow #footer:after, #a-propos .intro:after, #a-propos .benevoles ul:after, #footer .address:after {
+#one-pager #main-nav #gmap .customInfoWindow section:after, #gmap .customInfoWindow #main-nav #header:after, #main-nav #gmap .customInfoWindow #header:after, #gmap .customInfoWindow #main-nav #slider:after, #main-nav #gmap .customInfoWindow #slider:after, #gmap .customInfoWindow #main-nav #footer:after, #main-nav #gmap .customInfoWindow #footer:after, #a-propos .intro:after, #a-propos .benevoles ul:after, #footer:after, #footer .address:after {
   content: "";
   display: table;
 }
@@ -466,7 +471,7 @@ a:hover {
 #gmap .customInfoWindow #main-nav #one-pager section:after,
 #main-nav #one-pager #gmap .customInfoWindow section:after,
 #gmap .customInfoWindow #one-pager #main-nav section:after,
-#one-pager #main-nav #gmap .customInfoWindow section:after, #gmap .customInfoWindow #main-nav #header:after, #main-nav #gmap .customInfoWindow #header:after, #gmap .customInfoWindow #main-nav #slider:after, #main-nav #gmap .customInfoWindow #slider:after, #gmap .customInfoWindow #main-nav #footer:after, #main-nav #gmap .customInfoWindow #footer:after, #a-propos .intro:after, #a-propos .benevoles ul:after, #footer .address:after {
+#one-pager #main-nav #gmap .customInfoWindow section:after, #gmap .customInfoWindow #main-nav #header:after, #main-nav #gmap .customInfoWindow #header:after, #gmap .customInfoWindow #main-nav #slider:after, #main-nav #gmap .customInfoWindow #slider:after, #gmap .customInfoWindow #main-nav #footer:after, #main-nav #gmap .customInfoWindow #footer:after, #a-propos .intro:after, #a-propos .benevoles ul:after, #footer:after, #footer .address:after {
   clear: both;
 }
 
@@ -477,7 +482,7 @@ a:hover {
 #gmap .customInfoWindow #main-nav #one-pager section,
 #main-nav #one-pager #gmap .customInfoWindow section,
 #gmap .customInfoWindow #one-pager #main-nav section,
-#one-pager #main-nav #gmap .customInfoWindow section, #gmap .customInfoWindow #main-nav #header, #main-nav #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav #slider, #main-nav #gmap .customInfoWindow #slider, #gmap .customInfoWindow #main-nav #footer, #main-nav #gmap .customInfoWindow #footer, #a-propos .intro, #a-propos .benevoles ul, #footer .address {
+#one-pager #main-nav #gmap .customInfoWindow section, #gmap .customInfoWindow #main-nav #header, #main-nav #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav #slider, #main-nav #gmap .customInfoWindow #slider, #gmap .customInfoWindow #main-nav #footer, #main-nav #gmap .customInfoWindow #footer, #a-propos .intro, #a-propos .benevoles ul, #footer, #footer .address {
   *zoom: 1;
 }
 
@@ -622,7 +627,7 @@ a:hover {
 .listing #gmap .customInfoWindow #one-pager #main-nav section,
 #gmap .customInfoWindow #one-pager #main-nav .listing section,
 .listing #one-pager #main-nav #gmap .customInfoWindow section,
-#one-pager #main-nav #gmap .customInfoWindow .listing section, .listing #gmap .customInfoWindow #main-nav #header, #gmap .customInfoWindow #main-nav .listing #header, .listing #main-nav #gmap .customInfoWindow #header, #main-nav #gmap .customInfoWindow .listing #header, .listing #gmap .customInfoWindow #main-nav #slider, #gmap .customInfoWindow #main-nav .listing #slider, .listing #main-nav #gmap .customInfoWindow #slider, #main-nav #gmap .customInfoWindow .listing #slider, .listing #gmap .customInfoWindow #main-nav #footer, #gmap .customInfoWindow #main-nav .listing #footer, .listing #main-nav #gmap .customInfoWindow #footer, #main-nav #gmap .customInfoWindow .listing #footer, .listing #a-propos .intro, #a-propos .listing .intro, .listing #a-propos .benevoles ul, #a-propos .benevoles .listing ul, .listing #footer .address, #footer .listing .address {
+#one-pager #main-nav #gmap .customInfoWindow .listing section, .listing #gmap .customInfoWindow #main-nav #header, #gmap .customInfoWindow #main-nav .listing #header, .listing #main-nav #gmap .customInfoWindow #header, #main-nav #gmap .customInfoWindow .listing #header, .listing #gmap .customInfoWindow #main-nav #slider, #gmap .customInfoWindow #main-nav .listing #slider, .listing #main-nav #gmap .customInfoWindow #slider, #main-nav #gmap .customInfoWindow .listing #slider, .listing #gmap .customInfoWindow #main-nav #footer, #gmap .customInfoWindow #main-nav .listing #footer, .listing #main-nav #gmap .customInfoWindow #footer, #main-nav #gmap .customInfoWindow .listing #footer, .listing #a-propos .intro, #a-propos .listing .intro, .listing #a-propos .benevoles ul, #a-propos .benevoles .listing ul, .listing #footer, .listing #footer .address, #footer .listing .address {
   margin-bottom: 20px;
 }
 /* line 260, scss/global.scss */
@@ -2524,8 +2529,9 @@ html.no-opacity body #overlay {
   min-height: 180px;
   padding-top: 35px;
   margin-bottom: 30px;
+  font-family: Arial, Sans-serif;
 }
-/* line 1980, scss/global.scss */
+/* line 1981, scss/global.scss */
 #footer .diag {
   display: block;
   width: 109px;
@@ -2534,7 +2540,7 @@ html.no-opacity body #overlay {
   bottom: 0;
   left: 0;
 }
-/* line 1989, scss/global.scss */
+/* line 1990, scss/global.scss */
 #footer .gradient {
   display: block;
   width: 100%;
@@ -2551,12 +2557,13 @@ html.no-opacity body #overlay {
   background: linear-gradient(to right, #1198b7 0%, #006186 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1198b7', endColorstr='#006186',GradientType=1 );
 }
-/* line 2006, scss/global.scss */
+/* line 2007, scss/global.scss */
 #footer .address {
-  margin-left: 220px;
-  font-family: Arial, Sans-serif;
+  float: left;
+  margin-left: 19.2982456%;
+  width: 40.3508772%;
 }
-/* line 2011, scss/global.scss */
+/* line 2013, scss/global.scss */
 #footer .address h3 {
   font-size: 14px;
   font-size: 1.4rem;
@@ -2564,13 +2571,13 @@ html.no-opacity body #overlay {
   font-weight: bold;
   margin: 0 0 8px 0;
 }
-/* line 2018, scss/global.scss */
+/* line 2020, scss/global.scss */
 #footer .address .block {
   display: block;
   float: left;
-  margin-right: 50px;
+  margin-right: 6.869565%;
 }
-/* line 2023, scss/global.scss */
+/* line 2025, scss/global.scss */
 #footer .address .block span {
   display: block;
   color: #005674;
@@ -2578,13 +2585,53 @@ html.no-opacity body #overlay {
   font-size: 1.3rem;
   line-height: 20px;
 }
-/* line 2031, scss/global.scss */
+/* line 2033, scss/global.scss */
 #footer .address .block span[itemprop="postalCode"], #footer .address .block span[itemprop="addressLocality"] {
   display: inline-block;
 }
-/* line 2035, scss/global.scss */
+/* line 2037, scss/global.scss */
 #footer .address .block span[itemprop="telephone"] {
   margin-top: 12px;
+}
+/* line 2044, scss/global.scss */
+#footer form {
+  position: relative;
+  display: block;
+  float: right;
+  margin-right: 6.77193%;
+}
+/* line 2050, scss/global.scss */
+#footer form label {
+  display: inline-block;
+}
+/* line 2054, scss/global.scss */
+#footer form .label {
+  display: block;
+  color: #005674;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+/* line 2063, scss/global.scss */
+#footer form input[type="email"] {
+  border: none;
+  color: #c1c8d1;
+  font-size: 16px;
+  width: 315px;
+  font-size: 1.6rem;
+  padding: 8px;
+}
+/* line 2072, scss/global.scss */
+#footer form button {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: -50px;
+  border: none;
+  height: 35px;
+  width: 40px;
+  background: url("/assets/images/png/white-right-arrow.png") center center #0086b9 no-repeat;
 }
 
 /*}}}*/

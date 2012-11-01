@@ -693,7 +693,9 @@ Author: @louisdumas
       });
       this.get(/\#\/horaire\/(.*)\/$/, function(cx, day) {
         myOnePager.hashHasChange('horaire');
-        console.log(day);
+        if (mySchedule.confIsOpen) {
+          mySchedule.closeConf();
+        }
         return mySchedule.slideTo(day);
       });
       return this.get(/\#\/horaire\/(.*)\/(.*)-([0-9]+)\/*$/, function(cx, day, slug, id) {

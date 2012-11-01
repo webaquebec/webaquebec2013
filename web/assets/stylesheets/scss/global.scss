@@ -1970,12 +1970,13 @@ html.no-opacity body #overlay{
 **********************{{{*/
 
 #footer {
-  @extend .width;
+  @extend .width, .group;
   position: relative;
   background: #e9e9ea;
   min-height: 180px;
   padding-top: 35px;
   margin-bottom: 30px;
+  font-family: Arial, Sans-serif;
   
   .diag {
     @extend .png-white-diag;
@@ -2005,8 +2006,9 @@ html.no-opacity body #overlay{
   
   .address{
     @extend .group;
-    margin-left: 220px;
-    font-family: Arial, Sans-serif;
+    float: left;
+    margin-left: 19.2982456%;
+    width: 40.3508772%;
     
     h3 {
       font-size: 14px;
@@ -2018,7 +2020,7 @@ html.no-opacity body #overlay{
     .block {
       display: block;
       float: left;
-      margin-right: 50px;
+      margin-right: 6.869565%;
 
       span {
         display: block;
@@ -2036,6 +2038,46 @@ html.no-opacity body #overlay{
           margin-top: 12px;
         }
       }
+    }
+  } //.address
+  
+  form {
+    position: relative;
+    display: block;
+    float: right;
+    margin-right: 6.77193%;
+    
+    label {
+      display: inline-block;
+    }
+    
+    .label {
+      display: block;
+      color: #005674;
+      font-size: 14px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+    
+    input[type="email"] {
+      border: none;
+      color: #c1c8d1;
+      font-size: 16px;
+      width: 315px;
+      font-size: 1.6rem;
+      padding: 8px;
+    }
+    
+    button {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      right: -50px;
+      border: none;
+      height: 35px;
+      width: 40px;
+      background: url('/assets/images/png/white-right-arrow.png') center center #0086b9 no-repeat;
     }
   }
   

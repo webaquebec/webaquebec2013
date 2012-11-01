@@ -21,6 +21,30 @@
 </head>
 <body class="layout" itemscope itemtype="http://schema.org/Event">
     {% block body %}{% endblock %}
+    
+    <footer id="footer">
+        <span class="gradient"></span>
+        <span class="diag"></span>
+        <div class="address">
+            
+            <span class="block" itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
+                <h3>Adresse de l'événement</h3>
+                <span itemprop="streetAddress">100 rue Quai St-André</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3Y2</span>
+            </span>
+            
+            <span class="block" itemtype="http://schema.org/PostalAddress">
+                <h3>Siège social</h3>
+                <span itemprop="streetAddress">305 Charest Est, bureau 901</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3H3</span>
+                <span itemprop="telephone">418 647-3877</span>
+            </span>
+            
+        </div>
+    </footer>
+    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/assets/javascripts/libs/jquery.js"><\/script>')</script>
     {% block javascripts %}{% endblock %}

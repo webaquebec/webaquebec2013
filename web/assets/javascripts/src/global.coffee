@@ -108,6 +108,7 @@ class Schedule
     @slideWrapperHeight  = @slideWrapper.outerHeight()
     @openBtn             = $('#schedule #open-shedule a')
     @confLinks           = $('#schedule a.white')
+    @confThumbParents    = $('#schedule .conference')  
     @body                = $('body')
     @wrapConfContent     = null
     @confScrollbar       = null
@@ -166,12 +167,12 @@ class Schedule
     $(@).bind('onClose', onClose)
     
   showConf: (id) =>
-    @confIsOpen          = true
+    @confIsOpen      = true
     link             = @confLinks.filter('[data-id="'+id+'"]')
-    console.log link
     @confThumbParent = link.closest('.conference')
     url              = link.attr('href').replace('#', '')
 
+    @confThumbParents.removeClass('active')
     @confThumbParent.addClass('active')
     if !@body.hasClass('lock')
       @body.addClass('lock')
@@ -203,7 +204,7 @@ class Schedule
 
   closeConf: ->
     @confIsOpen = false
-    @confThumbParent.removeClass('active')
+    @confThumbParents.removeClass('active')
     @body.removeClass('lock')
     t = setTimeout(()=>
       @loadingGIF.removeClass('off')
@@ -306,7 +307,7 @@ class OnePager
     @nav.removeClass 'active'
     target.addClass('active')
         
-  slideTo: (target ,speed, moreOffsets) ->
+  slideTo: (target) ->
     target          = @sections.filter(target)
     targetId        = target.attr('id')
     moreOffsets     = moreOffsets || 0
@@ -318,7 +319,7 @@ class OnePager
     
     targetScrollTop = if targetScrollTop <= 0 then 0 else targetScrollTop
     if @animatWhenSliding
-      $('body, html').stop().animate({'scrollTop' : targetScrollTop},speed, $.bez([0.80, 0, 0.20, 1.0]), () =>
+      $('body, html').stop().animate({'scrollTop' : targetScrollTop}, 650, $.bez([0.80, 0, 0.20, 1.0]), () =>
         @isAnimated = false
       )
     else
@@ -333,7 +334,7 @@ class OnePager
   
   hashHasChange: (target) =>
     newhash = "##{target}"
-    @slideTo(newhash, 650)
+    @slideTo(newhash)
   
   HandleScrollEvents: ->
       if !@isAnimated
@@ -550,8 +551,10 @@ $ () ->
         mySchedule.closeConf()
     )
     
-    @.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, (cx, day) ->
+    @.get(/\#\/horaire\/(.*)\/$/, (cx, day) ->
       myOnePager.hashHasChange('horaire')
+      if mySchedule.confIsOpen
+        mySchedule.closeConf()
       mySchedule.slideTo(day)
     )
     

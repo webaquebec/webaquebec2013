@@ -147,6 +147,7 @@ Author: @louisdumas
       this.slideWrapperHeight = this.slideWrapper.outerHeight();
       this.openBtn = $('#schedule #open-shedule a');
       this.confLinks = $('#schedule a.white');
+      this.confThumbParents = $('#schedule .conference');
       this.body = $('body');
       this.wrapConfContent = null;
       this.confScrollbar = null;
@@ -204,9 +205,9 @@ Author: @louisdumas
         _this = this;
       this.confIsOpen = true;
       link = this.confLinks.filter('[data-id="' + id + '"]');
-      console.log(link);
       this.confThumbParent = link.closest('.conference');
       url = link.attr('href').replace('#', '');
+      this.confThumbParents.removeClass('active');
       this.confThumbParent.addClass('active');
       if (!this.body.hasClass('lock')) {
         this.body.addClass('lock');
@@ -243,7 +244,7 @@ Author: @louisdumas
       var t,
         _this = this;
       this.confIsOpen = false;
-      this.confThumbParent.removeClass('active');
+      this.confThumbParents.removeClass('active');
       this.body.removeClass('lock');
       return t = setTimeout(function() {
         return _this.loadingGIF.removeClass('off');
@@ -374,8 +375,8 @@ Author: @louisdumas
       return target.addClass('active');
     };
 
-    OnePager.prototype.slideTo = function(target, speed, moreOffsets) {
-      var targetId, targetLink, targetScrollTop,
+    OnePager.prototype.slideTo = function(target) {
+      var moreOffsets, targetId, targetLink, targetScrollTop,
         _this = this;
       target = this.sections.filter(target);
       targetId = target.attr('id');
@@ -389,7 +390,7 @@ Author: @louisdumas
       if (this.animatWhenSliding) {
         return $('body, html').stop().animate({
           'scrollTop': targetScrollTop
-        }, speed, $.bez([0.80, 0, 0.20, 1.0]), function() {
+        }, 650, $.bez([0.80, 0, 0.20, 1.0]), function() {
           return _this.isAnimated = false;
         });
       } else {
@@ -415,7 +416,7 @@ Author: @louisdumas
     OnePager.prototype.hashHasChange = function(target) {
       var newhash;
       newhash = "#" + target;
-      return this.slideTo(newhash, 650);
+      return this.slideTo(newhash);
     };
 
     OnePager.prototype.HandleScrollEvents = function() {
@@ -690,8 +691,11 @@ Author: @louisdumas
           return mySchedule.closeConf();
         }
       });
-      this.get(/\#\/horaire\/(mercredi|jeudi|vendredi)\/*$/, function(cx, day) {
+      this.get(/\#\/horaire\/(.*)\/$/, function(cx, day) {
         myOnePager.hashHasChange('horaire');
+        if (mySchedule.confIsOpen) {
+          mySchedule.closeConf();
+        }
         return mySchedule.slideTo(day);
       });
       return this.get(/\#\/horaire\/(.*)\/(.*)-([0-9]+)\/*$/, function(cx, day, slug, id) {

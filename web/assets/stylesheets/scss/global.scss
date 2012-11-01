@@ -104,7 +104,7 @@ $miso: 'misoregular', Arial, Sans-serif;
 $misoBold: 'misobold', Arial, Sans-serif;
 $misoLight: 'misolight', Arial, Sans-serif;
 
-html, body {
+html {
   height: 100%;
 }
 
@@ -114,6 +114,7 @@ body {
   font-size: 14px; 
   font-size: 1.4em; 
   line-height: 1.4;
+  padding-bottom: 10px;
   font-family: $miso;
   color: black;
   background-color: white;
@@ -1007,7 +1008,7 @@ $t15m:40px;
 #schedule-nav {
   position: absolute;
   z-index: 10;
-  right: 0;
+  right: 20px;
   top: 60px;
   font-size: 18px;
   font-size: 1.8rem;
@@ -1963,4 +1964,124 @@ body.lock {
 html.no-opacity body #overlay{
   background: url('/assets/images/interface/white40.png') repeat;
 }
+/*}}}*/
+
+/* Footer
+**********************{{{*/
+
+#footer {
+  @extend .width, .group;
+  position: relative;
+  background: #e9e9ea;
+  min-height: 180px;
+  padding-top: 35px;
+  margin-bottom: 30px;
+  font-family: Arial, Sans-serif;
+  
+  .diag {
+    @extend .png-white-diag;
+    display: block;
+    width: image-width('png/white-diag.png');
+    height: image-height('png/white-diag.png');
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .gradient {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: rgb(17,152,183);
+    background: -moz-linear-gradient(left,  rgba(17,152,183,1) 0%, rgba(0,97,134,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(17,152,183,1)), color-stop(100%,rgba(0,97,134,1)));
+    background: -webkit-linear-gradient(left,  rgba(17,152,183,1) 0%,rgba(0,97,134,1) 100%);
+    background: -o-linear-gradient(left,  rgba(17,152,183,1) 0%,rgba(0,97,134,1) 100%);
+    background: -ms-linear-gradient(left,  rgba(17,152,183,1) 0%,rgba(0,97,134,1) 100%);
+    background: linear-gradient(to right,  rgba(17,152,183,1) 0%,rgba(0,97,134,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1198b7', endColorstr='#006186',GradientType=1 );
+  }
+  
+  .address{
+    @extend .group;
+    float: left;
+    margin-left: 19.2982456%;
+    width: 40.3508772%;
+    
+    h3 {
+      font-size: 14px;
+      font-size: 1.4rem;
+      color: #0086b9;
+      font-weight: bold;
+      margin: 0 0 8px 0;
+    }
+    .block {
+      display: block;
+      float: left;
+      margin-right: 6.869565%;
+
+      span {
+        display: block;
+        color: #005674;
+        font-size: 13px;
+        font-size: 1.3rem;
+        line-height: 20px;
+        
+        &[itemprop="postalCode"],
+        &[itemprop="addressLocality"] {
+          display: inline-block;
+        }
+        
+        &[itemprop="telephone"] {
+          margin-top: 12px;
+        }
+      }
+    }
+  } //.address
+  
+  form {
+    position: relative;
+    display: block;
+    float: right;
+    margin-right: 6.77193%;
+    
+    label {
+      display: inline-block;
+    }
+    
+    .label {
+      display: block;
+      color: #005674;
+      font-size: 14px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+    
+    input[type="email"] {
+      border: none;
+      color: #c1c8d1;
+      font-size: 16px;
+      width: 315px;
+      font-size: 1.6rem;
+      padding: 8px;
+    }
+    
+    button {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      right: -50px;
+      border: none;
+      height: 35px;
+      width: 40px;
+      background: url('/assets/images/png/white-right-arrow.png') center center #0086b9 no-repeat;
+    }
+  }
+  
+  
+}
+
 /*}}}*/

@@ -1993,17 +1993,14 @@ body {
   -moz-transition-property: left;
   -ms-transition-property: left;
   -o-transition-property: left;
-  transition-property: left;
   -webkit-transition-duration: 400ms;
-  -moz-transition-duration: 400ms;
+  -moz-transition-duration: 0ms;
   -ms-transition-duration: 400ms;
   -o-transition-duration: 400ms;
-  transition-duration: 400ms;
   -webkit-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   -moz-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   -ms-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   -o-transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
-  transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
   -webkit-backface-visibility: hidden;
 }
 /* line 1484, scss/global.scss */
@@ -2077,6 +2074,14 @@ body #overlay {
   transform: translateZ(0);
 }
 /* line 1560, scss/global.scss */
+#conf-desc .addthis_toolbox {
+  margin: 20px 0 0 0;
+}
+/* line 1563, scss/global.scss */
+#conf-desc .addthis_toolbox a {
+  margin-right: 15px;
+}
+/* line 1568, scss/global.scss */
 #conf-desc .loading {
   display: block;
   background: #0086b9;

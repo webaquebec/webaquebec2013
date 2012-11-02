@@ -124,8 +124,9 @@ class Schedule
     
     if !$('#conf-desc').length
       @body.append(template)
-      @wrapConfContent = $('#conf-desc .wrap-content')
-      @loadingGIF      = $('#conf-desc .loading')
+    
+    @wrapConfContent = $('#conf-desc .wrap-content')
+    @loadingGIF      = $('#conf-desc .loading')
       
     @overlay = $('#overlay')
       
@@ -158,7 +159,8 @@ class Schedule
       
     $(window).on('resize', () =>
       if @confScrollbar && @wrapConfContent
-        newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 )
+        # Redifining conference description wrap height
+        newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 ) - 46
         @wrapConfContent.find('.viewport').css({ height : newHeigh})
         @confScrollbar.tinyscrollbar_update()
     )
@@ -186,11 +188,15 @@ class Schedule
     
     request.done((response) =>
       @wrapConfContent.html(response)
-      newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 )
-      @wrapConfContent.find('.viewport').css({ height : newHeigh})
-      @confScrollbar = $('#scrollbar1')
-      @confScrollbar.tinyscrollbar()
       
+      # Redifining conference description wrap height
+      newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 ) - 46
+      @wrapConfContent.find('.viewport').css({ height : newHeigh})
+      
+      @confScrollbar = $('#scrollbar1')
+
+      @confScrollbar.tinyscrollbar()
+
       t = setTimeout(()=>
         @loadingGIF.addClass('fadding')
         # Time for the css transition to end
@@ -256,7 +262,7 @@ class OnePager
     @pagesOffset   = {}
     
     @resetSectionsOffset()
-    @animatWhenSliding = no
+    @animateWhenSliding = no
     
     $(window).on('scroll', =>
       @didScroll = true;
@@ -318,7 +324,7 @@ class OnePager
     @setActiveMenu(targetLink)
     
     targetScrollTop = if targetScrollTop <= 0 then 0 else targetScrollTop
-    if @animatWhenSliding
+    if @animateWhenSliding
       $('body, html').stop().animate({'scrollTop' : targetScrollTop}, 650, $.bez([0.80, 0, 0.20, 1.0]), () =>
         @isAnimated = false
       )
@@ -569,7 +575,7 @@ $ () ->
   
   router.debug = true
   router.run()
-  myOnePager.animatWhenSliding = yes
+  myOnePager.animateWhenSliding = yes
 
   # StickyHeader {{{
   stickyHeader = ( ->

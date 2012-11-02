@@ -1450,10 +1450,15 @@ $t15m:40px;
       
       &:hover,
       &:focus,
-      &:active {
+      &.active {
         opacity: 0.7;
-        text-decoration: none;
+        text-decoration: none;        
       }
+      
+      &.active:after {
+        @extend .png-up-arrow;
+      }
+      
     }
   }
 } // #schedule
@@ -1761,6 +1766,42 @@ body.lock {
   }
 }
 
+@media (min-width: 2400px) {
+  body.lock {
+    left: 0;
+    
+    #one-pager {
+      -webkit-filter: blur(1px);
+    }
+    
+    #conf-desc {
+      top: 0;
+      right: 100px;
+    }
+  }
+}
+
+@media (min-width: 2100px) and (max-width: 2400px){
+  body.lock {
+    left: 0px;
+ 
+    #conf-desc {
+      top: 0;
+      right: 0px;
+    }
+  }
+}
+
+@media (min-width: 1700px) and (max-width: 2100px){
+  body.lock {
+    left: -100px;
+  
+    #conf-desc {
+      top: 0;
+      right: 0px;
+    }
+  }
+}
 /* }}} */
 
 /* Google map

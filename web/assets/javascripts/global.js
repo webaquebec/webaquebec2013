@@ -229,6 +229,13 @@ Author: @louisdumas
         });
         _this.confScrollbar = $('#scrollbar1');
         _this.confScrollbar.tinyscrollbar();
+        if (window.addthis) {
+          addthis.ost = 0;
+          addthis.ready();
+          addthis.init();
+          addthis.toolbox($(".addthis_toolbox").get(0));
+          addthis.counter($(".addthis_counter").get(0));
+        }
         return t = setTimeout(function() {
           var t1;
           _this.loadingGIF.addClass('fadding');

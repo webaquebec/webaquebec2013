@@ -2720,5 +2720,17 @@ html.no-opacity body #overlay {
   width: 40px;
   background: url("/assets/images/png/white-right-arrow.png") center center #0086b9 no-repeat;
 }
+/* line 2170, scss/global.scss */
+#footer #ix {
+  position: absolute;
+  bottom: 10px;
+  right: 23px;
+  color: #777;
+  display: inline-block;
+}
+/* line 2177, scss/global.scss */
+#footer #ix a {
+  color: #0086b9;
+}
 
 /*}}}*/

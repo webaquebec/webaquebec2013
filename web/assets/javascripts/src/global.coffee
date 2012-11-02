@@ -187,6 +187,7 @@ class Schedule
     )
     
     request.done((response) =>
+
       @wrapConfContent.html(response)
       
       # Redifining conference description wrap height
@@ -196,7 +197,19 @@ class Schedule
       @confScrollbar = $('#scrollbar1')
 
       @confScrollbar.tinyscrollbar()
+      
+      # Reinitiating addthis
+      
+      if window.addthis
+        addthis.ost = 0;
+        # addthis.update('share', 'url', window.location.href);
+        # addthis.update('share', 'title', window.document.title);
+        addthis.ready();
+        addthis.init()
 
+        addthis.toolbox($(".addthis_toolbox").get(0))
+        addthis.counter($(".addthis_counter").get(0))      
+      
       t = setTimeout(()=>
         @loadingGIF.addClass('fadding')
         # Time for the css transition to end

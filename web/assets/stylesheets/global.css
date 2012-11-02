@@ -320,29 +320,29 @@ td {
 /*}}}*/
 /* Common 
 **********************{{{*/
-/* line 178, png/*.png */
-.png-sprite, .png-arrow-white-down-hr, .png-arrow-white-down, .png-down-arrow, #schedule #open-shedule a:after, .png-facebook, #social li.facebook a, .png-grille, .png-h2-thingy-hr, .png-h2-thingy, #one-pager .h2:after, .png-iron-web-small-hr, .png-iron-web-small, #main-nav .iron-web:after, .png-logo-waq-gray, .png-logo-waq-small, #main-nav .small-logo, .png-logo-waq, #siteLogo, .png-nav-dash, #main-nav ul#nav-wrap a:after, .png-schedule-btn, #schedule #open-shedule a, .png-slider-mask, #slider .mask, .png-twitter, #social li.twitter a, .png-white-diag, #footer .diag, .png-white-right-arrow {
-  background: url('/assets/images/png-s992dadaded.png') no-repeat;
+/* line 186, png/*.png */
+.png-sprite, .png-arrow-white-down-hr, .png-arrow-white-down, .png-down-arrow, #schedule #open-shedule a:after, .png-facebook, #social li.facebook a, .png-grille, .png-h2-thingy-hr, .png-h2-thingy, #one-pager .h2:after, .png-infowindow-shadow, #gmap .customInfoWindow .shadow, .png-iron-web-small-hr, .png-iron-web-small, #main-nav .iron-web:after, .png-logo-waq-gray, .png-logo-waq-small, #main-nav .small-logo, .png-logo-waq, #siteLogo, .png-nav-dash, #main-nav ul#nav-wrap a:after, .png-schedule-btn, #schedule #open-shedule a, .png-slider-mask, #slider .mask, .png-twitter, #social li.twitter a, .png-white-diag, #footer .diag, .png-white-right-arrow {
+  background: url('/assets/images/png-s1d67b5fc8b.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-arrow-white-down-hr {
-  background-position: 0 -1226px;
+  background-position: 0 -1326px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-arrow-white-down {
-  background-position: 0 -1384px;
+  background-position: 0 -1484px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-down-arrow, #schedule #open-shedule a:after {
-  background-position: 0 -1317px;
+  background-position: 0 -1417px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-facebook, #social li.facebook a {
-  background-position: 0 -1266px;
+  background-position: 0 -1366px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -352,22 +352,27 @@ td {
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-h2-thingy-hr {
-  background-position: 0 -988px;
+  background-position: 0 -1088px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-h2-thingy, #one-pager .h2:after {
-  background-position: 0 -1163px;
+  background-position: 0 -1263px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.png-iron-web-small-hr {
+.png-infowindow-shadow, #gmap .customInfoWindow .shadow {
   background-position: 0 -929px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.png-iron-web-small-hr {
+  background-position: 0 -1029px;
+}
+
+/* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-iron-web-small, #main-nav .iron-web:after {
-  background-position: 0 -1109px;
+  background-position: 0 -1209px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -377,7 +382,7 @@ td {
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-logo-waq-small, #main-nav .small-logo {
-  background-position: 0 -950px;
+  background-position: 0 -1050px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -387,12 +392,12 @@ td {
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-nav-dash, #main-nav ul#nav-wrap a:after {
-  background-position: 0 -1362px;
+  background-position: 0 -1462px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-schedule-btn, #schedule #open-shedule a {
-  background-position: 0 -1127px;
+  background-position: 0 -1227px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -402,7 +407,7 @@ td {
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-twitter, #social li.twitter a {
-  background-position: 0 -1293px;
+  background-position: 0 -1393px;
 }
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -412,7 +417,7 @@ td {
 
 /* line 60, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p125/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .png-white-right-arrow {
-  background-position: 0 -1340px;
+  background-position: 0 -1440px;
 }
 
 /* line 107, scss/global.scss */
@@ -2318,6 +2323,17 @@ body.lock #overlay {
   border: 1px solid #e2e2e2;
 }
 /* line 1765, scss/global.scss */
+#gmap .customInfoWindow .shadow {
+  position: absolute;
+  z-index: -1;
+  bottom: -32px;
+  left: 0;
+  content: "";
+  display: block;
+  width: 433px;
+  height: 95px;
+}
+/* line 1778, scss/global.scss */
 #gmap .customInfoWindow .padding, #gmap .customInfoWindow #one-pager #accueil h1, #one-pager #accueil #gmap .customInfoWindow h1,
 #gmap .customInfoWindow #one-pager section h1,
 #one-pager section #gmap .customInfoWindow h1, #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav .width, #main-nav #gmap .customInfoWindow .width, #gmap .customInfoWindow #main-nav #one-pager #accueil, #main-nav #one-pager #gmap .customInfoWindow #accueil, #gmap .customInfoWindow #one-pager #main-nav #accueil, #one-pager #main-nav #gmap .customInfoWindow #accueil,
@@ -2327,18 +2343,18 @@ body.lock #overlay {
 #one-pager #main-nav #gmap .customInfoWindow section, #gmap .customInfoWindow #main-nav #header, #main-nav #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav #slider, #main-nav #gmap .customInfoWindow #slider, #gmap .customInfoWindow #main-nav #footer, #main-nav #gmap .customInfoWindow #footer {
   padding: 20px;
 }
-/* line 1769, scss/global.scss */
+/* line 1782, scss/global.scss */
 #gmap .customInfoWindow .address {
   display: block;
   float: left;
 }
-/* line 1774, scss/global.scss */
+/* line 1787, scss/global.scss */
 #gmap .customInfoWindow img {
   position: relative;
   top: 11px;
   float: right;
 }
-/* line 1780, scss/global.scss */
+/* line 1793, scss/global.scss */
 #gmap .customInfoWindow:after, #gmap .customInfoWindow:before {
   top: 100%;
   border: solid transparent;
@@ -2348,7 +2364,7 @@ body.lock #overlay {
   position: absolute;
   pointer-events: none;
 }
-/* line 1790, scss/global.scss */
+/* line 1803, scss/global.scss */
 #gmap .customInfoWindow:after {
   border-color: rgba(255, 255, 255, 0);
   border-top-color: #fff;
@@ -2356,7 +2372,7 @@ body.lock #overlay {
   left: 50%;
   margin-left: -30px;
 }
-/* line 1797, scss/global.scss */
+/* line 1810, scss/global.scss */
 #gmap .customInfoWindow:before {
   border-color: rgba(226, 226, 226, 0);
   border-top-color: #e2e2e2;
@@ -2371,62 +2387,62 @@ body.lock #overlay {
 /*}}}*/
 /* About
 **********************{{{*/
-/* line 1815, scss/global.scss */
+/* line 1828, scss/global.scss */
 #a-propos {
   width: 100%;
   color: white;
   font-size: 16px;
   font-size: 1.6rem;
 }
-/* line 1821, scss/global.scss */
+/* line 1834, scss/global.scss */
 #a-propos .intro {
   padding: 35px 37px 35px 3.9583333%;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   min-height: 298px;
   background: url("/assets/images/interface/a-propos-banner.jpg") left top no-repeat;
 }
-/* line 1828, scss/global.scss */
+/* line 1841, scss/global.scss */
 #a-propos .intro h2 {
   font-weight: normal;
   font-family: "misobold", Arial, Sans-serif;
   margin: 0;
   text-transform: uppercase;
 }
-/* line 1835, scss/global.scss */
+/* line 1848, scss/global.scss */
 #a-propos .intro h2 ~ p {
   margin-top: 0;
 }
-/* line 1840, scss/global.scss */
+/* line 1853, scss/global.scss */
 #a-propos .desc {
   float: left;
   width: 55%;
   padding: 0 70px 0 0;
 }
-/* line 1846, scss/global.scss */
+/* line 1859, scss/global.scss */
 #a-propos .benevoles {
   float: left;
   width: 45%;
 }
-/* line 1850, scss/global.scss */
+/* line 1863, scss/global.scss */
 #a-propos .benevoles ul {
   width: 100%;
   font-size: 13px;
   font-size: 1.3rem;
   font-family: Arial, "Lucida Grande", sans-serif;
 }
-/* line 1857, scss/global.scss */
+/* line 1870, scss/global.scss */
 #a-propos .benevoles ul li {
   float: left;
   width: 33.3333333%;
   margin-bottom: 2px;
 }
-/* line 1862, scss/global.scss */
+/* line 1875, scss/global.scss */
 #a-propos .benevoles ul span {
   display: inline-block;
   padding: 2px 3px;
   background: #006186;
 }
-/* line 1870, scss/global.scss */
+/* line 1883, scss/global.scss */
 #a-propos #team {
   background: url("/assets/images/interface/team-head.png") top center no-repeat;
   background-size: 98%;
@@ -2435,7 +2451,7 @@ body.lock #overlay {
   padding: 30px 38px 0 0;
   top: -50px;
 }
-/* line 1878, scss/global.scss */
+/* line 1891, scss/global.scss */
 #a-propos #team figure {
   position: relative;
   -webkit-transition-property: all;
@@ -2454,7 +2470,7 @@ body.lock #overlay {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1898, scss/global.scss */
+/* line 1911, scss/global.scss */
 #a-propos #team figure:before {
   position: absolute;
   background: rgba(31, 194, 221, 0.2);
@@ -2480,19 +2496,19 @@ body.lock #overlay {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1926, scss/global.scss */
+/* line 1939, scss/global.scss */
 #a-propos #team figure:hover {
   border: 2px solid #0086b9;
 }
-/* line 1929, scss/global.scss */
+/* line 1942, scss/global.scss */
 #a-propos #team figure:hover:before {
   opacity: 1;
 }
-/* line 1933, scss/global.scss */
+/* line 1946, scss/global.scss */
 #a-propos #team figure:hover figcaption {
   opacity: 1;
 }
-/* line 1938, scss/global.scss */
+/* line 1951, scss/global.scss */
 #a-propos #team figcaption {
   position: absolute;
   display: inline-block;
@@ -2522,7 +2538,7 @@ body.lock #overlay {
 /*}}}*/
 /* Old browser
 **********************{{{*/
-/* line 1972, scss/global.scss */
+/* line 1985, scss/global.scss */
 html.no-opacity body #overlay {
   background: url("/assets/images/interface/white40.png") repeat;
 }
@@ -2530,7 +2546,7 @@ html.no-opacity body #overlay {
 /*}}}*/
 /* Footer
 **********************{{{*/
-/* line 1980, scss/global.scss */
+/* line 1993, scss/global.scss */
 #footer {
   position: relative;
   background: #e9e9ea;
@@ -2539,7 +2555,7 @@ html.no-opacity body #overlay {
   margin-bottom: 30px;
   font-family: Arial, Sans-serif;
 }
-/* line 1989, scss/global.scss */
+/* line 2002, scss/global.scss */
 #footer .diag {
   display: block;
   width: 109px;
@@ -2548,7 +2564,7 @@ html.no-opacity body #overlay {
   bottom: 0;
   left: 0;
 }
-/* line 1998, scss/global.scss */
+/* line 2011, scss/global.scss */
 #footer .gradient {
   display: block;
   width: 100%;
@@ -2565,13 +2581,13 @@ html.no-opacity body #overlay {
   background: linear-gradient(to right, #1198b7 0%, #006186 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1198b7', endColorstr='#006186',GradientType=1 );
 }
-/* line 2015, scss/global.scss */
+/* line 2028, scss/global.scss */
 #footer .address {
   float: left;
   margin-left: 19.2982456%;
   width: 40.3508772%;
 }
-/* line 2021, scss/global.scss */
+/* line 2034, scss/global.scss */
 #footer .address h3 {
   font-size: 14px;
   font-size: 1.4rem;
@@ -2579,13 +2595,13 @@ html.no-opacity body #overlay {
   font-weight: bold;
   margin: 0 0 8px 0;
 }
-/* line 2028, scss/global.scss */
+/* line 2041, scss/global.scss */
 #footer .address .block {
   display: block;
   float: left;
   margin-right: 6.869565%;
 }
-/* line 2033, scss/global.scss */
+/* line 2046, scss/global.scss */
 #footer .address .block span {
   display: block;
   color: #005674;
@@ -2593,26 +2609,27 @@ html.no-opacity body #overlay {
   font-size: 1.3rem;
   line-height: 20px;
 }
-/* line 2041, scss/global.scss */
+/* line 2054, scss/global.scss */
 #footer .address .block span[itemprop="postalCode"], #footer .address .block span[itemprop="addressLocality"] {
   display: inline-block;
 }
-/* line 2045, scss/global.scss */
+/* line 2058, scss/global.scss */
 #footer .address .block span[itemprop="telephone"] {
   margin-top: 12px;
 }
-/* line 2052, scss/global.scss */
+/* line 2065, scss/global.scss */
 #footer form {
-  position: relative;
+  position: absolute;
+  right: 70px;
+  top: 35px;
   display: block;
   float: right;
-  margin-right: 6.77193%g;
 }
-/* line 2058, scss/global.scss */
+/* line 2072, scss/global.scss */
 #footer form label {
   display: inline-block;
 }
-/* line 2062, scss/global.scss */
+/* line 2076, scss/global.scss */
 #footer form .label {
   display: block;
   color: #005674;
@@ -2621,7 +2638,7 @@ html.no-opacity body #overlay {
   font-weight: bold;
   margin-bottom: 18px;
 }
-/* line 2071, scss/global.scss */
+/* line 2085, scss/global.scss */
 #footer form input[type="email"] {
   border: none;
   color: #c1c8d1;
@@ -2630,7 +2647,7 @@ html.no-opacity body #overlay {
   font-size: 1.6rem;
   padding: 8px;
 }
-/* line 2080, scss/global.scss */
+/* line 2094, scss/global.scss */
 #footer form button {
   display: inline-block;
   position: absolute;

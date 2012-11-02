@@ -1762,6 +1762,19 @@ body.lock {
     text-transform: uppercase;
     border: 1px solid #e2e2e2;
     
+    .shadow {
+      @extend .png-infowindow-shadow;
+      position: absolute;
+      z-index: -1;
+      bottom: -32px;
+      left: 0;
+      content: "";
+      display: block;
+      width: image-width('png/infowindow-shadow.png');
+      height: image-height('png/infowindow-shadow.png');
+      
+    }
+    
     .padding {
       @extend .group;
       padding: 20px;
@@ -2050,10 +2063,11 @@ html.no-opacity body #overlay{
   } //.address
   
   form {
-    position: relative;
+    position: absolute;
+    right: 70px;
+    top: 35px;
     display: block;
     float: right;
-    margin-right: 6.77193%g;
     
     label {
       display: inline-block;

@@ -432,6 +432,7 @@ class CustomInfoWindow
         </span>
         <img src="/assets/images/png/logo-waq-gray.png" alt="" width="121px" height="41px">
       </div>
+      <span class="shadow"></span>
     </div>
     '''
     @wrap = $(wrap)
@@ -545,6 +546,7 @@ $ () ->
   #-- ROUTER --#
   #############
   window.router = $.sammy(() ->
+    
     @.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, (cx, section) ->
       myOnePager.hashHasChange(section)
       if mySchedule.confIsOpen
@@ -564,6 +566,7 @@ $ () ->
       mySchedule.showConf(id)
     )
   )
+  
   router.debug = true
   router.run()
   myOnePager.animatWhenSliding = yes

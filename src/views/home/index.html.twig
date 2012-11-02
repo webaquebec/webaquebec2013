@@ -11,7 +11,7 @@
 <nav role="navigation" id="main-nav">
     <div class="width">
         <span class="left">
-            <a class="small-logo" href="#/acceuil/"><span class="shy">WAQ</span></a>
+            <a class="small-logo" href="#/accueil/"><span class="shy">WAQ</span></a>
             <a class="inscription" href="{# FIXME #}#">Inscrivez-vous</a>
         </span>
         <a href="{# FIXME #}#" class="iron-web"><span class="shy">Iron web</span> Deloitte</a>
@@ -25,7 +25,7 @@
 </nav>
 
 <div id="one-pager">
-    <div id="acceuil" data-section>
+    <div id="accueil" data-section>
 
         {% include 'includes/header.html.twig' %}
 
@@ -67,9 +67,11 @@
                 <div id="schedule-wrap">
                     <div id="time-zone">
                         {% for date, dateData in sessions %}
-                            {% for line in lines[date] %}
-                                <span class="time t{{ line }}"><span>{{ line }}</span></span>
-                            {% endfor %}
+                            <span id="{{ dateData.day | dateTime("%A") }}-lines">
+                                {% for line in lines[date] %}
+                                    <span class="time t{{ line }}"><span>{{ line }}</span></span>
+                                {% endfor %}
+                            </span>
                         {% endfor %}
                     </div>
                     <div class="slides-wrap">

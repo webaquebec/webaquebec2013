@@ -156,9 +156,9 @@ Author: @louisdumas
       template = '<section id="conf-desc">\n  <span class="loading"><img src="/assets/images/interface/loading.gif" /></span>\n  <div class="wrap-content"></div>\n</section>\n<span id="overlay"></span>';
       if (!$('#conf-desc').length) {
         this.body.append(template);
-        this.wrapConfContent = $('#conf-desc .wrap-content');
-        this.loadingGIF = $('#conf-desc .loading');
       }
+      this.wrapConfContent = $('#conf-desc .wrap-content');
+      this.loadingGIF = $('#conf-desc .loading');
       this.overlay = $('#overlay');
       this.confLinks.each(function() {
         var newHref, this_;
@@ -189,7 +189,7 @@ Author: @louisdumas
       $(window).on('resize', function() {
         var newHeigh;
         if (_this.confScrollbar && _this.wrapConfContent) {
-          newHeigh = _this.wrapConfContent.outerHeight() - (_this.wrapConfContent.find('figure').outerHeight() + 125);
+          newHeigh = _this.wrapConfContent.outerHeight() - (_this.wrapConfContent.find('figure').outerHeight() + 125) - 46;
           _this.wrapConfContent.find('.viewport').css({
             height: newHeigh
           });
@@ -223,7 +223,7 @@ Author: @louisdumas
       request.done(function(response) {
         var newHeigh, t;
         _this.wrapConfContent.html(response);
-        newHeigh = _this.wrapConfContent.outerHeight() - (_this.wrapConfContent.find('figure').outerHeight() + 125);
+        newHeigh = _this.wrapConfContent.outerHeight() - (_this.wrapConfContent.find('figure').outerHeight() + 125) - 46;
         _this.wrapConfContent.find('.viewport').css({
           height: newHeigh
         });
@@ -317,7 +317,7 @@ Author: @louisdumas
       this.navOffset = this.navHeight;
       this.pagesOffset = {};
       this.resetSectionsOffset();
-      this.animatWhenSliding = false;
+      this.animateWhenSliding = false;
       $(window).on('scroll', function() {
         return _this.didScroll = true;
       });
@@ -387,7 +387,7 @@ Author: @louisdumas
       this.currentPage = this.getPageIndex(targetId);
       this.setActiveMenu(targetLink);
       targetScrollTop = targetScrollTop <= 0 ? 0 : targetScrollTop;
-      if (this.animatWhenSliding) {
+      if (this.animateWhenSliding) {
         return $('body, html').stop().animate({
           'scrollTop': targetScrollTop
         }, 650, $.bez([0.80, 0, 0.20, 1.0]), function() {
@@ -547,7 +547,7 @@ Author: @louisdumas
       var wrap;
       this.position = position;
       this.map = map;
-      wrap = '<div class="customInfoWindow">    \n  <div class="padding">\n    <span class="address">\n      Espace 400e Bell<br>\n      100, Quai Saint-André<br>\n      Québec, QC\n    </span>\n    <img src="/assets/images/png/logo-waq-gray.png" alt="" width="121px" height="41px">\n  </div>\n</div>';
+      wrap = '<div class="customInfoWindow">    \n  <div class="padding">\n    <span class="address">\n      Espace 400e Bell<br>\n      100, Quai Saint-André<br>\n      Québec, QC\n    </span>\n    <img src="/assets/images/png/logo-waq-gray.png" alt="" width="121px" height="41px">\n  </div>\n  <span class="shadow"></span>\n</div>';
       this.wrap = $(wrap);
       this.setMap(this.map);
       this.isVisible = true;
@@ -706,7 +706,7 @@ Author: @louisdumas
     });
     router.debug = true;
     router.run();
-    myOnePager.animatWhenSliding = true;
+    myOnePager.animateWhenSliding = true;
     return stickyHeader = (function() {
       var header, headerOffsetTop, viewport;
       header = $('nav[role="navigation"]');

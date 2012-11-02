@@ -36,7 +36,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 
 // INDEX
 $index = function ($day = null, $slug = null, $id = null) use ($app) {
-    
+
     $sql = "SELECT * FROM room ORDER BY id ASC";
     $rooms = $app['db']->fetchAll($sql);
 
@@ -122,6 +122,15 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
         $start = min($start, $session["start"]);
         $end = max($end, $session["end"]);
         $block[$session["room_id"]][] = $session;
+    }    
+
+    if (!empty($block)) {
+        // Save block
+        $sessions[$dateTime->format("dmY")]["blocks"][] = array(
+            "size" => ($end - $start) / 60,
+            "line" => $firstLine,
+            "list" => $block,
+        );
     }
     return $app['twig']->render('home/index.html.twig', array(
         "page" => "index",
@@ -149,15 +158,15 @@ $app->get('/horaire/{day}/{slug}-{id}', function ($day = null, $slug = null, $id
     } else {
       $app->abort(404);
     }
-  
+
 })->bind('showSchedule')
   ->assert('slug', '.*');
 
 
-$app->error(function (\Exception $e, $code) use ($app){ 
-  if (404 == $code) { 
+$app->error(function (\Exception $e, $code) use ($app){
+  if (404 == $code) {
     return $app['twig']->render('404.html.twig');
-  } 
+  }
 });
 
 $app->run();

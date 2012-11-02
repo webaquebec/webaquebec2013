@@ -528,8 +528,8 @@ a:hover {
   background: #0086b9;
   color: white;
   padding: 5px 10px;
-  -webkit-box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.4);
-  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   -webkit-transition-property: background;
   -moz-transition-property: background;
@@ -563,8 +563,8 @@ a:hover {
   background: #f47920;
   color: white;
   padding: 5px 10px;
-  -webkit-box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.4);
-  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   -webkit-transition-property: background;
   -moz-transition-property: background;
@@ -2107,7 +2107,7 @@ body #overlay {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1587, scss/global.scss */
+/* line 1595, scss/global.scss */
 #conf-desc .loading:before {
   position: absolute;
   content: "";
@@ -2118,37 +2118,53 @@ body #overlay {
   bottom: 0;
   background: url("/assets/images/interface/shadow-conf-single.png") left top repeat-y;
 }
-/* line 1598, scss/global.scss */
+/* line 1606, scss/global.scss */
 #conf-desc .loading img {
   position: absolute;
   top: 150px;
   left: 50%;
   margin-left: -24px;
 }
-/* line 1605, scss/global.scss */
+/* line 1613, scss/global.scss */
 #conf-desc .loading.off {
   opacity: 0;
   top: -9999em;
   bottom: auto;
 }
-/* line 1611, scss/global.scss */
+/* line 1619, scss/global.scss */
 #conf-desc .loading.fadding {
   opacity: 0;
 }
-/* line 1616, scss/global.scss */
+/* line 1624, scss/global.scss */
 #conf-desc .wrap-content {
   position: relative;
   background: #0086b9;
   height: 100%;
   overflow: hidden;
 }
-/* line 1622, scss/global.scss */
+/* line 1630, scss/global.scss */
 #conf-desc .wrap-content figure {
   position: relative;
   display: block;
   width: 100%;
+  height: 375px;
+  overflow: hidden;
 }
-/* line 1628, scss/global.scss */
+/* line 1637, scss/global.scss */
+#conf-desc .wrap-content figure img {
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -187px;
+  position: absolute;
+}
+@media (max-height: 768px) {
+  /* line 1647, scss/global.scss */
+  #conf-desc .wrap-content figure {
+    height: 245px;
+  }
+}
+/* line 1651, scss/global.scss */
 #conf-desc .wrap-content h1 {
   position: absolute;
   bottom: 0;
@@ -2165,7 +2181,7 @@ body #overlay {
   font-size: 2.1rem;
   background-color: rgba(0, 97, 134, 0.5);
 }
-/* line 1645, scss/global.scss */
+/* line 1668, scss/global.scss */
 #conf-desc .wrap-content .content {
   position: relative;
   padding: 10px 15px 10px 24px;
@@ -2174,7 +2190,7 @@ body #overlay {
   font-size: 1.8rem;
   height: 100%;
 }
-/* line 1653, scss/global.scss */
+/* line 1676, scss/global.scss */
 #conf-desc .wrap-content .content:before {
   position: absolute;
   content: "";
@@ -2185,7 +2201,7 @@ body #overlay {
   bottom: 0;
   background: url("/assets/images/interface/shadow-conf-single.png") left top repeat-y;
 }
-/* line 1664, scss/global.scss */
+/* line 1687, scss/global.scss */
 #conf-desc .wrap-content .content h2 {
   color: white;
   font-weight: normal;
@@ -2195,14 +2211,14 @@ body #overlay {
   font-size: 2.1rem;
   margin: 0;
 }
-/* line 1674, scss/global.scss */
+/* line 1697, scss/global.scss */
 #conf-desc .wrap-content .content .time {
   display: block;
   font-size: 18px;
   font-size: 1.8rem;
   margin: 10px 0 0 0;
 }
-/* line 1680, scss/global.scss */
+/* line 1703, scss/global.scss */
 #conf-desc .wrap-content .content .room {
   display: block;
   font-size: 18px;
@@ -2210,45 +2226,43 @@ body #overlay {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-/* line 1688, scss/global.scss */
+/* line 1711, scss/global.scss */
 #conf-desc .wrap-content .content .desc-wrap {
   position: relative;
   width: 100%;
-  height: 100%;
 }
-/* line 1693, scss/global.scss */
+/* line 1716, scss/global.scss */
 #conf-desc .wrap-content .content .desc-wrap .viewport {
   width: 100%;
   height: 578px;
   overflow: hidden;
   position: relative;
 }
-/* line 1695, scss/global.scss */
+/* line 1718, scss/global.scss */
 #conf-desc .wrap-content .content .desc-wrap .overview {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: 415px;
-  padding-right: 30px;
   top: 0;
+  padding-right: 30px;
   list-style: none;
   font-size: 13px;
   font-size: 1.3rem;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
-/* line 1710, scss/global.scss */
+/* line 1732, scss/global.scss */
 #conf-desc .wrap-content .content #scrollbar1 .thumb .end,
 #conf-desc .wrap-content .content #scrollbar1 .thumb {
   background-color: white;
 }
-/* line 1711, scss/global.scss */
+/* line 1733, scss/global.scss */
 #conf-desc .wrap-content .content #scrollbar1 .scrollbar {
   position: absolute;
   width: 6px;
   right: 0;
   top: 0;
 }
-/* line 1712, scss/global.scss */
+/* line 1734, scss/global.scss */
 #conf-desc .wrap-content .content #scrollbar1 .track {
   background-color: #339ec7;
   height: 100%;
@@ -2256,7 +2270,7 @@ body #overlay {
   position: relative;
   padding: 0 1px;
 }
-/* line 1713, scss/global.scss */
+/* line 1735, scss/global.scss */
 #conf-desc .wrap-content .content #scrollbar1 .thumb {
   height: 20px;
   width: 6px;
@@ -2265,17 +2279,17 @@ body #overlay {
   position: absolute;
   top: 0;
 }
-/* line 1714, scss/global.scss */
+/* line 1736, scss/global.scss */
 #conf-desc .wrap-content .content #scrollbar1 .thumb .end {
   overflow: hidden;
   height: 5px;
   width: 13px;
 }
-/* line 1715, scss/global.scss */
+/* line 1737, scss/global.scss */
 #conf-desc .wrap-content .content #scrollbar1 .disable {
   display: none;
 }
-/* line 1716, scss/global.scss */
+/* line 1738, scss/global.scss */
 #conf-desc .wrap-content .content .noSelect {
   user-select: none;
   -o-user-select: none;
@@ -2284,20 +2298,21 @@ body #overlay {
   -webkit-user-select: none;
 }
 
-/* line 1722, scss/global.scss */
+/* line 1744, scss/global.scss */
 body.lock {
   left: -400px;
   overflow: hidden;
 }
-/* line 1726, scss/global.scss */
+/* line 1748, scss/global.scss */
 body.lock #one-pager {
   -webkit-filter: blur(2px);
 }
-/* line 1730, scss/global.scss */
+/* line 1752, scss/global.scss */
 body.lock #conf-desc {
+  top: 0;
   right: 0;
 }
-/* line 1734, scss/global.scss */
+/* line 1757, scss/global.scss */
 body.lock #overlay {
   opacity: 1;
   top: 0;
@@ -2307,14 +2322,14 @@ body.lock #overlay {
 /* }}} */
 /* Google map
 **********************{{{*/
-/* line 1746, scss/global.scss */
+/* line 1769, scss/global.scss */
 #gmap {
   display: block;
   width: 100%;
   height: 420px;
   border: 1px solid #cdcdcd;
 }
-/* line 1752, scss/global.scss */
+/* line 1775, scss/global.scss */
 #gmap .customInfoWindow {
   display: block;
   color: #005674;
@@ -2327,7 +2342,7 @@ body.lock #overlay {
   text-transform: uppercase;
   border: 1px solid #e2e2e2;
 }
-/* line 1765, scss/global.scss */
+/* line 1788, scss/global.scss */
 #gmap .customInfoWindow .shadow {
   position: absolute;
   z-index: -1;
@@ -2338,7 +2353,7 @@ body.lock #overlay {
   width: 433px;
   height: 95px;
 }
-/* line 1778, scss/global.scss */
+/* line 1801, scss/global.scss */
 #gmap .customInfoWindow .padding, #gmap .customInfoWindow #one-pager #accueil h1, #one-pager #accueil #gmap .customInfoWindow h1,
 #gmap .customInfoWindow #one-pager section h1,
 #one-pager section #gmap .customInfoWindow h1, #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav .width, #main-nav #gmap .customInfoWindow .width, #gmap .customInfoWindow #main-nav #one-pager #accueil, #main-nav #one-pager #gmap .customInfoWindow #accueil, #gmap .customInfoWindow #one-pager #main-nav #accueil, #one-pager #main-nav #gmap .customInfoWindow #accueil,
@@ -2348,18 +2363,18 @@ body.lock #overlay {
 #one-pager #main-nav #gmap .customInfoWindow section, #gmap .customInfoWindow #main-nav #header, #main-nav #gmap .customInfoWindow #header, #gmap .customInfoWindow #main-nav #slider, #main-nav #gmap .customInfoWindow #slider, #gmap .customInfoWindow #main-nav #footer, #main-nav #gmap .customInfoWindow #footer {
   padding: 20px;
 }
-/* line 1782, scss/global.scss */
+/* line 1805, scss/global.scss */
 #gmap .customInfoWindow .address {
   display: block;
   float: left;
 }
-/* line 1787, scss/global.scss */
+/* line 1810, scss/global.scss */
 #gmap .customInfoWindow img {
   position: relative;
   top: 11px;
   float: right;
 }
-/* line 1793, scss/global.scss */
+/* line 1816, scss/global.scss */
 #gmap .customInfoWindow:after, #gmap .customInfoWindow:before {
   top: 100%;
   border: solid transparent;
@@ -2369,7 +2384,7 @@ body.lock #overlay {
   position: absolute;
   pointer-events: none;
 }
-/* line 1803, scss/global.scss */
+/* line 1826, scss/global.scss */
 #gmap .customInfoWindow:after {
   border-color: rgba(255, 255, 255, 0);
   border-top-color: #fff;
@@ -2377,7 +2392,7 @@ body.lock #overlay {
   left: 50%;
   margin-left: -30px;
 }
-/* line 1810, scss/global.scss */
+/* line 1833, scss/global.scss */
 #gmap .customInfoWindow:before {
   border-color: rgba(226, 226, 226, 0);
   border-top-color: #e2e2e2;
@@ -2392,62 +2407,62 @@ body.lock #overlay {
 /*}}}*/
 /* About
 **********************{{{*/
-/* line 1828, scss/global.scss */
+/* line 1851, scss/global.scss */
 #a-propos {
   width: 100%;
   color: white;
   font-size: 16px;
   font-size: 1.6rem;
 }
-/* line 1834, scss/global.scss */
+/* line 1857, scss/global.scss */
 #a-propos .intro {
   padding: 35px 37px 35px 3.9583333%;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   min-height: 298px;
   background: url("/assets/images/interface/a-propos-banner.jpg") left top no-repeat;
 }
-/* line 1841, scss/global.scss */
+/* line 1864, scss/global.scss */
 #a-propos .intro h2 {
   font-weight: normal;
   font-family: "misobold", Arial, Sans-serif;
   margin: 0;
   text-transform: uppercase;
 }
-/* line 1848, scss/global.scss */
+/* line 1871, scss/global.scss */
 #a-propos .intro h2 ~ p {
   margin-top: 0;
 }
-/* line 1853, scss/global.scss */
+/* line 1876, scss/global.scss */
 #a-propos .desc {
   float: left;
   width: 55%;
   padding: 0 70px 0 0;
 }
-/* line 1859, scss/global.scss */
+/* line 1882, scss/global.scss */
 #a-propos .benevoles {
   float: left;
   width: 45%;
 }
-/* line 1863, scss/global.scss */
+/* line 1886, scss/global.scss */
 #a-propos .benevoles ul {
   width: 100%;
   font-size: 13px;
   font-size: 1.3rem;
   font-family: Arial, "Lucida Grande", sans-serif;
 }
-/* line 1870, scss/global.scss */
+/* line 1893, scss/global.scss */
 #a-propos .benevoles ul li {
   float: left;
   width: 33.3333333%;
   margin-bottom: 2px;
 }
-/* line 1875, scss/global.scss */
+/* line 1898, scss/global.scss */
 #a-propos .benevoles ul span {
   display: inline-block;
   padding: 2px 3px;
   background: #006186;
 }
-/* line 1883, scss/global.scss */
+/* line 1906, scss/global.scss */
 #a-propos #team {
   background: url("/assets/images/interface/team-head.png") top center no-repeat;
   background-size: 98%;
@@ -2456,7 +2471,7 @@ body.lock #overlay {
   padding: 30px 38px 0 0;
   top: -50px;
 }
-/* line 1891, scss/global.scss */
+/* line 1914, scss/global.scss */
 #a-propos #team figure {
   position: relative;
   -webkit-transition-property: all;
@@ -2475,7 +2490,7 @@ body.lock #overlay {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1911, scss/global.scss */
+/* line 1934, scss/global.scss */
 #a-propos #team figure:before {
   position: absolute;
   background: rgba(31, 194, 221, 0.2);
@@ -2501,19 +2516,19 @@ body.lock #overlay {
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 }
-/* line 1939, scss/global.scss */
+/* line 1962, scss/global.scss */
 #a-propos #team figure:hover {
   border: 2px solid #0086b9;
 }
-/* line 1942, scss/global.scss */
+/* line 1965, scss/global.scss */
 #a-propos #team figure:hover:before {
   opacity: 1;
 }
-/* line 1946, scss/global.scss */
+/* line 1969, scss/global.scss */
 #a-propos #team figure:hover figcaption {
   opacity: 1;
 }
-/* line 1951, scss/global.scss */
+/* line 1974, scss/global.scss */
 #a-propos #team figcaption {
   position: absolute;
   display: inline-block;
@@ -2543,7 +2558,7 @@ body.lock #overlay {
 /*}}}*/
 /* Old browser
 **********************{{{*/
-/* line 1985, scss/global.scss */
+/* line 2008, scss/global.scss */
 html.no-opacity body #overlay {
   background: url("/assets/images/interface/white40.png") repeat;
 }
@@ -2551,7 +2566,7 @@ html.no-opacity body #overlay {
 /*}}}*/
 /* Footer
 **********************{{{*/
-/* line 1993, scss/global.scss */
+/* line 2016, scss/global.scss */
 #footer {
   position: relative;
   background: #e9e9ea;
@@ -2560,7 +2575,7 @@ html.no-opacity body #overlay {
   margin-bottom: 30px;
   font-family: Arial, Sans-serif;
 }
-/* line 2002, scss/global.scss */
+/* line 2025, scss/global.scss */
 #footer .diag {
   display: block;
   width: 109px;
@@ -2569,7 +2584,7 @@ html.no-opacity body #overlay {
   bottom: 0;
   left: 0;
 }
-/* line 2011, scss/global.scss */
+/* line 2034, scss/global.scss */
 #footer .gradient {
   display: block;
   width: 100%;
@@ -2586,13 +2601,13 @@ html.no-opacity body #overlay {
   background: linear-gradient(to right, #1198b7 0%, #006186 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1198b7', endColorstr='#006186',GradientType=1 );
 }
-/* line 2028, scss/global.scss */
+/* line 2051, scss/global.scss */
 #footer .address {
   float: left;
   margin-left: 19.2982456%;
   width: 40.3508772%;
 }
-/* line 2034, scss/global.scss */
+/* line 2057, scss/global.scss */
 #footer .address h3 {
   font-size: 14px;
   font-size: 1.4rem;
@@ -2600,13 +2615,13 @@ html.no-opacity body #overlay {
   font-weight: bold;
   margin: 0 0 8px 0;
 }
-/* line 2041, scss/global.scss */
+/* line 2064, scss/global.scss */
 #footer .address .block {
   display: block;
   float: left;
   margin-right: 6.869565%;
 }
-/* line 2046, scss/global.scss */
+/* line 2069, scss/global.scss */
 #footer .address .block span {
   display: block;
   color: #005674;
@@ -2614,15 +2629,15 @@ html.no-opacity body #overlay {
   font-size: 1.3rem;
   line-height: 20px;
 }
-/* line 2054, scss/global.scss */
+/* line 2077, scss/global.scss */
 #footer .address .block span[itemprop="postalCode"], #footer .address .block span[itemprop="addressLocality"] {
   display: inline-block;
 }
-/* line 2058, scss/global.scss */
+/* line 2081, scss/global.scss */
 #footer .address .block span[itemprop="telephone"] {
   margin-top: 12px;
 }
-/* line 2065, scss/global.scss */
+/* line 2088, scss/global.scss */
 #footer form {
   position: absolute;
   right: 70px;
@@ -2630,11 +2645,11 @@ html.no-opacity body #overlay {
   display: block;
   float: right;
 }
-/* line 2072, scss/global.scss */
+/* line 2095, scss/global.scss */
 #footer form label {
   display: inline-block;
 }
-/* line 2076, scss/global.scss */
+/* line 2099, scss/global.scss */
 #footer form .label {
   display: block;
   color: #005674;
@@ -2643,7 +2658,7 @@ html.no-opacity body #overlay {
   font-weight: bold;
   margin-bottom: 18px;
 }
-/* line 2085, scss/global.scss */
+/* line 2108, scss/global.scss */
 #footer form input[type="email"] {
   border: none;
   color: #c1c8d1;
@@ -2652,7 +2667,7 @@ html.no-opacity body #overlay {
   font-size: 1.6rem;
   padding: 8px;
 }
-/* line 2094, scss/global.scss */
+/* line 2117, scss/global.scss */
 #footer form button {
   display: inline-block;
   position: absolute;

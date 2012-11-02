@@ -67,9 +67,11 @@
                 <div id="schedule-wrap">
                     <div id="time-zone">
                         {% for date, dateData in sessions %}
-                            {% for line in lines[date] %}
-                                <span class="time t{{ line }}"><span>{{ line }}</span></span>
-                            {% endfor %}
+                            <span id="{{ dateData.day | dateTime("%A") }}-lines">
+                                {% for line in lines[date] %}
+                                    <span class="time t{{ line }}"><span>{{ line }}</span></span>
+                                {% endfor %}
+                            </span>
                         {% endfor %}
                     </div>
                     <div class="slides-wrap">

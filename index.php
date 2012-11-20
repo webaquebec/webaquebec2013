@@ -34,6 +34,7 @@
         <div class="width">
           <div class="group">
             <nav id="meta-nav">
+              <a href="http://www.ironweb.org" class="iron-web" target="_blank"><span class="shy">Iron web</span> Deloitte</a>
               <p class="uppercase">Suivez-nous : </p>
               <ul>
                 <li>

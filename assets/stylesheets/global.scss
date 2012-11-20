@@ -16,12 +16,12 @@
  * Fully installable fonts can be purchased at http://www.fontspring.com
  *
  * The fonts included in this stylesheet are subject to the End User License you purchased
- * from Fontspring. The fonts are protected under domestic and international trademark and 
+ * from Fontspring. The fonts are protected under domestic and international trademark and
  * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
  * distributing this font software.
  *
  * (c) 2010-2012 Fontspring
- *   
+ *
  *
  *
  *
@@ -39,7 +39,7 @@
     src: url('/assets/stylesheets/fonts/miso/miso-webfont.eot?#iefix') format('embedded-opentype'),
          url('/assets/stylesheets/fonts/miso/miso-webfont.woff') format('woff'),
          url('/assets/stylesheets/fonts/miso/miso-webfont.ttf') format('truetype'),
-         url('/assets/stylesheets/fonts/miso/miso-webfont.svg#MisoRegular') format('svg'); 
+         url('/assets/stylesheets/fonts/miso/miso-webfont.svg#MisoRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -175,7 +175,7 @@ html {
   min-width: 1180px;
 }
 
-body { 
+body {
   background-size: cover;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -202,13 +202,56 @@ body {
   float: right;
   padding: 30px 0;
 
+  .iron-web {
+    color: white;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-family: $miso;
+    font-weight: bold;
+    line-height: 19px;
+    background: #f47920 url('/assets/images/layout/iron-web-small.png') no-repeat 10px center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 8px 10px 6px 86px;
+    -webkit-box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-right: 20px;
+    position: relative;
+    top: -3px;
+
+    -webkit-transition-property: background;
+    -moz-transition-property: background;
+    -ms-transition-property: background;
+    -o-transition-property: background;
+    transition-property: background;
+
+    -webkit-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    -ms-transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+    transition-duration: 200ms;
+
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -o-transform: translateZ(0);
+    -moz-tform: translateZ(0);
+    transform: translateZ(0);
+  }
+
   p {
     font-size: 22px;
     font-size: 2.2rem;
     margin: 0;
     display: inline-block;
   }
-  
+
   ul {
     display: inline-block;
     margin: 0 0 0 15px;
@@ -258,7 +301,7 @@ body {
     line-height: 40px;
     margin: 30px 70px 0 30px;
   }
-  
+
   #archive-2012 {
     margin: 48px 0 0 30px;
 
@@ -304,7 +347,7 @@ body {
   font-family: $miso;
   margin-top: 30px;
 
-  p { 
+  p {
     font-size: 20px;
     font-size: 2rem;
     margin: 0;
@@ -412,7 +455,7 @@ body {
     bottom: 40px;
     right: 0;
     -webkit-transition: 0.1s linear;
-    -moz-transition: 0.1s linear; 
+    -moz-transition: 0.1s linear;
     -ms-transition: 0.1s linear;
     -o-transition: 0.1s linear;
     transition: 0.1s linear;

@@ -11,15 +11,15 @@
 <nav role="navigation" id="main-nav">
     <div class="width">
         <span class="left">
-            <a class="small-logo" href="#/accueil/"><span class="shy">WAQ</span></a>
-            <a class="inscription" href="{# FIXME #}#">Inscrivez-vous</a>
+            <a class="small-logo" href="#/accueil/"><span class="shy">{% trans %}WAQ{% endtrans %}</span></a>
+            <a class="inscription" href="{# FIXME #}#">{% trans %}Inscrivez-vous{% endtrans %}</a>
         </span>
-        <a href="{# FIXME #}#" class="iron-web"><span class="shy">Iron web</span> Deloitte</a>
+        <a href="{# FIXME #}#" class="iron-web"><span class="shy">{% trans %}Iron web{% endtrans %}</span>{% trans %}Deloitte{% endtrans %}</a>
         <ul id="nav-wrap">
-          <li><a href="#/horaire/">Horaire</a></li>
-          <li><a href="#/lieu-et-infos/">Lieu et infos</a></li>
-          <li><a href="#/partenaires/">Partenaires</a></li>
-          <li><a href="#/a-propos/">À propos</a></li>
+          <li><a href="#/horaire/">{% trans %}Horaire{% endtrans %}</a></li>
+          <li><a href="#/lieu-et-infos/">{% trans %}Lieu et infos{% endtrans %}</a></li>
+          <li><a href="#/partenaires/">{% trans %}Partenaires{% endtrans %}</a></li>
+          <li><a href="#/a-propos/">{% trans %}À propos{% endtrans %}</a></li>
         </ul>
     </div>
 </nav>
@@ -34,9 +34,9 @@
             <span class="mask"></span>
             <div class="slider-info">
                 <span itemprop="description">
-                    Trois jours de rencontres<br>
-                    par et pour les gens<br>
-                    qui imaginent le web
+                    {% trans %}Trois jours de rencontres{% endtrans %}<br>
+                    {% trans %}par et pour les gens{% endtrans %}<br>
+                    {% trans %}qui imaginent le web{% endtrans %}
                 </span>
                 <div class="desc-nav-wrap">
                     <span class="slider-nav"></span>
@@ -44,13 +44,13 @@
                 </div>
             </div>
             <div class="slides-wrap">
-                <div id="slide01" class="slide" data-desc="ux \ design web \ mobile \ médias sociaux \ données ouvertes \ seo \ css3 \ html5"><img src="/assets/images/slider/slide-01.jpg" width="1140" height="420"  alt=" " /></div>
+                <div id="slide01" class="slide" data-desc="{% trans %}ux \ design web \ mobile \ médias sociaux \ données ouvertes \ seo \ css3 \ html5{% endtrans %}"><img src="/assets/images/slider/slide-01.jpg" width="1140" height="420"  alt=" " /></div>
                 <div id="slide02" class="slide" data-desc="This is another awesome desc ... lorem ipsum dolor sit amet, consectetur."><img src="/assets/images/slider/slide-02.jpg" width="1140" height="420" alt=" " /></div>
             </div>
         </div>{# #slider #}
     </div> {# #home #}
     <section id="horaire" data-section>
-        <h1 class="h2">Horaire</h1>
+        <h1 class="h2">{% trans %}Horaire{% endtrans %}</h1>
         <ul id="schedule-nav">
             {% for date, dateData in sessions %}
                 <li><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
@@ -59,7 +59,7 @@
         <div id="schedule">
             <ul id="rooms-name">
                 {% for room in rooms if room.id != 6 %}
-                    <li id="room-{{ room.id }}">Salle {{ room.name }}</li>
+                    <li id="room-{{ room.id }}">{% trans %}Salle{% endtrans %} {{ room.name }}</li>
                 {% endfor %}
             </ul>
             <span class="shadow-top"></span>
@@ -77,7 +77,7 @@
                     <div class="slides-wrap">
                         {% for date, dateData in sessions %}
                             <div id="{{ dateData.day | dateTime("%A") }}" class="slide">
-                                
+
                                 <span id="separators">{% for room in rooms if room.id != 6 %}<span></span>{% endfor %}</span>
                                 <span class="lines">
                                     {% for line in lines[date] %}
@@ -133,52 +133,52 @@
                 </div> {# #schedule-wrap #}
             </div> {# .wrapper #}
             <span class="shadow-bottom"></span>
-            <span id="open-shedule"><a href="javascript://">Tout afficher</a></span>
+            <span id="open-shedule"><a href="javascript://">{% trans %}Tout afficher{% endtrans %}</a></span>
         </div>
     </section>{# #horaire #}
-    
-    
+
+
     <section id="lieu-et-infos" data-section>
-        <h1 class="h2">Lieu et infos</h1>
+        <h1 class="h2">{% trans %}Lieu et infos{% endtrans %}</h1>
         <div id="gmap"></div>
     </section>
     <section id="partenaires" class="listing" data-section>
-        <h1 class="h2">Partenaires</h1>
+        <h1 class="h2">{% trans %}Partenaires{% endtrans %}</h1>
         <div class="group">
-            <h2>Principaux</h2>
+            <h2>{% trans %}Principaux{% endtrans %}</h2>
             <ul class="list">
-                <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+                <li><img src="/assets/images/sponsors/redbull.gif"  alt="{% trans %}RedBull{% endtrans %}" /></li>
             </ul>
         </div>
         <div class="group">
-            <h2>Associés</h2>
+            <h2>{% trans %}Associés{% endtrans %}</h2>
             <ul class="list">
-                <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+                <li><img src="/assets/images/sponsors/redbull.gif"  alt="{% trans %}RedBull{% endtrans %}" /></li>
             </ul>
         </div>
         <div class="group">
-            <h2>Supporteurs</h2>
+            <h2>{% trans %}Supporteurs{% endtrans %}</h2>
             <ul class="list">
-                <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+                <li><img src="/assets/images/sponsors/redbull.gif"  alt="{% trans %}{RedBull{% endtrans %}" /></li>
             </ul>
         </div>
         <div class="group">
-            <h2>Médias et collaborateurs</h2>
+            <h2>{% trans %}Médias et collaborateurs{% endtrans %}</h2>
             <ul class="list">
-                <li><img src="/assets/images/sponsors/redbull.gif"  alt="RedBull" /></li>
+                <li><img src="/assets/images/sponsors/redbull.gif"  alt="{% trans %}RedBull{% endtrans %}" /></li>
             </ul>
         </div>
     </section>
     <section id="a-propos" data-section>
-        <h1 class="h2">À propos</h1>
+        <h1 class="h2">{% trans %}À propos{% endtrans %}</h1>
         <div class="intro">
             <div class="desc">
-                <h2>Par et pour les gens</h2>
+                <h2>{% trans %}par et pour les gens{% endtrans %}</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
             <div class="benevoles">
-                <h2>Des bénécoles essentiels</h2>                    
-                <p>Un merci tout spécial à notre équipe du tonnerre !</p>
+                <h2>{% trans %}Des bénévoles essentiels{% endtrans %}</h2>
+                <p>{% trans %}Un merci tout spécial à notre équipe du tonnerre{% endtrans %}!</p>
                 <ul>
                     <li><span>Luc Vaillancourt</span></li>
                     <li><span>Alain Léveillé-Simard</span></li>
@@ -198,8 +198,8 @@
         </div>
         <div id="team" class="listing">
             <div class="group">
-                <h2>Comité programmation</h2>
-                <div class="list"> 
+                <h2>{% trans %}Comité programmation{% endtrans %}</h2>
+                <div class="list">
                     <figure itemprop="attendees" itemscope itemtype="http://schema.org/Person">
                         <img itemprop="image" src="http://cageme.herokuapp.com/g/80/80" alt="Nicolas Cage" />
                         <figcaption itemprop="name">Nicolas Cage</figcaption>
@@ -207,13 +207,13 @@
                 </div>
             </div>
             <div class="group">
-                <h2>Comité opérations et logistique</h2>
+                <h2>{% trans %}Comité opérations et logistique{% endtrans %}</h2>
             </div>
             <div class="group">
-                <h2 style="margin-top: 29px;">Comité IRON WEB</h2>
+                <h2 style="margin-top: 29px;">{% trans %}Comité IRON WEB{% endtrans %}</h2>
             </div>
             <div class="group">
-                <h2>Conseil d’administration<br>et permanence</h2>
+                <h2>{% trans %}Conseil d’administration{% endtrans %}<br>{% trans %}et permanence{% endtrans %}</h2>
             </div>
         </div>
     </section>

@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
 
+use Symfony\Component\Translation\Loader\XliffFileLoader;
+
 setlocale(LC_ALL, 'fr_CA.UTF-8');
 date_default_timezone_set('GMT');
 
@@ -10,6 +12,10 @@ $app['debug'] = true;
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../src/views',
+));
+
+$app->register(new Silex\Provider\TranslationServiceProvider(), array(
+    'locale' => 'fr',
 ));
 
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
@@ -33,6 +39,14 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     return $twig;
 }));
 
+$app['translator'] = $app->share($app->extend('translator', function($translator, $app) {
+    $translator->addLoader('xliff', new XliffFileLoader());
+
+    $translator->addResource('xliff', __DIR__.'/../i18n/en.xml', 'en');
+    $translator->addResource('xliff', __DIR__.'/../i18n/fr.xml', 'fr');
+
+    return $translator;
+}));
 
 // INDEX
 $index = function ($day = null, $slug = null, $id = null) use ($app) {

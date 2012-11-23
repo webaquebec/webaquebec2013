@@ -59,7 +59,7 @@
         <div id="schedule">
             <ul id="rooms-name">
                 {% for room in rooms if room.id != 6 %}
-                    <li id="room-{{ room.id }}">Salle {{ room.name }}</li>
+                    <li id="room-{{ room.id }}">{% trans %}Salle{% endtrans %} {{ room.name }}</li>
                 {% endfor %}
             </ul>
             <span class="shadow-top"></span>
@@ -77,7 +77,7 @@
                     <div class="slides-wrap">
                         {% for date, dateData in sessions %}
                             <div id="{{ dateData.day | dateTime("%A") }}" class="slide">
-                                
+
                                 <span id="separators">{% for room in rooms if room.id != 6 %}<span></span>{% endfor %}</span>
                                 <span class="lines">
                                     {% for line in lines[date] %}
@@ -136,8 +136,8 @@
             <span id="open-shedule"><a href="javascript://">{% trans %}Tout afficher{% endtrans %}</a></span>
         </div>
     </section>{# #horaire #}
-    
-    
+
+
     <section id="lieu-et-infos" data-section>
         <h1 class="h2">{% trans %}Lieu et infos{% endtrans %}</h1>
         <div id="gmap"></div>
@@ -173,12 +173,12 @@
         <h1 class="h2">{% trans %}À propos{% endtrans %}</h1>
         <div class="intro">
             <div class="desc">
-                <h2>{% trans %}Par et pour les gens{% endtrans %}</h2>
+                <h2>{% trans %}par et pour les gens{% endtrans %}</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
             <div class="benevoles">
-                <h2>{% trans %}Des bénécoles essentiels{% endtrans %}</h2>                    
-                <p>{% trans %}Un merci tout spécial à notre équipe du tonnerre !<{% endtrans %}/p>
+                <h2>{% trans %}Des bénévoles essentiels{% endtrans %}</h2>
+                <p>{% trans %}Un merci tout spécial à notre équipe du tonnerre{% endtrans %}!</p>
                 <ul>
                     <li><span>Luc Vaillancourt</span></li>
                     <li><span>Alain Léveillé-Simard</span></li>
@@ -199,7 +199,7 @@
         <div id="team" class="listing">
             <div class="group">
                 <h2>{% trans %}Comité programmation{% endtrans %}</h2>
-                <div class="list"> 
+                <div class="list">
                     <figure itemprop="attendees" itemscope itemtype="http://schema.org/Person">
                         <img itemprop="image" src="http://cageme.herokuapp.com/g/80/80" alt="Nicolas Cage" />
                         <figcaption itemprop="name">Nicolas Cage</figcaption>

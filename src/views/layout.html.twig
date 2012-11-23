@@ -21,38 +21,38 @@
 </head>
 <body class="layout" itemscope itemtype="http://schema.org/Event">
     {% block body %}{% endblock %}
-    
+
     <footer id="footer">
         <span class="gradient"></span>
         <span class="diag"></span>
         <div class="address">
-            
+
             <span class="block" itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
-                <h3>Adresse de l'événement</h3>
-                <span itemprop="streetAddress">100 rue Quai St-André</span>
-                <span itemprop="addressLocality">Québec (Qc)</span>
+                <h3>{% trans %}venue-address-header{% endtrans %}</h3>
+                <span itemprop="streetAddress">{% trans %}venue-street{% endtrans %}</span>
+                <span itemprop="addressLocality">{% trans %}hq-city{% endtrans %}</span>
                 <span itemprop="postalCode">G1K 3Y2</span>
             </span>
-            
+
             <span class="block" itemtype="http://schema.org/PostalAddress">
-                <h3>Siège social</h3>
-                <span itemprop="streetAddress">305 Charest Est, bureau 901</span>
-                <span itemprop="addressLocality">Québec (Qc)</span>
+                <h3>{% trans %}hq{% endtrans %}</h3>
+                <span itemprop="streetAddress">{% trans %}hq-street{% endtrans %}</span>
+                <span itemprop="addressLocality">{% trans %}hq-city{% endtrans %}</span>
                 <span itemprop="postalCode">G1K 3H3</span>
                 <span itemprop="telephone">418 647-3877</span>
             </span>
-            
+
         </div>
         <form action="/#/a-propos/" method="post" id="newsletter">
             <label>
-                <span class="label">Inscrivez-vous à l’infolettre du WAQ !</span>
+                <span class="label">{% trans %}subscribe-newsletter{% endtrans %}</span>
                 <input type="email" name="some_name" id="some_name" >
             </label>
-            <button type='submit'><span class="shy">Envoyer</span></button>
+            <button type='submit'><span class="shy">{% trans %}Envoyer{% endtrans %}</span></button>
         </form>
         <span id="ix">Conception: <a href="http://ixmedia.com">iXmédia</a></span>
     </footer>
-    
+
     <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-505c8d037002272c"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/assets/javascripts/libs/jquery.js"><\/script>')</script>

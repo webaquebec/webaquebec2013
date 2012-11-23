@@ -2,7 +2,17 @@
     <a id="siteLogo" href="/"><span class="shy"{% trans %}Le Web à Québec{% endtrans %}</span></a>
     <div id="event-desc">
         <h1 itemprop="name"{% trans %}Le web à Québec{% endtrans %}</h1>
-        {% trans %}Du <time itemprop="startDate" datetime="2013-02-20T07:30-17:30">20</time> au <time itemprop="endDate" datetime="2013-02-22T07:30-17:30">22</time> février 2013,{% endtrans %}
+
+        {% trans %}event-date-before-start-date{% endtrans %}
+        <time itemprop="startDate" datetime="2013-02-20T07:30-17:30">
+            {% trans %}event-date-start-date{% endtrans %}
+        </time>
+        {% trans %}event-date-between-dates{% endtrans %}
+        <time itemprop="endDate" datetime="2013-02-22T07:30-17:30">
+            {% trans %}event-date-end-date{% endtrans %}
+        </time>
+        {% trans %}event-date-after-end-date{% endtrans %}
+
         <span itemprop="location" itemscope itemtype="http://schema.org/Place">
             <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                 <span itemprop="name">{% trans %}Espace 400<sup>e</sup> Bell</span>{% endtrans %},

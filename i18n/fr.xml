@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <body>
+      <!-- INDEX-->
+      <trans-unit id="1">
+        <source>Horaire</source>
+        <target>Horaire</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Lieu et infos</source>
+        <target>Lieu et infos</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Partenaires</source>
+        <target>Partenaires</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>À propos</source>
+        <target>À propos</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Trois jours de rencontres</source>
+        <target>Trois jours de rencontres</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>par et pour les gens</source>
+        <target>par et pour les gens</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>qui imaginent le web</source>
+        <target>qui imaginent le web</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>ux \ design web \ mobile \ médias sociaux \ données ouvertes \ seo \ css3 \ html5</source>
+        <target>ux \ design web \ mobile \ médias sociaux \ données ouvertes \ seo \ css3 \ html5</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Tout afficher</source>
+        <target>Tout afficher</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Principaux</source>
+        <target>Principaux</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Associés</source>
+        <target>Associés</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Supporteurs</source>
+        <target>Supporteurs</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Médias et collaborateurs</source>
+        <target>Médias et collaborateurs</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Un merci tout spécial à notre équipe du tonnerre</source>
+        <target>Un merci tout spécial à notre équipe du tonnerre</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Comité programmation</source>
+        <target>Comité programmation</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Comité opérations et logistique</source>
+        <target>Comité opérations et logistique</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Comité IRON WEB</source>
+        <target>Comité IRON WEB</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Conseil d’administration</source>
+        <target>Conseil d’administration</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>et permanence</source>
+        <target>et permanence</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Des bénévoles essentiels</source>
+        <target>Des bénévoles essentiels</target>
+      </trans-unit>
+
+      <!-- HEADER -->
+      <trans-unit id="21">
+        <source>Le web à Québec</source>
+        <target>Le web à Québec</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>event-date-before-start-date</source>
+        <target>Du</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>event-date-start-date</source>
+        <target>20</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>event-date-between-dates</source>
+        <target>au</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>event-date-end-date</source>
+        <target>22</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>event-date-after-end-date</source>
+        <target> février 2013,</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Québec</source>
+        <target>Québec</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Nous joindre</source>
+        <target>Nous joindre</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>Salle</source>
+        <target>Salle</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Adresse de l'événement</source>
+        <target>Adresse de l'événement</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>hq</source>
+        <target>Siège social</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>hq-street</source>
+        <target>305 Charest Est, bureau 901</target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>hq-city</source>
+        <target>Québec (Qc)</target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>venue-address-header</source>
+        <target>Adresse de l'événement</target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>venue-street</source>
+        <target>100 rue Quai St-André</target>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>subscribe-newsletter</source>
+        <target>Inscrivez-vous à l’infolettre du WAQ !</target>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>Envoyer</source>
+        <target>Envoyer</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

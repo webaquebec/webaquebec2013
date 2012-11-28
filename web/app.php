@@ -152,13 +152,15 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
         "sponsors" => $sponsors,
         "rooms" => $rooms,
         "lines" => $lines,
-        "sessions" => $sessions
+        "sessions" => $sessions,
+        "locale" => $app['locale']
         ));
 };
-$app->get('/', $index)
+$app->get('/', $index);
+$app->get('/{_locale}', $index)
     ->bind('index');
 
-$app->get('/horaire/{day}/{slug}-{id}', function ($day = null, $slug = null, $id = null) use ($app) {
+$app->get('/horaire/{_locale}/{day}/{slug}-{id}', function ($day = null, $slug = null, $id = null) use ($app) {
     $sessionId = (int) $id;
     $sql = "SELECT session.*, speaker.name AS speaker_name, room.name AS room_name FROM session JOIN speaker ON speaker.id = session.speaker_id JOIN room ON room.id = session.room_id WHERE session.id = ?";
     $session = $app['db']->fetchAssoc($sql, array($sessionId));

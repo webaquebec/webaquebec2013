@@ -16,10 +16,10 @@
         </span>
         <a href="{# FIXME #}#" class="iron-web"><span class="shy">{% trans %}Iron web{% endtrans %}</span>{% trans %}Deloitte{% endtrans %}</a>
         <ul id="nav-wrap">
-          <li><a href="#/horaire/">{% trans %}Horaire{% endtrans %}</a></li>
-          <li><a href="#/lieu-et-infos/">{% trans %}Lieu et infos{% endtrans %}</a></li>
-          <li><a href="#/partenaires/">{% trans %}Partenaires{% endtrans %}</a></li>
-          <li><a href="#/a-propos/">{% trans %}À propos{% endtrans %}</a></li>
+          <li><a href="#/{{ locale }}/horaire/">{% trans %}Horaire{% endtrans %}</a></li>
+          <li><a href="#/{{ locale }}/lieu-et-infos/">{% trans %}Lieu et infos{% endtrans %}</a></li>
+          <li><a href="#/{{ locale }}/partenaires/">{% trans %}Partenaires{% endtrans %}</a></li>
+          <li><a href="#/{{ locale }}/a-propos/">{% trans %}À propos{% endtrans %}</a></li>
         </ul>
     </div>
 </nav>
@@ -101,7 +101,8 @@
                                                     desc      : blockData.session.description,
                                                     room      : blockData.session.room_id,
                                                     start     : blockData.session.start,
-                                                    end       : blockData.session.end
+                                                    end       : blockData.session.end,
+                                                    locale    : locale
                                                 } %}
                                             </div>
                                         {% endif %}
@@ -119,7 +120,8 @@
                                                             img       : "/assets/images/performers/" ~ speakers[session.speaker_id].image,
                                                             desc      : session.description,
                                                             room      : session.room_id,
-                                                            start     : session.start
+                                                            start     : session.start,
+                                                            locale   : locale
                                                         } %}
                                                     {% endfor %}
                                                 </div>

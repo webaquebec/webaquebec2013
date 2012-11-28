@@ -705,7 +705,7 @@ Author: @louisdumas
         }
         return mySchedule.slideTo(day);
       });
-      return this.get(/\#\/horaire\/(.*)\/(.*)-([0-9]+)\/*$/, function(cx, day, slug, id) {
+      return this.get(/\#\/horaire\/(en|fr)\/(.*)\/(.*)-([0-9]+)\/*$/, function(cx, locale, day, slug, id) {
         myOnePager.hashHasChange('horaire');
         mySchedule.slideTo(day);
         return mySchedule.showConf(id);

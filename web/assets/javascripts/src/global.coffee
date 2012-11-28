@@ -1,5 +1,5 @@
 ###
-Author: @louisdumas
+Author: Louis-Philippe Dumas, @louisdumas, github: lpdumas
 ###
 ###############
 ## Bootstrap ##
@@ -202,8 +202,6 @@ class Schedule
       
       if window.addthis
         addthis.ost = 0;
-        # addthis.update('share', 'url', window.location.href);
-        # addthis.update('share', 'title', window.document.title);
         addthis.ready();
         addthis.init()
 

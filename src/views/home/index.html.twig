@@ -110,6 +110,9 @@
                                             {% for roomId, sessions in blockData.list %}
                                                 <div class="col">
                                                     {% for session in sessions %}
+                                                      {% if session.empty %}
+                                                        <span class="empty t{{ session.line }} t{{ session.duration }}m" ></span>
+                                                      {% else %}
                                                         {% include 'includes/conference-thumb.html.twig' with {
                                                             id        : session.id,
                                                             slug      : session.slug,
@@ -117,10 +120,11 @@
                                                             line      : session.line,
                                                             performer : speakers[session.speaker_id].name,
                                                             img       : "/assets/images/performers/" ~ speakers[session.speaker_id].image,
-                                                            desc      : session.description,
+                                                            name      : session.name,
                                                             room      : session.room_id,
                                                             start     : session.start
                                                         } %}
+                                                      {% endif %}
                                                     {% endfor %}
                                                 </div>
                                             {% endfor %}

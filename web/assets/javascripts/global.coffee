@@ -584,7 +584,7 @@ $ () ->
     )
   )
   
-  router.debug = true
+  router.debug = false
   router.run()
   myOnePager.animateWhenSliding = yes
 

@@ -577,7 +577,7 @@ $ () ->
       mySchedule.slideTo(day)
     )
     
-    @.get(/\#\/horaire\/(.*)\/(.*)\/*$/, (cx, day, slug, id) ->
+    @.get(/\#\/horaire\/(.*)\/(.*)-([0-9]+)\/*$/, (cx, day, slug, id) ->
       myOnePager.hashHasChange('horaire')
       mySchedule.slideTo(day)
       mySchedule.showConf(id)

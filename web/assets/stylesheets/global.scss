@@ -1340,7 +1340,7 @@ $t15m:40px;
           height: 100%;
           
           .white {
-            padding: 10px 10px 10px 210px;
+            padding: 10px 10px 10px 225px;
             
             .info {
               max-width: 450px;
@@ -1571,7 +1571,9 @@ body {
   transform : translateZ(0);
 
   .addthis_toolbox {
-    margin: 20px 0 0 0;
+    position: absolute;
+    bottom: -39px;
+    left: 0px;
     
     a {
       margin-right: 15px;
@@ -1727,6 +1729,26 @@ body {
 //        height: 100%;
         
         .viewport { width: 100%; height: 578px; overflow: hidden; position: relative; }
+        
+        .viewport {
+          p + ol,
+          p + ul {
+            margin-top: -10px;
+          }
+          
+          ul, 
+          ol {
+            margin-left: 17px;
+          }
+          
+          ol {
+            list-style: decimal outside;
+          }
+          
+          ul {
+            list-style: disc outside;
+          }
+        }
         
         .overview {
           position: absolute;

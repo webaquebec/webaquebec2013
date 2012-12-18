@@ -97,7 +97,7 @@
                                                     id        : blockData.session.id,
                                                     slug      : blockData.session.slug,
                                                     performer : speakers[blockData.session.speaker_id].name,
-                                                    img       : "/assets/images/performers/" ~ speakers[blockData.session.speaker_id].image,
+                                                    img       : speakers[blockData.session.speaker_id].image,
                                                     desc      : blockData.session.description,
                                                     room      : blockData.session.room_id,
                                                     start     : blockData.session.start,
@@ -119,7 +119,7 @@
                                                             duration  : session.duration,
                                                             line      : session.line,
                                                             performer : speakers[session.speaker_id].name,
-                                                            img       : "/assets/images/performers/" ~ speakers[session.speaker_id].image,
+                                                            img       : speakers[session.speaker_id].image,
                                                             name      : session.name,
                                                             room      : session.room_id,
                                                             start     : session.start

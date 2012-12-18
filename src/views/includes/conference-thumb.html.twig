@@ -1,7 +1,11 @@
 <div id="conf-{{ id }}" class="conference t{{ line }} t{{ duration }}m" itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
     <a href="/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}" class="white room-{{ room }}" data-id="{{ id }}">
         <figure itemprop="performer" itemscope itemtype="http://schema.org/Person">
-          <img src="http://cageme.herokuapp.com/g/47/52" width="47" height="52" alt=" " itemprop="image" />
+          {% if duration == '90' %}
+          <img src="/assets/images/speakers/123x115/{{ img }}-medium.jpg" width="123" height="115" alt="{{ performer }}" itemprop="image" />
+          {% else %}
+          <img src="/assets/images/speakers/47x44/{{ img }}-small.jpg" width="47" height="44" alt="{{ performer }}" itemprop="image" />
+          {% endif %}
             {#
             <img src="{{ img }}" width="47" height="52" alt=" " itemprop="image" />
             #}

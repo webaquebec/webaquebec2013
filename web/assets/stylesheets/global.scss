@@ -286,6 +286,19 @@ a:hover { color: #06e; text-decoration: underline;}
       & + li,
       & + figure { margin-left: 6px;}
     }
+    
+    &#partners li{
+      height: 60px; // largest logo's height
+      line-height: 60px;
+      vertical-align: middle;
+    }
+    
+    &#medias li {
+      height: 75px; // largest logo's height
+      line-height: 75px;
+      min-width: 135px;
+      vertical-align: middle;
+    }
   }
   
 }
@@ -684,12 +697,12 @@ a:hover { color: #06e; text-decoration: underline;}
       
       &.backstage {
         opacity: 0;
-        top: 0;
+        top: -9px;
       }
       
       &.on-stage {
         opacity: 1;
-        top: 0;
+        top: -9px;
         left: 0;
       }
     }

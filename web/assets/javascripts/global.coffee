@@ -49,15 +49,16 @@ class Slider
     @navElements  = @navWrap.find('a')
     @descElements = @descWrap.find('span')
     
-    @slides[@currentIndex].addClass('active')
-    @handleNav()
-    if @timer > 0
-      @i = setInterval( =>
-        if !@isAnimated
-          @handleNextSlide()
-          @isAnimated = yes
-          @slide()
-      , @timer)
+    if @slides.length > 1
+      @slides[@currentIndex].addClass('active')
+      @handleNav()
+      if @timer > 0
+        @i = setInterval( =>
+          if !@isAnimated
+            @handleNextSlide()
+            @isAnimated = yes
+            @slide()
+        , @timer)
     
   handleNav: ->
     @navElements.click( (e) =>
@@ -135,6 +136,7 @@ class Schedule
       newHref  = this_.attr('href').replace('/horaire', '#/horaire')
       this_.attr('href', newHref)
     )
+    
     @confLinks.click( ->
       this_ = $(this)
       if window.location.hash is this_.attr('href')
@@ -578,13 +580,20 @@ $ () ->
     )
     
     @.get(/\#\/horaire\/(.*)\/(.*)-([0-9]+)\/*$/, (cx, day, slug, id) ->
-      myOnePager.hashHasChange('horaire')
+      
+      # no horizontal animation when we click on a conf link
+      # after the initial load
+      if myOnePager.windowInitialHash
+        myOnePager.hashHasChange('horaire')
+        myOnePager.windowInitialHash = null
+        
       mySchedule.slideTo(day)
       mySchedule.showConf(id)
     )
   )
   
   router.debug = false
+  myOnePager.windowInitialHash = window.location.hash || null
   router.run()
   myOnePager.animateWhenSliding = yes
 

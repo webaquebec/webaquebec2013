@@ -622,6 +622,7 @@ a:hover { color: #06e; text-decoration: underline;}
     display: block;
     background: url('/assets/images/interface/slider-texture.png') repeat transparent;
   }
+  
   .mask {
     @extend .png-slider-mask;
     display: block;
@@ -632,6 +633,7 @@ a:hover { color: #06e; text-decoration: underline;}
     width: image-width('png/slider-mask.png');
     height: image-height('png/slider-mask.png');
   }
+  
   .slider-info {
     position: absolute;
     z-index: 13;
@@ -643,11 +645,13 @@ a:hover { color: #06e; text-decoration: underline;}
     font-size: 4.2rem;
     line-height: 48px;
   }
+  
   .desc-nav-wrap { 
     margin: 5px 0 0 71px; 
     font-size: 14px;
     font-size: 1.4rem;
   }
+  
   .slider-nav {
     a {
       display: inline-block;
@@ -686,6 +690,7 @@ a:hover { color: #06e; text-decoration: underline;}
       }
     }
   }
+  
   .descs {
     position: relative;
     display: block;
@@ -737,6 +742,7 @@ a:hover { color: #06e; text-decoration: underline;}
     }
     
   }
+  
   .slides-wrap {
     @extend .group;
     position: relative;
@@ -1373,7 +1379,6 @@ $t15m:40px;
       } // .conferences 
       .empty {
         display: block;
-        background: red;
       }
       .row {
         .conference {
@@ -1999,7 +2004,9 @@ body.lock {
 
 /* Sponsors
 **********************{{{*/
-
+.sponsors.listing .list li + li {
+  margin-left: 20px;
+}
 /*}}}*/
 
 /* About

@@ -28,8 +28,8 @@ function dateTime($dateTime, $format) {
 }
 
 function limitTitle($title) {
-    if (strlen($title) > 30) {
-        $title = substr($title, 0, 30);
+    if (strlen($title) > 50) {
+        $title = substr($title, 0, 50);
         $title .= "...";
     }
 

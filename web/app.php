@@ -69,6 +69,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
 
         $session["line"] = ltrim($dateTime->format("H\hi"), "0");
         $session["duration"] = ($session["end"] - $session["start"]) / 60;
+        
         if (is_null($session["room_id"])) {
             $session["room_id"] = 0;
         }
@@ -80,6 +81,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
             $lines[$dateTime->format("dmY")] = array();
             $sessions[$dateTime->format("dmY")] = array("day" => $day->getTimestamp(), "blocks" => array());
         }
+        
         if (!in_array($session["line"], $lines[$dateTime->format("dmY")])) {
             $lines[$dateTime->format("dmY")][] = $session["line"];
         }

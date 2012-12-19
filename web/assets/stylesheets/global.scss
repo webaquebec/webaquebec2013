@@ -223,7 +223,29 @@ a:hover { color: #06e; text-decoration: underline;}
   @extend .png-twitter-bird;
   display: inline-block;
   width: image-width('png/twitter-bird.png');
-  height: image-height('png/twitter-bird.png');;
+  height: image-height('png/twitter-bird.png');
+  
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -ms-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 #one-pager {
@@ -1705,27 +1727,6 @@ body {
         top: 5px;
         right: 24px;
         
-        -webkit-transition-property: opacity;
-        -moz-transition-property: opacity;
-        -ms-transition-property: opacity;
-        -o-transition-property: opacity;
-        transition-property: opacity;
-
-        -webkit-transition-duration: 200ms;
-        -moz-transition-duration: 200ms;
-        -ms-transition-duration: 200ms;
-        -o-transition-duration: 200ms;
-        transition-duration: 200ms;
-
-        -webkit-transition-timing-function: linear;
-        -moz-transition-timing-function: linear;
-        -ms-transition-timing-function: linear;
-        -o-transition-timing-function: linear;
-        transition-timing-function: linear;
-
-        &:hover {
-          opacity: 0.8;
-        }
       }
     }
     
@@ -1780,6 +1781,22 @@ body {
         .viewport { width: 100%; height: 578px; overflow: hidden; position: relative; }
         
         .viewport {
+          
+          h2 {
+            position: relative;
+            margin-top: 22px;
+            
+            .twitter-bird {
+              position: absolute;
+              right: 0;
+              top: 0;
+            }
+          }
+          
+          h2 + p {
+            margin-top: 10px;
+          }
+          
           p + ol,
           p + ul {
             margin-top: -10px;
@@ -1787,7 +1804,7 @@ body {
           
           ul, 
           ol {
-            margin-left: 17px;
+            margin-left: 19px;
             margin-bottom: 15px;
           }
           
@@ -1801,6 +1818,8 @@ body {
         }
         
         .bio-meta {
+          margin-bottom: 15px;
+          
           > span {
             display: block;
           }

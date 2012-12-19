@@ -1,5 +1,9 @@
 {% extends 'layout.html.twig' %}
+{% block title %}{{ session.name }} | {% endblock %}
+{% block bodyClasses %}single-session{% endblock %}
 {% block body %}
     {% include 'includes/header.html.twig' %}
-    {% include 'conference/show.html.twig' with session %}
+    <div class="width">
+      {% include 'conference/show.html.twig' with session %}
+    </div>
 {% endblock %}

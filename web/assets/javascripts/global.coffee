@@ -575,7 +575,7 @@ $ () ->
   #############
   window.router = $.sammy(() ->
     
-    @.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos)\/*$/, (cx, section) ->
+    @.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos|nous-joindre)\/*$/, (cx, section) ->
       myOnePager.hashHasChange(section)
       if mySchedule.confIsOpen
         mySchedule.closeConf()

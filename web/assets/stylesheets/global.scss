@@ -2173,6 +2173,13 @@ body.lock {
 }
 /*}}}*/
 
+/* Single session 
+**********************{{{*/
+body.single-session {
+//  @extend .width;
+}
+/*}}}*/
+
 /* Old browser
 **********************{{{*/
 html.no-opacity body #overlay{
@@ -2183,7 +2190,7 @@ html.no-opacity body #overlay{
 /* Footer
 **********************{{{*/
 
-#footer {
+footer {
   @extend .width, .group;
   position: relative;
   background: #e9e9ea;

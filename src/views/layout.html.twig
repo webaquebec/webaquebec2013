@@ -19,10 +19,10 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
 </head>
-<body class="layout" itemscope itemtype="http://schema.org/Event">
+<body class="layout{% block bodyClasses %}{% endblock %}" itemscope itemtype="http://schema.org/Event">
     {% block body %}{% endblock %}
     
-    <footer id="footer">
+    <footer id="nous-joindre" data-section>
         <span class="gradient"></span>
         <span class="diag"></span>
         <div class="address">

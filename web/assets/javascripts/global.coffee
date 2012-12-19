@@ -162,7 +162,8 @@ class Schedule
     $(window).on('resize', () =>
       if @confScrollbar && @wrapConfContent
         # Redifining conference description wrap height
-        newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 ) - 46
+        newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 ) - 56
+        console.log newHeigh
         @wrapConfContent.find('.viewport').css({ height : newHeigh})
         @confScrollbar.tinyscrollbar_update()
     )
@@ -193,7 +194,8 @@ class Schedule
       @wrapConfContent.html(response)
       
       # Redifining conference description wrap height
-      newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 ) - 46
+      newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 ) - 56
+      console.log newHeigh
       @wrapConfContent.find('.viewport').css({ height : newHeigh})
       
       @confScrollbar = $('#scrollbar1')

@@ -28,7 +28,7 @@ sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: b
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 ul { margin: 0; padding: 0; list-style: none;}
-ol { margin: 1em 0; padding: 0 0 0 40px; }
+ol { margin: 0; padding: 0; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
@@ -217,6 +217,13 @@ a:hover { color: #06e; text-decoration: underline;}
     background: #faaa71;
     text-decoration: none;
   }
+}
+
+.twitter-bird {
+  @extend .png-twitter-bird;
+  display: inline-block;
+  width: image-width('png/twitter-bird.png');
+  height: image-height('png/twitter-bird.png');;
 }
 
 #one-pager {
@@ -1585,7 +1592,7 @@ body {
 
   .addthis_toolbox {
     position: absolute;
-    bottom: -39px;
+    bottom: -44px;
     left: 0px;
     
     a {
@@ -1676,6 +1683,7 @@ body {
        height: 245px;
      } 
     }
+    
     h1 {
       position: absolute;
       bottom: 0;
@@ -1691,6 +1699,34 @@ body {
       font-size: 21px;
       font-size: 2.1rem;
       background-color: rgba(0, 97, 134, 0.5);
+      
+      .twitter-bird {
+        position: absolute;
+        top: 5px;
+        right: 24px;
+        
+        -webkit-transition-property: opacity;
+        -moz-transition-property: opacity;
+        -ms-transition-property: opacity;
+        -o-transition-property: opacity;
+        transition-property: opacity;
+
+        -webkit-transition-duration: 200ms;
+        -moz-transition-duration: 200ms;
+        -ms-transition-duration: 200ms;
+        -o-transition-duration: 200ms;
+        transition-duration: 200ms;
+
+        -webkit-transition-timing-function: linear;
+        -moz-transition-timing-function: linear;
+        -ms-transition-timing-function: linear;
+        -o-transition-timing-function: linear;
+        transition-timing-function: linear;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
     }
     
     .content {
@@ -1752,6 +1788,7 @@ body {
           ul, 
           ol {
             margin-left: 17px;
+            margin-bottom: 15px;
           }
           
           ol {
@@ -1760,6 +1797,21 @@ body {
           
           ul {
             list-style: disc outside;
+          }
+        }
+        
+        .bio-meta {
+          > span {
+            display: block;
+          }
+          
+          a {
+            color: white;
+            text-decoration: underline;
+            
+            &:hover {
+              text-decoration: none;
+            }
           }
         }
         
@@ -1774,8 +1826,9 @@ body {
           font-size: 1.3rem;
           font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         }
+        
       }
-
+      
       #scrollbar1 .thumb .end,
       #scrollbar1 .thumb { background-color: white; }
       #scrollbar1 .scrollbar { position: absolute; width: 6px; right: 0; top: 0; }

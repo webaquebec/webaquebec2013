@@ -163,7 +163,6 @@ class Schedule
       if @confScrollbar && @wrapConfContent
         # Redifining conference description wrap height
         newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 ) - 56
-        console.log newHeigh
         @wrapConfContent.find('.viewport').css({ height : newHeigh})
         @confScrollbar.tinyscrollbar_update()
     )
@@ -195,7 +194,6 @@ class Schedule
       
       # Redifining conference description wrap height
       newHeigh = @wrapConfContent.outerHeight() - ( @wrapConfContent.find('figure').outerHeight() + 125 ) - 56
-      console.log newHeigh
       @wrapConfContent.find('.viewport').css({ height : newHeigh})
       
       @confScrollbar = $('#scrollbar1')
@@ -567,7 +565,7 @@ $ () ->
   $('#team [itemprop="name"]').each ->
     $this       = $(this)
     newRightPos =  $this.outerWidth()/2
-    console.log "#{$this.html()}: #{newRightPos}"
+
     $this.css
       right : -newRightPos
     

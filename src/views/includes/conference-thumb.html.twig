@@ -11,6 +11,6 @@
             #}
             <figcaption><h2 itemprop="name">{{ performer }}</h2></figcaption>
         </figure>
-        <span itemprop="description">{{ name }}</span>
+        <span itemprop="description">{{ name | limitTitle }}</span>
     </a>
 </div>

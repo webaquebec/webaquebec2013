@@ -27,8 +27,18 @@ function dateTime($dateTime, $format) {
     return strftime($format, $dateTime);
 }
 
+function limitTitle($title) {
+    if (strlen($title) > 30) {
+        $title = substr($title, 0, 30);
+        $title .= "...";
+    }
+
+    return $title;
+}
+
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addFilter('dateTime', new \Twig_Filter_Function('dateTime'));
+    $twig->addFilter('limitTitle', new \Twig_Filter_Function('limitTitle'));
 
     return $twig;
 }));
@@ -70,7 +80,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
 
         $session["line"] = ltrim($dateTime->format("H\hi"), "0");
         $session["duration"] = ($session["end"] - $session["start"]) / 60;
-        
+
         if (is_null($session["room_id"])) {
             $session["room_id"] = 0;
         }
@@ -82,7 +92,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
             $lines[$dateTime->format("dmY")] = array();
             $sessions[$dateTime->format("dmY")] = array("day" => $day->getTimestamp(), "blocks" => array());
         }
-        
+
         if (!in_array($session["line"], $lines[$dateTime->format("dmY")])) {
             $lines[$dateTime->format("dmY")][] = $session["line"];
         }

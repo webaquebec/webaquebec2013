@@ -1,6 +1,13 @@
 <figure>
     <img src="/assets/images/speakers/400x375/{{ speaker_image }}-xlarge.jpg" width="400" height="375" alt="{{ speaker_name }}" />
-    <figcaption><h1>{{ speaker_name }}</h1></figcaption>
+    <figcaption>
+      <h1>
+      {{ speaker_name }}
+      {% if speaker_twitter != null %}
+      <a class="twitter-bird" href="http://www.twitter.com/{{ speaker_twitter }}" title="{{ speaker_name }} sur twitter" target="_blank"><span class="shy">twitter</span></a>
+      {% endif %}
+      </h1>
+    </figcaption>
 </figure>
 <div class="content">
     <h2>{{ name }}</h2>
@@ -15,14 +22,30 @@
               {% else %}
                 <p>Détails à venir</p>
               {% endif %}
-              {% if speaker_bio is defined and speaker_bio is not null %}
-                {% if is_panel is defined and is_panel == '1' %}
+              
+              {% if speaker_bio != null %}
+                {% if is_panel == '1' %}
                   {{ speaker_bio|raw }}
                 {% else %}
                   <h2>Biographie</h2>
                   {{ speaker_bio|raw }}
                 {% endif %}
               {% endif %}
+              
+              <div class="bio-meta">
+                {% if speaker_entreprise != null %}
+                <span><strong>Entreprise</strong>: {{ speaker_entreprise }}</span>
+                {% endif %}
+                
+                {% if speaker_title != null %}
+                <span><strong>Titre</strong>: {{ speaker_title }}</span>
+                {% endif %}
+              
+                {% if speaker_website != null %}
+                <span><strong>Site web</strong>: <a href="{{ speaker_website }}" target="_blank">{{ speaker_website }}</a></span>
+                {% endif %}
+              </div>
+              
             </div>
         </div>
         <div class="addthis_toolbox addthis_default_style ">

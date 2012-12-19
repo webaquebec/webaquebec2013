@@ -28,8 +28,9 @@ function dateTime($dateTime, $format) {
 }
 
 function limitTitle($title) {
-    if (strlen($title) > 30) {
-        $title = substr($title, 0, 30);
+    $title = html_entity_decode($title, ENT_COMPAT, 'UTF-8');
+    if (strlen($title) > 50) {
+        $title = mb_substr($title, 0, 50, 'utf-8');
         $title .= "...";
     }
 

@@ -562,7 +562,16 @@ $ () ->
       myOnePager.hashHasChange('horaire')
   )
   myOnePager   = new OnePager()
-
+  
+  # Team captions width hack/fix
+  $('#team [itemprop="name"]').each ->
+    $this       = $(this)
+    newRightPos =  $this.outerWidth()/2
+    console.log "#{$this.html()}: #{newRightPos}"
+    $this.css
+      right : -newRightPos
+    
+  
   #############
   #-- ROUTER --#
   #############

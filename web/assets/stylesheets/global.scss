@@ -1373,7 +1373,6 @@ $t15m:40px;
       } // .conferences 
       .empty {
         display: block;
-        background: red;
       }
       .row {
         .conference {
@@ -1999,7 +1998,9 @@ body.lock {
 
 /* Sponsors
 **********************{{{*/
-
+.sponsors.listing .list li + li {
+  margin-left: 20px;
+}
 /*}}}*/
 
 /* About

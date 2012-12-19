@@ -61,6 +61,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
     $block = array();
     $lines = array();
     $firstLine = "";
+    $currentDay = "";
     $start = 0;
     $end = 0;
     foreach ($sessionsTmp as $session) {
@@ -86,13 +87,17 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
             $lines[$dateTime->format("dmY")][] = $session["line"];
         }
 
-        // Verify if we have a new block
-        if ($session["break"] == 1 || $session["row"] == 1) {
+        if ($currentDay == "") {
+            $currentDay = $dateTime->format("dmY");
+        }
+
+        // Verify if we have a new block or the day is ending
+        if ($session["break"] == 1 || $session["row"] == 1 || $currentDay != $dateTime->format("dmY")) {
             // New block
 
             if (!empty($block)) {
                 // Save block
-                $sessions[$dateTime->format("dmY")]["blocks"][] = array(
+                $sessions[$currentDay]["blocks"][] = array(
                     "size" => ($end - $start) / 60,
                     "line" => $firstLine,
                     "list" => $block,
@@ -107,8 +112,10 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
             $block = array();
             $start = 0;
             $end = 0;
+            $currentDay = $dateTime->format("dmY");
             continue;
         }
+        $currentDay = $dateTime->format("dmY");
 
         if (empty($block)) {
             $firstLine = $session["line"];
@@ -124,7 +131,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
         $start = min($start, $session["start"]);
         $end = max($end, $session["end"]);
         $block[$session["room_id"]][] = $session;
-    }    
+    }
 
     if (!empty($block)) {
         // Save block
@@ -134,6 +141,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
             "list" => $block,
         );
     }
+
     return $app['twig']->render('home/index.html.twig', array(
         "page" => "index",
         "speakers" => $speakers,

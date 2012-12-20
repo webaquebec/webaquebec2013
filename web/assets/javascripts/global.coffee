@@ -500,20 +500,6 @@ class CustomInfoWindow
       top: @oY
     })
     
-  # panMap: ->
-  #   if @map.getZoom() < 3
-  #     @map.setZoom(3)
-  #     
-  #   scale = Math.pow(2, @map.getZoom());
-  #   worldCoordinateCenter = @map.getProjection().fromLatLngToPoint(@position)
-  #   worldCoordinateNewCenter = new google.maps.Point(
-  #       worldCoordinateCenter.x - 150/scale,
-  #       worldCoordinateCenter.y + 200/scale
-  #   )
-  #   newCenter = @map.getProjection().fromPointToLatLng(worldCoordinateNewCenter)
-  #   
-  #   @map.panTo(newCenter)
-    
 ###
 # }}}
 ###

@@ -493,25 +493,26 @@ class CustomInfoWindow
     overlayProjection = @getProjection()
     pos = overlayProjection.fromLatLngToDivPixel(@position)
     @oX = pos.x - @wrap.outerWidth() / 2
-    @oY = pos.y - @wrap.outerHeight()
+    @oY = pos.y - @wrap.outerHeight() - 30
+    console.log @wrap
     @wrap.css({
       left: @oX,
       top: @oY
     })
     
-  panMap: ->
-    if @map.getZoom() < 3
-      @map.setZoom(3)
-      
-    scale = Math.pow(2, @map.getZoom());
-    worldCoordinateCenter = @map.getProjection().fromLatLngToPoint(@position)
-    worldCoordinateNewCenter = new google.maps.Point(
-        worldCoordinateCenter.x - 150/scale,
-        worldCoordinateCenter.y + 200/scale
-    )
-    newCenter = @map.getProjection().fromPointToLatLng(worldCoordinateNewCenter)
-    
-    @map.panTo(newCenter)
+  # panMap: ->
+  #   if @map.getZoom() < 3
+  #     @map.setZoom(3)
+  #     
+  #   scale = Math.pow(2, @map.getZoom());
+  #   worldCoordinateCenter = @map.getProjection().fromLatLngToPoint(@position)
+  #   worldCoordinateNewCenter = new google.maps.Point(
+  #       worldCoordinateCenter.x - 150/scale,
+  #       worldCoordinateCenter.y + 200/scale
+  #   )
+  #   newCenter = @map.getProjection().fromPointToLatLng(worldCoordinateNewCenter)
+  #   
+  #   @map.panTo(newCenter)
     
 ###
 # }}}

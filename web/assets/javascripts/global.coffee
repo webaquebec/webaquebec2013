@@ -102,19 +102,21 @@ class Slider
 class Schedule
   constructor: (opts)->
     @slideWrapper        = $('#schedule .slides-wrap')
-    @overFlowwRapper     = $('#schedule .wrapper')
+    @overFlowWrapper     = $('#schedule .wrapper')
     @navElement          = $('#schedule-nav a')
     @slides              = @slideWrapper.find('.slide')
-    @startingHeight      = 500
     @slideWrapperHeight  = @slideWrapper.outerHeight()
     @openBtn             = $('#schedule #open-shedule a')
     @confLinks           = $('#schedule a.white')
     @confThumbParents    = $('#schedule .conference')  
     @body                = $('body')
+    @sideTimeLineSpan    = $('#time-zone span')
+    @startingHeight      = 500
     @wrapConfContent     = null
     @confScrollbar       = null
     @loadingGIF          = null
     @confIsOpen          = false 
+    
     template            = '''
     <section id="conf-desc">
       <span class="loading"><img src="/assets/images/interface/loading.gif" /></span>
@@ -232,15 +234,22 @@ class Schedule
   slideTo: (id) ->
     target = @slides.filter("##{id}")
     posX   = target.position().left
+    
     @navElement.removeClass('active')
+    
     $('[data-ref="'+id+'"]').addClass('active')
+    
+    console.log @sideTimeLineSpan.filter("##{id}-lines")
+    
+    @sideTimeLineSpan.removeClass('active')
+    @sideTimeLineSpan.filter("##{id}-lines").addClass('active')
     @slideWrapper.css({ 'left' : -posX})
 
   open: =>
     $(@).trigger('onOpen')
     @openBtn.html('Fermer')
     @openBtn.addClass('active')
-    @overFlowwRapper.css(
+    @overFlowWrapper.css(
       'height'     : @slideWrapperHeight
     )
     
@@ -249,7 +258,7 @@ class Schedule
     @openBtn.html('Tout afficher')
     @openBtn.removeClass('active')
     t = setTimeout( =>
-      @overFlowwRapper.css(
+      @overFlowWrapper.css(
         'height'     : @startingHeight
       )
     ,200)

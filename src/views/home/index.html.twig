@@ -66,7 +66,7 @@
                 <div id="schedule-wrap">
                     <div id="time-zone">
                         {% for date, dateData in sessions %}
-                            <span id="{{ dateData.day | dateTime("%A") }}-lines">
+                            <span id="{{ dateData.day | dateTime("%A") }}-lines"{% if dateData.day | dateTime("%A") == "jeudi" %} class="active"{% endif %}>
                                 {% for line in lines[date] %}
                                     <span class="time t{{ line }}"><span>{{ line }}</span></span>
                                 {% endfor %}

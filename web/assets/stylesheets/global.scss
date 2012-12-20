@@ -1245,6 +1245,32 @@ $t15m:40px;
       border-right: 1px solid #bbbdbf;
       height: (11 * image-height('interface/squared-texture.png'));
       
+      > span {
+        opacity: 0;
+        -webkit-transition-property: opacity;
+        -moz-transition-property: opacity;
+        -ms-transition-property: opacity;
+        -o-transition-property: opacity;
+        transition-property: opacity;
+
+        -webkit-transition-duration: 200ms;
+        -moz-transition-duration: 200ms;
+        -ms-transition-duration: 200ms;
+        -o-transition-duration: 200ms;
+        transition-duration: 200ms;
+
+        -webkit-transition-timing-function: linear;
+        -moz-transition-timing-function: linear;
+        -ms-transition-timing-function: linear;
+        -o-transition-timing-function: linear;
+        transition-timing-function: linear;
+
+        &.active {
+          opacity: 1;
+        }
+        
+      }
+      
       .time {
         @extend .blue-line;
         z-index: 15;

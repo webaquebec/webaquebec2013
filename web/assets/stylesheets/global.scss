@@ -2293,6 +2293,16 @@ footer {
       }
     }
   } //.address
+  .confirm {
+    position: absolute;
+    right: 70px;
+    top: 35px;
+    display: block;
+    float: right;
+    color: #005674;
+    background: #F0F8FB;
+    padding: 5px 10px;
+  }
   
   form {
     position: absolute;

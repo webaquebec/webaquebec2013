@@ -239,8 +239,6 @@ class Schedule
     
     $('[data-ref="'+id+'"]').addClass('active')
     
-    console.log @sideTimeLineSpan.filter("##{id}-lines")
-    
     @sideTimeLineSpan.removeClass('active')
     @sideTimeLineSpan.filter("##{id}-lines").addClass('active')
     @slideWrapper.css({ 'left' : -posX})
@@ -494,7 +492,6 @@ class CustomInfoWindow
     pos = overlayProjection.fromLatLngToDivPixel(@position)
     @oX = pos.x - @wrap.outerWidth() / 2
     @oY = pos.y - @wrap.outerHeight() - 30
-    console.log @wrap
     @wrap.css({
       left: @oX,
       top: @oY
@@ -571,16 +568,20 @@ $ () ->
   #############
   window.router = $.sammy(() ->
     
-    @.get(/\#\/(home|horaire|lieu-et-infos|partenaires|a-propos|nous-joindre)\/*$/, (cx, section) ->
+    @.get(/\#\/(accueil|horaire|lieu-et-infos|partenaires|a-propos|nous-joindre)\/*$/, (cx, section) ->
       myOnePager.hashHasChange(section)
       if mySchedule.confIsOpen
         mySchedule.closeConf()
     )
     
     @.get(/\#\/horaire\/(.*)\/$/, (cx, day) ->
-      myOnePager.hashHasChange('horaire')
+      if myOnePager.windowInitialHash
+        myOnePager.hashHasChange('horaire')
+        myOnePager.windowInitialHash = null
+        
       if mySchedule.confIsOpen
         mySchedule.closeConf()
+        
       mySchedule.slideTo(day)
     )
     

@@ -154,13 +154,20 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
         );
     }
 
+    $campaignConfirmation = false;
+    // Campaign monitor confirmartion
+    if (isset($_GET['confirmation']) && $_GET['confirmation'] == '1') {
+        $campaignConfirmation = true;
+    }
+
     return $app['twig']->render('home/index.html.twig', array(
         "page" => "index",
         "speakers" => $speakers,
         "sponsors" => $sponsors,
         "rooms" => $rooms,
         "lines" => $lines,
-        "sessions" => $sessions
+        "sessions" => $sessions,
+        "campaignConfirmation" => $campaignConfirmation
         ));
 };
 $app->get('/', $index)

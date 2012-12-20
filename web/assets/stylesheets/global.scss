@@ -322,6 +322,12 @@ a:hover { color: #06e; text-decoration: underline;}
       vertical-align: middle;
     }
     
+    &#main li { 
+      height: 115px;
+      line-height: 115px;
+      vertical-align: middle;
+    }
+    
     &#medias li {
       height: 75px; // largest logo's height
       line-height: 75px;
@@ -1985,11 +1991,11 @@ body.lock {
     }
 
     &:after {
-    	border-color: rgba(255, 255, 255, 0);
-    	border-top-color: #fff;
-    	border-width: 30px;
-    	left: 50%;
-    	margin-left: -30px;
+      border-color: rgba(255, 255, 255, 0);
+      border-top-color: #fff;
+      border-width: 30px;
+      left: 50%;
+      margin-left: -30px;
     }
     &:before {
     	border-color: rgba(226, 226, 226, 0);
@@ -2005,7 +2011,7 @@ body.lock {
 /* Sponsors
 **********************{{{*/
 .sponsors.listing .list li + li {
-  margin-left: 20px;
+  margin-left: 40px;
 }
 /*}}}*/
 

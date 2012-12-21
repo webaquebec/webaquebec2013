@@ -213,6 +213,7 @@ class Schedule
         t1 = setTimeout(()=>
           @loadingGIF.removeClass('fadding').addClass('off')
           
+          # Setting up sharing buttons
           shareURL = $('[data-shareURL]').attr('data-shareURL')
           fb       = $(App.fbButton)
           tw       = $(App.twButton)

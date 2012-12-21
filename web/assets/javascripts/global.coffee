@@ -173,6 +173,7 @@ class Schedule
         @confScrollbar.tinyscrollbar_update()
     )
     
+    @openBtn.trigger('click')
     $(@).bind('onOpen', onOpen)
     $(@).bind('onClose', onClose)
     
@@ -256,7 +257,7 @@ class Schedule
 
   open: =>
     $(@).trigger('onOpen')
-    @openBtn.html('Fermer')
+    @openBtn.html('Réduire')
     @openBtn.addClass('active')
     @overFlowWrapper.css(
       'height'     : @slideWrapperHeight

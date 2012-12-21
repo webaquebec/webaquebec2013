@@ -48,11 +48,10 @@
               
             </div>
         </div>
-        
-        <div class="share-btn ">
-          <div class="fb-like" data-href="http://{{ app.request.host }}/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://{{ app.request.host }}/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}">Tweet</a>
-        </div>
     </div>
     
+</div>
+<div class="share-btn ">
+  <div class="fb-like" data-href="http://{{ app.request.host }}/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://{{ app.request.host }}/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}">Tweet</a>
 </div>

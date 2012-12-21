@@ -13,6 +13,9 @@ if html.style.opacity != undefined
 else
   html.className += " no-opacity"
 
+App.fbButton = '<div class="fb-like-template" data-href=" " data-send="false" data-layout="button_count" data-show-faces="false"></div>'
+App.twButton = '<a href="https://twitter.com/share" class="twitter-share-button-template" data-url=" ">Tweet</a>'
+  
 #}}}
 
 #############
@@ -111,6 +114,7 @@ class Schedule
     @confThumbParents    = $('#schedule .conference')  
     @body                = $('body')
     @sideTimeLineSpan    = $('#time-zone span')
+    @shareButtonWrap     = $('.share-btn')
     @startingHeight      = 500
     @wrapConfContent     = null
     @confScrollbar       = null
@@ -208,8 +212,20 @@ class Schedule
         # Time for the css transition to end
         t1 = setTimeout(()=>
           @loadingGIF.removeClass('fadding').addClass('off')
+          
+          shareURL = $('[data-shareURL]').attr('data-shareURL')
+          fb       = $(App.fbButton)
+          tw       = $(App.twButton)
+          
+          fb.addClass('fb-like').attr('data-href', shareURL)
+          tw.addClass('twitter-share-button').attr('data-url', shareURL)
+          
+          @shareButtonWrap.html('').append(fb, tw)
+          @shareButtonWrap.show()
+          
           FB.XFBML.parse()
           twttr.widgets.load()
+          
         , 200)
       , 400)
     )
@@ -219,6 +235,7 @@ class Schedule
   closeConf: ->
     @confIsOpen = false
     @confThumbParents.removeClass('active')
+    @shareButtonWrap.hide()
     @body.removeClass('lock')
     t = setTimeout(()=>
       @loadingGIF.removeClass('off')

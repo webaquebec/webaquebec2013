@@ -9,7 +9,7 @@
       </h1>
     </figcaption>
 </figure>
-<div class="content">
+<div class="content" data-shareURL="http://{{ app.request.host }}/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}">
     <h2>{{ name }}</h2>
     <span class="time"><time itemprop="startDate" datetime="{{ start | dateTime("%Y-%m-%dT%H:%M:00") }}">{{ start | dateTime("%A le %e %B, de %l h %M") }}</time> à <time itemprop="endDate" datetime="{{ end|dateTime("%Y-%m-%dT%H:%M:00") }}">{{ end|dateTime("%l h %M") }}</time></span>
     <span class="room">{% if room_name != "Grande salle" %}Salle {% endif %}{{ room_name }}</span>
@@ -47,11 +47,6 @@
               </div>
               
             </div>
-        </div>
-        
-        <div class="share-btn ">
-          <div class="fb-like" data-href="http://{{ app.request.host }}/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://{{ app.request.host }}/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}">Tweet</a>
         </div>
     </div>
     

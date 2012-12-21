@@ -1649,26 +1649,6 @@ body {
   -moz-tform : translateZ(0);
   transform : translateZ(0);
 
-  .share-btn {
-    position: absolute;
-    display: block;
-    bottom: -44px;
-    left: 0px;
-    
-    a {
-      margin-right: 15px;
-      background: transparent;
-    }
-    
-    .fb-like {
-      width: 100px;
-    }
-    .twitter-share-button {
-      position: relative;
-      top: 4px;
-    }
-  }
-  
   .loading {
     display: block;
     background: #0086b9;
@@ -1905,6 +1885,27 @@ body {
       .noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
       
     } //.content
+  }
+}
+
+.share-btn {
+  position: fixed;
+  z-index: 200;
+  display: block;
+  bottom: 10px;
+  right: 10px;
+  
+  a {
+    margin-right: 15px;
+    background: transparent;
+  }
+  
+  .fb-like {
+    width: 100px;
+  }
+  .twitter-share-button {
+    position: relative;
+    top: 4px;
   }
 }
 

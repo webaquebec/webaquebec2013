@@ -1,24 +1,53 @@
 <figure>
-    <img src="http://cageme.herokuapp.com/g/400/375" width="400" height="375" alt="{{ speaker_name }}" />
-    <figcaption><h1>{{ speaker_name }}</h1></figcaption>
+    <img src="/assets/images/speakers/400x375/{{ speaker_image }}-xlarge.jpg" width="400" height="375" alt="{{ speaker_name }}" />
+    <figcaption>
+      <h1>
+      {{ speaker_name }}
+      {% if speaker_twitter != null %}
+      <a class="twitter-bird" href="http://www.twitter.com/{{ speaker_twitter }}" title="{{ speaker_name }} sur twitter" target="_blank"><span class="shy">twitter</span></a>
+      {% endif %}
+      </h1>
+    </figcaption>
 </figure>
-<div class="content">
+<div class="content" data-shareURL="http://{{ app.request.host }}/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}">
     <h2>{{ name }}</h2>
     <span class="time"><time itemprop="startDate" datetime="{{ start | dateTime("%Y-%m-%dT%H:%M:00") }}">{{ start | dateTime("%A le %e %B, de %l h %M") }}</time> à <time itemprop="endDate" datetime="{{ end|dateTime("%Y-%m-%dT%H:%M:00") }}">{{ end|dateTime("%l h %M") }}</time></span>
-    <span class="room">{{ room_name }}</span>
+    <span class="room">{% if room_name != "Grande salle" %}Salle {% endif %}{{ room_name }}</span>
     <div id="scrollbar1" class="desc-wrap">
         <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
         <div class="viewport">
             <div class="overview">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              {% if description is defined and description is not null %}
+                {{ description|raw }}
+              {% else %}
+                <p>Détails à venir</p>
+              {% endif %}
+              
+              {% if speaker_bio != null %}
+                {% if is_panel == '1' %}
+                  {{ speaker_bio|raw }}
+                {% else %}
+                  <h2>Biographie</h2>
+                  {{ speaker_bio|raw }}
+                {% endif %}
+              {% endif %}
+              
+              <div class="bio-meta">
+                {% if speaker_entreprise != null %}
+                <span><strong>Entreprise</strong>: {{ speaker_entreprise }}</span>
+                {% endif %}
+                
+                {% if speaker_title != null %}
+                <span><strong>Titre</strong>: {{ speaker_title }}</span>
+                {% endif %}
+              
+                {% if speaker_website != null %}
+                <span><strong>Site web</strong>: <a href="{{ speaker_website }}" target="_blank">{{ speaker_website }}</a></span>
+                {% endif %}
+              </div>
+              
             </div>
         </div>
     </div>
-    <div class="addthis_toolbox addthis_default_style ">
-        <a class="addthis_button_facebook_like" fb:like:layout="button_count" addthis:url="http://webaquebec.org/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}"></a>
-        <a style="width: 92px;" class="addthis_button_tweet" addthis:url="http://webaquebec.org/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}"></a>
-    </div>
+    
 </div>

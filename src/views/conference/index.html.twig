@@ -1,5 +1,14 @@
 {% extends 'layout.html.twig' %}
+{% block title %}{{ session.name }} | {% endblock %}
+{% block bodyClasses %} single-session{% endblock %}
 {% block body %}
+    <script type="text/javascript" charset="utf-8">
+      var body = document.getElementsByTagName('body')
+      body[0].className = body[0].className + " hidden";
+      window.location = '/#/horaire/{{ session.start | dateTime("%A") }}/{{ session.slug }}-{{ session.id }}';
+    </script>
     {% include 'includes/header.html.twig' %}
-    {% include 'conference/show.html.twig' with session %}
+    <div class="width">
+      {% include 'conference/show.html.twig' with session %}
+    </div>
 {% endblock %}

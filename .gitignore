@@ -1,3 +1,5 @@
 .DS_Store
 .sass-cache
+web/assets/javascripts/*.js
+web/assets/stylesheets/*.css
 vendor/

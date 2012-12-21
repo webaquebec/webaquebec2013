@@ -27,8 +27,20 @@ function dateTime($dateTime, $format) {
     return strftime($format, $dateTime);
 }
 
+function limitTitle($title) {
+
+    $title = html_entity_decode($title, ENT_COMPAT, 'UTF-8');
+    if (strlen($title) > 50) {
+        $title = mb_substr($title, 0, 50, 'utf-8');
+        $title .= "...";
+    }
+
+    return $title;
+}
+
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addFilter('dateTime', new \Twig_Filter_Function('dateTime'));
+    $twig->addFilter('limitTitle', new \Twig_Filter_Function('limitTitle'));
 
     return $twig;
 }));
@@ -61,6 +73,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
     $block = array();
     $lines = array();
     $firstLine = "";
+    $currentDay = "";
     $start = 0;
     $end = 0;
     foreach ($sessionsTmp as $session) {
@@ -69,6 +82,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
 
         $session["line"] = ltrim($dateTime->format("H\hi"), "0");
         $session["duration"] = ($session["end"] - $session["start"]) / 60;
+
         if (is_null($session["room_id"])) {
             $session["room_id"] = 0;
         }
@@ -80,17 +94,22 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
             $lines[$dateTime->format("dmY")] = array();
             $sessions[$dateTime->format("dmY")] = array("day" => $day->getTimestamp(), "blocks" => array());
         }
+
         if (!in_array($session["line"], $lines[$dateTime->format("dmY")])) {
             $lines[$dateTime->format("dmY")][] = $session["line"];
         }
 
-        // Verify if we have a new block
-        if ($session["break"] == 1 || $session["row"] == 1) {
+        if ($currentDay == "") {
+            $currentDay = $dateTime->format("dmY");
+        }
+
+        // Verify if we have a new block or the day is ending
+        if ($session["break"] == 1 || $session["row"] == 1 || $currentDay != $dateTime->format("dmY")) {
             // New block
 
             if (!empty($block)) {
                 // Save block
-                $sessions[$dateTime->format("dmY")]["blocks"][] = array(
+                $sessions[$currentDay]["blocks"][] = array(
                     "size" => ($end - $start) / 60,
                     "line" => $firstLine,
                     "list" => $block,
@@ -105,8 +124,10 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
             $block = array();
             $start = 0;
             $end = 0;
+            $currentDay = $dateTime->format("dmY");
             continue;
         }
+        $currentDay = $dateTime->format("dmY");
 
         if (empty($block)) {
             $firstLine = $session["line"];
@@ -122,7 +143,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
         $start = min($start, $session["start"]);
         $end = max($end, $session["end"]);
         $block[$session["room_id"]][] = $session;
-    }    
+    }
 
     if (!empty($block)) {
         // Save block
@@ -132,13 +153,21 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
             "list" => $block,
         );
     }
+
+    $campaignConfirmation = false;
+    // Campaign monitor confirmartion
+    if (isset($_GET['confirmation']) && $_GET['confirmation'] == '1') {
+        $campaignConfirmation = true;
+    }
+
     return $app['twig']->render('home/index.html.twig', array(
         "page" => "index",
         "speakers" => $speakers,
         "sponsors" => $sponsors,
         "rooms" => $rooms,
         "lines" => $lines,
-        "sessions" => $sessions
+        "sessions" => $sessions,
+        "campaignConfirmation" => $campaignConfirmation
         ));
 };
 $app->get('/', $index)
@@ -146,7 +175,7 @@ $app->get('/', $index)
 
 $app->get('/horaire/{day}/{slug}-{id}', function ($day = null, $slug = null, $id = null) use ($app) {
     $sessionId = (int) $id;
-    $sql = "SELECT session.*, speaker.name AS speaker_name, room.name AS room_name FROM session JOIN speaker ON speaker.id = session.speaker_id JOIN room ON room.id = session.room_id WHERE session.id = ?";
+    $sql = "SELECT session.*, speaker.name AS speaker_name, speaker.bio AS speaker_bio, speaker.image AS speaker_image, speaker.title AS speaker_title, speaker.entreprise AS speaker_entreprise, speaker.website AS speaker_website, speaker.twitter AS speaker_twitter, room.name AS room_name FROM session JOIN speaker ON speaker.id = session.speaker_id JOIN room ON room.id = session.room_id WHERE session.id = ?";
     $session = $app['db']->fetchAssoc($sql, array($sessionId));
 
     if ($session) {

@@ -1649,13 +1649,23 @@ body {
   -moz-tform : translateZ(0);
   transform : translateZ(0);
 
-  .addthis_toolbox {
+  .share-btn {
     position: absolute;
+    display: block;
     bottom: -44px;
     left: 0px;
     
     a {
       margin-right: 15px;
+      background: transparent;
+    }
+    
+    .fb-like {
+      width: 100px;
+    }
+    .twitter-share-button {
+      position: relative;
+      top: 4px;
     }
   }
   
@@ -1901,9 +1911,11 @@ body {
 body.lock {
   left: -400px;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
   
   #one-pager {
     -webkit-filter: blur(2px);
+    filter: blur(2px);
   }
   
   #conf-desc {

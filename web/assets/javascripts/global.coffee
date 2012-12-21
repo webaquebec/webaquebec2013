@@ -202,21 +202,14 @@ class Schedule
 
       @confScrollbar.tinyscrollbar()
       
-      # Reinitiating addthis
-      
-      if window.addthis
-        addthis.ost = 0;
-        addthis.ready();
-        addthis.init()
-
-        addthis.toolbox($(".addthis_toolbox").get(0))
-        addthis.counter($(".addthis_counter").get(0))      
       
       t = setTimeout(()=>
         @loadingGIF.addClass('fadding')
         # Time for the css transition to end
         t1 = setTimeout(()=>
           @loadingGIF.removeClass('fadding').addClass('off')
+          FB.XFBML.parse()
+          twttr.widgets.load()
         , 200)
       , 400)
     )

@@ -15,11 +15,28 @@
 
     <link rel="stylesheet" href="/assets/stylesheets/global.css">
     {% block stylesheets %}{% endblock %}
+    {#
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-20043510-1'],
+                    ['_trackPageview']),
+                    ['ix_setAccount', 'UA-25106796-1'],
+                    ['ix_setDomainName', 'webaquebec.org'],
+                    ['ix_setAllowHash', false],
+                    ['ix_setAllowLinker', true],
+                    ['ix_trackPageview'],);
+
+      (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+    </script>
+    #}
       <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
 </head>
 <body class="layout{% block bodyClasses %}{% endblock %}" itemscope itemtype="http://schema.org/Event">
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/fr_CA/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
     {% block body %}{% endblock %}
     
     <footer id="nous-joindre" data-section>
@@ -43,7 +60,7 @@
             </span>
             
         </div>
-        {% if campaignConfirmation %}
+        {% if campaignConfirmationis is defined and campaignConfirmation %}
         <p class="confirm">Merci, vous êtes abonnés.</p>
         {% else %}
         <form action="http://webaquebec.createsend.com/t/r/s/jjjdthl" method="post" id="newsletter">

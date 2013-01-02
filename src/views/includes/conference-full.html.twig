@@ -6,7 +6,7 @@
                 <img src="/assets/images/speakers/200x188/{{ img }}-large.jpg" width="200" height="188" alt="{{ performer }}" itemprop="image" />
                 <figcaption><h2 itemprop="name">{{ performer }}</h2></figcaption>
             </figure>
-            <span itemprop="description">{{ desc }}</span>
+            <span itemprop="description">{{ name | limitTitle | raw }}</span>
             <span class="time"><time itemprop="startDate" datetime="{{ start | dateTime("%Y-%m-%dT%H:%M:00") }}">{{ start | dateTime("%Hh%M") }}</time> à <time itemprop="endDate" datetime="{{ end|dateTime("%Y-%m-%dT%H:%M:00") }}">{{ end|dateTime("%Hh%M") }}</time></span>
         </div>
     </a>

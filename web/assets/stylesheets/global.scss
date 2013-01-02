@@ -1707,6 +1707,7 @@ body {
   
   .wrap-content {
     position: relative;
+    z-index: 95;
     background: #0086b9;
     height: 100%;
     overflow: hidden;

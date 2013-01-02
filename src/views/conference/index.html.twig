@@ -1,6 +1,15 @@
 {% extends 'layout.html.twig' %}
 {% block title %}{{ session.name }} | {% endblock %}
 {% block bodyClasses %} single-session{% endblock %}
+{% block og_meta %}
+<meta property="og:title" content="{{ session.name }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://webaquebec.org/horaire/{{ session.start | dateTime("%A") }}/{{ session.slug }}-{{ session.id }}" />
+<meta property="og:image" content="/assets/images/speakers/400x375/{{ session.speaker_image }}-xlarge.jpg"/>
+<meta property="og:site_name" content="Web à Québec"/>
+<meta property="og:locale" content="fr_CA"/>
+<meta property="og:description" content="{{ session.description|striptags }}"/>
+{% endblock %}
 {% block body %}
     <script type="text/javascript" charset="utf-8">
       var body = document.getElementsByTagName('body')

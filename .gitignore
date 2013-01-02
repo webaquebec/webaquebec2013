@@ -3,3 +3,4 @@
 web/assets/javascripts/*.js
 web/assets/stylesheets/*.css
 vendor/
+._*

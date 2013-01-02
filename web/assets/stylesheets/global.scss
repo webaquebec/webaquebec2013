@@ -1653,7 +1653,7 @@ body {
     display: block;
     background: #0086b9;
     position: absolute;
-    z-index: 96;
+    z-index: 100;
     top: 0;
     left: 0;
     right: 0;
@@ -1863,7 +1863,7 @@ body {
         
         .overview {
           position: absolute;
-          z-index: 500;
+          z-index: 96;
           width: 100%;
           left: 0;
           top: 0;
@@ -1878,7 +1878,7 @@ body {
       
       #scrollbar1 .thumb .end,
       #scrollbar1 .thumb { background-color: white; }
-      #scrollbar1 .scrollbar { position: absolute; width: 6px; right: 0; top: 0; z-index: 501; }
+      #scrollbar1 .scrollbar { position: absolute; width: 6px; right: 0; top: 0; z-index: 97; }
       #scrollbar1 .track { background-color: #339ec7; height: 100%; width:6px; position: relative; padding: 0 1px; }
       #scrollbar1 .thumb { height: 20px; width: 6px; cursor: pointer; overflow: hidden; position: absolute; top: 0; }
       #scrollbar1 .thumb .end { overflow: hidden; height: 5px; width: 13px; }

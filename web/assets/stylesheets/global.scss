@@ -2094,9 +2094,8 @@ body.lock {
 
 /* Sponsors
 **********************{{{*/
-.sponsors.listing .list li + li {
-  margin-left: 40px;
-}
+.sponsors.listing .list li { margin-left: 20px;}
+.sponsors.listing .list li + li { margin-left: 40px;}
 /*}}}*/
 
 /* About

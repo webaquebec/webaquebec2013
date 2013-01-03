@@ -618,6 +618,49 @@ a:hover { color: #06e; text-decoration: underline;}
   background: #0a6183;
   overflow: hidden;
   
+  .subscribe {
+    position: absolute;
+    z-index: 15;
+    bottom: 40px;
+    right: 40px;
+    background: white;
+    width: 345px;
+    padding: 10px 21px 21px 21px;
+    min-height: 50px;
+    
+    strong {
+      display: block;
+      font-size: 32px;
+      font-size: 3.2rem;
+      color: #006186;
+      margin-bottom: 10px;
+      font-weight: normal;
+      line-height: normal;
+    }
+    
+    a {
+      position: relative;
+      display: block;
+      font-size: 17px;
+      font-size: 1.7rem;
+      font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      padding-left: 103px;
+      
+      span {
+        display: inline-block;
+        position: absolute;
+        left : 15px;
+        top: 0px;
+        font-size: 44px;
+        font-size: 4.4rem;
+        font-family: $miso;
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+      }
+      
+      &:hover { color: white;}
+    }
+  }
+  
   .texture-mask {
     position: absolute;
     z-index: 11;

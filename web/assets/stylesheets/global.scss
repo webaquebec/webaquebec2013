@@ -956,6 +956,7 @@ $t15m:40px;
       color: white;
       background: #0587b9;
       text-decoration: none;
+      overflow: hidden;
       
       h2,
       .time,
@@ -977,6 +978,7 @@ $t15m:40px;
     height: 100%;
     border-radius: 0px 0px 5px 5px;
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
     cursor: pointer;
     -webkit-transition-property: all;
     -moz-transition-property: all;
@@ -1428,6 +1430,7 @@ $t15m:40px;
           
           .white {
             padding: 10px 10px 10px 55px;
+            overflow: hidden;
             
             &.room-2:after { border-color: transparent $ixmedia transparent transparent;}
             &.room-3:after { border-color: transparent $vetiq transparent transparent;}
@@ -1448,6 +1451,7 @@ $t15m:40px;
           &.t90m {
             .white {
               padding: 130px 10px 10px 10px;
+              overflow: hidden;
             }
           }
         } // .conference
@@ -1463,6 +1467,7 @@ $t15m:40px;
           
           .white {
             padding: 10px 10px 10px 225px;
+            overflow: hidden;
             
             .info {
               max-width: 450px;

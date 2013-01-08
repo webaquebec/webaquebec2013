@@ -12,7 +12,7 @@
 <div class="content" data-shareURL="http://{{ app.request.host }}/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}">
     <h2>{{ name }}</h2>
     <span class="time"><time itemprop="startDate" datetime="{{ start | dateTime("%Y-%m-%dT%H:%M:00") }}">{{ start | dateTime("%A le %e %B, de %l h %M") }}</time> à <time itemprop="endDate" datetime="{{ end|dateTime("%Y-%m-%dT%H:%M:00") }}">{{ end|dateTime("%l h %M") }}</time></span>
-    <span class="room">{% if room_name != "Grande salle" %}Salle {% endif %}{{ room_name }}</span>
+    <span class="room">{% if room_name != "Grand Hall" %}Salle {% endif %}{{ room_name }}</span>
     <div id="scrollbar1" class="desc-wrap">
         <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
         <div class="viewport">

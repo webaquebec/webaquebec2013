@@ -23,7 +23,7 @@
                     <p>Détails à venir</p>
                 {% endif %}
               
-                {% if questions is defined and description is not null %}
+                {% if questions is defined and questions is not null %}
                     <h2>Les trois principales questions auxquelles la présentation répondra</h2>
                     {{ questions|raw }}
                 {% endif %}

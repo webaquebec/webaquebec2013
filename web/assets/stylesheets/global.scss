@@ -1482,6 +1482,17 @@ $t15m:40px;
               margin: 15px 0;
             }
             
+            .sponsor {
+              display: inline-block;
+              margin-top: 15px;
+              
+              img {
+                position: relative;
+                top: -2px;
+                left: 5px;
+              }
+            }
+            
             .place {
               position: absolute;
               top: 10px;

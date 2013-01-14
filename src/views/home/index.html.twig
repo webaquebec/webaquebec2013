@@ -97,16 +97,20 @@
                                             </div>
                                         {% else %}
                                             <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m" itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
+                                                
                                                 {% include 'includes/conference-full.html.twig' with {
-                                                    id        : blockData.session.id,
-                                                    slug      : blockData.session.slug,
-                                                    performer : speakers[blockData.session.speaker_id].name,
-                                                    img       : speakers[blockData.session.speaker_id].image,
-                                                    name      : blockData.session.name,
-                                                    room      : blockData.session.room_id,
-                                                    start     : blockData.session.start,
-                                                    end       : blockData.session.end
+                                                    id          : blockData.session.id,
+                                                    slug        : blockData.session.slug,
+                                                    performer   : speakers[blockData.session.speaker_id].name,
+                                                    img         : speakers[blockData.session.speaker_id].image,
+                                                    name        : blockData.session.name,
+                                                    room        : blockData.session.room_id,
+                                                    start       : blockData.session.start,
+                                                    end         : blockData.session.end,
+                                                    sponsors    : sponsors,
+                                                    sponsorId   : blockData.session.sponsor_id
                                                 } %}
+                                                
                                             </div>
                                         {% endif %}
                                     {% else %}

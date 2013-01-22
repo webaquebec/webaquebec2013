@@ -909,6 +909,12 @@ $t15m:40px;
 .t60m { height: (4 * $t15m);}
 .t75m { height: (5 * $t15m);}
 .t90m { height: (6 * $t15m);}
+.t105m { height: (7 * $t15m);}
+.t120m { height: (8 * $t15m);}
+.t135m { height: (9 * $t15m);}
+.t150m { height: (10 * $t15m);}
+.t165m { height: (11 * $t15m);}
+.t180m { height: (12 * $t15m);}
 
 .blue-line {
   position: absolute;
@@ -1448,9 +1454,17 @@ $t15m:40px;
             width: 132px;
           }
           
-          &.t90m {
+          &.t90m,
+          &.t120m {
             .white {
               padding: 130px 10px 10px 10px;
+              overflow: hidden;
+            }
+          }
+          
+          &.master-class {
+            .white {
+              padding: 110px 10px 10px 10px;
               overflow: hidden;
             }
           }

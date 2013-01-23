@@ -1460,14 +1460,49 @@ $t15m:40px;
               padding: 130px 10px 10px 10px;
               overflow: hidden;
             }
+            
           }
           
           &.master-class {
             .white {
-              padding: 110px 10px 10px 10px;
+              padding: 130px 10px 10px 10px;
               overflow: hidden;
             }
+
+            figcaption,
+            [itemprop="description"] {
+              position: relative;
+//              margin-left: 80px;
+            }
+            
+            .diner {
+              position: absolute;
+              top: 200px;
+              color: #b3b3b3;
+              font-weight: bold;
+              font-size: 14px;
+              font-size: 1.4rem;
+
+              strong {
+                font-size: 21px;
+                font-size: 2.1rem;
+                font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+                color: #0687b9;
+              }  
+            }
+            
+            .desc {
+              position: absolute;
+              top: 315px;
+              font-size: 15px; font-size: 1.5rem;
+              
+              span {
+                display: block;
+              }
+            }
           }
+          
+          
         } // .conference
       } // .conferences 
       .empty {

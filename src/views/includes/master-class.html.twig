@@ -1,10 +1,14 @@
 <div id="conf-{{ id }}" class="conference t{{ line }} t{{ duration }}m master-class" itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
     <a href="/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}" class="white room-{{ room }}" data-id="{{ id }}">
         <figure itemprop="performer" itemscope itemtype="http://schema.org/Person">
-          <img class="speaker-thumb" src="/assets/images/speakers/123x115/{{ img }}-medium.jpg" width="110"  alt="{{ performer }}" itemprop="image" />
+          <img class="speaker-thumb" src="/assets/images/speakers/123x115/{{ img }}-medium.jpg" width="123"  alt="{{ performer }}" itemprop="image" />
           <figcaption><h2 itemprop="name">{{ performer }}</h2></figcaption>
         </figure>
         <span itemprop="description">{{ name }}</span>
-        <div class="diner">Diner non-inclus</div>
+        <div class="diner"><strong>Diner</strong> non-inclus</div>
+        <div class="desc">
+            <span class="limit">Places limités à {{ limit }} personnes</span>
+            <span class="price">Coûts: {{ price }}$</span>
+        </div>
     </a>
 </div>

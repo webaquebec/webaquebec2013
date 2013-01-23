@@ -73,9 +73,9 @@
                     <div id="time-zone">
                         <span id="mercredi-lines" class="active">
                             <span class="time t7h15"><span>8h30</span></span>
-                            <span class="time t8h15"><span>11h45</span></span>
-                            <span class="time t8h45"><span>13h15</span></span>
-                            <span class="time t9h45"><span>16h30</span></span>
+                            <span class="time t8h30"><span>11h45</span></span>
+                            <span class="time t9h00"><span>13h15</span></span>
+                            <span class="time t10h15"><span>16h30</span></span>
                         </span>
                         
                         {% for date, dateData in sessions %}
@@ -95,19 +95,14 @@
                                     {% include 'includes/master-class.html.twig' with {
                                         id        : 99,
                                         slug      : "html5-windows-8-amis-avec-benefices",
-                                        duration  : 150,
+                                        duration  : 180,
                                         line      : "7h15",
                                         performer : "Frédéric Harper",
                                         img       : "placeholder",
                                         name      : "HTML5 & Windows 8: amis avec bénéfices",
-                                        desc      : "
-                                        <p>8h30 à 11h45<br>
-                                        Dîner (non inclus)<br>
-                                        13h30 à 16h30</p>
-                                        <p>Places limités à 50 personnes<br>
-                                        Coûts : 160$</p>
-                                        ",
                                         room      : 1,
+                                        limit     : 50,
+                                        price     : 160,
                                         start     : 1361344500
                                     } %}
                                     

@@ -967,7 +967,9 @@ $t15m: 40px;
       h2,
       .time,
       .place,
-      span[itemprop="description"] {
+      span[itemprop="description"],
+      .desc,
+      .conf-type {
         color: white;
       }
       
@@ -1042,7 +1044,9 @@ $t15m: 40px;
       h2,
       .time,
       .place,
-      span[itemprop="description"] {
+      span[itemprop="description"],
+      .desc,
+      .conf-type {
         color: white;
       }
       
@@ -1085,6 +1089,8 @@ $t15m: 40px;
     span[itemprop="description"],
     .time,
     .place,
+    .desc,
+    .conf-type,
     &:after {
       -webkit-transition-property: color;
       -moz-transition-property: color;
@@ -1428,6 +1434,7 @@ $t15m: 40px;
           height: 100%;
           float: left;
         }
+        
         .conference {
           @extend .conference-box;
           width: 100%;
@@ -1464,45 +1471,60 @@ $t15m: 40px;
           }
           
           &.master-class {
+            
             .white {
               padding: 130px 10px 10px 10px;
               overflow: hidden;
             }
-
+            
+            h2 {
+              font-size: 21px;
+              font-size: 2.1rem;
+            }
+            
+            .conf-type {
+              display: block;
+              text-transform: uppercase;
+              color: #026288;
+              font-size: 12px; font-size: 1.2rem;
+              margin: 0 0 0.6em 0;
+            }
+            
             figcaption,
             [itemprop="description"] {
               position: relative;
-//              margin-left: 80px;
             }
             
-            .diner {
-              position: absolute;
-              top: 200px;
+            [itemprop="description"] {
+              width: 100%;
+              color: #006287;
+              font-weight: bold;
+              font-size: 14px;
+              font-size: 1.4rem;
+              margin: 10px 0;
+            }
+            
+            .time {
               color: #b3b3b3;
               font-weight: bold;
               font-size: 14px;
               font-size: 1.4rem;
-
-              strong {
-                font-size: 21px;
-                font-size: 2.1rem;
-                font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-                color: #0687b9;
-              }  
+              margin: 15px 0;
+              
+              span {
+                display: block;
+              }
             }
             
             .desc {
-              position: absolute;
-              top: 315px;
-              font-size: 15px; font-size: 1.5rem;
+              color: black;
+              margin: 10px 0;
               
               span {
                 display: block;
               }
             }
           }
-          
-          
         } // .conference
       } // .conferences 
       .empty {

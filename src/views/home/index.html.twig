@@ -73,9 +73,9 @@
                     <div id="time-zone">
                         <span id="mercredi-lines" class="active">
                             <span class="time t7h15"><span>8h30</span></span>
-                            <span class="time t8h30"><span>11h45</span></span>
-                            <span class="time t9h00"><span>13h15</span></span>
-                            <span class="time t10h15"><span>16h30</span></span>
+                            <span class="time t8h15"><span>11h45</span></span>
+                            <span class="time t8h30"><span>13h15</span></span>
+                            <span class="time t9h30"><span>16h30</span></span>
                         </span>
                         
                         {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
@@ -95,11 +95,12 @@
                                     {% include 'includes/master-class.html.twig' with {
                                         id        : 73,
                                         slug      : "html5-windows-8-amis-avec-benefices",
-                                        duration  : 180,
+                                        duration  : 135,
                                         line      : "7h15",
                                         performer : "Frédéric Harper",
                                         img       : "frederic_harper",
                                         name      : "HTML5 & Windows 8: amis avec bénéfices",
+                                        time      : "<span>8h30 à 11h45</span><span>13h15 à 16h30</span>",
                                         room      : 1,
                                         limit     : 50,
                                         price     : 160,
@@ -111,13 +112,14 @@
                                     
                                     {% include 'includes/master-class.html.twig' with {
                                         id        : 73,
-                                        slug      : "html5-windows-8-amis-avec-benefices",
-                                        duration  : 180,
+                                        duration  : 135,
                                         line      : "7h15",
-                                        performer : "Frédéric Harper",
-                                        img       : "frederic_harper",
-                                        name      : "HTML5 & Windows 8: amis avec bénéfices",
-                                        room      : 1,
+                                        performer : "Jean-Daniel Cryans",
+                                        img       : "jean-daniel_cryans",
+                                        name      : "Introduction au Big Data avec Hadoop et HBase",
+                                        slug      : "introduction-au-big-data-avec-hadoop-et-hbase",
+                                        time      : "<span>8h30 à 11h45</span><span>13h15 à 16h30</span>",
+                                        room      : 2,
                                         limit     : 50,
                                         price     : 160,
                                         start     : 1361344500

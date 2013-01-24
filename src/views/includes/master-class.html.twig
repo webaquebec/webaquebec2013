@@ -4,8 +4,9 @@
           <img class="speaker-thumb" src="/assets/images/speakers/123x115/{{ img }}-medium.jpg" width="123"  alt="{{ performer }}" itemprop="image" />
           <figcaption><h2 itemprop="name">{{ performer }}</h2></figcaption>
         </figure>
+       <span class="conf-type">Classe de maître</span>
         <span itemprop="description">{{ name }}</span>
-        <div class="diner"><strong>Diner</strong> non-inclus</div>
+        <div class="time">{{ time|raw }}</div>
         <div class="desc">
             <span class="limit">Places limités à {{ limit }} personnes</span>
             <span class="price">Coûts: {{ price }}$</span>

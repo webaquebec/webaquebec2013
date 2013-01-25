@@ -89,6 +89,13 @@
                     </div>
                     <div class="slides-wrap">
                         <div id="mercredi" class="slide">
+                            <span class="lines">
+                                <span class="t7h15"></span>
+                                <span class="t8h15"></span>
+                                <span class="t8h30"></span>
+                                <span class="t9h30"></span>
+                                <span class="t9h45"></span>
+                            </span>
                             <span id="separators"><span></span><span></span><span></span><span></span></span>
                             <div class="conferences t7h15 t90m">
                                 <div class="col">
@@ -128,13 +135,13 @@
                                     
                                 </div>
                                 <div class="col">
-                                    <span class="empty t7h15 t60m" ></span>
-                                    {% include 'includes/conference-thumb.html.twig' with {
+                                    <span class="empty t7h15" style="height:180px;"></span>
+                                    {% include 'includes/gouv-camp.html.twig' with {
                                         id        : 73,
                                         duration  : 60,
                                         line      : "13h00",
                                         performer : "GouvCamp",
-                                        img       : "jean-daniel_cryans",
+                                        img       : "egouv",
                                         name      : "GouvCamp en collaboration avec E-Gouv Québec",
                                         slug      : "gouvcamp-en-collaboration-avec-e-gouv-quebec",
                                         time      : "<span>13h00 à 16h00</span>",

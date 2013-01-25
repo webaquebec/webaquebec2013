@@ -594,6 +594,9 @@ $ () ->
       if mySchedule.confIsOpen
         mySchedule.closeConf()
         
+      if day is "mercredi"
+        console?.log "mercredi"
+        
       mySchedule.slideTo(day)
     )
     

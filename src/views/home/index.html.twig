@@ -76,7 +76,8 @@
                             <span class="time t8h15"><span>11h45</span></span>
                             <span class="time t8h30"><span>13h15</span></span>
                             <span class="time t9h30"><span>16h30</span></span>
-                            <span class="time t9h45"><span>19h00</span></span>
+                            <span class="time t10h15"><span>19h00</span></span>
+                            <span class="time t11h45"><span>xxhxx</span></span>
                         </span>
                         
                         {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
@@ -94,7 +95,8 @@
                                 <span class="t8h15"></span>
                                 <span class="t8h30"></span>
                                 <span class="t9h30"></span>
-                                <span class="t9h45"></span>
+                                <span class="t10h15"></span>
+                                <span class="t11h45"></span>
                             </span>
                             <span id="separators"><span></span><span></span><span></span><span></span></span>
                             <div class="conferences t7h15 t90m">
@@ -119,7 +121,7 @@
                                 <div class="col">
                                     
                                     {% include 'includes/master-class.html.twig' with {
-                                        id        : 73,
+                                        id        : 75,
                                         duration  : 135,
                                         line      : "7h15",
                                         performer : "Jean-Daniel Cryans",
@@ -137,7 +139,7 @@
                                 <div class="col">
                                     <span class="empty t7h15" style="height:180px;"></span>
                                     {% include 'includes/gouv-camp.html.twig' with {
-                                        id        : 73,
+                                        id        : 74,
                                         duration  : 60,
                                         line      : "13h00",
                                         performer : "GouvCamp",
@@ -153,10 +155,10 @@
                                 </div>
                                 <div class="col"></div>
                             </div>
-                            <div class="break t9h30 t15m">
+                            <div class="break t9h30 t45m">
                                 <span class="type">5 @ 7 de lancement</span>
                             </div>
-                            <div class="row t9h45 t90m">
+                            <div class="row t10h15 t90m">
                                 {% include 'includes/conference-full.html.twig' with {
                                     id          : 99,
                                     slug        : "mike-kruzeniski",

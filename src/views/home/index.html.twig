@@ -76,6 +76,7 @@
                             <span class="time t8h15"><span>11h45</span></span>
                             <span class="time t8h30"><span>13h15</span></span>
                             <span class="time t9h30"><span>16h30</span></span>
+                            <span class="time t9h45"><span>19h00</span></span>
                         </span>
                         
                         {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
@@ -126,11 +127,41 @@
                                     } %}
                                     
                                 </div>
-                                <div class="col"></div>
+                                <div class="col">
+                                    <span class="empty t7h15 t60m" ></span>
+                                    {% include 'includes/conference-thumb.html.twig' with {
+                                        id        : 73,
+                                        duration  : 60,
+                                        line      : "13h00",
+                                        performer : "GouvCamp",
+                                        img       : "jean-daniel_cryans",
+                                        name      : "GouvCamp en collaboration avec E-Gouv Québec",
+                                        slug      : "gouvcamp-en-collaboration-avec-e-gouv-quebec",
+                                        time      : "<span>13h00 à 16h00</span>",
+                                        room      : 3,
+                                        limit     : 60,
+                                        price     : "Gratuit",
+                                        start     : 1361365200
+                                    } %}
+                                </div>
                                 <div class="col"></div>
                             </div>
-                            <div class="break t9h30 t30m">
-                                YEAWSDAS
+                            <div class="break t9h30 t15m">
+                                <span class="type">5 @ 7 de lancement</span>
+                            </div>
+                            <div class="row t9h45 t90m">
+                                {% include 'includes/conference-full.html.twig' with {
+                                    id          : 99,
+                                    slug        : "mike-kruzeniski",
+                                    performer   : "Mike Kruzeniski",
+                                    img         : "placeholder",
+                                    name        : "Content & Chrome",
+                                    room        : 6,
+                                    start       : 1361386800,
+                                    end         : 1361392200,
+                                    sponsors    : null,
+                                    sponsorId   : null
+                                } %}
                             </div>
                         </div>
                         {% for date, dateData in sessions %}

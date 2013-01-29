@@ -109,6 +109,7 @@ class Schedule
     @navElement          = $('#schedule-nav a')
     @slides              = @slideWrapper.find('.slide')
     @slideWrapperHeight  = @slideWrapper.outerHeight()
+    @currentSlide        = @slides.eq(0)
     @openBtn             = $('#schedule #open-shedule a')
     @confLinks           = $('#schedule a.white')
     @confThumbParents    = $('#schedule .conference')  
@@ -120,6 +121,9 @@ class Schedule
     @confScrollbar       = null
     @loadingGIF          = null
     @confIsOpen          = false 
+    
+    
+    console?.log @currentSlide
     
     template            = '''
     <section id="conf-desc">
@@ -178,10 +182,10 @@ class Schedule
     $(@).bind('onClose', onClose)
     
   showConf: (id) =>
-    @confIsOpen      = true
     link             = @confLinks.filter('[data-id="'+id+'"]')
-    @confThumbParent = link.closest('.conference')
     url              = link.attr('href').replace('#', '')
+    @confIsOpen      = true
+    @confThumbParent = link.closest('.conference')
 
     @confThumbParents.removeClass('active')
     @confThumbParent.addClass('active')
@@ -254,14 +258,33 @@ class Schedule
     @sideTimeLineSpan.removeClass('active')
     @sideTimeLineSpan.filter("##{id}-lines").addClass('active')
     @slideWrapper.css({ 'left' : -posX})
-
+    @currentSlide = target
+    if @currentSlide.attr('id') isnt 'mercredi'
+      @overFlowWrapper.css(
+        'height'     : @slideWrapperHeight
+        'overflow-y' : 'scroll'
+      )
+    else
+      @overFlowWrapper.css(
+        'height'     : 800
+        'overflow-y' : 'hidden'
+      )
+      
   open: =>
     $(@).trigger('onOpen')
     @openBtn.html('Réduire')
     @openBtn.addClass('active')
-    @overFlowWrapper.css(
-      'height'     : @slideWrapperHeight
-    )
+    
+    if @currentSlide.attr('id') isnt 'mercredi'
+      @overFlowWrapper.css(
+        'height'     : @slideWrapperHeight
+        'overflow-y' : 'scroll'
+      )
+    else
+      @overFlowWrapper.css(
+        'height'     : 800
+        'overflow-y' : 'hidden'
+      )
     
   close: =>
     $(@).trigger('onClose')

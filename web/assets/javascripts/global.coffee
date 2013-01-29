@@ -177,7 +177,8 @@ class Schedule
         @confScrollbar.tinyscrollbar_update()
     )
     
-    @openBtn.trigger('click')
+    @openBtn.hide()
+    @open()
     $(@).bind('onOpen', onOpen)
     $(@).bind('onClose', onClose)
     
@@ -262,7 +263,7 @@ class Schedule
     if @currentSlide.attr('id') isnt 'mercredi'
       @overFlowWrapper.css(
         'height'     : @slideWrapperHeight
-        'overflow-y' : 'scroll'
+        'overflow-y' : 'hidden'
       )
     else
       @overFlowWrapper.css(
@@ -278,7 +279,7 @@ class Schedule
     if @currentSlide.attr('id') isnt 'mercredi'
       @overFlowWrapper.css(
         'height'     : @slideWrapperHeight
-        'overflow-y' : 'scroll'
+        'overflow-y' : 'hidden'
       )
     else
       @overFlowWrapper.css(

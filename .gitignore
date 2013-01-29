@@ -4,4 +4,4 @@ web/assets/javascripts/*.js
 web/assets/stylesheets/*.css
 vendor/
 ._*
-*.db
+db/app.db

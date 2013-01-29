@@ -3,7 +3,12 @@
         <span class="place">Grand Hall</span>
         <div class="info">
             <figure itemprop="performer" itemscope itemtype="http://schema.org/Person">
-                <img class="speaker-thumb" src="/assets/images/speakers/200x188/{{ img }}-large.jpg" width="200" height="188" alt="{{ performer }}" itemprop="image" />
+                {% if img is defined %}
+                    {% set thumb = img %}
+                    {% else %}
+                    {% set thumb = "placeholder" %}
+                {% endif %}
+                <img class="speaker-thumb" src="/assets/images/speakers/200x188/{{ thumb }}-large.jpg" width="200" height="188" alt="{{ performer }}" itemprop="image" />
                 <figcaption><h2 itemprop="name">{{ performer }}</h2></figcaption>
             </figure>
             <span itemprop="description">{{ name | limitTitle | raw }}</span>

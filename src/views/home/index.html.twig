@@ -56,7 +56,7 @@
     <section id="horaire" data-section>
         <h1 class="h2">Horaire</h1>
         <ul id="schedule-nav">
-            {% for date, dateData in sessions %}
+            {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
                 <li><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
             {% endfor %}
         </ul>
@@ -79,7 +79,7 @@
                         {% endfor %}
                     </div>
                     <div class="slides-wrap">
-                        {% for date, dateData in sessions %}
+                        {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
                             <div id="{{ dateData.day | dateTime("%A") }}" class="slide">
                                 
                                 <span id="separators">{% for room in rooms if room.id != 6 %}<span></span>{% endfor %}</span>

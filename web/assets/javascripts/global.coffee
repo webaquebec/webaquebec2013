@@ -402,6 +402,33 @@ class OnePager
 # Class Gmap {{{
 ###
 class customGmap
+  settings: 
+    markers: [{
+      coord: [46.817682, -71.2065922],
+      isWaq: true,
+      content: '''
+      <a href="https://maps.google.ca/maps?q=ESPACE+400E+BELL+100,+QUAI+SAINT-ANDR%C3%89+QU%C3%89BEC,+QC&hl=fr&ie=UTF8&hq=ESPACE+400E+BELL+100,+QUAI+SAINT-ANDR%C3%89+QU%C3%89BEC,+QC&t=m&z=16&iwloc=A" target="_blank">
+      Espace 400e Bell<br>
+      100, Quai Saint-André<br>
+      Québec, QC
+      </a>
+      ''',
+      image: "/assets/images/png/logo-waq-gray.png"
+    },{
+      coord: [46.815988, -71.203190],
+      icon: 
+        src    : "/assets/images/interface/germain_dominion.png"
+        width  : 32
+        height : 32
+      content: '''
+      <a href="https://maps.google.ca/maps?q=ESPACE+400E+BELL+100,+QUAI+SAINT-ANDR%C3%89+QU%C3%89BEC,+QC&hl=fr&ie=UTF8&hq=ESPACE+400E+BELL+100,+QUAI+SAINT-ANDR%C3%89+QU%C3%89BEC,+QC&t=m&z=16&iwloc=A" target="_blank">
+      Hôtel Le Germain-Dominion<br> 126 Saint-Pierre Rue<br> Québec  QC G1K 4A8
+      </a><br>
+      1-888-833-5253 ou par courriel à <a href="mailto:reservations@germaindominion.com">reservations@germaindominion.com</a><br>
+      Mentionnez le groupe : Web à Québec
+      ''',
+      image: "/assets/images/png/logo-waq-gray.png"
+    }]
   constructor: (elementId) ->
     coord = new google.maps.LatLng(46.817682, -71.2065922)
     gMapOptions = 
@@ -446,9 +473,51 @@ class customGmap
     styledMap = new google.maps.StyledMapType(mapStyle, {name: "Styled Map"})
     @map.mapTypes.set('map_style', styledMap)
     @map.setMapTypeId('map_style')
-    @infoWindow = new CustomInfoWindow(coord, @map)
+    # @infoWindow = 
+    @addMarker()
     
-    
+  addMarker: ->
+    @marker = [];
+    for key, marker of @settings.markers
+      markerCoord  = new google.maps.LatLng(marker["coord"][0], marker["coord"][1])
+      @marker[key] = {}
+
+      # InfoWindow
+      opts =
+        coord      : markerCoord
+        content    : marker.content
+        image      : marker.image,
+        alwaysOpen : marker.isWaq?
+        
+      @marker[key]["infoWindow"] = new CustomInfoWindow(@map, opts)
+      
+      # Icon
+      if marker.icon?
+        iconWidth  = marker.icon.width
+        iconHeight = marker.icon.height
+        iconmid    = [(iconWidth / 2), (iconHeight / 2)]
+        @marker[key]["icon"] = new google.maps.MarkerImage(marker.icon.src, null, null, new google.maps.Point(iconmid[0],iconmid[1]), new google.maps.Size(iconWidth, iconHeight))
+        
+        @marker[key]["marker"] = new google.maps.Marker
+          position: markerCoord,
+          map: @map
+          icon: @marker[key]["icon"]
+          visible: true
+          draggable: false
+          cursor: "pointer"
+        
+        google.maps.event.addListener(@marker[key]["marker"], 'click', (e) =>
+          if @currentOpenedInfoWindow?
+            @currentOpenedInfoWindow.close()
+                  
+          @marker[key]["infoWindow"].open()
+          @currentOpenedInfoWindow = @marker[key]["infoWindow"]
+        )
+        
+        
+      # if marker.isWaq?
+        # console?.log "bobo"
+        
 ###
 # }}}
 ###
@@ -457,23 +526,25 @@ class customGmap
 # Class CustomInfoWindow {{{
 ###
 class CustomInfoWindow
-  constructor: (position, map) ->
-    @position = position 
-    @map      = map
-    wrap = '''
-    <div class="customInfoWindow">    
-      <div class="padding">
-        <span class="address">
-          Espace 400e Bell<br>
-          100, Quai Saint-André<br>
-          Québec, QC
+  constructor: (map, opts) ->
+    
+    @position   = opts.coord
+    @alwaysOpen = opts.alwaysOpen
+    @map        = map
+    
+    wrap = "
+    <div class=\"customInfoWindow\">    
+      <div class=\"padding\">
+        <span class=\"address\">
+          #{opts.content}
         </span>
-        <img src="/assets/images/png/logo-waq-gray.png" alt="" width="121px" height="41px">
+          <img src=\"#{opts.image}\" />
       </div>
-      <span class="shadow"></span>
+      <span class=\"shadow\"></span>
     </div>
-    '''
+    "
     @wrap = $(wrap)
+    console?.log @wrap
     @setMap(@map)
     @isVisible = true
   
@@ -481,7 +552,7 @@ class CustomInfoWindow
   
   onAdd: ->
     @wrap.css(
-      display: "block"
+      display: if @alwaysOpen then "block" else "none"
       position: "absolute"
     )
     panes = @getPanes()
@@ -498,7 +569,13 @@ class CustomInfoWindow
     @listeners = []
     for event in events
       @listeners.push(google.maps.event.addDomListener(@wrap[0], event, cancelHandler);)
-      
+  
+  open: ->
+    @wrap.show()
+
+  close: ->
+    @wrap.hide()
+    
   draw: ->
     overlayProjection = @getProjection()
     pos = overlayProjection.fromLatLngToDivPixel(@position)

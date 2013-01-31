@@ -2413,6 +2413,7 @@ body.lock {
       padding: 2px 6px;
       background: #1fc2dd;
       text-transform: uppercase;
+      pointer-events:none;
       opacity: 0;
       -webkit-transition-property: opacity;
       -moz-transition-property: opacity;

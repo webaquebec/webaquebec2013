@@ -422,17 +422,16 @@ class customGmap
         height : 32
       content: '''
       <a href="https://maps.google.ca/maps?q=ESPACE+400E+BELL+100,+QUAI+SAINT-ANDR%C3%89+QU%C3%89BEC,+QC&hl=fr&ie=UTF8&hq=ESPACE+400E+BELL+100,+QUAI+SAINT-ANDR%C3%89+QU%C3%89BEC,+QC&t=m&z=16&iwloc=A" target="_blank">
-      Hôtel Le Germain-Dominion<br> 126 Saint-Pierre Rue<br> Québec  QC G1K 4A8
-      </a><br>
-      1-888-833-5253 ou par courriel à <a href="mailto:reservations@germaindominion.com">reservations@germaindominion.com</a><br>
-      Mentionnez le groupe : Web à Québec
+      Hôtel Le Germain-Dominion<br>126 Rue Saint-Pierre</a><br>
+      <span class="small">1-888-833-5253<br><a href="mailto:reservations@germaindominion.com">reservations@germaindominion.com</a><br>
+      Mentionnez le groupe : Web à Québec</span>
       ''',
-      image: "/assets/images/png/logo-waq-gray.png"
+      image: "/assets/images/interface/germain_dominion_full.png"
     }]
   constructor: (elementId) ->
     coord = new google.maps.LatLng(46.817682, -71.2065922)
     gMapOptions = 
-      zoom              : 17
+      zoom              : 16
       center            : coord
       mapTypeControl    : false
       streetViewControl : false
@@ -532,8 +531,10 @@ class CustomInfoWindow
     @alwaysOpen = opts.alwaysOpen
     @map        = map
     
+    closeBtn = if !@alwaysOpen then "<span class=\"closeBtn\">×</span>" else ""
     wrap = "
-    <div class=\"customInfoWindow\">    
+    <div class=\"customInfoWindow\">
+      #{closeBtn}
       <div class=\"padding\">
         <span class=\"address\">
           #{opts.content}
@@ -544,15 +545,17 @@ class CustomInfoWindow
     </div>
     "
     @wrap = $(wrap)
-    console?.log @wrap
     @setMap(@map)
     @isVisible = true
-  
+    @wrap.find('.closeBtn').on('click', =>
+      console?.log "click to close"
+      @close()
+    )
   CustomInfoWindow:: = new google.maps.OverlayView()
   
   onAdd: ->
     @wrap.css(
-      display: if @alwaysOpen then "block" else "none"
+      opacity: if @alwaysOpen then 1 else 0
       position: "absolute"
     )
     panes = @getPanes()
@@ -581,10 +584,18 @@ class CustomInfoWindow
     pos = overlayProjection.fromLatLngToDivPixel(@position)
     @oX = pos.x - @wrap.outerWidth() / 2
     @oY = pos.y - @wrap.outerHeight() - 30
-    @wrap.css({
-      left: @oX,
+    
+    wrapImg       = @wrap.find('img')
+    wrapImgHeight = wrapImg.height()
+    @wrap.find('img').css
+      'top': '50%' 
+      'margin-top': -(wrapImgHeight/2)
+        
+    @wrap.css
+      left: @oX
       top: @oY
-    })
+      opacity: 1
+      display: if @alwaysOpen then 'block' else 'none'
     
 ###
 # }}}

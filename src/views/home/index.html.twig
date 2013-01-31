@@ -56,13 +56,14 @@
     <section id="horaire" data-section>
         <h1 class="h2">Horaire</h1>
         <ul id="schedule-nav">
+                <li><a href="#/horaire/mercredi/" data-ref="mercredi">mercredi 20 février</a></li>
             {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
                 <li><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
             {% endfor %}
         </ul>
         <div id="schedule">
             <ul id="rooms-name">
-                {% for room in rooms if room.id != 6 %}
+                {% for room in rooms if room.id != 6%}
                     <li id="room-{{ room.id }}">Salle {{ room.name }}</li>
                 {% endfor %}
             </ul>
@@ -70,8 +71,17 @@
             <div class="wrapper">
                 <div id="schedule-wrap">
                     <div id="time-zone">
-                        {% for date, dateData in sessions %}
-                            <span id="{{ dateData.day | dateTime("%A") }}-lines"{% if dateData.day | dateTime("%A") == "jeudi" %} class="active"{% endif %}>
+                        <span id="mercredi-lines" class="active">
+                            <span class="time t7h15"><span>8h30</span></span>
+                            <span class="time t8h15"><span>11h45</span></span>
+                            <span class="time t8h30"><span>13h15</span></span>
+                            <span class="time t9h30"><span>16h30</span></span>
+                            <span class="time t10h15"><span>19h00</span></span>
+                            <span class="time t11h45"><span>20h30</span></span>
+                        </span>
+                        
+                        {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
+                            <span id="{{ dateData.day | dateTime("%A") }}-lines"{% if dateData.day | dateTime("%A") == "mercredie" %} class="active"{% endif %}>
                                 {% for line in lines[date] %}
                                     <span class="time t{{ line }}"><span>{{ line }}</span></span>
                                 {% endfor %}
@@ -79,67 +89,157 @@
                         {% endfor %}
                     </div>
                     <div class="slides-wrap">
-                        {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
-                            <div id="{{ dateData.day | dateTime("%A") }}" class="slide">
+                        <div id="mercredi" class="slide">
+                            <span class="lines">
+                                <span class="t7h15"></span>
+                                <span class="t8h15"></span>
+                                <span class="t8h30"></span>
+                                <span class="t9h30"></span>
+                                <span class="t10h15"></span>
+                                <span class="t11h45"></span>
+                            </span>
+                            <span id="separators"><span></span><span></span><span></span><span></span></span>
+                            <div class="conferences t7h15 t90m">
+                                <div class="col">
+                                    
+                                    {% include 'includes/master-class.html.twig' with {
+                                        id        : 73,
+                                        slug      : "html5-windows-8-amis-avec-benefices",
+                                        duration  : 135,
+                                        line      : "7h15",
+                                        performer : "Frédéric Harper",
+                                        img       : "frederic_harper",
+                                        name      : "HTML5 & Windows 8: amis avec bénéfices",
+                                        time      : "<span>8h30 à 11h45</span><span>13h15 à 16h30</span>",
+                                        room      : 1,
+                                        limit     : 50,
+                                        price     : 160,
+                                        start     : 1361344500
+                                    } %}
+                                    
+                                </div>
+                                <div class="col">
+                                    
+                                    {% include 'includes/master-class.html.twig' with {
+                                        id        : 75,
+                                        duration  : 135,
+                                        line      : "7h15",
+                                        performer : "Jean-Daniel Cryans",
+                                        img       : "jean-daniel_cryans",
+                                        name      : "Introduction au Big Data avec Hadoop et HBase",
+                                        slug      : "introduction-au-big-data-avec-hadoop-et-hbase",
+                                        time      : "<span>8h30 à 11h45</span><span>13h15 à 16h30</span>",
+                                        room      : 2,
+                                        limit     : 50,
+                                        price     : 160,
+                                        start     : 1361344500
+                                    } %}
+                                    
+                                </div>
+                                <div class="col">
+                                    <span class="empty t7h15" style="height:180px;"></span>
+                                    {% include 'includes/gouv-camp.html.twig' with {
+                                        id        : 74,
+                                        duration  : 75,
+                                        line      : "13h00",
+                                        performer : "GouvCamp",
+                                        img       : "egouv",
+                                        name      : "GouvCamp en collaboration avec E-Gouv Québec",
+                                        slug      : "gouvcamp-en-collaboration-avec-e-gouv-quebec",
+                                        time      : "<span>13h00 à 16h00</span>",
+                                        room      : 3,
+                                        limit     : 60,
+                                        price     : "Gratuit",
+                                        start     : 1361365200
+                                    } %}
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                            <div class="break t9h30 t45m">
+                                <span class="type">5 à 7 de lancement</span>
+                                <div class="sponsor">
+                                    <span>Cocktail dînatoire offert par</span>
+                                    <img src="/assets/images/sponsors/partners/mirego.png"  alt="Mirego" />
+                                </div>
+                            </div>
+                            <div class="row t10h15 t90m">
+                                {% include 'includes/conference-full.html.twig' with {
+                                    id          : 76,
+                                    slug        : "content-and-chrome",
+                                    performer   : "Mike Kruzeniski",
+                                    img         : "placeholder",
+                                    name        : "Content & Chrome",
+                                    room        : 6,
+                                    start       : 1361386800,
+                                    end         : 1361392200,
+                                    sponsors    : null,
+                                    sponsorId   : null
+                                } %}
                                 
-                                <span id="separators">{% for room in rooms if room.id != 6 %}<span></span>{% endfor %}</span>
-                                <span class="lines">
-                                    {% for line in lines[date] %}
-                                        <span class="t{{ line }}"></span>
-                                    {% endfor %}
-                                </span>
+                            </div>
+                        </div>
+                        {% for date, dateData in sessions %}
+                            {% if dateData.day | dateTime("%A") != "mercredi" %}
+                                <div id="{{ dateData.day | dateTime("%A") }}" class="slide">
+                                    <span id="separators">{% for room in rooms if room.id != 6 %}<span></span>{% endfor %}</span>
+                                    <span class="lines">
+                                        {% for line in lines[date] %}
+                                            <span class="t{{ line }}"></span>
+                                        {% endfor %}
+                                    </span>
 
-                                {% for blockData in dateData.blocks %}
-                                    {% if blockData.session is defined %}
-                                        {% if blockData.session.break %}
-                                            <div class="break t{{ blockData.session.line }} t{{ blockData.size }}m">
-                                                <span class="type">{{ blockData.session.name }}</span>
-                                            </div>
+                                    {% for blockData in dateData.blocks %}
+                                        {% if blockData.session is defined %}
+                                            {% if blockData.session.break %}
+                                                <div class="break t{{ blockData.session.line }} t{{ blockData.size }}m">
+                                                    <span class="type">{{ blockData.session.name }}</span>
+                                                </div>
+                                            {% else %}
+                                                <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m" itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
+                                                
+                                                    {% include 'includes/conference-full.html.twig' with {
+                                                        id          : blockData.session.id,
+                                                        slug        : blockData.session.slug,
+                                                        performer   : speakers[blockData.session.speaker_id].name,
+                                                        img         : speakers[blockData.session.speaker_id].image,
+                                                        name        : blockData.session.name,
+                                                        room        : blockData.session.room_id,
+                                                        start       : blockData.session.start,
+                                                        end         : blockData.session.end,
+                                                        sponsors    : sponsors,
+                                                        sponsorId   : blockData.session.sponsor_id
+                                                    } %}
+                                                
+                                                </div>
+                                            {% endif %}
                                         {% else %}
-                                            <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m" itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
-                                                
-                                                {% include 'includes/conference-full.html.twig' with {
-                                                    id          : blockData.session.id,
-                                                    slug        : blockData.session.slug,
-                                                    performer   : speakers[blockData.session.speaker_id].name,
-                                                    img         : speakers[blockData.session.speaker_id].image,
-                                                    name        : blockData.session.name,
-                                                    room        : blockData.session.room_id,
-                                                    start       : blockData.session.start,
-                                                    end         : blockData.session.end,
-                                                    sponsors    : sponsors,
-                                                    sponsorId   : blockData.session.sponsor_id
-                                                } %}
-                                                
+                                            <div class="conferences t{{ blockData.line }} t{{ blockData.size }}m">
+                                                {% for roomId, sessions in blockData.list %}
+                                                    <div class="col">
+                                                        {% for session in sessions %}
+                                                          {% if session.empty %}
+                                                            <span class="empty t{{ session.line }} t{{ session.duration }}m" ></span>
+                                                          {% else %}
+                                                            {% include 'includes/conference-thumb.html.twig' with {
+                                                                id        : session.id,
+                                                                slug      : session.slug,
+                                                                duration  : session.duration,
+                                                                line      : session.line,
+                                                                performer : speakers[session.speaker_id].name,
+                                                                img       : speakers[session.speaker_id].image,
+                                                                name      : session.name,
+                                                                room      : session.room_id,
+                                                                start     : session.start
+                                                            } %}
+                                                          {% endif %}
+                                                        {% endfor %}
+                                                    </div>
+                                                {% endfor %}
                                             </div>
                                         {% endif %}
-                                    {% else %}
-                                        <div class="conferences t{{ blockData.line }} t{{ blockData.size }}m">
-                                            {% for roomId, sessions in blockData.list %}
-                                                <div class="col">
-                                                    {% for session in sessions %}
-                                                      {% if session.empty %}
-                                                        <span class="empty t{{ session.line }} t{{ session.duration }}m" ></span>
-                                                      {% else %}
-                                                        {% include 'includes/conference-thumb.html.twig' with {
-                                                            id        : session.id,
-                                                            slug      : session.slug,
-                                                            duration  : session.duration,
-                                                            line      : session.line,
-                                                            performer : speakers[session.speaker_id].name,
-                                                            img       : speakers[session.speaker_id].image,
-                                                            name      : session.name,
-                                                            room      : session.room_id,
-                                                            start     : session.start
-                                                        } %}
-                                                      {% endif %}
-                                                    {% endfor %}
-                                                </div>
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 </div> {# #schedule-wrap #}

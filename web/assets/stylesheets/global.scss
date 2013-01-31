@@ -187,6 +187,10 @@ a:hover { color: #06e; text-decoration: underline;}
   -webkit-box-shadow:  2px 2px 6px 0px rgba(0, 0, 0, 0.2);
   box-shadow:  2px 2px 6px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  font-family: $misoBold;
+  font-size: 16px; font-size: 1.6rem;
   
   -webkit-transition-property: background;
   -moz-transition-property: background;
@@ -829,6 +833,10 @@ a:hover { color: #06e; text-decoration: underline;}
       height: 100%;
       overflow: hidden;
       
+      &#mercredi {
+        height: 800px;
+      }
+      
       img {
         position: absolute;
         height: 100%;
@@ -851,7 +859,7 @@ $korem: #c61d5a;
 $scheduleWidth: 91.2280702%;
 $timeZoneWidth: 8.7719298%;
 
-$t15m:40px;
+$t15m: 40px;
 .t7h00 { top: 0;}
 .t7h15 { top: (1 * $t15m)}
 .t7h30 { top: (2 * $t15m)}
@@ -909,6 +917,12 @@ $t15m:40px;
 .t60m { height: (4 * $t15m);}
 .t75m { height: (5 * $t15m);}
 .t90m { height: (6 * $t15m);}
+.t105m { height: (7 * $t15m);}
+.t120m { height: (8 * $t15m);}
+.t135m { height: (9 * $t15m);}
+.t150m { height: (10 * $t15m);}
+.t165m { height: (11 * $t15m);}
+.t180m { height: (12 * $t15m);}
 
 .blue-line {
   position: absolute;
@@ -961,7 +975,9 @@ $t15m:40px;
       h2,
       .time,
       .place,
-      span[itemprop="description"] {
+      span[itemprop="description"],
+      .desc,
+      .conf-type {
         color: white;
       }
       
@@ -1036,7 +1052,9 @@ $t15m:40px;
       h2,
       .time,
       .place,
-      span[itemprop="description"] {
+      span[itemprop="description"],
+      .desc,
+      .conf-type {
         color: white;
       }
       
@@ -1079,6 +1097,8 @@ $t15m:40px;
     span[itemprop="description"],
     .time,
     .place,
+    .desc,
+    .conf-type,
     &:after {
       -webkit-transition-property: color;
       -moz-transition-property: color;
@@ -1230,7 +1250,7 @@ $t15m:40px;
     width: 100%;
     height: 500px;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
     -webkit-transition-property: height;
     -moz-transition-property: height;
     -ms-transition-property: height;
@@ -1422,6 +1442,7 @@ $t15m:40px;
           height: 100%;
           float: left;
         }
+        
         .conference {
           @extend .conference-box;
           width: 100%;
@@ -1448,12 +1469,98 @@ $t15m:40px;
             width: 132px;
           }
           
-          &.t90m {
+          &.t90m,
+          &.t120m {
             .white {
               padding: 130px 10px 10px 10px;
               overflow: hidden;
             }
+            
           }
+          
+          &.master-class {
+            
+            .white {
+              padding: 130px 10px 10px 10px;
+              overflow: hidden;
+            }
+            
+            h2 {
+              font-size: 21px;
+              font-size: 2.1rem;
+            }
+            
+            .conf-type {
+              display: block;
+              text-transform: uppercase;
+              color: #026288;
+              font-size: 12px; font-size: 1.2rem;
+              margin: 0 0 0.6em 0;
+            }
+            
+            figcaption,
+            [itemprop="description"] {
+              position: relative;
+            }
+            
+            [itemprop="description"] {
+              width: 100%;
+              color: #006287;
+              font-weight: bold;
+              font-size: 14px;
+              font-size: 1.4rem;
+              margin: 10px 0;
+            }
+            
+            .time {
+              color: #b3b3b3;
+              font-weight: bold;
+              font-size: 14px;
+              font-size: 1.4rem;
+              margin: 15px 0;
+              
+              span {
+                display: block;
+              }
+            }
+            
+            .desc {
+              color: black;
+              margin: 10px 0;
+              
+              span {
+                display: block;
+              }
+            }
+          } // .master-class
+          
+          &.gouv-camp {
+            top: 970px;
+            height: 175px;
+            
+            .time {
+              color: #b3b3b3;
+              font-weight: bold;
+              font-size: 13px;
+              font-size: 1.3rem;
+              margin: 7px 0;
+              
+              span {
+                display: block;
+              }
+            }
+            
+            .desc {
+              color: black;
+              margin: 10px 0;
+              
+              span {
+                display: block;
+              }
+            }
+            
+          } // .gouv-camp
+          
         } // .conference
       } // .conferences 
       .empty {
@@ -1539,6 +1646,19 @@ $t15m:40px;
           font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
           color: #0687b9;
           margin: 22px 0 0 40px;
+        }
+        
+        .sponsor {
+          text-align: center;
+          font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+          color: #999999;
+          font-size: 14px; font-size: 1.4rem;
+          font-weight: bold;
+          
+          span {
+            display: inline-block;
+            margin-right: 10px;
+          }
         }
         
         &.t15m .type{
@@ -1904,6 +2024,17 @@ body {
           ul {
             list-style: disc outside;
           }
+          
+          a {
+            display: inline-block;
+            color: white;
+            text-decoration: underline;
+            
+            &:hover {
+              text-decoration: none;
+            }
+          }
+          
         }
         
         .bio-meta {

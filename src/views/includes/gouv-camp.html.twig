@@ -1,0 +1,13 @@
+<div id="conf-{{ id }}" class="conference gouv-camp" itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
+    <a href="/horaire/{{ start | dateTime("%A") }}/{{ slug }}-{{ id }}" class="white room-{{ room }}" data-id="{{ id }}">
+        <figure itemprop="performer" itemscope itemtype="http://schema.org/Person">
+          <img class="speaker-thumb" src="/assets/images/speakers/47x44/{{ img }}-small.jpg" width="47"  alt="{{ performer }}" itemprop="image" />
+        </figure>
+        <span itemprop="description">{{ name }}</span>
+        <div class="time">{{ time|raw }}</div>
+        <div class="desc">
+            <span class="limit">Places limitées à {{ limit }} personnes</span>
+            <span class="price">Coûts: {{ price }}</span>
+        </div>
+    </a>
+</div>

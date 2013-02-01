@@ -573,7 +573,7 @@ a:hover { color: #06e; text-decoration: underline;}
     position: relative;
     top: 4px;
     float: right;
-    padding-left: image-width('png/iron-web-small.png') + 20;
+    padding-left: image-width('png/iron-web-small.png') + 5;
     
     &:after {
       @extend .png-iron-web-small;

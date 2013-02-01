@@ -1989,6 +1989,15 @@ body {
         
         .viewport {
           
+          a {
+            color: white;
+            text-decoration: underline;
+            
+            &:hover {
+              text-decoration: none;
+            }
+          }
+          
           h2 {
             position: relative;
             margin-top: 22px;
@@ -2044,14 +2053,6 @@ body {
             display: block;
           }
           
-          a {
-            color: white;
-            text-decoration: underline;
-            
-            &:hover {
-              text-decoration: none;
-            }
-          }
         }
         
         .overview {

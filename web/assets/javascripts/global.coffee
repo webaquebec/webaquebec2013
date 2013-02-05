@@ -442,8 +442,12 @@ class customGmap
       coord: [46.815988, -71.203190],
       icon: 
         src    : "/assets/images/interface/germain_dominion.png"
-        width  : 32
-        height : 32
+        width  : 43
+        height : 56
+      shadow:
+        src    : "/assets/images/interface/germain-dominion-shadow.png"
+        width  : 68
+        height : 55
       content: '''
       <a href="https://maps.google.ca/maps?q=ESPACE+400E+BELL+100,+QUAI+SAINT-ANDR%C3%89+QU%C3%89BEC,+QC&hl=fr&ie=UTF8&hq=ESPACE+400E+BELL+100,+QUAI+SAINT-ANDR%C3%89+QU%C3%89BEC,+QC&t=m&z=16&iwloc=A" target="_blank">
       Hôtel Le Germain-Dominion<br>126 Rue Saint-Pierre</a><br>
@@ -516,15 +520,22 @@ class customGmap
       
       # Icon
       if marker.icon?
-        iconWidth  = marker.icon.width
-        iconHeight = marker.icon.height
-        iconmid    = [(iconWidth / 2), (iconHeight / 2)]
+        iconWidth            = marker.icon.width
+        iconHeight           = marker.icon.height
+        iconmid              = [(iconWidth / 2), (iconHeight / 2)]
         @marker[key]["icon"] = new google.maps.MarkerImage(marker.icon.src, null, null, new google.maps.Point(iconmid[0],iconmid[1]), new google.maps.Size(iconWidth, iconHeight))
+        
+        if marker.shadow?
+          shadowWidth            = marker.shadow.width
+          shadowHeight           = marker.shadow.height
+          shadowmid              = [(shadowWidth / 2), (shadowHeight / 2)]
+          @marker[key]["shadow"] = new google.maps.MarkerImage(marker.shadow.src, null, null, new google.maps.Point(shadowmid[0],shadowmid[1]), new google.maps.Size(shadowWidth, shadowHeight))
         
         @marker[key]["marker"] = new google.maps.Marker
           position: markerCoord,
           map: @map
           icon: @marker[key]["icon"]
+          shadow: if @marker[key]["shadow"]? then @marker[key]["shadow"] else false
           visible: true
           draggable: false
           cursor: "pointer"

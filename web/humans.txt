@@ -2,24 +2,28 @@
 /* humanstxt.org */
 
 /* TEAM */
-	Project Management : Karl Lacroix
-	Location: Quebec, Qc, Canada
+    Project Management : Karl Lacroix
+    Location: Quebec, Qc, Canada
 
-	Developer: Louis-Philippe Dumas
-	Twitter: @louisdumas
-	Location: Quebec, Qc, Canada
+    Developer: Louis-Philippe Dumas
+    Twitter: @louisdumas
+    Location: Quebec, Qc, Canada
 
-	Developer: Jean-François Chaput
-	Location: Quebec, Qc, Canada
+    Developer: Jean-François Chaput
+    Location: Quebec, Qc, Canada
 
-	Designer: Felix Lapointe
-	Site: http://www.felixlapointe.com
-	Location: Quebec, Qc, Canada
+    Developer: Luc-Olivier Boulet
+    Twitter: @loboulet
+    Location: Quebec, Qc, Canada
+
+    Designer: Felix Lapointe
+    Site: http://www.felixlapointe.com
+    Location: Quebec, Qc, Canada
 
 /* SITE */
-	Standards: HTML5, CSS3
-	Components: jQuery, SASS, Coffeescripts
-	Software: TextMate
+    Standards: HTML5, CSS3
+    Components: jQuery, SASS, Coffeescripts
+    Software: TextMate
 
  _                         _ _
 (_)                       | (_)

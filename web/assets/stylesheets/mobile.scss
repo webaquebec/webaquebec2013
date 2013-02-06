@@ -133,6 +133,7 @@ a:hover { color: #06e; text-decoration: underline;}
 
 .width {
   margin: 0 auto;
+  padding: 0 10px;
 }
 .padding {
   padding: 0 20px;
@@ -239,7 +240,7 @@ a:hover { color: #06e; text-decoration: underline;}
 **********************{{{*/
 .navigation {
 
-  ul { display: block; text-align: center;}
+  ul { display: block; text-align: center; }
 
   li {
     display: inline-block;
@@ -251,26 +252,77 @@ a:hover { color: #06e; text-decoration: underline;}
         @extend .png-nav-dash;
         content: "";
         position: absolute;
+        display: block;
         top: 5px;
         left: -(image-width('png/nav-dash.png'));
-        display: block;
         width: image-width('png/nav-dash.png');
         height: image-height('png/nav-dash.png');
       }
     }
+  }
 
-    a {
-      font-weight: bold;
-      font-size: 20px;
-      font-size: 2rem;
-      text-transform: uppercase;
-      display: block;
-      position: relative;
+  a {
+    font-weight: bold;
+    font-size: 20px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: block;
+    position: relative;
 
-      &.active { color: #006186; }
+    &.active { color: #006186; }
+
+    &:hover,
+    &:focus,
+    &.active {
+      text-decoration: none;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      color: $darkblue;
     }
   }
 }
 /* }}} */
 
+/* Schedule
+**********************{{{*/
+#schedule-nav {
+  @extend .group;
 
+  li {
+    display: block;
+    float: left;
+    width: 49%;
+
+    & + li { float: right; }
+
+    &.active a {
+      color: #fff;
+      background: #309bc5;
+      font-weight: bold;
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -7px;
+        right: -(image-width('png/nav-dash.png') - 1);
+        width: image-width('png/nav-dash.png');
+        height: image-height('png/nav-dash.png') + 30;
+      }
+    }
+
+    a {
+      text-align: center;
+      display: block;
+      padding: 7px 0;
+    }
+  }
+
+  #jeudi.active a:after   { @extend .mobile-schedule-nav-right-shadow; }
+  #vendredi.active :after {
+    @extend .mobile-schedule-nav-left-shadow;
+    right: 0;
+    left: -(image-width('png/nav-dash.png') - 9);
+  }
+}
+/* }}} */

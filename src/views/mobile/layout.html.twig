@@ -29,7 +29,7 @@
 
         {% block og_meta %}{% endblock %}
 
-        <title>Web à Québec</title>
+        <title>{% block title %}{% endblock %}Web à Québec</title>
 
         <link rel="stylesheet" href="/assets/stylesheets/mobile.css">
         {% block stylesheets %}{% endblock %}
@@ -41,7 +41,7 @@
                 <img src="/assets/images/mobile/logo-waq-mobile.png" alt="Logo - Web à Québec" width="115" height="41">
             </div>
 
-            <nav role="navigation" class="navigation">
+            <nav class="navigation">
                 <ul>
                     <li><a href="/mobile/horaire/" class="active">Horaire</a></li>
                     <li><a href="/mobile/lieu-et-infos/">Lieu et infos</a></li>

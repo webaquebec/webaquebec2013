@@ -1,14 +1,62 @@
 {% extends 'mobile/layout.html.twig' %}
 
+{% block title %}Horaire - {% endblock %}
 {% block javascripts %}
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
     <script src="/assets/javascripts/global.js"></script>
 {% endblock %}
 
 {% block body %}
-    <div id="content">
-        <div class="schedule">
+    <div id="content" class="width">
+        <div id="schedule">
 
+            <ul id="schedule-nav">
+                <li id="jeudi" class="active"><a href="#">jeudi le 21 février</a></li>
+                <li id="vendredi"><a href="#">vendredi le 22 février</a></li>
+            </ul>
+
+            <div id="room-nav">
+                <a href="#" class="previous">&nbsp;</a>
+
+                <ul id="rooms-name">
+                    <li><a href="#libeo">Salle Libéo</a></li>
+                    <li><a href="#ixmedia">Salle iXmédia</a></li>
+                    <li><a href="#bell">Salle Bell</a></li>
+                    <li><a href="#4">Salle 4</a></li>
+                </ul>
+
+                <a href="#" class="next">&nbsp;</a>
+            </div>
+
+            <div class="overflow">
+                <div class="container">
+                    <div class="room">
+                        <h1 class="shy">Salle Libéo</h1>
+
+                        <div class="conference"  itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
+                            <a href="{# TO-DO #}">
+                                <span class="room">Grand Hall</span>
+                                <span class="time">7h15 à 8h30</span>
+
+                                {# Add class 'desc' only if there is a logo #}
+                                <div class="desc">
+                                    <span itemprop="description">
+                                        <span class="title">Déjeuner et accueil</span>
+                                        <span class="subtitle">Viennoiseries, jus et café offerts par</span>
+                                    </span>
+
+                                    <img src="/assets/images/sponsors/main/bell.png" alt="Logo - Bell" width="76" height="36">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="pause">
+                            <span class="time">10 à 10h30</span>
+                            <span class="title">Pause</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -169,7 +169,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
         "lines" => $lines,
         "sessions" => $sessions,
         "campaignConfirmation" => $campaignConfirmation
-        ));
+    ));
 };
 
 $app->get('/', $index)

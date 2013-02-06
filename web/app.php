@@ -76,7 +76,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
     $currentDay = "";
     $start = 0;
     $end = 0;
-    
+
     foreach ($sessionsTmp as $session) {
         $dateTime = new DateTime();
         $dateTime->setTimestamp($session["start"]);
@@ -171,11 +171,12 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
         "campaignConfirmation" => $campaignConfirmation
         ));
 };
+
 $app->get('/', $index)
     ->bind('index');
 
 $app->get('/horaire/{day}/{slug}-{id}', function ($day = null, $slug = null, $id = null) use ($app) {
-    
+
     $sessionId = (int) $id;
     $sql = "SELECT session.*, speaker.name AS speaker_name, speaker.bio AS speaker_bio, speaker.image AS speaker_image, speaker.title AS speaker_title, speaker.entreprise AS speaker_entreprise, speaker.website AS speaker_website, speaker.twitter AS speaker_twitter, room.name AS room_name FROM session JOIN speaker ON speaker.id = session.speaker_id JOIN room ON room.id = session.room_id WHERE session.id = ?";
     $session = $app['db']->fetchAssoc($sql, array($sessionId));
@@ -192,6 +193,11 @@ $app->get('/horaire/{day}/{slug}-{id}', function ($day = null, $slug = null, $id
 
 })->bind('showSchedule')
   ->assert('slug', '.*');
+
+
+$app->get('/mobile/', function () use ($app) {
+    return $app['twig']->render('mobile/index.html.twig');
+});
 
 
 $app->error(function (\Exception $e, $code) use ($app){

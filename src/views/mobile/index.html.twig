@@ -16,37 +16,42 @@
             </ul>
 
             <div id="room-nav">
-                <a href="#" class="previous">&nbsp;</a>
-
-                <ul id="rooms-name">
-                    <li><a href="#libeo">Salle Libéo</a></li>
-                    <li><a href="#ixmedia">Salle iXmédia</a></li>
-                    <li><a href="#bell">Salle Bell</a></li>
-                    <li><a href="#4">Salle 4</a></li>
-                </ul>
-
-                <a href="#" class="next">&nbsp;</a>
+                <a href="#" class="previous"><span>◀</span></a>
+                <a href="#" class="next"><span>▶</span></a>
             </div>
 
             <div class="overflow">
-                <div class="container">
-                    <div class="room">
-                        <h1 class="shy">Salle Libéo</h1>
 
-                        <div class="conference"  itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
+                <div class="container">
+
+                    <div id="libeo" class="room">
+                        <h1 class="room-name">Salle Libéo</h1>
+
+                        <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
                             <a href="{# TO-DO #}">
-                                <span class="room">Grand Hall</span>
+                                <span class="special-location">Grand Hall</span>
                                 <span class="time">7h15 à 8h30</span>
 
                                 {# Add class 'desc' only if there is a logo #}
                                 <div class="desc">
                                     <span itemprop="description">
                                         <span class="title">Déjeuner et accueil</span>
-                                        <span class="subtitle">Viennoiseries, jus et café offerts par</span>
+                                        <span class="subtitle offered-by">Viennoiseries, jus et café offerts par</span>
                                     </span>
 
-                                    <img src="/assets/images/sponsors/main/bell.png" alt="Logo - Bell" width="76" height="36">
+                                    <img src="/assets/images/mobile/uxpa_quebec.png" alt="Logo - UXPA Québec" width="48" height="25">
                                 </div>
+                            </a>
+                        </div>
+
+                        <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
+                            <a href="{# TO-DO #}">
+                                <span class="time">7h15 à 8h30</span>
+
+                                <span itemprop="description">
+                                    <span class="title">Déjeuner et accueil</span>
+                                    <span class="subtitle">Travailler à distance pour une entreprise non-québecoise</span>
+                                </span>
                             </a>
                         </div>
 
@@ -54,7 +59,60 @@
                             <span class="time">10 à 10h30</span>
                             <span class="title">Pause</span>
                         </div>
-                    </div>
+                    </div> {# End of Libeo's room #}
+
+                    <div id="ixmedia" class="room">
+                        <h1 class="room-name">Salle iXmédia</h1>
+
+                        <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
+                            <a href="{# TO-DO #}">
+                                <span class="special-location">Grand Hall</span>
+                                <span class="time">7h15 à 8h30</span>
+
+                                {# Add class 'desc' only if there is a logo #}
+                                <div class="desc">
+                                    <span itemprop="description">
+                                        <span class="title">Déjeuner et accueil</span>
+                                        <span class="subtitle offered-by">Viennoiseries, jus et café offerts par</span>
+                                    </span>
+
+                                    <img src="/assets/images/mobile/uxpa_quebec.png" alt="Logo - UXPA Québec" width="48" height="25">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
+                            <a href="{# TO-DO #}">
+                                <span class="time">7h15 à 8h30</span>
+
+                                <span itemprop="description">
+                                    <span class="title">Déjeuner et accueil</span>
+                                    <span class="subtitle">Travailler à distance pour une entreprise non-québecoise</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="pause">
+                            <span class="time">11 à 11h30</span>
+                            <span class="title">Pause</span>
+                        </div>
+
+                        <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
+                            <a href="{# TO-DO #}">
+                                <span class="time">7h15 à 8h30</span>
+
+                                <span itemprop="description">
+                                    <span class="title">Déjeuner et accueil</span>
+                                    <span class="subtitle">Travailler à distance pour une entreprise non-québecoise</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="pause">
+                            <span class="time">10 à 10h30</span>
+                            <span class="title">Dîner</span>
+                        </div>
+                    </div> {# End of Libeo's room #}
                 </div>
             </div>
         </div>

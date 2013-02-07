@@ -8,8 +8,8 @@ html { font-size: 62.5%;}
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 * {
   -webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 a:hover, a:active { outline: 0; }
 abbr[title] { border-bottom: 1px dotted; }
@@ -103,10 +103,15 @@ $mobile-spacing: 5px;
 
 $darkblue: #006186;
 $linkblue: #0086b9;
+$libeo : #3ca637;
+$ixmedia: black;
+$bell: blue;
+$salle4: red;
 
 $miso: 'misoregular', Arial, Sans-serif;
 $misoBold: 'misobold', Arial, Sans-serif;
 $misoLight: 'misolight', Arial, Sans-serif;
+$helveticaNeue: HelveticaNeue, Helvetica, Arial, sans-serif;
 
 html {
   height: 100%;
@@ -230,7 +235,7 @@ a:hover { color: #06e; text-decoration: underline;}
 **********************{{{*/
 #header {
   @extend .width, .padding, .group;
-  padding: 25px 0 53px 0;
+  padding: 25px 0;
 
   #logo { text-align: center; }
 }
@@ -239,8 +244,12 @@ a:hover { color: #06e; text-decoration: underline;}
 /* Main-nav
 **********************{{{*/
 .navigation {
+  margin-top: 15px;
 
-  ul { display: block; text-align: center; }
+  ul {
+    display: block;
+    text-align: center;
+  }
 
   li {
     display: inline-block;
@@ -250,23 +259,24 @@ a:hover { color: #06e; text-decoration: underline;}
 
       a:after {
         @extend .png-nav-dash;
+
         content: "";
-        position: absolute;
         display: block;
-        top: 5px;
-        left: -(image-width('png/nav-dash.png'));
-        width: image-width('png/nav-dash.png');
         height: image-height('png/nav-dash.png');
+        left: -(image-width('png/nav-dash.png'));
+        position: absolute;
+        top: 5px;
+        width: image-width('png/nav-dash.png');
       }
     }
   }
 
   a {
-    font-weight: bold;
+    display: block;
+    font-family: $misoBold;
     font-size: 20px;
     font-size: 2rem;
     text-transform: uppercase;
-    display: block;
     position: relative;
 
     &.active { color: #006186; }
@@ -274,16 +284,17 @@ a:hover { color: #06e; text-decoration: underline;}
     &:hover,
     &:focus,
     &.active {
+      color: $darkblue;
       text-decoration: none;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-      color: $darkblue;
     }
   }
 }
 /* }}} */
 
 /* Schedule
-**********************{{{*/
+**************************************************/
+// Schedule-nav {{{
 #schedule-nav {
   @extend .group;
 
@@ -295,25 +306,27 @@ a:hover { color: #06e; text-decoration: underline;}
     & + li { float: right; }
 
     &.active a {
-      color: #fff;
       background: #309bc5;
-      font-weight: bold;
+      color: #fff;
+      font-family: $misoBold;
       position: relative;
 
       &:after {
         content: "";
         display: block;
-        position: absolute;
-        top: -7px;
-        right: -(image-width('png/nav-dash.png') - 1);
-        width: image-width('png/nav-dash.png');
         height: image-height('png/nav-dash.png') + 30;
+        position: absolute;
+        right: -(image-width('png/nav-dash.png') - 1);
+        top: -5px;
+        width: image-width('png/nav-dash.png');
       }
     }
 
     a {
-      text-align: center;
       display: block;
+      font-size: 15px;
+      font-size: 1.5rem;
+      text-align: center;
       padding: 7px 0;
     }
   }
@@ -321,8 +334,203 @@ a:hover { color: #06e; text-decoration: underline;}
   #jeudi.active a:after   { @extend .mobile-schedule-nav-right-shadow; }
   #vendredi.active :after {
     @extend .mobile-schedule-nav-left-shadow;
+
     right: 0;
     left: -(image-width('png/nav-dash.png') - 9);
   }
 }
-/* }}} */
+// }}}
+// Rooms overflow/container {{{
+#schedule .overflow {
+  overflow: hidden;
+  width: 100%;
+
+  .container {
+    @extend .group;
+
+    left: -50px;
+    position: relative;
+    width: 400%;
+  }
+}
+// }}}
+// Room-nav {{{
+#room-nav {
+  margin-top: 15px;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+
+  a {
+    color: #fff;
+    display: block;
+    height: 29px;
+    position: absolute;
+    text-align: center;
+    width: 30px;
+
+    span { position: relative; top: 5px; }
+
+    &:hover,
+    &:active {
+      color: #333;
+      background: #fff;
+      text-decoration: none;
+    }
+
+    &.previous  { left: 0; }
+    &.next      { right: 0; }
+  }
+}
+// }}}
+// Room {{{
+.room {
+  float: left;
+  width: 25%;
+  position: relative;
+  z-index: 5;
+
+  .room-name {
+    color: #fff;
+    font-size: 21px;
+    font-size: 2.1rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+  }
+
+  &#libeo {
+    .room-name { background: $libeo; }
+    .pause { background: $libeo; }
+  }
+
+  &#ixmedia {
+    .room-name { background: $ixmedia; }
+    .pause { background: $ixmedia; }
+  }
+
+  &#bell {
+    .room-name { background: $bell; }
+    .pause { background: $bell; }
+  }
+
+  &#salle-4 {
+    .room-name { background: $salle4; }
+    .pause { background: $salle4; }
+  }
+}
+
+// }}}
+// Room > Conference {{{
+.conference {
+  padding: 7px 11px;
+  position: relative;
+
+  &:after {
+    background: transparent url('/assets/images/mobile/bg-bottom-conference.png') repeat-x top left;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  & > a {
+    display: block;
+
+    &:hover,
+    &:active { text-decoration: none; }
+  }
+
+  .special-location {
+    color: #006287;
+    display: block;
+    font-size: 14px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  .time {
+    color: #006286;
+    display: block;
+    font-family: $helveticaNeue;
+    font-size: 24px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 24px;
+  }
+
+  .title {
+    color: #0687b9;
+    display: block;
+    font-size: 21px;
+    font-size: 2.1rem;
+    font-family: $helveticaNeue;
+    font-weight: bold;
+    line-height: 21px;
+    margin-top: 4px;
+  }
+
+  .subtitle {
+    color: #0687b9;
+    display: block;
+    font-size: 12px;
+    font-size: 1.2rem;
+    font-family: $helveticaNeue;
+    margin-top: 3px;
+
+    &.offered-by { color: #999999; }
+  }
+
+  .desc {
+    @extend .group;
+
+    [itemprop=description] {
+      width: 75%;
+      float: left;
+    }
+
+    img {
+      float: right;
+    }
+  }
+}
+// }}}
+// Room > Pause {{{
+.pause {
+  color: #fff;
+  font-family: $helveticaNeue;
+  font-weight: bold;
+  padding: 10px 11px;
+  position: relative;
+  margin: 2px 0 5px;
+
+  &:after {
+    background: transparent url('/assets/images/mobile/bg-bottom-conference.png') repeat-x bottom left;
+    bottom: -3px;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  span { display: block; }
+
+  .time {
+    display: block;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 14px;
+  }
+
+  .title {
+    display: block;
+    font-size: 18px;
+    font-size: 1.8rem;
+  }
+}
+// }}}
+

@@ -292,6 +292,28 @@ a:hover { color: #06e; text-decoration: underline;}
 }
 /* }}} */
 
+/* Content
+**********************{{{*/
+.page-title {
+  color: #006186;
+  font-size: 36px;
+  font-size: 3.6rem;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+
+  &:after {
+    display: inline-block;
+    content: '';
+    height: 58px;
+    margin-left: 3px;
+    position: relative;
+    width: 51px;
+    @extend .png-h2-thingy;
+  }
+}
+/* }}} */
+
 /* Schedule
 **************************************************/
 // Schedule-nav {{{
@@ -348,7 +370,6 @@ a:hover { color: #06e; text-decoration: underline;}
   .container {
     @extend .group;
 
-    left: -50px;
     position: relative;
     width: 400%;
   }

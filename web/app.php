@@ -199,6 +199,10 @@ $app->get('/mobile/', function () use ($app) {
     return $app['twig']->render('mobile/index.html.twig');
 });
 
+$app->get('/mobile/partenaires/', function () use ($app) {
+    return $app['twig']->render('mobile/partners.html.twig');
+});
+
 
 $app->error(function (\Exception $e, $code) use ($app){
   if (404 == $code) {

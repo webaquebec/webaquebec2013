@@ -109,7 +109,8 @@ class Schedule
     @navElement          = $('#schedule-nav a')
     @slides              = @slideWrapper.find('.slide')
     @slideWrapperHeight  = @slideWrapper.outerHeight()
-    @currentSlide        = @slides.eq(0)
+    @currentSlide        = @slides.filter(".active")
+    @currentIndex        = @slides.index(@currentSlide)
     @openBtn             = $('#schedule #open-shedule a')
     @confLinks           = $('#schedule a.white')
     @confThumbParents    = $('#schedule .conference')  
@@ -121,9 +122,6 @@ class Schedule
     @confScrollbar       = null
     @loadingGIF          = null
     @confIsOpen          = false 
-    
-    
-    console?.log @currentSlide
     
     template            = '''
     <section id="conf-desc">
@@ -153,7 +151,7 @@ class Schedule
         window.router.refresh()
     )
     
-    @navElement.eq(0).addClass('active')
+    # @navElement.eq(@currentIndex).addClass('active')
 
     @openBtn.click( =>
       if @openBtn.hasClass('active')
@@ -179,6 +177,10 @@ class Schedule
     
     @openBtn.hide()
     @open()
+    
+    if @currentIndex != 0
+      @slideTo(@currentSlide.attr("id"))
+    
     $(@).bind('onOpen', onOpen)
     $(@).bind('onClose', onClose)
     
@@ -583,7 +585,7 @@ class CustomInfoWindow
     @setMap(@map)
     @isVisible = true
     @wrap.find('.closeBtn').on('click', =>
-      console?.log "click to close"
+      # console?.log "click to close"
       @close()
     )
   CustomInfoWindow:: = new google.maps.OverlayView()
@@ -717,8 +719,6 @@ $ () ->
       if mySchedule.confIsOpen
         mySchedule.closeConf()
         
-      if day is "mercredi"
-        console?.log "mercredi"
         
       mySchedule.slideTo(day)
     )

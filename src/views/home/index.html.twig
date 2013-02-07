@@ -46,7 +46,7 @@
             <div class="slides-wrap">
                 <div id="slide01" class="slide" data-desc="design, ux, data, commerce électronique, médias sociaux, mobile, dev, objet connecté, société numérique, marketing, startup"><img src="/assets/images/slider/slide-01.jpg" width="1140" height="420"  alt=" " /></div>
             </div>
-            
+
             <div class="subscribe">
               <strong>Inscrivez-vous!</strong>
               <a class="blue-btn" href="http://webaquebec2013.eventbrite.ca/"><span>595$</span> tarif régulier jusqu'à épuisement des places</a>
@@ -79,7 +79,7 @@
                             <span class="time t10h15"><span>19h00</span></span>
                             <span class="time t11h45"><span>20h30</span></span>
                         </span>
-                        
+
                         {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
                             <span id="{{ dateData.day | dateTime("%A") }}-lines"{% if dateData.day | dateTime("%A") == "mercredie" %} class="active"{% endif %}>
                                 {% for line in lines[date] %}
@@ -101,7 +101,7 @@
                             <span id="separators"><span></span><span></span><span></span><span></span></span>
                             <div class="conferences t7h15 t90m">
                                 <div class="col">
-                                    
+
                                     {% include 'includes/master-class.html.twig' with {
                                         id        : 73,
                                         slug      : "html5-windows-8-amis-avec-benefices",
@@ -116,10 +116,10 @@
                                         price     : 160,
                                         start     : 1361344500
                                     } %}
-                                    
+
                                 </div>
                                 <div class="col">
-                                    
+
                                     {% include 'includes/master-class.html.twig' with {
                                         id        : 75,
                                         duration  : 135,
@@ -134,7 +134,7 @@
                                         price     : 160,
                                         start     : 1361344500
                                     } %}
-                                    
+
                                 </div>
                                 <div class="col">
                                     <span class="empty t7h15" style="height:180px;"></span>
@@ -175,7 +175,7 @@
                                     sponsors    : null,
                                     sponsorId   : null
                                 } %}
-                                
+
                             </div>
                         </div>
                         {% for date, dateData in sessions %}
@@ -196,7 +196,7 @@
                                                 </div>
                                             {% else %}
                                                 <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m" itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
-                                                
+
                                                     {% include 'includes/conference-full.html.twig' with {
                                                         id          : blockData.session.id,
                                                         slug        : blockData.session.slug,
@@ -209,7 +209,7 @@
                                                         sponsors    : sponsors,
                                                         sponsorId   : blockData.session.sponsor_id
                                                     } %}
-                                                
+
                                                 </div>
                                             {% endif %}
                                         {% else %}
@@ -248,8 +248,8 @@
             <span id="open-shedule"><a href="javascript://">Tout afficher</a></span>
         </div>
     </section>{# #horaire #}
-    
-    
+
+
     <section id="lieu-et-infos" data-section>
         <h1 class="h2">Lieu et infos</h1>
         <div id="gmap"></div>
@@ -259,23 +259,23 @@
         <div class="group">
             <h2>Principaux</h2>
             <ul id="main" class="list">
-                <li><a href="http://www.ixmedia.com"><img src="/assets/images/sponsors/main/ix.png"  alt="iXmédia" /></a></li>
-                <li><a href="http://www.libeo.com"><img src="/assets/images/sponsors/main/libeo.png"  alt="Libéo" /></a></li>
-                <li><a href="http://www.bell.ca"><img src="/assets/images/sponsors/main/bell.png"  alt="Bell" /></a></li>
+                <li><a href="http://www.ixmedia.com"><img src="/assets/images/sponsors/main/ix.png" alt="iXmédia" /></a></li>
+                <li><a href="http://www.libeo.com"><img src="/assets/images/sponsors/main/libeo.png" alt="Libéo" /></a></li>
+                <li><a href="http://www.bell.ca"><img src="/assets/images/sponsors/main/bell.png" alt="Bell" /></a></li>
             </ul>
         </div>
         <div class="group">
             <h2>Associés</h2>
             <ul id="partners" class="list">
-                <li><a href="http://www.crowdbase.com"><img src="/assets/images/sponsors/partners/crowdbase.png"  alt="Crowdbase" /></a></li>
-                <li><a href="http://www.fernandezcom.ca"><img src="/assets/images/sponsors/partners/fernandez.png"  alt="Fernandez communication" /></a></li>
-                <li><a href="http://www.mirego.com"><img src="/assets/images/sponsors/partners/mirego.png"  alt="Mirego" /></a></li>
-                <li><a href="http://www.quebecinternational.ca"><img src="/assets/images/sponsors/partners/quebec_international.png"  alt="Québec International" /></a></li>
-                <li style="clear:both; margin-top: 10px;"><a href="http://www.egouvquebec.com/"><img src="/assets/images/sponsors/partners/egouv-quebec.png"  alt="Egouv Québec" /></a></li>
-                <li style="margin-top: 15px;"><a href="http://www.ville.quebec.qc.ca/"><img src="/assets/images/sponsors/partners/ville_de_quebec.png"  alt="Ville de Québec" /></a></li>
-                <li style="margin-top: 15px;"><a href="http://www.webnotwar.ca/"><img src="/assets/images/sponsors/partners/make-web-not-war.png"  alt="Make Web Not War" /></a></li>
-                <li style="margin-top: 15px;"><img src="/assets/images/sponsors/partners/accord.png"  alt="Accord Capitale-Nationale" /></li>
-                <li style="margin-top: 15px;"><img src="/assets/images/sponsors/partners/gouv-qc.png"  alt="Québec" /></li>
+                <li><a href="http://www.crowdbase.com"><img src="/assets/images/sponsors/partners/crowdbase.png" alt="Crowdbase" /></a></li>
+                <li><a href="http://www.fernandezcom.ca"><img src="/assets/images/sponsors/partners/fernandez.png"alt="Fernandez communication" /></a></li>
+                <li><a href="http://www.mirego.com"><img src="/assets/images/sponsors/partners/mirego.png"alt="Mirego" /></a></li>
+                <li><a href="http://www.quebecinternational.ca"><img src="/assets/images/sponsors/partners/quebec_international.png" alt="Québec International" /></a></li>
+                <li style="clear:both; margin-top: 10px;"><a href="http://www.egouvquebec.com/"><img src="/assets/images/sponsors/partners/egouv-quebec.png" alt="Egouv Québec" /></a></li>
+                <li style="margin-top: 15px;"><a href="http://www.ville.quebec.qc.ca/"><img src="/assets/images/sponsors/partners/ville_de_quebec.png"alt="Ville de Québec" /></a></li>
+                <li style="margin-top: 15px;"><a href="http://www.webnotwar.ca/"><img src="/assets/images/sponsors/partners/make-web-not-war.png" alt="Make Web Not War" /></a></li>
+                <li style="margin-top: 15px;"><img src="/assets/images/sponsors/partners/accord.png" alt="Accord Capitale-Nationale" /></li>
+                <li style="margin-top: 15px;"><img src="/assets/images/sponsors/partners/gouv-qc.png" alt="Québec" /></li>
                 {#
                 <li><img src="/assets/images/sponsors/partners/tva.png"  alt="TVA" /></li>
                 #}
@@ -284,24 +284,24 @@
         <div class="group">
             <h2>Supporteurs</h2>
             <ul id="supporters" class="list">
-                <li><a href="http://www.chalifour.net"><img src="/assets/images/sponsors/supporters/chalifour.png"  alt="Chalifour" /></a></li>
-                <li><a href="http://www.nebbio.net"><img src="/assets/images/sponsors/supporters/nebbio.png"  alt="Nebbio" /></a></li>
-                <li><a href="http://www.umen.ca"><img src="/assets/images/sponsors/supporters/umen.png"  alt="Umen" /></a></li>
-                <li><a href="http://www.pagesjaunes.ca"><img src="/assets/images/sponsors/supporters/groupe_pages_jaunes.png"  alt="Groupe Pages Jaunes" /></a></li>
-               
+                <li><a href="http://www.chalifour.net"><img src="/assets/images/sponsors/supporters/chalifour.png" alt="Chalifour" /></a></li>
+                <li><a href="http://www.nebbio.net"><img src="/assets/images/sponsors/supporters/nebbio.png" alt="Nebbio" /></a></li>
+                <li><a href="http://www.umen.ca"><img src="/assets/images/sponsors/supporters/umen.png" alt="Umen" /></a></li>
+                <li><a href="http://www.pagesjaunes.ca"><img src="/assets/images/sponsors/supporters/groupe_pages_jaunes.png" alt="Groupe Pages Jaunes" /></a></li>
+
             </ul>
         </div>
         <div class="group">
             <h2>Médias et collaborateurs</h2>
             <ul id="medias" class="list">
-                <li><a href="http://www.marcographie.com"><img src="/assets/images/sponsors/medias/marcographie.png"  alt="Marcographie" /></a></li>
-                <li><a href="http://www.technocompetences.qc.ca"><img src="/assets/images/sponsors/medias/technocompetences.png"  alt="Techno Compétences" /></a></li>
-                <li><a href="http://www.vetiq.org"><img src="/assets/images/sponsors/medias/vetiq.png"  alt="Vetiq" /></a></li>
-                <li><a href="http://socom.ca/"><img src="/assets/images/sponsors/medias/socom.png"  alt="Socom" /></a></li>
-                <li><a href="http://www.uxpaquebec.org/"><img src="/assets/images/sponsors/medias/uxpa_quebec.png"  alt="uXpa Québec" /></a></li>
-                <li><a href="http://quebecgirlgeekdinners.com/"><img src="/assets/images/sponsors/medias/qc_geek_girls.png"  alt="Québec Girl Geek Dinners" /></a></li>
-                <li><a href="http://www.alliancenumerique.com/"><img src="/assets/images/sponsors/medias/alliance-numerique.png"  alt="Alliance numérique" /></a></li>
-                <li><a href="http://www.zapquebec.org"><img src="/assets/images/sponsors/medias/zap.png"  alt="Zap" /></a></li>
+                <li><a href="http://www.marcographie.com"><img src="/assets/images/sponsors/medias/marcographie.png" alt="Marcographie" /></a></li>
+                <li><a href="http://www.technocompetences.qc.ca"><img src="/assets/images/sponsors/medias/technocompetences.png" alt="Techno Compétences" /></a></li>
+                <li><a href="http://www.vetiq.org"><img src="/assets/images/sponsors/medias/vetiq.png" alt="Vetiq" /></a></li>
+                <li><a href="http://socom.ca/"><img src="/assets/images/sponsors/medias/socom.png" alt="Socom" /></a></li>
+                <li><a href="http://www.uxpaquebec.org/"><img src="/assets/images/sponsors/medias/uxpa_quebec.png" alt="uXpa Québec" /></a></li>
+                <li><a href="http://quebecgirlgeekdinners.com/"><img src="/assets/images/sponsors/medias/qc_geek_girls.png" alt="Québec Girl Geek Dinners" /></a></li>
+                <li><a href="http://www.alliancenumerique.com/"><img src="/assets/images/sponsors/medias/alliance-numerique.png" alt="Alliance numérique" /></a></li>
+                <li><a href="http://www.zapquebec.org"><img src="/assets/images/sponsors/medias/zap.png" alt="Zap" /></a></li>
             </ul>
         </div>
     </section>
@@ -313,7 +313,7 @@
                 <p>Le WAQ est l’occasion privilégiée d’avoir accès au plus grand rassemblement de décideurs, professionnels, gestionnaires, développeurs et étudiants de l’industrie du numérique de Québec. Renouvelant sa formule à succès, pour une troisième année, de présentation éclair par des talents locaux, l’événement accueillera à nouveau des invités internationaux inspirants qui entretiendront plus de 500 participants sur les sujets et thèmes les plus actuels. </p>
             </div>
             <div class="benevoles">
-                <h2>Des bénévoles essentiels!</h2>                  
+                <h2>Des bénévoles essentiels!</h2>
                 <p>Un merci tout spécial à notre équipe du tonnerre !</p>
                 <ul>
                     <li><span>Yhoanis Obando</span></li>
@@ -325,7 +325,7 @@
         <div id="team" class="listing">
             <div class="group">
                 <h2>Comité programmation</h2>
-                <div class="list"> 
+                <div class="list">
                     <figure itemprop="attendees" itemscope itemtype="http://schema.org/Person">
                         <img itemprop="image" src="/assets/images/team/jason_lemay.jpg" alt="Jason Lemay" />
                         <figcaption itemprop="name">Jason Lemay</figcaption>
@@ -350,7 +350,7 @@
             </div>
             <div class="group">
                 <h2>Comité opérations et logistique</h2>
-                <div class="list"> 
+                <div class="list">
                     <figure itemprop="attendees" itemscope itemtype="http://schema.org/Person">
                         <img itemprop="image" src="/assets/images/team/nicolas-loic_fortin.jpg" alt="Nicolas-Loïc Fortin" />
                         <figcaption itemprop="name">Nicolas-Loïc Fortin</figcaption>
@@ -363,7 +363,7 @@
             </div>
             <div class="group">
                 <h2 style="margin-top: 29px;">Comité IRON WEB</h2>
-                <div class="list"> 
+                <div class="list">
                     <figure itemprop="attendees" itemscope itemtype="http://schema.org/Person">
                         <img itemprop="image" src="/assets/images/team/jpdoyle.jpg" alt="Jean-Philippe Doyle" />
                         <figcaption itemprop="name">Jean-Philippe Doyle</figcaption>
@@ -388,7 +388,7 @@
             </div>
             <div class="group">
                 <h2>Conseil d’administration<br>et permanence</h2>
-                <div class="list"> 
+                <div class="list">
                     <figure itemprop="attendees" itemscope itemtype="http://schema.org/Person">
                         <img itemprop="image" src="/assets/images/team/cfd.jpg" alt="Carl-Frédéric De Celles" />
                           <figcaption itemprop="name">Carl-Frédéric De Celles</figcaption>

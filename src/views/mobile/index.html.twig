@@ -1,9 +1,9 @@
 {% extends 'mobile/layout.html.twig' %}
 
+{% block bodyClasses %}schedule {% endblock %}
 {% block title %}Horaire - {% endblock %}
 {% block javascripts %}
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
-    <script src="/assets/javascripts/global.js"></script>
+    <script src="/assets/javascripts/mobile.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -24,7 +24,7 @@
 
                 <div class="container">
 
-                    <div id="libeo" class="room">
+                    <div id="libeo" class="room active">
                         <h1 class="room-name">Salle Libéo</h1>
 
                         <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">

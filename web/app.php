@@ -194,7 +194,13 @@ $app->get('/horaire/{day}/{slug}-{id}', function ($day = null, $slug = null, $id
 })->bind('showSchedule')
   ->assert('slug', '.*');
 
+$app->error(function (\Exception $e, $code) use ($app){
+  if (404 == $code) {
+    return $app['twig']->render('404.html.twig');
+  }
+});
 
+// Mobile
 $app->get('/mobile/', function () use ($app) {
     return $app['twig']->render('mobile/index.html.twig');
 });
@@ -207,11 +213,8 @@ $app->get('/mobile/a-propos/', function () use ($app) {
     return $app['twig']->render('mobile/about.html.twig');
 });
 
-
-$app->error(function (\Exception $e, $code) use ($app){
-  if (404 == $code) {
-    return $app['twig']->render('404.html.twig');
-  }
+$app->get('/mobile/lieu-et-infos/', function () use ($app) {
+    return $app['twig']->render('mobile/location-and-infos.html.twig');
 });
 
 $app->run();

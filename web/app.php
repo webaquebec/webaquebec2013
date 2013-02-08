@@ -203,6 +203,10 @@ $app->get('/mobile/partenaires/', function () use ($app) {
     return $app['twig']->render('mobile/partners.html.twig');
 });
 
+$app->get('/mobile/a-propos/', function () use ($app) {
+    return $app['twig']->render('mobile/about.html.twig');
+});
+
 
 $app->error(function (\Exception $e, $code) use ($app){
   if (404 == $code) {

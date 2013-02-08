@@ -217,4 +217,8 @@ $app->get('/mobile/lieu-et-infos/', function () use ($app) {
     return $app['twig']->render('mobile/location-and-infos.html.twig');
 });
 
+$app->get('/mobile/nous-joindre/', function () use ($app) {
+    return $app['twig']->render('mobile/contact-us.html.twig');
+});
+
 $app->run();

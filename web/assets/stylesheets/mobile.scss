@@ -55,7 +55,7 @@ td { vertical-align: top; }
 /*}}}*/
 
 /* @Font-face
-*********************{{{*/
+*********************{{{ */
 @font-face {
     font-family: 'misoregular';
     src: url('fonts/miso/miso-regular-webfont.eot');
@@ -92,7 +92,7 @@ td { vertical-align: top; }
 /*}}}*/
 
 /* Common
-**********************{{{*/
+**********************{{{ */
 $png-spacing: 5px;
 @import "png/*.png";
 @include all-png-sprites;
@@ -232,7 +232,7 @@ a:hover { color: #06e; text-decoration: underline;}
 /* }}} */
 
 /* Titles
-**********************{{{*/
+**********************{{{ */
 .page-title {
   color: #006186;
   font-size: 36px;
@@ -263,20 +263,19 @@ a:hover { color: #06e; text-decoration: underline;}
   color: $darkblue;
 
   &:after {
-    @extend .png-h2-thingy;
+    @extend .png-h2-thingy-small;
     display: inline-block;
     position: relative;
     margin-left: 3px;
     content: "";
-    width: image-width('png/h2-thingy.png');
-    height: image-height('png/h2-thingy.png');
-    background-size: 60%;
+    width: image-width('png/h2-thingy-small.png');
+    height: image-height('png/h2-thingy-small.png');
   }
 }
 /* }}} */
 
 /* Header
-**********************{{{*/
+**********************{{{ */
 #header {
   @extend .width, .padding, .group;
   padding: 25px 0 15px;
@@ -286,7 +285,7 @@ a:hover { color: #06e; text-decoration: underline;}
 /* }}} */
 
 /* Main-nav
-**********************{{{*/
+**********************{{{ */
 .navigation {
   margin-top: 15px;
 
@@ -336,8 +335,22 @@ a:hover { color: #06e; text-decoration: underline;}
 }
 /* }}} */
 
+/* Content
+**********************{{{*/
+#content {
+  h2 {
+    color: #0686b8;
+    font-size: 21px;
+    font-size: 2.1rem;
+    font-weight: normal;
+    margin: 10px 0 0 0;
+    text-transform: uppercase;
+  }
+}
+/* }}} */
+
 /* Schedule
-**************************************************/
+**********************/
 // Schedule-nav {{{
 #schedule-nav {
   @extend .group;
@@ -584,9 +597,9 @@ a:hover { color: #06e; text-decoration: underline;}
     color: #0686b8;
     font-size: 21px;
     font-size: 2.1rem;
-    text-transform: uppercase;
     font-weight: normal;
     margin: 10px 0 0 0;
+    text-transform: uppercase;
   }
 }
 
@@ -608,18 +621,35 @@ a:hover { color: #06e; text-decoration: underline;}
       max-width: 90%;
     }
   }
-
-  h2 {
-    color: #0686b8;
-    font-size: 21px;
-    font-size: 2.1rem;
-    text-transform: uppercase;
-    float: left;
-    font-weight: normal;
-    width: 18.1578947%;
-    padding-left: 5%;
-    margin: 10px 0 0 0;
-  }
-
 }
 /* }}} */
+
+/* About
+**********************{{{ */
+.section-about {
+  .intro {
+    h2      { margin: 10px 0 0; }
+    h2 + p  { margin: 0; }
+
+    ul {
+      list-style: square;
+      margin-left: 20px;
+    }
+  }
+
+  #team {
+    .list { @extend .group; }
+
+    figure {
+      float: left;
+      height: 110px;
+      line-height: 14px;
+      margin: 0 2% 2% 0;
+      text-align: center;
+      width: 80px;
+    }
+  }
+}
+/* }}} */
+
+

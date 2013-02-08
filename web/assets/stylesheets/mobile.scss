@@ -231,11 +231,55 @@ a:hover { color: #06e; text-decoration: underline;}
 }
 /* }}} */
 
+/* Titles
+**********************{{{*/
+.page-title {
+  color: #006186;
+  font-size: 36px;
+  font-size: 3.6rem;
+  font-weight: normal;
+  position: relative;
+  text-transform: uppercase;
+
+  &:after {
+    display: inline-block;
+    content: '';
+    height: 58px;
+    margin-left: 3px;
+    position: relative;
+    width: 51px;
+    @extend .png-h2-thingy-small;
+  }
+}
+
+.h2 {
+  position: relative;
+  font-weight: normal;
+  font-size: 36px;
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  margin: 0;
+
+  color: $darkblue;
+
+  &:after {
+    @extend .png-h2-thingy;
+    display: inline-block;
+    position: relative;
+    margin-left: 3px;
+    content: "";
+    width: image-width('png/h2-thingy.png');
+    height: image-height('png/h2-thingy.png');
+    background-size: 60%;
+  }
+}
+/* }}} */
+
 /* Header
 **********************{{{*/
 #header {
   @extend .width, .padding, .group;
-  padding: 25px 0;
+  padding: 25px 0 15px;
 
   #logo { text-align: center; }
 }
@@ -288,28 +332,6 @@ a:hover { color: #06e; text-decoration: underline;}
       text-decoration: none;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     }
-  }
-}
-/* }}} */
-
-/* Content
-**********************{{{*/
-.page-title {
-  color: #006186;
-  font-size: 36px;
-  font-size: 3.6rem;
-  font-weight: normal;
-  position: relative;
-  text-transform: uppercase;
-
-  &:after {
-    display: inline-block;
-    content: '';
-    height: 58px;
-    margin-left: 3px;
-    position: relative;
-    width: 51px;
-    @extend .png-h2-thingy;
   }
 }
 /* }}} */
@@ -555,3 +577,49 @@ a:hover { color: #06e; text-decoration: underline;}
 }
 // }}}
 
+/* Partners
+**********************{{{ */
+.section-partners #content {
+  h2 {
+    color: #0686b8;
+    font-size: 21px;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 10px 0 0 0;
+  }
+}
+
+.section-partners #content .list {
+  @extend .group;
+
+  li {
+    float: left;
+    height: 80px;
+    line-height: 60px;
+    margin: 0 3% 2% 0;
+    position: relative;
+    text-align: center;
+    width: 45%;
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 90%;
+    }
+  }
+
+  h2 {
+    color: #0686b8;
+    font-size: 21px;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+    float: left;
+    font-weight: normal;
+    width: 18.1578947%;
+    padding-left: 5%;
+    margin: 10px 0 0 0;
+  }
+
+}
+/* }}} */

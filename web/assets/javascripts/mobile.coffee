@@ -3,12 +3,19 @@ if $('body.schedule')?
   activeRoom = $('.room.active')
   $('#schedule .overflow').height(activeRoom.height())
 
+if $('body.section-location-and-infos')? && CustomGmap?
+  myGmap = new CustomGmap('#gmap')
 
 $('.next').click ->
-  slide(1)
+  initSlide(1)
 
 $('.previous').click ->
-  slide(-1)
+  initSlide(-1)
 
-slide = (direction) ->
-  console?.log 'foobar', direction
+initSlide = (direction) ->
+  activeRoom = $('.room.active').attr 'id'
+  index = activeRoom.index('.container')
+
+  console?.log activeRoom
+  # are we at the end? if yes, set the left to 0% if not, increment the current value of 25%
+

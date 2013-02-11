@@ -35,5 +35,3 @@ if $('body.schedule')?
 
 if $('body.section-location-and-infos')? && CustomGmap?
   myGmap = new CustomGmap('#gmap')
-
-

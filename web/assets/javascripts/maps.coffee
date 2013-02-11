@@ -158,7 +158,7 @@ class window.CustomInfoWindow
         </span>"
 
     if !isMobile
-        wrap += "<img src=\"#{opts.image}\" />"
+      wrap += "<img src=\"#{opts.image}\" />"
 
     wrap += "</div>"
 

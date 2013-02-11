@@ -160,9 +160,9 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
     if (isset($_GET['confirmation']) && $_GET['confirmation'] == '1') {
         $campaignConfirmation = true;
     }
-    
+
     $today = time();
-    
+
     return $app['twig']->render('home/index.html.twig', array(
         "page" => "index",
         "speakers" => $speakers,
@@ -275,11 +275,15 @@ $app->get('/mobile/', function () use ($app) {
         $sessions[$dateTime->format("dmY")]["list"][$session["room_id"]][] = $session;
     }
 
+    $today = time();
+    $today = 1361451363;
+
     return $app['twig']->render('mobile/index.html.twig', array(
         "page" => "index",
         "speakers" => $speakers,
         "sponsors" => $sponsors,
         "rooms" => $rooms,
+        "today" => $today,
         "sessions" => $sessions
     ));
 });

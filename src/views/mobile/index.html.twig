@@ -11,9 +11,9 @@
         <div id="schedule">
 
             <ul id="schedule-nav">
-            {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
-                <li id="{{ dateData.day | dateTime("%A") }}"{% if dateData.day | dateTime("%A") == "jeudi" %} class="active"{% endif %}><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
-            {% endfor %}
+                {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
+                    <li{% if today | dateTime("%Y-%m-%d") == dateData.day | dateTime("%Y-%m-%d") %} class="active"{% endif %}><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
+                {% endfor %}
             </ul>
 
             <div id="room-nav">
@@ -27,7 +27,7 @@
 
                     {% for date, dateData in sessions %}
                         {% if dateData.day | dateTime("%A") != "mercredi" %}
-                            <div id="{{ dateData.day | dateTime("%A") }}" class="day">
+                            <div id="{{ dateData.day | dateTime("%A") }}" class="day{% if today | dateTime("%Y-%m-%d") == dateData.day | dateTime("%Y-%m-%d") %} active{% endif %}">
                                 {% for room, list in dateData.list %}
                                     <div id="room{{ room }}" class="room">
                                         <h1 class="room-name">Salle {{ rooms[room].name }}</h1>

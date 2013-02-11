@@ -121,16 +121,8 @@ class Schedule
     @wrapConfContent     = null
     @confScrollbar       = null
     @loadingGIF          = null
-<<<<<<< HEAD
     @confIsOpen          = false
 
-
-    console?.log @currentSlide
-
-=======
-    @confIsOpen          = false
-
->>>>>>> 435bc92bbbf593538ef6890ba03645652b279cbf
     template            = '''
     <section id="conf-desc">
       <span class="loading"><img src="/assets/images/interface/loading.gif" /></span>
@@ -432,8 +424,6 @@ class OnePager
 # }}}
 ###
 
-<<<<<<< HEAD
-=======
 ###
 # Class Gmap {{{
 ###
@@ -647,7 +637,6 @@ class CustomInfoWindow
 ###
 # }}}
 ###
->>>>>>> 435bc92bbbf593538ef6890ba03645652b279cbf
 $ () ->
   # Common
   ################{{{
@@ -693,7 +682,7 @@ $ () ->
 
   # Class instaciation
   myHomeSlider = new Slider($('#slider'), {timer : 5000})
-  myGmap       = new CustomGmap('#gmap')
+  myGmap       = new customGmap('#gmap')
   mySchedule   = new Schedule(
     onOpen : () ->
       myOnePager.hashHasChange('horaire')
@@ -729,15 +718,8 @@ $ () ->
 
       if mySchedule.confIsOpen
         mySchedule.closeConf()
-<<<<<<< HEAD
-
-      if day is "mercredi"
-        console?.log "mercredi"
-
-=======
 
 
->>>>>>> 435bc92bbbf593538ef6890ba03645652b279cbf
       mySchedule.slideTo(day)
     )
 

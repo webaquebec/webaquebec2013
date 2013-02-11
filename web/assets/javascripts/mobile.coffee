@@ -32,6 +32,7 @@ changeActiveDay = ->
   $('.room.active-room').removeClass('active-room')
   $('#' + targetDay).find('.room:eq(0)').addClass('active-room')
 
+
 if $('body.schedule')?
   $('.day.active .room:eq(0)').addClass('active-room')
 
@@ -40,7 +41,6 @@ if $('body.schedule')?
 
   $('.next').click -> slide(1)
   $('.previous').click -> slide(-1)
-
   $('#schedule-nav a').click -> changeActiveDay()
 
 if $('body.section-location-and-infos')? && CustomGmap?

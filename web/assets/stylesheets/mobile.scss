@@ -103,10 +103,12 @@ $mobile-spacing: 5px;
 
 $darkblue: #006186;
 $linkblue: #0086b9;
+
 $libeo : #3ca637;
-$ixmedia: black;
-$bell: blue;
-$salle4: red;
+$ixmedia: #000;
+$bell: #0066a4;
+$salle4: #bc0910;
+$salle6: #f47920;
 
 $miso: 'misoregular', Arial, Sans-serif;
 $misoBold: 'misobold', Arial, Sans-serif;
@@ -484,6 +486,11 @@ a:hover { color: #06e; text-decoration: underline;}
   &#room4 {
     .room-name { background: $salle4; }
     .pause { background: $salle4; }
+  }
+
+  &#room6 {
+    .room-name { background: $salle6; }
+    .pause { background: $salle6; }
   }
 }
 

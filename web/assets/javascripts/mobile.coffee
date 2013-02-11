@@ -20,18 +20,28 @@ slide = (direction) ->
 
   return
 
+changeActiveDay = ->
+  targetDay = $(this).attr 'data-ref'
+
+  $('#schedule-nav li').removeClass('active')
+  $(this).parent().addClass('active')
+
+  $('.day').hide().removeClass('active')
+  $('#' + targetDay).show().addClass('active')
+
+  $('.room.active-room').removeClass('active-room')
+  $('#' + targetDay).find('.room:eq(0)').addClass('active-room')
+
 if $('body.schedule')?
-  $('.day.active .room:eq(0.)').addClass('active-room')
+  $('.day.active .room:eq(0)').addClass('active-room')
 
   activeRoom = $('.day.active .room.active-room')
   $('#schedule .overflow').height(activeRoom.height())
 
-  $('.next').click ->
-    slide(1)
+  $('.next').click -> slide(1)
+  $('.previous').click -> slide(-1)
 
-  $('.previous').click ->
-    slide(-1)
-
+  $('#schedule-nav a').click -> changeActiveDay()
 
 if $('body.section-location-and-infos')? && CustomGmap?
   myGmap = new CustomGmap('#gmap')

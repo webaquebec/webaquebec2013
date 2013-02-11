@@ -160,7 +160,9 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
     if (isset($_GET['confirmation']) && $_GET['confirmation'] == '1') {
         $campaignConfirmation = true;
     }
-
+    
+    $today = time();
+    
     return $app['twig']->render('home/index.html.twig', array(
         "page" => "index",
         "speakers" => $speakers,
@@ -168,6 +170,7 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
         "rooms" => $rooms,
         "lines" => $lines,
         "sessions" => $sessions,
+        "today"    => $today,
         "campaignConfirmation" => $campaignConfirmation
     ));
 };

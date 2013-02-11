@@ -14,8 +14,8 @@ $('.previous').click ->
 
 initSlide = (direction) ->
   activeRoom = $('.room.active').attr 'id'
-  index = activeRoom.index('.container')
+  index = $('.room').index('.active')
 
-  console?.log activeRoom
+  console?.log index
   # are we at the end? if yes, set the left to 0% if not, increment the current value of 25%
 

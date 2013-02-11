@@ -27,7 +27,7 @@
 
                     {% for date, dateData in sessions %}
                         {% if dateData.day | dateTime("%A") != "mercredi" %}
-                            <div id="{{ dateData.day | dateTime("%A") }}">
+                            <div id="{{ dateData.day | dateTime("%A") }}" class="day">
                                 {% for room, list in dateData.list %}
                                     <div id="room{{ room }}" class="room">
                                         <h1 class="room-name">Salle {{ rooms[room].name }}</h1>

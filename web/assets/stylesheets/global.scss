@@ -962,6 +962,8 @@ $t15m: 40px;
   -o-transition-timing-function: linear;
   transition-timing-function: linear;
 
+  -webkit-backface-visibility: hidden;
+
   &:hover,
   &.active {
     background: #88dcec;

@@ -202,7 +202,83 @@ $app->error(function (\Exception $e, $code) use ($app){
 
 // Mobile
 $app->get('/mobile/', function () use ($app) {
-    return $app['twig']->render('mobile/index.html.twig');
+    $sql = "SELECT * FROM room ORDER BY id ASC";
+    $query = $app['db']->executeQuery($sql);
+    $rooms = array();
+    while ($room = $query->fetch(\PDO::FETCH_ASSOC)) {
+        $rooms[$room["id"]] = $room;
+    }
+
+    $sql = "SELECT * FROM speaker ORDER BY id ASC";
+    $query = $app['db']->executeQuery($sql);
+    $speakers = array();
+    while ($speaker = $query->fetch(\PDO::FETCH_ASSOC)) {
+        $speakers[$speaker["id"]] = $speaker;
+    }
+
+    $sql = "SELECT * FROM sponsor ORDER BY id ASC";
+    $query = $app['db']->executeQuery($sql);
+    $sponsors = array();
+    while ($sponsor = $query->fetch(\PDO::FETCH_ASSOC)) {
+        $sponsors[$sponsor["id"]] = $sponsor;
+    }
+
+    $sql = "SELECT * FROM session ORDER BY start ASC";
+    $sessionsTmp = $app['db']->fetchAll($sql);
+
+    $sessions = array();
+    $block = array();
+    $lines = array();
+    $firstLine = "";
+    $currentDay = "";
+    $start = 0;
+    $end = 0;
+
+    foreach ($sessionsTmp as $session) {
+        $dateTime = new DateTime();
+        $dateTime->setTimestamp($session["start"]);
+
+        if (!isset($sessions[$dateTime->format("dmY")])) {
+            $day = new DateTime();
+            $day->setTimestamp($session["start"]);
+            $day->setTime(0, 0);
+            $sessions[$dateTime->format("dmY")] = array("day" => $day->getTimestamp(), "list" => array());
+        }
+
+        if ($currentDay == "") {
+            $currentDay = $dateTime->format("dmY");
+        }
+
+        $currentDay = $dateTime->format("dmY");
+
+        if ($session["name"] == "") {
+            continue;
+        }
+
+        if (!isset($session["room_id"])) {
+            foreach ($rooms as $id => $room) {
+                if (!isset($sessions[$dateTime->format("dmY")]["list"][$id])) {
+                    $sessions[$dateTime->format("dmY")]["list"][$id] = array();
+                }
+                $sessions[$dateTime->format("dmY")]["list"][$id][] = $session;
+            }
+
+            continue;
+        }
+
+        if (!isset($sessions[$dateTime->format("dmY")]["list"][$session["room_id"]])) {
+            $sessions[$dateTime->format("dmY")]["list"][$session["room_id"]] = array();
+        }
+        $sessions[$dateTime->format("dmY")]["list"][$session["room_id"]][] = $session;
+    }
+
+    return $app['twig']->render('mobile/index.html.twig', array(
+        "page" => "index",
+        "speakers" => $speakers,
+        "sponsors" => $sponsors,
+        "rooms" => $rooms,
+        "sessions" => $sessions
+    ));
 });
 
 $app->get('/mobile/partenaires/', function () use ($app) {

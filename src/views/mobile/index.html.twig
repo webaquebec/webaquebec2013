@@ -11,8 +11,9 @@
         <div id="schedule">
 
             <ul id="schedule-nav">
-                <li id="jeudi" class="active"><a href="#">jeudi le 21 février</a></li>
-                <li id="vendredi"><a href="#">vendredi le 22 février</a></li>
+            {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
+                <li id="{{ dateData.day | dateTime("%A") }}"{% if dateData.day | dateTime("%A") == "jeudi" %} class="active"{% endif %}><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
+            {% endfor %}
             </ul>
 
             <div id="room-nav">
@@ -24,95 +25,53 @@
 
                 <div class="container">
 
-                    <div id="libeo" class="room active">
-                        <h1 class="room-name">Salle Libéo</h1>
+                    {% for date, dateData in sessions %}
+                        {% if dateData.day | dateTime("%A") != "mercredi" %}
+                            <div id="{{ dateData.day | dateTime("%A") }}">
+                                {% for room, list in dateData.list %}
+                                    <div id="room{{ room }}" class="room">
+                                        <h1 class="room-name">Salle {{ rooms[room].name }}</h1>
 
-                        <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
-                            <a href="{# TO-DO #}">
-                                <span class="special-location">Grand Hall</span>
-                                <span class="time">7h15 à 8h30</span>
+                                        {% for session in list %}
+                                            {% if session.break %}
+                                                <div class="pause">
+                                                    <span class="time">{{ session.start | dateTime("%Hh%M") }} à {{ session.end | dateTime("%Hh%M") }}</span>
+                                                    <span class="title">{{ session.name }}</span>
+                                                </div>
+                                            {% else %}
+                                                <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
+                                                    <a href="/horaire/{{ session.start | dateTime("%A") }}/{{ session.slug }}-{{ session.id }}">
+                                                        {% if session.room_id == 6 %}
+                                                            <span class="special-location">Grand Hall</span>
+                                                        {% endif %}
+                                                        <span class="time">{{ session.start | dateTime("%Hh%M") }} à {{ session.end | dateTime("%Hh%M") }}</span>
 
-                                {# Add class 'desc' only if there is a logo #}
-                                <div class="desc">
-                                    <span itemprop="description">
-                                        <span class="title">Déjeuner et accueil</span>
-                                        <span class="subtitle offered-by">Viennoiseries, jus et café offerts par</span>
-                                    </span>
+                                                        {% if sponsors[session.sponsor_id] is defined %}
+                                                            <div class="desc">
+                                                                <span itemprop="description">
+                                                                    <span class="title">{{ session.name | limitTitle | raw }}</span>
+                                                                    <span class="subtitle offered-by">{{ sponsors[session.sponsor_id].presentation }}</span>
+                                                                </span>
 
-                                    <img src="/assets/images/mobile/uxpa_quebec.png" alt="Logo - UXPA Québec" width="48" height="25">
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
-                            <a href="{# TO-DO #}">
-                                <span class="time">7h15 à 8h30</span>
-
-                                <span itemprop="description">
-                                    <span class="title">Déjeuner et accueil</span>
-                                    <span class="subtitle">Travailler à distance pour une entreprise non-québecoise</span>
-                                </span>
-                            </a>
-                        </div>
-
-                        <div class="pause">
-                            <span class="time">10 à 10h30</span>
-                            <span class="title">Pause</span>
-                        </div>
-                    </div> {# End of Libeo's room #}
-
-                    <div id="ixmedia" class="room">
-                        <h1 class="room-name">Salle iXmédia</h1>
-
-                        <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
-                            <a href="{# TO-DO #}">
-                                <span class="special-location">Grand Hall</span>
-                                <span class="time">7h15 à 8h30</span>
-
-                                {# Add class 'desc' only if there is a logo #}
-                                <div class="desc">
-                                    <span itemprop="description">
-                                        <span class="title">Déjeuner et accueil</span>
-                                        <span class="subtitle offered-by">Viennoiseries, jus et café offerts par</span>
-                                    </span>
-
-                                    <img src="/assets/images/mobile/uxpa_quebec.png" alt="Logo - UXPA Québec" width="48" height="25">
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
-                            <a href="{# TO-DO #}">
-                                <span class="time">7h15 à 8h30</span>
-
-                                <span itemprop="description">
-                                    <span class="title">Déjeuner et accueil</span>
-                                    <span class="subtitle">Travailler à distance pour une entreprise non-québecoise</span>
-                                </span>
-                            </a>
-                        </div>
-
-                        <div class="pause">
-                            <span class="time">11 à 11h30</span>
-                            <span class="title">Pause</span>
-                        </div>
-
-                        <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
-                            <a href="{# TO-DO #}">
-                                <span class="time">7h15 à 8h30</span>
-
-                                <span itemprop="description">
-                                    <span class="title">Déjeuner et accueil</span>
-                                    <span class="subtitle">Travailler à distance pour une entreprise non-québecoise</span>
-                                </span>
-                            </a>
-                        </div>
-
-                        <div class="pause">
-                            <span class="time">10 à 10h30</span>
-                            <span class="title">Dîner</span>
-                        </div>
-                    </div> {# End of Libeo's room #}
+                                                                <img src="/assets/images/sponsors/medias/{{ sponsors[session.sponsor_id].logo }}.png" alt="{{ sponsors[session.sponsor_id].name }}" width="48" height="25">
+                                                            </div>
+                                                        {% else %}
+                                                            <span itemprop="description">
+                                                                {% if speakers[session.speaker_id] is defined %}
+                                                                    <span class="title">{{ speakers[session.speaker_id].name }}</span>
+                                                                {% endif %}
+                                                                <span class="subtitle">{{ session.name | limitTitle | raw }}</span>
+                                                            </span>
+                                                        {% endif %}
+                                                    </a>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>

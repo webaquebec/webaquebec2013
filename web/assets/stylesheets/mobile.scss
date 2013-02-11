@@ -407,9 +407,16 @@ a:hover { color: #06e; text-decoration: underline;}
 
     position: relative;
     width: 500%;
+
+    -webkit-transition: left 0.5s linear;
+    transition: left 0.5s linear;
   }
 
-  .day { display: none; }
+  .day {
+    @extend .group;
+    display: none;
+  }
+
   .day.active { display: block; }
 }
 // }}}

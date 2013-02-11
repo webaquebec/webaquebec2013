@@ -276,7 +276,8 @@ $app->get('/mobile/', function () use ($app) {
     }
 
     $today = time();
-    $today = 1361451363;
+    $today = 1361451363; #jeudi
+    $today = 1361537763; #vendredi
 
     return $app['twig']->render('mobile/index.html.twig', array(
         "page" => "index",

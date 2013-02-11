@@ -497,7 +497,6 @@ a:hover { color: #06e; text-decoration: underline;}
 // }}}
 // Room > Conference {{{
 .conference {
-  padding: 7px 11px;
   position: relative;
 
   &:after {
@@ -512,9 +511,13 @@ a:hover { color: #06e; text-decoration: underline;}
 
   & > a {
     display: block;
+    padding: 7px 11px;
 
     &:hover,
-    &:active { text-decoration: none; }
+    &:active {
+      background: #f9f9f9;
+      text-decoration: none;
+    }
   }
 
   .special-location {

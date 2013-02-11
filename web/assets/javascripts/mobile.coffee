@@ -14,7 +14,7 @@ slide = (direction) ->
 
   $('.day.active .active-room').removeClass('active-room')
   $('.day.active .room').eq(nextRoom).addClass('active-room')
-  $('#schedule .overflow').height($('.day.active .room.active-room').height())
+  $('#schedule .overflow').animate({'height': $('.day.active .room.active-room').height() })
 
   $('#schedule .container').css('left', newLeft + '%')
 

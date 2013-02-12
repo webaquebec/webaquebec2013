@@ -277,7 +277,7 @@ $app->get('/mobile/', function () use ($app) {
 
     $today = time();
     $today = 1361451363; #jeudi
-    $today = 1361537763; #vendredi
+    #today = 1361537763; #vendredi
 
     return $app['twig']->render('mobile/index.html.twig', array(
         "page" => "index",
@@ -289,20 +289,43 @@ $app->get('/mobile/', function () use ($app) {
     ));
 });
 
+
+$app->get('/mobile/horaire/{day}/{slug}-{id}', function ($day = null, $slug = null, $id = null) use ($app) {
+
+    $sessionId = (int) $id;
+
+    $sql = "SELECT session.*, speaker.name AS speaker_name, speaker.bio AS speaker_bio, speaker.image AS speaker_image, speaker.title AS speaker_title, speaker.entreprise AS speaker_entreprise, speaker.website AS speaker_website, speaker.twitter AS speaker_twitter, room.name AS room_name FROM session JOIN speaker ON speaker.id = session.speaker_id JOIN room ON room.id = session.room_id WHERE session.id = ?";
+    $session = $app['db']->fetchAssoc($sql, array($sessionId));
+
+    if ($session) {
+        return $app['twig']->render('mobile/conference/index.html.twig', array( "session" => $session));
+    } else {
+      $app->abort(404);
+    }
+})->assert('slug', '.*');
+
+
 $app->get('/mobile/partenaires/', function () use ($app) {
     return $app['twig']->render('mobile/partners.html.twig');
-});
+})->bind('showPartners')
+  ->assert('slug', '.*');
+
 
 $app->get('/mobile/a-propos/', function () use ($app) {
     return $app['twig']->render('mobile/about.html.twig');
-});
+})->bind('showAboutUs')
+  ->assert('slug', '.*');
+
 
 $app->get('/mobile/lieu-et-infos/', function () use ($app) {
     return $app['twig']->render('mobile/location-and-infos.html.twig');
-});
+})->bind('showLocationAndInfos')
+  ->assert('slug', '.*');
+
 
 $app->get('/mobile/nous-joindre/', function () use ($app) {
     return $app['twig']->render('mobile/contact-us.html.twig');
-});
+})->bind('showContactUs')
+  ->assert('slug', '.*');
 
 $app->run();

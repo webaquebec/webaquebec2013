@@ -8,10 +8,9 @@
 
 {% block body %}
     <div id="content" class="width">
-        <a href="javascript:history.back()">Retour à l'horaire</a>
 
         <figure>
-            <img src="/assets/images/speakers/400x375/{{ session.speaker_image }}-xlarge.jpg" width="400" height="375" alt="{{ session.speaker_name }}" />
+            <img src="/assets/images/speakers/200x188/{{ session.speaker_image }}-large.jpg" width="200" height="188" alt="{{ session.speaker_name }}" />
             <figcaption>
                 <h1>
                     {{ session.name }}
@@ -22,10 +21,10 @@
             </figcaption>
         </figure>
 
-        <div class="content" data-shareURL="http://{{ app.request.host }}/horaire/{{ session.start | dateTime("%A") }}/{{ session.slug }}-{{ session.id }}">
+        <div class="content">
             <h2>{{ session.speaker_name }}</h2>
-            <span class="time"><time itemprop="startDate" datetime="{{ session.start | dateTime("%Y-%m-%dT%H:%M:00") }}">{{ session.start | dateTime("%A le %e %B, de %k h %M") }}</time> à <time itemprop="endDate" datetime="{{ session.end|dateTime("%Y-%m-%dT%H:%M:00") }}">{{ session.end|dateTime("%k h %M") }}</time></span>
-            <span class="room">{% if session.room_name != "Grand Hall" %}Salle {% endif %}{{ session.room_name }}</span>
+            <p class="time"><time itemprop="startDate" datetime="{{ session.start | dateTime("%Y-%m-%dT%H:%M:00") }}">{{ session.start | dateTime("%A le %e %B, de %k h %M") }}</time> à <time itemprop="endDate" datetime="{{ session.end|dateTime("%Y-%m-%dT%H:%M:00") }}">{{ session.end|dateTime("%k h %M") }}</time></p>
+            <p class="room">{% if session.room_name != "Grand Hall" %}Salle {% endif %}{{ session.room_name }}</p>
 
             <div class="overview">
                 {% if session.description is defined and session.description is not null %}

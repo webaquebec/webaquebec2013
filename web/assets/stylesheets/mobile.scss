@@ -777,8 +777,34 @@ a:hover { color: #06e; text-decoration: underline;}
 /* Details
 **********************{{{ */
 .section-single-session {
+  .content { font-family: $helveticaNeue; }
+
   figure {
     text-align: center;
+
+    h1 {
+      font-family: $misoBold;
+      font-size: 21px;
+      font-size: 2.1rem;
+      text-transform: uppercase;
+    }
+  }
+
+  .time { margin-bottom: 0; }
+  .room {
+    text-transform: uppercase;
+    float: none;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  #content {
+    h2 {
+      font-family: $misoBold;
+      margin-bottom: 0;
+    }
+
+    h2 + p { margin-top: 0; }
   }
 }
 /* }}} */

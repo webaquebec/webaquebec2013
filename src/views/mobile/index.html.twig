@@ -40,7 +40,7 @@
                                                 </div>
                                             {% else %}
                                                 <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
-                                                    <a href="/horaire/{{ session.start | dateTime("%A") }}/{{ session.slug }}-{{ session.id }}">
+                                                    <a href="/mobile/horaire/{{ session.start | dateTime("%A") }}/{{ session.slug }}-{{ session.id }}">
                                                         {% if session.room_id == 6 %}
                                                             <span class="special-location">Grand Hall</span>
                                                         {% endif %}

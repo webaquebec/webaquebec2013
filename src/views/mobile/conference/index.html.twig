@@ -1,0 +1,69 @@
+{% extends 'mobile/layout.html.twig' %}
+
+{% block bodyClasses %}section-single-session{% endblock %}
+{% block title %}{{ session.name }} - {% endblock %}
+{% block javascripts %}
+    <script src="/assets/javascripts/mobile.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div id="content" class="width">
+        <a href="javascript:history.back()">Retour à l'horaire</a>
+
+        <figure>
+            <img src="/assets/images/speakers/400x375/{{ session.speaker_image }}-xlarge.jpg" width="400" height="375" alt="{{ session.speaker_name }}" />
+            <figcaption>
+                <h1>
+                    {{ session.name }}
+                    {% if session.speaker_twitter != null %}
+                        <a class="twitter-bird" href="http://www.twitter.com/{{ session.speaker_twitter }}" title="{{ session.speaker_name }} sur twitter" target="_blank"><span class="shy">twitter</span></a>
+                    {% endif %}
+                </h1>
+            </figcaption>
+        </figure>
+
+        <div class="content" data-shareURL="http://{{ app.request.host }}/horaire/{{ session.start | dateTime("%A") }}/{{ session.slug }}-{{ session.id }}">
+            <h2>{{ session.speaker_name }}</h2>
+            <span class="time"><time itemprop="startDate" datetime="{{ session.start | dateTime("%Y-%m-%dT%H:%M:00") }}">{{ session.start | dateTime("%A le %e %B, de %k h %M") }}</time> à <time itemprop="endDate" datetime="{{ session.end|dateTime("%Y-%m-%dT%H:%M:00") }}">{{ session.end|dateTime("%k h %M") }}</time></span>
+            <span class="room">{% if session.room_name != "Grand Hall" %}Salle {% endif %}{{ session.room_name }}</span>
+
+            <div class="overview">
+                {% if session.description is defined and session.description is not null %}
+                    {{ session.description|raw }}
+                {% else %}
+                    <p>Détails à venir</p>
+                {% endif %}
+
+                {% if session.questions is defined and session.questions is not null %}
+                    <h2>Les trois principales questions auxquelles la présentation répondra</h2>
+                    {{ session.questions|raw }}
+                {% endif %}
+
+                {% if session.speaker_bio != null %}
+                    {% if session.is_panel == '1' %}
+                        {{ session.speaker_bio|raw }}
+                    {% else %}
+                        <h2>Biographie</h2>
+                        {{ session.speaker_bio|raw }}
+                    {% endif %}
+                {% endif %}
+
+              <div class="bio-meta">
+                  {% if session.speaker_entreprise != null %}
+                  <span><strong>Entreprise</strong>: {{ session.speaker_entreprise }}</span>
+                  {% endif %}
+
+                  {% if session.speaker_title != null %}
+                  <span><strong>Titre</strong>: {{ session.speaker_title }}</span>
+                  {% endif %}
+
+                  {% if session.speaker_website != null %}
+                  <span><strong>Site web</strong>: <a href="{{ session.speaker_website }}" target="_blank">{{ session.speaker_website }}</a></span>
+                  {% endif %}
+              </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

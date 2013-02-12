@@ -683,7 +683,8 @@ a:hover { color: #06e; text-decoration: underline;}
 }
 /* }}} */
 
-/**********************{{{ */
+/* Google Map
+**********************{{{ */
 #gmap {
   display: block;
   width: 100%;
@@ -769,6 +770,15 @@ a:hover { color: #06e; text-decoration: underline;}
     	left: 50%;
     	margin-left: -31px;
     }
+  }
+}
+/* }}} */
+
+/* Details
+**********************{{{ */
+.section-single-session {
+  figure {
+    text-align: center;
   }
 }
 /* }}} */

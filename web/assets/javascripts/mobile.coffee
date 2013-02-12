@@ -20,11 +20,11 @@ slide = (direction) ->
 
   return
 
-changeActiveDay = ->
-  targetDay = $(this).attr 'data-ref'
+changeActiveDay = (e) ->
+  targetDay = e.attr 'data-ref'
 
   $('#schedule-nav li').removeClass('active')
-  $(this).parent().addClass('active')
+  e.parent().addClass('active')
 
   $('.day').hide().removeClass('active')
   $('#' + targetDay).show().addClass('active')
@@ -41,7 +41,7 @@ if $('body.schedule')?
 
   $('.next').click -> slide(1)
   $('.previous').click -> slide(-1)
-  $('#schedule-nav a').click -> changeActiveDay()
+  $('#schedule-nav a').click -> changeActiveDay($(this))
 
 if $('body.section-location-and-infos')? && CustomGmap?
   myGmap = new CustomGmap('#gmap')

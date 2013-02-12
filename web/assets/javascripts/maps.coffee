@@ -43,6 +43,9 @@ class window.CustomGmap
       scrollwheel       : false
       mapTypeId         : google.maps.MapTypeId.ROADMAP
 
+    if isMobile?
+
+
     mapStyle = [
       {
         "featureType": "poi",

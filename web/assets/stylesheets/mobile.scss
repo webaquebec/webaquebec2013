@@ -29,6 +29,7 @@ sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 ul { margin: 0; padding: 0; list-style: none;}
 ol { margin: 0; padding: 0; }
+#content ul, #content ol { margin-left: 20px; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
@@ -790,12 +791,17 @@ a:hover { color: #06e; text-decoration: underline;}
     }
   }
 
-  .time { margin-bottom: 0; }
+  .time {
+    font-family: $misoBold;
+    margin-bottom: 0;
+  }
+
   .room {
-    text-transform: uppercase;
+    font-family: $misoBold;
     float: none;
-    width: 100%;
     margin-top: 0;
+    text-transform: uppercase;
+    width: 100%;
   }
 
   #content {
@@ -803,8 +809,8 @@ a:hover { color: #06e; text-decoration: underline;}
       font-family: $misoBold;
       margin-bottom: 0;
     }
-
-    h2 + p { margin-top: 0; }
   }
+
+  .bio-meta span { display: block; }
 }
 /* }}} */

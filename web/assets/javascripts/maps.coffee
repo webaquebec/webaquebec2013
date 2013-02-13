@@ -44,7 +44,7 @@ class window.CustomGmap
       mapTypeId         : google.maps.MapTypeId.ROADMAP
 
     if isMobile?
-
+      draggable: false
 
     mapStyle = [
       {

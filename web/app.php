@@ -74,8 +74,6 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
     $sessionsTmp = $app['db']->fetchAll($sql);
 
     $today = time();
-    $today = 1361451363; #jeudi
-    #today = 1361537763; #vendredi
 
     if ($detect->isMobile()) {
         $sessions = array();

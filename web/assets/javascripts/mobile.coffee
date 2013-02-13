@@ -36,6 +36,10 @@ changeActiveDay = (e) ->
 
 
 if $('body.schedule')?
+  if $('.day.active').length == 0
+    $('#schedule-nav li:eq(0)').addClass('active')
+    $('.day:eq(0)').addClass('active')
+
   $('.day.active .room:eq(0)').addClass('active-room')
 
   activeRoom = $('.day.active .room.active-room')

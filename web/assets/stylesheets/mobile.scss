@@ -370,16 +370,6 @@ a:hover { color: #06e; text-decoration: underline;}
       color: #fff;
       font-family: $misoBold;
       position: relative;
-
-      &:after {
-        content: "";
-        display: block;
-        height: image-height('png/nav-dash.png') + 30;
-        position: absolute;
-        right: -(image-width('png/nav-dash.png') - 1);
-        top: -5px;
-        width: image-width('png/nav-dash.png');
-      }
     }
 
     a {

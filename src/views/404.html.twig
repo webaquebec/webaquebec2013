@@ -1,7 +1,15 @@
-{% extends 'layout.html.twig' %}
+{% extends mobile ? 'mobile/layout.html.twig' : 'layout.html.twig' %}
+{% block bodyClasses %} section-404{% endblock %}
 {% block body %}
-{% include 'includes/header.html.twig' %}
-<div class="width padding">
-    <h1>404</h1>
-</div>
+    {% if not mobile %}
+        {% include 'includes/header.html.twig' %}
+    {% endif %}
+
+    <div class="width padding">
+        <div id="error404">
+            <h1>Erreur 404 - Document introuvable</h1>
+            <p>La page à laquelle vous tentiez d’accéder n’est pas disponible.</p>
+            <p>Nous vous suggérons d’utiliser les éléments de navigation ci-haut ou de revenir à la <a href="/">page d'accueil</a>.</p>
+        </div>
+    </div>
 {% endblock %}

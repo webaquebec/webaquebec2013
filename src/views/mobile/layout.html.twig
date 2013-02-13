@@ -29,14 +29,16 @@
     <body class="mobile layout {% block bodyClasses %}{% endblock %}" itemscope itemtype="http://schema.org/Event">
         <header id="header">
             <div id="logo">
-                <img src="/assets/images/mobile/logo-waq-mobile.png" alt="Logo - Web à Québec" width="115" height="41">
+                <a href="/">
+                    <img src="/assets/images/mobile/logo-waq-mobile.png" alt="Logo - Web à Québec" width="115" height="41">
+                </a>
             </div>
 
             <nav class="navigation">
                 <ul>
-                    <li><a href="/" class="active">Horaire</a></li>
-                    <li><a href="/mobile/lieu-et-infos/">Lieu et infos</a></li>
-                    <li><a href="/mobile/nous-joindre/">Nous joindre</a></li>
+                    <li><a href="/"{% if section is defined and section == "schedule" %} class="active"{% endif %}>Horaire</a></li>
+                    <li><a href="/mobile/lieu-et-infos/"{% if section is defined and section == "location-and-infos" %} class="active"{% endif %}>Lieu et infos</a></li>
+                    <li><a href="/mobile/nous-joindre/"{% if section is defined and section == "contact-us" %} class="active"{% endif %}>Nous joindre</a></li>
                 </ul>
             </nav>
         </header>
@@ -46,14 +48,14 @@
         <footer id="footer">
             <nav class="navigation">
                 <ul>
-                    <li><a href="/">Horaire</a></li>
-                    <li><a href="/mobile/lieu-et-infos/">Lieu et infos</a></li>
-                    <li><a href="/mobile/partenaires/">Nous joindre</a></li>
+                    <li><a href="/"{% if section is defined and section == "schedule" %} class="active"{% endif %}>Horaire</a></li>
+                    <li><a href="/mobile/lieu-et-infos/"{% if section is defined and section == "location-and-infos" %} class="active"{% endif %}>Lieu et infos</a></li>
+                    <li><a href="/mobile/nous-joindre/"{% if section is defined and section == "contact-us" %} class="active"{% endif %}>Nous joindre</a></li>
                 </ul>
 
                 <ul>
-                    <li><a href="/mobile/a-propos/">À propos</a></li>
-                    <li><a href="/mobile/partenaires/">Partenaires</a></li>
+                    <li><a href="/mobile/a-propos/"{% if section is defined and section == "about" %} class="active"{% endif %}>À propos</a></li>
+                    <li><a href="/mobile/partenaires/"{% if section is defined and section == "partners" %} class="active"{% endif %}>Partenaires</a></li>
                 </ul>
             </nav>
         </footer>

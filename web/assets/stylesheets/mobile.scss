@@ -357,6 +357,7 @@ a:hover { color: #06e; text-decoration: underline;}
 // Schedule-nav {{{
 #schedule-nav {
   @extend .group;
+  margin: 0 !important;
 
   li {
     display: block;

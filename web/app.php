@@ -132,7 +132,8 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
             "sponsors" => $sponsors,
             "rooms" => $rooms,
             "sessions" => $sessions,
-            "today"    => $today
+            "today"    => $today,
+            "section" => "schedule"
         ));
     } else {
         $sessions = array();
@@ -301,26 +302,27 @@ $app->get('/mobile/horaire/{day}/{slug}-{id}', function ($day = null, $slug = nu
     }
 })->assert('slug', '.*');
 
+
 $app->get('/mobile/partenaires/', function () use ($app) {
-    return $app['twig']->render('mobile/partners.html.twig');
+    return $app['twig']->render('mobile/partners.html.twig', array("section" => "partners"));
 })->bind('showPartners')
   ->assert('slug', '.*');
 
 
 $app->get('/mobile/a-propos/', function () use ($app) {
-    return $app['twig']->render('mobile/about.html.twig');
+    return $app['twig']->render('mobile/about.html.twig', array("section" => "about"));
 })->bind('showAboutUs')
   ->assert('slug', '.*');
 
 
 $app->get('/mobile/lieu-et-infos/', function () use ($app) {
-    return $app['twig']->render('mobile/location-and-infos.html.twig');
+    return $app['twig']->render('mobile/location-and-infos.html.twig', array("section" => "location-and-infos"));
 })->bind('showLocationAndInfos')
   ->assert('slug', '.*');
 
 
 $app->get('/mobile/nous-joindre/', function () use ($app) {
-    return $app['twig']->render('mobile/contact-us.html.twig');
+    return $app['twig']->render('mobile/contact-us.html.twig', array("section" => "contact-us"));
 })->bind('showContactUs')
   ->assert('slug', '.*');
 

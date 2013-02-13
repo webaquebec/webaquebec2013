@@ -34,6 +34,8 @@ class window.CustomGmap
     }]
   constructor: (elementId) ->
     coord = new google.maps.LatLng(46.817682, -71.2065922)
+    isMobile = if $('body').hasClass 'mobile' then true else false
+
     gMapOptions =
       zoom              : 16
       center            : coord
@@ -43,8 +45,8 @@ class window.CustomGmap
       scrollwheel       : false
       mapTypeId         : google.maps.MapTypeId.ROADMAP
 
-    if isMobile?
-      draggable: false
+    if isMobile
+      gMapOptions.draggable = false
 
     mapStyle = [
       {

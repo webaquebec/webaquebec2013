@@ -32,6 +32,8 @@ changeActiveDay = (e) ->
   $('.room.active-room').removeClass('active-room')
   $('#' + targetDay).find('.room:eq(0)').addClass('active-room')
 
+  $('#schedule .overflow').animate({'height': $('#' + targetDay).find('.active-room').height() })
+
 
 if $('body.schedule')?
   $('.day.active .room:eq(0)').addClass('active-room')

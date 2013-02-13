@@ -814,3 +814,11 @@ a:hover { color: #06e; text-decoration: underline;}
   .bio-meta span { display: block; }
 }
 /* }}} */
+
+/* 404
+**********************{{{ */
+.section-404 #error404 {
+  h1 + p  { margin-bottom: 0; }
+  p + p   { margin-top: 0; }
+}
+/* }}} */

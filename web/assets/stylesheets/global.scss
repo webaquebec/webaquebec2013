@@ -2596,3 +2596,15 @@ footer {
 }
 
 /*}}}*/
+
+/* 404
+**********************{{{ */
+.section-404 #error404 {
+  p {
+    font-size: 16px;
+    font-size: 1.6rem;
+  }
+  h1 + p  { margin-bottom: 0; }
+  p + p   { margin-top: 0; }
+}
+/* }}} */

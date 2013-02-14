@@ -37,6 +37,13 @@
                                                 <div class="pause">
                                                     <span class="time">{{ session.start | dateTime("%Hh%M") }} à {{ session.end | dateTime("%Hh%M") }}</span>
                                                     <span class="title">{{ session.name }}</span>
+
+                                                    {% if session.name == 'Déjeuner' or session.name == "Dîner" %}
+                                                        <span class="location">Grand Hall</span>
+                                                    {% else %}
+                                                        <span class="location">Lounge Sun Life</span>
+                                                    {% endif %}
+
                                                 </div>
                                             {% else %}
                                                 <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">

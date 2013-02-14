@@ -424,12 +424,12 @@ a:hover { color: #06e; text-decoration: underline;}
   a {
     color: #fff;
     display: block;
-    height: 29px;
+    height: 43px;
     position: absolute;
     text-align: center;
     width: 30px;
 
-    span { position: relative; top: 5px; }
+    span { position: relative; top: 13px; }
 
     &:hover,
     &:active {
@@ -458,31 +458,36 @@ a:hover { color: #06e; text-decoration: underline;}
     text-transform: uppercase;
     text-align: center;
     margin: 0;
+    padding: 7px 0;
+  }
+
+  .location {
+    font-weight: normal;
   }
 
   &#room1 {
     .room-name { background: $libeo; }
-    .pause { background: $libeo; }
+    .pause { background: lighten($libeo, 15); }
   }
 
   &#room2 {
     .room-name { background: $ixmedia; }
-    .pause { background: $ixmedia; }
+    .pause { background: lighten($ixmedia, 15); }
   }
 
   &#room3 {
     .room-name { background: $bell; }
-    .pause { background: $bell; }
+    .pause { background: lighten($bell, 15); }
   }
 
   &#room4 {
     .room-name { background: $salle4; }
-    .pause { background: $salle4; }
+    .pause { background: lighten($salle4, 15); }
   }
 
   &#room6 {
     .room-name { background: $salle6; }
-    .pause { background: $salle6; }
+    .pause { background: lighten($salle6, 15); }
   }
 }
 

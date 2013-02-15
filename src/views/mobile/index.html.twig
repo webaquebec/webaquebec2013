@@ -1,0 +1,86 @@
+{% extends 'mobile/layout.html.twig' %}
+
+{% block bodyClasses %}section-schedule{% endblock %}
+{% block title %}Horaire - {% endblock %}
+{% block javascripts %}
+    <script src="/assets/javascripts/mobile.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div id="content" class="width">
+        <div id="schedule">
+
+            <ul id="schedule-nav">
+                {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
+                    <li{% if today | dateTime("%Y-%m-%d") == dateData.day | dateTime("%Y-%m-%d") %} class="active"{% endif %}><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <div id="room-nav">
+                <a href="javascript:" class="previous"><span>◀</span></a>
+                <a href="javascript:" class="next"><span>▶</span></a>
+            </div>
+
+            <div class="overflow">
+
+                <div class="container">
+
+                    {% for date, dateData in sessions %}
+                        {% if dateData.day | dateTime("%A") != "mercredi" %}
+                            <div id="{{ dateData.day | dateTime("%A") }}" class="day{% if today | dateTime("%Y-%m-%d") == dateData.day | dateTime("%Y-%m-%d") %} active{% endif %}">
+                                {% for room, list in dateData.list %}
+                                    <div id="room{{ room }}" class="room">
+                                        <h1 class="room-name">Salle {{ rooms[room].name }}</h1>
+
+                                        {% for session in list %}
+                                            {% if session.break %}
+                                                <div class="pause">
+                                                    <span class="time">{{ session.start | dateTime("%Hh%M") }} à {{ session.end | dateTime("%Hh%M") }}</span>
+                                                    <span class="title">{{ session.name }}</span>
+
+                                                    {% if session.name == 'Déjeuner' or session.name == "Dîner" %}
+                                                        <span class="location">Grand Hall</span>
+                                                    {% else %}
+                                                        <span class="location">Lounge Sun Life</span>
+                                                    {% endif %}
+
+                                                </div>
+                                            {% else %}
+                                                <div class="conference" itemprop="subEvent" itemscope="" itemtype="http://schema.org/Event">
+                                                    <a href="/mobile/horaire/{{ session.start | dateTime("%A") }}/{{ session.slug }}-{{ session.id }}">
+                                                        {% if session.room_id == 6 %}
+                                                            <span class="special-location">Grand Hall</span>
+                                                        {% endif %}
+                                                        <span class="time">{{ session.start | dateTime("%Hh%M") }} à {{ session.end | dateTime("%Hh%M") }}</span>
+
+                                                        {% if sponsors[session.sponsor_id] is defined %}
+                                                            <div class="desc">
+                                                                <span itemprop="description">
+                                                                    <span class="title">{{ session.name | limitTitle | raw }}</span>
+                                                                    <span class="subtitle offered-by">{{ sponsors[session.sponsor_id].presentation }}</span>
+                                                                </span>
+
+                                                                <img src="/assets/images/sponsors/medias/{{ sponsors[session.sponsor_id].logo }}.png" alt="{{ sponsors[session.sponsor_id].name }}" width="48" height="25">
+                                                            </div>
+                                                        {% else %}
+                                                            <span itemprop="description">
+                                                                {% if speakers[session.speaker_id] is defined %}
+                                                                    <span class="title">{{ speakers[session.speaker_id].name }}</span>
+                                                                {% endif %}
+                                                                <span class="subtitle">{{ session.name | limitTitle | raw }}</span>
+                                                            </span>
+                                                        {% endif %}
+                                                    </a>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

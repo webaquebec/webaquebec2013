@@ -32,24 +32,25 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
 </head>
+
 <body class="layout{% block bodyClasses %}{% endblock %}" itemscope itemtype="http://schema.org/Event">
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   <div id="fb-root"></div>
   <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/fr_CA/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
     {% block body %}{% endblock %}
-    
+
     <footer id="nous-joindre" data-section>
         <span class="gradient"></span>
         <span class="diag"></span>
         <div class="address">
-            
+
             <span class="block" itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
                 <h3>Adresse de l'événement</h3>
                 <span itemprop="streetAddress">100 rue Quai St-André</span>
                 <span itemprop="addressLocality">Québec (Qc)</span>
                 <span itemprop="postalCode">G1K 3Y2</span>
             </span>
-            
+
             <span class="block" itemtype="http://schema.org/PostalAddress">
                 <h3>Siège social</h3>
                 <span itemprop="streetAddress">305 Charest Est, bureau 901</span>
@@ -57,7 +58,7 @@
                 <span itemprop="postalCode">G1K 3H3</span>
                 <span itemprop="telephone">418 647-3877</span>
             </span>
-            
+
         </div>
         {% if campaignConfirmationis is defined and campaignConfirmation %}
         <p class="confirm">Merci, vous êtes abonnés.</p>

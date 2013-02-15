@@ -1,0 +1,34 @@
+{% extends 'mobile/layout.html.twig' %}
+
+{% block bodyClasses %}section-contact-us {% endblock %}
+{% block title %}Lieu et infos - {% endblock %}
+{% block javascripts %}
+    <script src="/assets/javascripts/mobile.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div id="content" class="width">
+
+        <h1 class="h2">Nous joindre</h1>
+
+        <div class="address">
+
+            <span class="block" itemprop="location" itemscope="" itemtype="http://schema.org/PostalAddress">
+                <h2>Adresse de l'événement</h2>
+                <span itemprop="streetAddress">100 rue Quai St-André</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3Y2</span>
+            </span>
+
+            <span class="block" itemtype="http://schema.org/PostalAddress">
+                <h2>Siège social</h2>
+                <span itemprop="streetAddress">305 Charest Est, bureau 901</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3H3</span>
+                <span itemprop="telephone">418 647-3877</span>
+            </span>
+
+        </div>
+
+    </div>
+{% endblock %}

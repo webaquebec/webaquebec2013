@@ -1,5 +1,5 @@
 {
-    "hash": "c589455faa979e892b5e0d1a0a313615",
+    "hash": "c3a3cee1e10b9cb2a3b5aadf57ac4511",
     "packages": [
         {
             "name": "doctrine/common",
@@ -20,7 +20,6 @@
             },
             "time": "2012-08-29 01:04:14",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Common": "lib/"
@@ -58,11 +57,11 @@
             "description": "Common Library for Doctrine projects",
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
-                "collections",
-                "spl",
-                "eventmanager",
                 "annotations",
-                "persistence"
+                "collections",
+                "eventmanager",
+                "persistence",
+                "spl"
             ]
         },
         {
@@ -80,12 +79,11 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "doctrine/common": ">=2.2.0,<=2.2.99"
+                "doctrine/common": ">=2.2.0,<=2.2.99",
+                "php": ">=5.3.2"
             },
             "time": "2012-10-06 10:22:57",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Doctrine\\DBAL": "lib/"
@@ -118,9 +116,55 @@
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "database",
-                "persistence",
                 "dbal",
+                "persistence",
                 "queryobject"
+            ]
+        },
+        {
+            "name": "mobiledetect/mobiledetectlib",
+            "version": "2.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/serbanghita/Mobile-Detect",
+                "reference": "2.5.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/2.5.5",
+                "reference": "2.5.5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "time": "2013-02-07 21:01:21",
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Mobile_Detect.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Serban Ghita",
+                    "email": "serbanghita@gmail.com",
+                    "homepage": "http://mobiledetect.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+            "homepage": "https://github.com/serbanghita/Mobile-Detect",
+            "keywords": [
+                "detect mobile devices",
+                "mobile",
+                "mobile detect",
+                "mobile detector",
+                "php mobile detect"
             ]
         },
         {
@@ -146,7 +190,6 @@
                     "dev-master": "1.0.x-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Pimple": "lib/"
@@ -164,8 +207,8 @@
             "description": "Pimple is a simple Dependency Injection Container for PHP 5.3",
             "homepage": "http://pimple.sensiolabs.org",
             "keywords": [
-                "dependency injection",
-                "container"
+                "container",
+                "dependency injection"
             ],
             "time": "2012-09-10 12:09:48"
         },
@@ -184,30 +227,30 @@
                 "shasum": ""
             },
             "require": {
+                "php": ">=5.3.3",
+                "pimple/pimple": "1.*",
                 "symfony/event-dispatcher": "2.1.*",
                 "symfony/http-foundation": "2.1.*",
                 "symfony/http-kernel": "2.1.*",
-                "symfony/routing": "2.1.*",
-                "php": ">=5.3.3",
-                "pimple/pimple": "1.*"
+                "symfony/routing": "2.1.*"
             },
             "require-dev": {
+                "doctrine/dbal": ">=2.2.0,<2.4.0-dev",
+                "monolog/monolog": ">=1.0.0,<1.2-dev",
+                "swiftmailer/swiftmailer": "4.2.*",
+                "symfony/browser-kit": "2.1.*",
+                "symfony/config": "2.1.*",
+                "symfony/css-selector": "2.1.*",
+                "symfony/finder": "2.1.*",
                 "symfony/form": "2.1.*",
+                "symfony/locale": "2.1.*",
+                "symfony/monolog-bridge": "2.1.*",
+                "symfony/process": "2.1.*",
+                "symfony/security": "2.1.*",
                 "symfony/translation": "2.1.*",
                 "symfony/twig-bridge": "2.1.*",
                 "symfony/validator": "2.1.*",
-                "symfony/monolog-bridge": "2.1.*",
-                "symfony/browser-kit": "2.1.*",
-                "symfony/css-selector": "2.1.*",
-                "symfony/finder": "2.1.*",
-                "symfony/process": "2.1.*",
-                "symfony/security": "2.1.*",
-                "monolog/monolog": ">=1.0.0,<1.2-dev",
-                "symfony/config": "2.1.*",
-                "symfony/locale": "2.1.*",
-                "twig/twig": ">=1.8.0,<2.0-dev",
-                "swiftmailer/swiftmailer": "4.2.*",
-                "doctrine/dbal": ">=2.2.0,<2.4.0-dev"
+                "twig/twig": ">=1.8.0,<2.0-dev"
             },
             "suggest": {
                 "symfony/browser-kit": "2.1.*",
@@ -220,7 +263,6 @@
                     "dev-master": "1.0.x-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Silex": "src/"
@@ -278,7 +320,6 @@
                     "dev-master": "2.1-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\EventDispatcher": ""
@@ -325,7 +366,6 @@
                     "dev-master": "2.1-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\HttpFoundation": "",
@@ -393,7 +433,6 @@
                     "dev-master": "2.1-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\HttpKernel": ""
@@ -435,10 +474,10 @@
                 "php": ">=5.3.3"
             },
             "require-dev": {
+                "doctrine/common": ">=2.2,<2.4-dev",
                 "symfony/config": "2.1.*",
-                "symfony/yaml": "2.1.*",
                 "symfony/http-kernel": "2.1.*",
-                "doctrine/common": ">=2.2,<2.4-dev"
+                "symfony/yaml": "2.1.*"
             },
             "suggest": {
                 "doctrine/common": ">=2.2,<2.4-dev",
@@ -451,7 +490,6 @@
                     "dev-master": "2.1-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Routing": ""
@@ -507,7 +545,6 @@
                     "dev-master": "2.1-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Translation": ""
@@ -535,30 +572,30 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "0879472d7ecfd6b5714b066da152e005d7781b5b"
+                "reference": "72c8bb73e90cf6d2e992b01ab508f7fc13e38c8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/zipball/0879472d7ecfd6b5714b066da152e005d7781b5b",
-                "reference": "0879472d7ecfd6b5714b066da152e005d7781b5b",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/72c8bb73e90cf6d2e992b01ab508f7fc13e38c8f",
+                "reference": "72c8bb73e90cf6d2e992b01ab508f7fc13e38c8f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-10-30 18:13:42",
+            "time": "2013-02-09 18:37:02",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11-dev"
+                    "dev-master": "1.12-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Twig_": "lib/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3"
             ],

@@ -79,6 +79,10 @@ $index = function ($day = null, $slug = null, $id = null) use ($app) {
         $sessions = array();
         $currentDay = "";
 
+        if ($_SERVER['HTTP_HOST'] != 'm.webaquebec.org') {
+            header('location: http://m.webaquebec.org');
+        }
+
         foreach ($sessionsTmp as $session) {
             $dateTime = new DateTime();
             $dateTime->setTimestamp($session["start"]);

@@ -2473,6 +2473,14 @@ body.single-session {
 html.no-opacity body #overlay{
   background: url('/assets/images/interface/white40.png') repeat;
 }
+
+html.no-opacity #schedule .wrapper #time-zone > span {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
 /*}}}*/
 
 /* Footer

@@ -911,6 +911,14 @@ $t15m: 40px;
 
 .t17h00 { top: (40 * $t15m)}
 .t17h15 { top: (41 * $t15m)}
+.t17h30 { top: (42 * $t15m)}
+.t17h45 { top: (43 * $t15m)}
+.t18h00 { top: (44 * $t15m)}
+.t18h15 { top: (45 * $t15m)}
+.t18h30 { top: (46 * $t15m)}
+.t18h45 { top: (47 * $t15m)}
+.t19h00 { top: (48 * $t15m)}
+.t19h15 { top: (49 * $t15m)}
 
 .t15m { height: $t15m;}
 .t30m { height: (2 * $t15m);}
@@ -1280,7 +1288,7 @@ $t15m: 40px;
 
     #schedule-wrap {
       position: relative;
-      height: (11 * image-height('interface/squared-texture.png'));
+      height: (13 * image-height('interface/squared-texture.png'));
     }
 
     #separators {
@@ -1311,7 +1319,7 @@ $t15m: 40px;
       background: white;
       box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.4);
       border-right: 1px solid #bbbdbf;
-      height: (11 * image-height('interface/squared-texture.png'));
+      height: (13 * image-height('interface/squared-texture.png'));
 
       > span {
         opacity: 0;
@@ -1639,6 +1647,7 @@ $t15m: 40px;
       .break {
         display: block;
         z-index: 12;
+        width: 100%;
         background: url('/assets/images/interface/break-texture.png') repeat transparent;
 
         .type {
@@ -1652,11 +1661,20 @@ $t15m: 40px;
         }
 
         .sponsor {
+          position: absolute;
+          top: 50%;
+          left: 0;
           text-align: center;
           font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
           color: #999999;
           font-size: 14px; font-size: 1.4rem;
           font-weight: bold;
+          width: 100%;
+          min-height: 60px;
+          line-height: 60px;
+          vertical-align: middle;
+          margin-top: -30px;
+          margin-left: -5.92398%;
 
           span {
             display: inline-block;

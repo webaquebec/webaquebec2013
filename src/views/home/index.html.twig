@@ -193,6 +193,13 @@
                                             {% if blockData.session.break %}
                                                 <div class="break t{{ blockData.session.line }} t{{ blockData.size }}m">
                                                     <span class="type">{{ blockData.session.name }}</span>
+                                                    {% if blockData.session.sponsor_id is defined and  blockData.session.sponsor_id is not null %}
+                                                        {% set sponsor_id = blockData.session.sponsor_id %}
+                                                        <div class="sponsor">
+                                                            <span>{{ sponsors[sponsor_id].presentation }}</span>
+                                                            <img src="/assets/images/sponsors/schedule/{{ sponsors[sponsor_id].logo }}.png"  alt="{{ sponsors[sponsor_id].name }}" />
+                                                        </div>
+                                                    {% endif %}
                                                 </div>
                                             {% else %}
                                                 <div class="row t{{ blockData.session.line }} t{{ blockData.size }}m" itemprop="subEvent" itemscope itemtype="http://schema.org/Event">

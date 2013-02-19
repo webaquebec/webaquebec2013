@@ -197,7 +197,9 @@
                                                         {% set sponsor_id = blockData.session.sponsor_id %}
                                                         <div class="sponsor">
                                                             <span>{{ sponsors[sponsor_id].presentation }}</span>
-                                                            <img src="/assets/images/sponsors/schedule/{{ sponsors[sponsor_id].logo }}.png"  alt="{{ sponsors[sponsor_id].name }}" />
+                                                            {% if ponsors[sponsor_id].logo is defined and ponsors[sponsor_id].logo is not null %}
+                                                                <img src="/assets/images/sponsors/schedule/{{ sponsors[sponsor_id].logo }}.png"  alt="{{ sponsors[sponsor_id].name }}" />
+                                                            {% endif %}
                                                         </div>
                                                     {% endif %}
                                                 </div>

@@ -2524,8 +2524,8 @@ footer {
   .address{
     @extend .group;
     float: left;
-    margin-left: 19.2982456%;
-    width: 40.3508772%;
+    margin-left: 15.2982456%;
+    width: 44.3508772%;
 
     h3 {
       font-size: 14px;
@@ -2534,6 +2534,7 @@ footer {
       font-weight: bold;
       margin: 0 0 8px 0;
     }
+
     .block {
       display: block;
       float: left;
@@ -2554,6 +2555,16 @@ footer {
         &[itemprop="telephone"] {
           margin-top: 12px;
         }
+
+        &.media-telephone {
+          margin-top: 12px;
+
+          [itemprop="telephone"] { 
+            display: inline-block;
+            margin-top: 0;
+          }
+        }
+
       }
     }
   } //.address

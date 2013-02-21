@@ -56,7 +56,7 @@
     <section id="horaire" data-section>
         <h1 class="h2">Horaire</h1>
         <ul id="schedule-nav">
-            <li><a href="#/horaire/mercredi/" data-ref="mercredi"{% if today | dateTime("%Y-%m-%d") != "2013-02-21" or today | dateTime("%Y-%m-%d") != "2013-02-22" %} class="active"{% endif %}>mercredi 20 février</a></li>
+            <li><a href="#/horaire/mercredi/" data-ref="mercredi">mercredi 20 février</a></li>
             {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
                 <li><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}"{% if today | dateTime("%Y-%m-%d") == dateData.day | dateTime("%Y-%m-%d") %} class="active"{% endif %}>{{ dateData.day | dateTime("%A %d %B") }}</a></li>
             {% endfor %}
@@ -89,7 +89,7 @@
                         {% endfor %}
                     </div>
                     <div class="slides-wrap">
-                        <div id="mercredi" class="slide{% if today | dateTime("%Y-%m-%d") != "2013-02-21" or today | dateTime("%Y-%m-%d") != "2013-02-22" %} active{% endif %}">
+                        <div id="mercredi" class="slide">
                             <span class="lines">
                                 <span class="t7h15"></span>
                                 <span class="t8h15"></span>

@@ -56,9 +56,9 @@
     <section id="horaire" data-section>
         <h1 class="h2">Horaire</h1>
         <ul id="schedule-nav">
-            <li><a href="#/horaire/mercredi/" data-ref="mercredi">mercredi 20 février</a></li>
+            <li><a href="#/horaire/mercredi/" data-ref="mercredi" class="active">mercredi 20 février</a></li>
             {% for date, dateData in sessions if dateData.day | dateTime("%A") != "mercredi" %}
-                <li><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}"{% if today | dateTime("%Y-%m-%d") == dateData.day | dateTime("%Y-%m-%d") %} class="active"{% endif %}>{{ dateData.day | dateTime("%A %d %B") }}</a></li>
+                <li><a href="#/horaire/{{ dateData.day | dateTime("%A") }}/" data-ref="{{ dateData.day | dateTime("%A") }}">{{ dateData.day | dateTime("%A %d %B") }}</a></li>
             {% endfor %}
         </ul>
         <div id="schedule">
@@ -89,7 +89,7 @@
                         {% endfor %}
                     </div>
                     <div class="slides-wrap">
-                        <div id="mercredi" class="slide">
+                        <div id="mercredi" class="slide active">
                             <span class="lines">
                                 <span class="t7h15"></span>
                                 <span class="t8h15"></span>
@@ -180,7 +180,7 @@
                         </div>
                         {% for date, dateData in sessions %}
                             {% if dateData.day | dateTime("%A") != "mercredi" %}
-                                <div id="{{ dateData.day | dateTime("%A") }}" class="slide{% if today | dateTime("%Y-%m-%d") == dateData.day | dateTime("%Y-%m-%d") %} active{% endif %}">
+                                <div id="{{ dateData.day | dateTime("%A") }}" class="slide">
                                     <span id="separators">{% for room in rooms if room.id != 6 %}<span></span>{% endfor %}</span>
                                     <span class="lines">
                                         {% for line in lines[date] %}

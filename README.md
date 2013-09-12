@@ -18,3 +18,18 @@ Or point your favorite server index at `web/app.php`.
 To watch both sass and coffeescript files, just ```cd /path/to/my/project/``` and run the ```guard``` command.
 
 You'll need [Guard](https://github.com/guard/guard) and [guard-shell](https://github.com/guard/guard-shell) : ```gem install guard```, ```gem install guard-shell```
+
+## Deployment
+
+Setup :
+
+    git remote add heroku git@heroku.com:webaquebec2013.git
+    heroku config:push
+
+Deployment :
+
+    git push heroku master
+
+1. http://webaquebec2013.herokuapp.com
+2. http://d2svtc8wj5w0di.cloudfront.net
+3. http://2013.webaquebec.org

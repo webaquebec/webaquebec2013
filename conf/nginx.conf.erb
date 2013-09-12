@@ -67,12 +67,12 @@ http {
 
     #site root is redirected to the app boot script
     location = / {
-        try_files @site @site;
+      try_files @site @site;
     }
 
     #all other locations try other files first and go to our front controller if none of them exists
     location / {
-        try_files $uri $uri/ @site;
+      try_files $uri $uri/ @site;
     }
 
     #return 404 for all php files as we do have a front controller
@@ -81,23 +81,13 @@ http {
     }
 
     location @site {
-      try_files $uri =404;
       limit_conn phplimit 5; # limit to 5 concurrent users to PHP per IP.
       include         fastcgi_params;
       fastcgi_param   HTTPS $my_https if_not_empty;
       fastcgi_pass    php_fpm;
-      fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      fastcgi_param   SCRIPT_FILENAME $document_root/app.php;
     }
 
     include /app/conf/nginx.d/*.conf;
-
-    location ~ .*\.php$ {
-      try_files $uri =404;
-      limit_conn phplimit 5; # limit to 5 concurrent users to PHP per IP.
-      include         fastcgi_params;
-      fastcgi_param   HTTPS $my_https if_not_empty;
-      fastcgi_pass    php_fpm;
-      fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    }
   }
 }

@@ -5,3 +5,4 @@ web/assets/stylesheets/*.css
 vendor/
 ._*
 db/app.db
+node_modules/

@@ -31,5 +31,5 @@ Deployment :
     git push heroku master
 
 1. http://webaquebec2013.herokuapp.com
-2. http://d2svtc8wj5w0di.cloudfront.net
+2. http://d2pbmel10c19ix.cloudfront.net
 3. http://2013.webaquebec.org

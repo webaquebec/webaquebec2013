@@ -41,7 +41,6 @@ http {
     # Cache all the way, it's an archived version
     expires         max;
     add_header      Pragma public;
-    add_header      Cache-Control "s-maxage: 157680000; ";
 
     # Deny hidden files (.htaccess, .htpasswd, .DS_Store).
     location ~ /\. {

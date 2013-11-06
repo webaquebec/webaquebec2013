@@ -25,6 +25,8 @@ Setup :
 
     git remote add heroku git@heroku.com:webaquebec2013.git
     heroku config:push
+    heroku scale web=1
+    git push heroku master
 
 Deployment :
 

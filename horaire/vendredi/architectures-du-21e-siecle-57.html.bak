@@ -1,0 +1,158 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="fr"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="fr"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="fr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Architectures du 21e siècle | Web à Québec</title>
+    <meta name="description" content="Le Web à Québec c'est trois jours de rencontres par et pour les gens qui imaginent le web.">
+    <meta property="og:image" content="http://www.webaquebec.org/assets/images/waq-facebook.png" />
+
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Architectures du 21e siècle"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://webaquebec2013.herokuapp.com/horaire/vendredi/architectures-du-21e-siecle-57" />
+<meta property="og:image" content="http://webaquebec2013.herokuapp.com/assets/images/speakers/400x375/jean-michel_lacroix-xlarge.jpg"/>
+<meta property="og:site_name" content="Web à Québec"/>
+<meta property="og:locale" content="fr_CA"/>
+<meta property="og:description" content="Comme l&#039;a prouvé Pinterest, la croissance virale ne tient parfois qu&#039;à un fil. Mais encore faut-il être capable de la supporter.
+
+Avec la puissance du cloud computing et les bonnes pratiques de conception d&#039;architecture, il est plus facile que jamais de concevoir des produits souples qui s&#039;adaptent rapidement aux imprévus 
+sans compromettre la viabilité du projet."/>
+    <link rel="stylesheet" href="../../assets/stylesheets/global.css">
+        <script type="text/javascript">
+      var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-20043510-1'],
+                    ['_trackPageview'],
+                    ['ix_setAccount', 'UA-25106796-1'],
+                    ['ix_setDomainName', 'webaquebec.org'],
+                    ['ix_setAllowHash', false],
+                    ['ix_setAllowLinker', true],
+                    ['ix_trackPageview']);
+
+      (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+    </script>
+      <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+</head>
+
+<body class="layout single-session" itemscope itemtype="http://schema.org/Event">
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/fr_CA/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+        <script type="text/javascript" charset="utf-8">
+      var body = document.getElementsByTagName('body')
+      body[0].className = body[0].className + " hidden";
+      window.location = '/#/horaire/vendredi/architectures-du-21e-siecle-57';
+    </script>
+    <header id="header">
+    <a id="siteLogo" href="../../index.html"><span class="shy">Le Web à Québec</span></a>
+    <div id="event-desc">
+        <h1 itemprop="name">Le web à Québec</h1>
+        Du <time itemprop="startDate" datetime="2013-02-20T07:30-17:30">20</time> au <time itemprop="endDate" datetime="2013-02-22T07:30-17:30">22</time> février 2013,
+        <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="name">Espace 400<sup>e</sup> Bell</span>,
+                <span itemprop="addressRegion">Québec</span>
+            </span>
+        </span>
+    </div>
+    <ul id="social">
+        <li><a href="architectures-du-21e-siecle-57.html#/nous-joindre/">Nous joindre</a></li>
+        <li class="twitter"><a href="https://twitter.com/webaquebec"><span class="shy">Twitter</span></a></li>
+        <li class="facebook"><a href="http://www.facebook.com/webaquebec"><span class="shy">Facebook</span></a></li>
+    </ul>
+</header>    <div class="width">
+      <figure>
+    <img src="../../assets/images/speakers/400x375/jean-michel_lacroix-xlarge.jpg" width="400" height="375" alt="Jean-Michel Lacroix " />
+    <figcaption>
+      <h1>
+      Jean-Michel Lacroix 
+            <a class="twitter-bird" href="http://www.twitter.com/jmlacroix" title="Jean-Michel Lacroix  sur twitter" target="_blank"><span class="shy">twitter</span></a>
+            </h1>
+    </figcaption>
+</figure>
+<div class="content" data-shareURL="http://webaquebec2013.herokuapp.com/horaire/vendredi/architectures-du-21e-siecle-57">
+    <h2>Architectures du 21e siècle</h2>
+    <span class="time"><time itemprop="startDate" datetime="2013-02-22T10:30:00">vendredi le 22 février, de 10 h 30</time> à <time itemprop="endDate" datetime="2013-02-22T11:15:00">11 h 15</time></span>
+    <span class="room">Salle Bell</span>
+    <div id="scrollbar1" class="desc-wrap">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport">
+            <div class="overview">
+                                    <p>Comme l'a prouvé Pinterest, la croissance virale ne tient parfois qu'à un fil. Mais encore faut-il être capable de la supporter.</p>
+
+<p>Avec la puissance du cloud computing et les bonnes pratiques de conception d'architecture, il est plus facile que jamais de concevoir des produits souples qui s'adaptent rapidement aux imprévus 
+sans compromettre la viabilité du projet.</p>
+                              
+                                    <h2>Les trois principales questions auxquelles la présentation répondra</h2>
+                    <ul>
+	<li>Comment des produits comme Pinterest font-ils pour survivre à une croissance ultra rapide?</li>
+	<li>Quelles sont les meilleures techniques de conception à utiliser pour avoir une architecture adaptable et souple?</li>
+	<li>Comment adresser dès aujourd'hui les problèmes futurs?</li>
+</ul>
+                              
+                                                            <h2>Biographie</h2>
+                        <p>Passionné de solutions simples et efficaces, Jean-Michel réalise depuis plus de 10 ans des projets technologiques dans diverses industries. Programmeur système de formation, son approche originale et avant-gardiste a contribué au succès d'entreprises renommées telles que Copernic, Canoë, Mirego et Ubisoft. Leader technique accompli, il accompagne aujourd’hui les organisations à maîtriser les enjeux technologiques auxquels elles font face.  </p>
+                                                    
+              <div class="bio-meta">
+                                    <span><strong>Entreprise</strong>: Octova</span>
+                                  
+                                    <span><strong>Titre</strong>: Conseiller en stratégie technologique</span>
+                                
+                                    <span><strong>Site web</strong>: <a href="http://octova.com" target="_blank">http://octova.com</a></span>
+                                </div>
+              
+            </div>
+        </div>
+    </div>
+    
+</div>
+    </div>
+
+    <footer id="nous-joindre" data-section>
+        <span class="gradient"></span>
+        <span class="diag"></span>
+        <div class="address">
+
+            <div class="block" itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
+                <h3>Adresse de l'événement</h3>
+                <span itemprop="streetAddress">100 rue Quai St-André</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3Y2</span>
+
+                <span class="media-telephone"><strong>Média:</strong> <span itemprop="telephone">418 704-1559 #228</span></span>
+                <span><strong>Questions générales</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#119;&#101;&#98;&#97;&#113;&#117;&#101;&#98;&#101;&#99;&#46;&#111;&#114;&#103;">&#105;&#110;&#102;&#111;&#64;&#119;&#101;&#98;&#97;&#113;&#117;&#101;&#98;&#101;&#99;&#46;&#111;&#114;&#103;</a></span>
+            </div>
+
+            <div class="block" itemtype="http://schema.org/PostalAddress">
+                <h3>Siège social</h3>
+                <span itemprop="streetAddress">305 Charest Est, bureau 901</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3H3</span>
+                <span itemprop="telephone">418 647-3877</span>
+            </div>
+
+        </div>
+                <form action="http://webaquebec.createsend.com/t/r/s/jjjdthl" method="post" id="newsletter">
+            <label>
+                <span class="label">Inscrivez-vous à l’infolettre du WAQ !</span>
+                <input type="email" name="cm-jjjdthl-jjjdthl" id="some_name" >
+            </label>
+            <button type='submit'><span class="shy">Envoyer</span></button>
+        </form>
+                <span id="ix">Conception: <a href="http://ixmedia.com">iXmédia</a></span>
+    </footer>
+    <div class="share-btn">
+
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-505c8d037002272c"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/javascripts/libs/jquery.js"><\/script>')</script>
+    </body>
+</html>

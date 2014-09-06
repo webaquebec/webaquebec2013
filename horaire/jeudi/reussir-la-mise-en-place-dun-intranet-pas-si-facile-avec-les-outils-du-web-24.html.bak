@@ -1,0 +1,160 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="fr"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="fr"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="fr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Réussir la mise en place d’un intranet : pas si facile avec les outils du Web! | Web à Québec</title>
+    <meta name="description" content="Le Web à Québec c'est trois jours de rencontres par et pour les gens qui imaginent le web.">
+    <meta property="og:image" content="http://www.webaquebec.org/assets/images/waq-facebook.png" />
+
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Réussir la mise en place d’un intranet : pas si facile avec les outils du Web!"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://webaquebec2013.herokuapp.com/horaire/jeudi/reussir-la-mise-en-place-dun-intranet-pas-si-facile-avec-les-outils-du-web-24" />
+<meta property="og:image" content="http://webaquebec2013.herokuapp.com/assets/images/speakers/400x375/yann_sadok-xlarge.jpg"/>
+<meta property="og:site_name" content="Web à Québec"/>
+<meta property="og:locale" content="fr_CA"/>
+<meta property="og:description" content="Avec l’évolution des technologies du Web qui interviennent dans la plupart des processus des entreprises, nombreuses sont celles qui sont confrontées à comprendre et devoir choisir entre différents concepts. De l’intranet au réseau social d’entreprise chacune d’entre elle se retrouve à devoir faire face à un casse-tête.
+
+Petit tour d’horizon sur les approches, les moyens et les types de solutions que chacun peut envisager et comment s’approprier rapidement les outils qui sont mis en place pour transformer le changement en succès."/>
+    <link rel="stylesheet" href="../../assets/stylesheets/global.css">
+        <script type="text/javascript">
+      var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-20043510-1'],
+                    ['_trackPageview'],
+                    ['ix_setAccount', 'UA-25106796-1'],
+                    ['ix_setDomainName', 'webaquebec.org'],
+                    ['ix_setAllowHash', false],
+                    ['ix_setAllowLinker', true],
+                    ['ix_trackPageview']);
+
+      (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+    </script>
+      <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+</head>
+
+<body class="layout single-session" itemscope itemtype="http://schema.org/Event">
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/fr_CA/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+        <script type="text/javascript" charset="utf-8">
+      var body = document.getElementsByTagName('body')
+      body[0].className = body[0].className + " hidden";
+      window.location = '/#/horaire/jeudi/reussir-la-mise-en-place-dun-intranet-pas-si-facile-avec-les-outils-du-web-24';
+    </script>
+    <header id="header">
+    <a id="siteLogo" href="../../index.html"><span class="shy">Le Web à Québec</span></a>
+    <div id="event-desc">
+        <h1 itemprop="name">Le web à Québec</h1>
+        Du <time itemprop="startDate" datetime="2013-02-20T07:30-17:30">20</time> au <time itemprop="endDate" datetime="2013-02-22T07:30-17:30">22</time> février 2013,
+        <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="name">Espace 400<sup>e</sup> Bell</span>,
+                <span itemprop="addressRegion">Québec</span>
+            </span>
+        </span>
+    </div>
+    <ul id="social">
+        <li><a href="reussir-la-mise-en-place-dun-intranet-pas-si-facile-avec-les-outils-du-web-24.html#/nous-joindre/">Nous joindre</a></li>
+        <li class="twitter"><a href="https://twitter.com/webaquebec"><span class="shy">Twitter</span></a></li>
+        <li class="facebook"><a href="http://www.facebook.com/webaquebec"><span class="shy">Facebook</span></a></li>
+    </ul>
+</header>    <div class="width">
+      <figure>
+    <img src="../../assets/images/speakers/400x375/yann_sadok-xlarge.jpg" width="400" height="375" alt="Yann Sadok" />
+    <figcaption>
+      <h1>
+      Yann Sadok
+            <a class="twitter-bird" href="http://www.twitter.com/ysadok" title="Yann Sadok sur twitter" target="_blank"><span class="shy">twitter</span></a>
+            </h1>
+    </figcaption>
+</figure>
+<div class="content" data-shareURL="http://webaquebec2013.herokuapp.com/horaire/jeudi/reussir-la-mise-en-place-dun-intranet-pas-si-facile-avec-les-outils-du-web-24">
+    <h2>Réussir la mise en place d’un intranet : pas si facile avec les outils du Web!</h2>
+    <span class="time"><time itemprop="startDate" datetime="2013-02-21T11:15:00">jeudi le 21 février, de 11 h 15</time> à <time itemprop="endDate" datetime="2013-02-21T12:00:00">12 h 00</time></span>
+    <span class="room">Salle Bell</span>
+    <div id="scrollbar1" class="desc-wrap">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport">
+            <div class="overview">
+                                    <p>Avec l’évolution des technologies du Web qui interviennent dans la plupart des processus des entreprises, nombreuses sont celles qui sont confrontées à comprendre et devoir choisir entre différents concepts. De l’intranet au réseau social d’entreprise chacune d’entre elle se retrouve à devoir faire face à un casse-tête.</p>
+
+<p>Petit tour d’horizon sur les approches, les moyens et les types de solutions que chacun peut envisager et comment s’approprier rapidement les outils qui sont mis en place pour transformer le changement en succès.</p>
+                              
+                                    <h2>Les trois principales questions auxquelles la présentation répondra</h2>
+                    <ol>
+    <li>Se doter d’un intranet : communication, collaboration, réseau social d’entreprise, quel concept envisager?</li>
+    <li>Contexte technologique, besoins d’affaires, besoins utilisateurs, l’équilibre parfait n’existe pas! Lequel privilégier?</li>
+    <li>Tomber dans le piège de la dérive technologique c’est facile, atteindre le succès dans l’utilisation des solutions c’est une autre histoire. Y a t-il une recette miracle?</li>
+</ol>
+                              
+                                                            <h2>Biographie</h2>
+                        <p>« Si j’étais un objet, je serais sans doute connecté aux autres objets, aux places et aux humains! Si j’étais une place, je montrerais à chacun ce que tous aimeraient connaitre! Si j’étais un humain, j’aimerais être doté de supers pouvoirs pour faire évoluer encore plus vite mes congénères! »</p>
+
+<p>Yann Sadok a traversé l’Atlantique voilà quasi 8 ans pour s’installer à Québec, y partager ses passions et prendre plaisir à imaginer des solutions autour du Web qui combinent objectifs d’affaires, besoins utilisateurs et moyens technologiques.</p>
+
+<p>Il est directeur services conseils en accompagnement stratégique avec les technologies du Web chez Alithis.</p>
+                                                    
+              <div class="bio-meta">
+                                    <span><strong>Entreprise</strong>: Alithis</span>
+                                  
+                                    <span><strong>Titre</strong>: Directeur Services Conseils - Stratégie Web</span>
+                                
+                                    <span><strong>Site web</strong>: <a href="http://2013.webaquebec.org/horaire/jeudi/a.linkedin.com/in/yannsadok" target="_blank">a.linkedin.com/in/yannsadok</a></span>
+                                </div>
+              
+            </div>
+        </div>
+    </div>
+    
+</div>
+    </div>
+
+    <footer id="nous-joindre" data-section>
+        <span class="gradient"></span>
+        <span class="diag"></span>
+        <div class="address">
+
+            <div class="block" itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
+                <h3>Adresse de l'événement</h3>
+                <span itemprop="streetAddress">100 rue Quai St-André</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3Y2</span>
+
+                <span class="media-telephone"><strong>Média:</strong> <span itemprop="telephone">418 704-1559 #228</span></span>
+                <span><strong>Questions générales</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#119;&#101;&#98;&#97;&#113;&#117;&#101;&#98;&#101;&#99;&#46;&#111;&#114;&#103;">&#105;&#110;&#102;&#111;&#64;&#119;&#101;&#98;&#97;&#113;&#117;&#101;&#98;&#101;&#99;&#46;&#111;&#114;&#103;</a></span>
+            </div>
+
+            <div class="block" itemtype="http://schema.org/PostalAddress">
+                <h3>Siège social</h3>
+                <span itemprop="streetAddress">305 Charest Est, bureau 901</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3H3</span>
+                <span itemprop="telephone">418 647-3877</span>
+            </div>
+
+        </div>
+                <form action="http://webaquebec.createsend.com/t/r/s/jjjdthl" method="post" id="newsletter">
+            <label>
+                <span class="label">Inscrivez-vous à l’infolettre du WAQ !</span>
+                <input type="email" name="cm-jjjdthl-jjjdthl" id="some_name" >
+            </label>
+            <button type='submit'><span class="shy">Envoyer</span></button>
+        </form>
+                <span id="ix">Conception: <a href="http://ixmedia.com">iXmédia</a></span>
+    </footer>
+    <div class="share-btn">
+
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-505c8d037002272c"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/javascripts/libs/jquery.js"><\/script>')</script>
+    </body>
+</html>

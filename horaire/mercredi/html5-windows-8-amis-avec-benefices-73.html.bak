@@ -1,0 +1,210 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="fr"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="fr"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="fr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>HTML5 &amp; Windows 8: amis avec bénéfices | Web à Québec</title>
+    <meta name="description" content="Le Web à Québec c'est trois jours de rencontres par et pour les gens qui imaginent le web.">
+    <meta property="og:image" content="http://www.webaquebec.org/assets/images/waq-facebook.png" />
+
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="HTML5 &amp; Windows 8: amis avec bénéfices"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://webaquebec2013.herokuapp.com/horaire/mercredi/html5-windows-8-amis-avec-benefices-73" />
+<meta property="og:image" content="http://webaquebec2013.herokuapp.com/assets/images/speakers/400x375/frederic_harper-xlarge.jpg"/>
+<meta property="og:site_name" content="Web à Québec"/>
+<meta property="og:locale" content="fr_CA"/>
+<meta property="og:description" content="ANNULÉ
+08h00 - Introduction à la classe des maîtres
+08h15 - La plateforme Windows 8
+08h45 - Mini-lesson: HTML5 &amp; JavaScript
+09h00 - Laboratoire pratique
+09h30 - Pause
+09h45 -  Laboratoire pratique
+10h45 - Mini-lesson: Setting contract
+11h00 - Laboratoire pratique
+11h45 - Diner
+13h15 - Mini-lesson: Share contract
+13h30 - Laboratoire pratique
+14h45 - Pause
+15h00 - Mini-lesson: Search contract
+15h15 - Laboratoire pratique
+16h15 - Mot de fin et mouvement des développeurs
+16h30 - Fin de la classe des maîtres
+
+Pré-requis
+
+  Une machine avec Windows 8 (télécharger une version d&#039;essais de 90 jours)
+  Les outils et le SDK (télécharger gratuitement)
+  Laboratoires pratiques pour JavaScript et HTML (télécharger gratuitement)
+  Connaissances HTML, CSS et JavaScript un atout
+
+
+Documentations &amp;amp; liens intéressants
+
+  Applications Windows Store &quot;sample&quot;
+  Forum de discussions pour les développeurs
+  Ressources pour les développeurs iOS
+  Comment installer Windows 8 avec VMWare sur un Macbook (utiliser la première partie, car la deuxième parties est pour les développeurs Windows Phone)(utiliser la première partie, car la deuxième parties est pour les développeurs Windows Phone)
+"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/global.css">
+        <script type="text/javascript">
+      var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-20043510-1'],
+                    ['_trackPageview'],
+                    ['ix_setAccount', 'UA-25106796-1'],
+                    ['ix_setDomainName', 'webaquebec.org'],
+                    ['ix_setAllowHash', false],
+                    ['ix_setAllowLinker', true],
+                    ['ix_trackPageview']);
+
+      (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+    </script>
+      <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+</head>
+
+<body class="layout single-session" itemscope itemtype="http://schema.org/Event">
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/fr_CA/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+        <script type="text/javascript" charset="utf-8">
+      var body = document.getElementsByTagName('body')
+      body[0].className = body[0].className + " hidden";
+      window.location = '/#/horaire/mercredi/html5-windows-8-amis-avec-benefices-73';
+    </script>
+    <header id="header">
+    <a id="siteLogo" href="../../index.html"><span class="shy">Le Web à Québec</span></a>
+    <div id="event-desc">
+        <h1 itemprop="name">Le web à Québec</h1>
+        Du <time itemprop="startDate" datetime="2013-02-20T07:30-17:30">20</time> au <time itemprop="endDate" datetime="2013-02-22T07:30-17:30">22</time> février 2013,
+        <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="name">Espace 400<sup>e</sup> Bell</span>,
+                <span itemprop="addressRegion">Québec</span>
+            </span>
+        </span>
+    </div>
+    <ul id="social">
+        <li><a href="html5-windows-8-amis-avec-benefices-73.html#/nous-joindre/">Nous joindre</a></li>
+        <li class="twitter"><a href="https://twitter.com/webaquebec"><span class="shy">Twitter</span></a></li>
+        <li class="facebook"><a href="http://www.facebook.com/webaquebec"><span class="shy">Facebook</span></a></li>
+    </ul>
+</header>    <div class="width">
+      <figure>
+    <img src="../../assets/images/speakers/400x375/frederic_harper-xlarge.jpg" width="400" height="375" alt="Frédéric Harper" />
+    <figcaption>
+      <h1>
+      Frédéric Harper
+            <a class="twitter-bird" href="http://www.twitter.com/fharper" title="Frédéric Harper sur twitter" target="_blank"><span class="shy">twitter</span></a>
+            </h1>
+    </figcaption>
+</figure>
+<div class="content" data-shareURL="http://webaquebec2013.herokuapp.com/horaire/mercredi/html5-windows-8-amis-avec-benefices-73">
+    <h2>HTML5 &amp; Windows 8: amis avec bénéfices</h2>
+    <span class="time"><time itemprop="startDate" datetime="2013-02-20T07:15:00">mercredi le 20 février, de  7 h 15</time> à <time itemprop="endDate" datetime="2013-02-20T16:30:00">16 h 30</time></span>
+    <span class="room">Salle Libéo</span>
+    <div id="scrollbar1" class="desc-wrap">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport">
+            <div class="overview">
+                                    <p><strong>ANNULÉ</strong></p>
+<p>08h00 - Introduction à la classe des maîtres<br>
+08h15 - La plateforme Windows 8<br>
+08h45 - Mini-lesson: HTML5 & JavaScript<br>
+09h00 - Laboratoire pratique<br>
+09h30 - Pause<br>
+09h45 -  Laboratoire pratique<br>
+10h45 - Mini-lesson: Setting contract<br>
+11h00 - Laboratoire pratique<br>
+11h45 - Diner<br>
+13h15 - Mini-lesson: Share contract<br>
+13h30 - Laboratoire pratique<br>
+14h45 - Pause<br>
+15h00 - Mini-lesson: Search contract<br>
+15h15 - Laboratoire pratique<br>
+16h15 - Mot de fin et mouvement des développeurs<br>
+16h30 - Fin de la classe des maîtres</p>
+
+<h3>Pré-requis</h3>
+<ol>
+  <li>Une machine avec Windows 8 (<a href="http://msdn.microsoft.com/en-US/evalcenter/jj554510.aspx?wt.mc_id=MEC_132_1_4" target="_blank">télécharger une version d'essais de 90 jours</a>)</li>
+  <li>Les outils et le SDK (<a href="http://msdn.microsoft.com/en-US/windows/apps/br229516" target="_blank">télécharger gratuitement</a>)</li>
+  <li>Laboratoires pratiques pour JavaScript et HTML (<a href="http://msdn.microsoft.com/en-us/windows/apps/jj674832" target="_blank">télécharger gratuitement</a>)</li>
+  <li>Connaissances HTML, CSS et JavaScript un atout</li>
+</ol>
+
+<h3>Documentations &amp; liens intéressants</h3>
+<ul>
+  <li><a href="http://msdn.microsoft.com/library/windows/apps/" target="_blank">Applications Windows Store "sample"</a></li>
+  <li><a href="http://code.msdn.microsoft.com/windowsapps" target="_blank">Forum de discussions pour les développeurs</a></li>
+  <li><a href="http://social.msdn.microsoft.com/Forums/en-US/category/windowsapps" target="_blank">Ressources pour les développeurs iOS</a></li>
+  <li><a href="http://www.developer.nokia.com/Community/Wiki/Windows_Phone_8_SDK_on_a_Virtual_Machine_with_Working_Emulator" target="_blank">Comment installer Windows 8 avec VMWare sur un Macbook (utiliser la première partie, car la deuxième parties est pour les développeurs Windows Phone)</a>(utiliser la première partie, car la deuxième parties est pour les développeurs Windows Phone)</li>
+</ul>
+                              
+                              
+                                                            <h2>Biographie</h2>
+                        <p>Frédéric Harper créé des logiciels depuis plus d'une décennie. Vivant à Montréal, il travaille comme Évangéliste Technique à Microsoft, partageant sa passion à propos du développement d'applications. Menant l'initiative Make Web Not War, l'Open Source, l'Open Standard, et l'Interopérabilité sont les piliers de son aventure à l'Empire. Présentateur expérimenté, porteur de t-shirts, blogueur de longue haleine, donneur de câlins passionné, et amoureux d'HTML5, Fred a plusieurs personnalités. Toujours conscient de l'importante des licornes et des gnomes, vous pouvez lire sur ces sujets et autre pensées sur outofcomfortzone.net.</p>
+                                                    
+              <div class="bio-meta">
+                                    <span><strong>Entreprise</strong>: Microsoft Canada</span>
+                                  
+                                    <span><strong>Titre</strong>: Technical Evangelist</span>
+                                
+                                    <span><strong>Site web</strong>: <a href="http://outofcomfortzone.net" target="_blank">http://outofcomfortzone.net</a></span>
+                                </div>
+              
+            </div>
+        </div>
+    </div>
+    
+</div>
+    </div>
+
+    <footer id="nous-joindre" data-section>
+        <span class="gradient"></span>
+        <span class="diag"></span>
+        <div class="address">
+
+            <div class="block" itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
+                <h3>Adresse de l'événement</h3>
+                <span itemprop="streetAddress">100 rue Quai St-André</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3Y2</span>
+
+                <span class="media-telephone"><strong>Média:</strong> <span itemprop="telephone">418 704-1559 #228</span></span>
+                <span><strong>Questions générales</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#119;&#101;&#98;&#97;&#113;&#117;&#101;&#98;&#101;&#99;&#46;&#111;&#114;&#103;">&#105;&#110;&#102;&#111;&#64;&#119;&#101;&#98;&#97;&#113;&#117;&#101;&#98;&#101;&#99;&#46;&#111;&#114;&#103;</a></span>
+            </div>
+
+            <div class="block" itemtype="http://schema.org/PostalAddress">
+                <h3>Siège social</h3>
+                <span itemprop="streetAddress">305 Charest Est, bureau 901</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3H3</span>
+                <span itemprop="telephone">418 647-3877</span>
+            </div>
+
+        </div>
+                <form action="http://webaquebec.createsend.com/t/r/s/jjjdthl" method="post" id="newsletter">
+            <label>
+                <span class="label">Inscrivez-vous à l’infolettre du WAQ !</span>
+                <input type="email" name="cm-jjjdthl-jjjdthl" id="some_name" >
+            </label>
+            <button type='submit'><span class="shy">Envoyer</span></button>
+        </form>
+                <span id="ix">Conception: <a href="http://ixmedia.com">iXmédia</a></span>
+    </footer>
+    <div class="share-btn">
+
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-505c8d037002272c"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/javascripts/libs/jquery.js"><\/script>')</script>
+    </body>
+</html>

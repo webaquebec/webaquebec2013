@@ -1,0 +1,188 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="fr"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="fr"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="fr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Le Web au féminin | Web à Québec</title>
+    <meta name="description" content="Le Web à Québec c'est trois jours de rencontres par et pour les gens qui imaginent le web.">
+    <meta property="og:image" content="http://www.webaquebec.org/assets/images/waq-facebook.png" />
+
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Le Web au féminin"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://webaquebec2013.herokuapp.com/horaire/vendredi/le-web-au-feminin-62" />
+<meta property="og:image" content="http://webaquebec2013.herokuapp.com/assets/images/speakers/400x375/placeholder-xlarge.jpg"/>
+<meta property="og:site_name" content="Web à Québec"/>
+<meta property="og:locale" content="fr_CA"/>
+<meta property="og:description" content="Comment s’articule le rapport des femmes au Web, sous un angle plus sociologique que technique : le comportement des femmes sur le web et leur façon de naviguer.
+
+Trois axes à envisager : 
+
+    Réseautage d’affaires en ligne
+    Apprentissage
+    Consommation/recherche d’informations
+"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/global.css">
+        <script type="text/javascript">
+      var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-20043510-1'],
+                    ['_trackPageview'],
+                    ['ix_setAccount', 'UA-25106796-1'],
+                    ['ix_setDomainName', 'webaquebec.org'],
+                    ['ix_setAllowHash', false],
+                    ['ix_setAllowLinker', true],
+                    ['ix_trackPageview']);
+
+      (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+    </script>
+      <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+</head>
+
+<body class="layout single-session" itemscope itemtype="http://schema.org/Event">
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/fr_CA/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+        <script type="text/javascript" charset="utf-8">
+      var body = document.getElementsByTagName('body')
+      body[0].className = body[0].className + " hidden";
+      window.location = '/#/horaire/vendredi/le-web-au-feminin-62';
+    </script>
+    <header id="header">
+    <a id="siteLogo" href="../../index.html"><span class="shy">Le Web à Québec</span></a>
+    <div id="event-desc">
+        <h1 itemprop="name">Le web à Québec</h1>
+        Du <time itemprop="startDate" datetime="2013-02-20T07:30-17:30">20</time> au <time itemprop="endDate" datetime="2013-02-22T07:30-17:30">22</time> février 2013,
+        <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="name">Espace 400<sup>e</sup> Bell</span>,
+                <span itemprop="addressRegion">Québec</span>
+            </span>
+        </span>
+    </div>
+    <ul id="social">
+        <li><a href="le-web-au-feminin-62.html#/nous-joindre/">Nous joindre</a></li>
+        <li class="twitter"><a href="https://twitter.com/webaquebec"><span class="shy">Twitter</span></a></li>
+        <li class="facebook"><a href="http://www.facebook.com/webaquebec"><span class="shy">Facebook</span></a></li>
+    </ul>
+</header>    <div class="width">
+      <figure>
+    <img src="../../assets/images/speakers/400x375/placeholder-xlarge.jpg" width="400" height="375" alt="Panel" />
+    <figcaption>
+      <h1>
+      Panel
+            </h1>
+    </figcaption>
+</figure>
+<div class="content" data-shareURL="http://webaquebec2013.herokuapp.com/horaire/vendredi/le-web-au-feminin-62">
+    <h2>Le Web au féminin</h2>
+    <span class="time"><time itemprop="startDate" datetime="2013-02-22T13:15:00">vendredi le 22 février, de 13 h 15</time> à <time itemprop="endDate" datetime="2013-02-22T14:45:00">14 h 45</time></span>
+    <span class="room">Salle Libéo</span>
+    <div id="scrollbar1" class="desc-wrap">
+        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+        <div class="viewport">
+            <div class="overview">
+                                    <p>Comment s’articule le rapport des femmes au Web, sous un angle plus sociologique que technique : le comportement des femmes sur le web et leur façon de naviguer.</p>
+
+<p>Trois axes à envisager : </p>
+<ul>
+    <li>Réseautage d’affaires en ligne</li>
+    <li>Apprentissage</li>
+    <li>Consommation/recherche d’informations</li>
+</ul>
+                              
+                                    <h2>Les trois principales questions auxquelles la présentation répondra</h2>
+                    <ol>
+    <li>Est-ce que les femmes consomment le Web différemment?</li>
+    <li>Que font les femmes sur le Web?</li>
+    <li>Doit-on concevoir le Web différemment pour les femmes?</li>
+</ol>
+                              
+                                                            <h2>Manon Arcand <a class="twitter-bird" href="http://twitter.com/manonarcand"><span class="shy">Twitter</span></a></h2>
+<p>Diplomée de HEC Montréal (Ph.D. en marketing sous la direction de Jacques Nantel) et professeure à l’ESG depuis 2007. Intérêts de recherche : genre, traitement de l’information et magasinage en ligne, Internet et Vie privée, Marketing électronique</p>
+<div class="bio-meta">
+    <span><strong>Entreprise</strong>: ESG-UQAM</span>
+    <span><strong>Titre</strong>: Professeure de marketing</span>
+    <span><strong>Site web</strong>: <a href="http://www.marketing.esg.uqam.ca/Pages/arcand_m.aspx" target="_blank">http://www.marketing.esg.uqam.ca/Pages/arcand_m.aspx</a></span>
+</div>
+
+<h2>Christine Renaud <a class="twitter-bird" href="http://twitter.com/christinerenaud"><span class="shy">Twitter</span></a></h2>
+<p>Christine est une entrepreneure sociale qui se passionne pour le développement du potentiel des individus et des communautés. Diplômée de Harvard, elle est co-fondatrice de E-180, un site web de jumelage qui vous connecte avec des personnes aux intérêts similaires afin de vous permettre d'échanger des connaissances en personne, au-dessus d'un café.</p>
+<div class="bio-meta">
+    <span><strong>Entreprise</strong>: E-180</span>
+    <span><strong>Titre</strong>: Directrice générale et co-fondatrice</span>
+    <span><strong>Site web</strong>: <a href="http://www.e-180.com" target="_blank">http://wwwwww.e-180.com</a></span>
+</div>
+
+
+<h2>Anastasia Simitsis</h2>
+<p>domaine du Web, ayant occupé différents rôles dans la conception de sites. Elle détient un Baccalauréat en Administration des affaires, avec une spécialisation en Marketing et Gestion internationale. Elle a ensuite suivi une formation de 2e cycle en Ergonomie, Interactions humains-ordinateurs ainsi que plusieurs formations professionnelles reliées à l’expérience utilisateur.</p>
+ 
+<p>Passionnée par le comportement du consommateur, le design persuasif et l’ergonomie, elle a fait sa marque comme experte, conférencière et formatrice de l’expérience utilisateur. Son défi : réconcilier les besoins d’affaires, les besoins utilisateurs et la technologie afin d’offrir des solutions qui allient utilité, efficacité et rentabilité.</p>
+ 
+<p>Chez w.illi.am/, Anastasia et son équipe d’experts en ergonomie et design d’interaction interviennent dans la recherche, l’analyse, la conception, l’évaluation et l’optimisation des interfaces (Web, mobile, tablette, etc.) dans une démarche centrée utilisateur. Parmi ses clients :  Banque Nationale, DuProprio.com, Workopolis, Centre d’accès à l’information juridique, Juste Pour Rire, Fonds FTQ, Bombardier, Pages Jaunes, La Presse, Cogeco, L’Oréal, Mary Kay et Céragrès.</p>
+<div class="bio-meta">
+    <span><strong>Entreprise</strong>: w.illi.am</span>
+    <span><strong>Titre</strong>: Directrice, Expérience utilisateur</span>
+    <span><strong>Site web</strong>: <a href="http://w.illi.am" target="_blank">http://w.illi.am</a></span>
+</div>
+                                                    
+              <div class="bio-meta">
+                                  
+                                
+                                </div>
+              
+            </div>
+        </div>
+    </div>
+    
+</div>
+    </div>
+
+    <footer id="nous-joindre" data-section>
+        <span class="gradient"></span>
+        <span class="diag"></span>
+        <div class="address">
+
+            <div class="block" itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
+                <h3>Adresse de l'événement</h3>
+                <span itemprop="streetAddress">100 rue Quai St-André</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3Y2</span>
+
+                <span class="media-telephone"><strong>Média:</strong> <span itemprop="telephone">418 704-1559 #228</span></span>
+                <span><strong>Questions générales</strong>: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#119;&#101;&#98;&#97;&#113;&#117;&#101;&#98;&#101;&#99;&#46;&#111;&#114;&#103;">&#105;&#110;&#102;&#111;&#64;&#119;&#101;&#98;&#97;&#113;&#117;&#101;&#98;&#101;&#99;&#46;&#111;&#114;&#103;</a></span>
+            </div>
+
+            <div class="block" itemtype="http://schema.org/PostalAddress">
+                <h3>Siège social</h3>
+                <span itemprop="streetAddress">305 Charest Est, bureau 901</span>
+                <span itemprop="addressLocality">Québec (Qc)</span>
+                <span itemprop="postalCode">G1K 3H3</span>
+                <span itemprop="telephone">418 647-3877</span>
+            </div>
+
+        </div>
+                <form action="http://webaquebec.createsend.com/t/r/s/jjjdthl" method="post" id="newsletter">
+            <label>
+                <span class="label">Inscrivez-vous à l’infolettre du WAQ !</span>
+                <input type="email" name="cm-jjjdthl-jjjdthl" id="some_name" >
+            </label>
+            <button type='submit'><span class="shy">Envoyer</span></button>
+        </form>
+                <span id="ix">Conception: <a href="http://ixmedia.com">iXmédia</a></span>
+    </footer>
+    <div class="share-btn">
+
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-505c8d037002272c"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/javascripts/libs/jquery.js"><\/script>')</script>
+    </body>
+</html>

@@ -217,12 +217,9 @@ Author: Louis-Philippe Dumas, @louisdumas, github: lpdumas
         this.body.addClass('lock');
       }
       request = $.ajax({
-        url: url,
+        url: url.replace('.html', '.ajax.html'),
         type: "GET",
-        dataType: "html",
-        data: {
-          ajax: 1
-        }
+        dataType: "html"
       });
       request.done(function(response) {
         var newHeigh, t;
@@ -531,7 +528,7 @@ Author: Louis-Philippe Dumas, @louisdumas, github: lpdumas
     };
     links = $links.get();
     l = links.length;
-    
+
   while (l--) {
     link = links[l];
     if (!link.className.match(/fancybox|videos/) && !link.href.match(/^(javascript:|mailto:)/) && (domainWithoutSubdomain(link.hostname) != domainWithoutSubdomain(location.hostname) || link.href.match(/\.(docx?|xlsx?|pptx?|pdf|eps|zip|vsd|vxd|rar|wma|mov|avi|wmv|mp3|mp4|mpg|mpeg|mpeg4|m4a|m4v|f4v|flv|csv|xml|ogg|oga|ogv|webm|jpg|jpeg|png|gif|webp|svg|ico|txt|css|js)$/))) {
@@ -579,7 +576,7 @@ Author: Louis-Philippe Dumas, @louisdumas, github: lpdumas
         }
         return mySchedule.slideTo(day);
       });
-      return this.get(/\#\/horaire\/(.*)\/(.*)-([0-9]+)\/*$/, function(cx, day, slug, id) {
+      return this.get(/\#\/horaire\/(.*)\/(.*)-([0-9]+)\/*\.html$/, function(cx, day, slug, id) {
         if (myOnePager.windowInitialHash) {
           myOnePager.hashHasChange('horaire');
           myOnePager.windowInitialHash = null;
